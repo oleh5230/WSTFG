@@ -45,7 +45,17 @@ snd_3_layer2			                                       	  = weapons\shared_high_c
 ; snd_shoot2                                                        = $no_sound
 
 ![base_sounds]
-snd_shoot_grenade			                                      = weapons\_gunfire\mono\ugl\Close_1
+snd_shoot_grenade			                                      = weapons\m203\m203_grenshoot
+scripted_snd_shots_g                                              = weapons\m203\m203_tail, true
+scripted_snd_shots_g_aim                                          = weapons\m203\m203_tail, true
+
+![wpn_m79_sounds]
+snd_shoot               	                                      = weapons\m203\m203_grenshoot
+snd_shoot_actor				                                      = wpn_m79_snd_shoot_actor
+
+![wpn_rg-6_sounds]
+snd_shoot               	                                      = weapons\gp25\gp25_grenshoot
+snd_shoot_actor				                                      = wpn_rg6_snd_shoot_actor
 
 ![scope_detector]
 found_snd				                                          = detectors\detector_8
@@ -54,3 +64,14 @@ catch_snd				                                          = detectors\detector_8
 ![wpn_binoc_sounds]
 found_snd				                                          = detectors\detector_8
 catch_snd				                                          = detectors\detector_8
+
+;-----------------------------------------------------------------------------------------------------------------------------
+;---------------------------------- SOUND LAYERS -----------------------------------------------------------------------------
+
+[wpn_m79_snd_shoot_actor]
+snd_1_layer			                                          	  = weapons\m203\m203_grenshoot
+snd_2_layer			                                          	  = weapons\m203\m203_tail
+
+[wpn_rg6_snd_shoot_actor]
+snd_1_layer			                                          	  = weapons\gp25\gp25_grenshoot
+snd_2_layer			                                          	  = weapons\gp25\gp25_tail

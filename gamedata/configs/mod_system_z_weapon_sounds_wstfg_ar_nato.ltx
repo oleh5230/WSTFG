@@ -2,7 +2,7 @@
 ;--------------------------------- AUTOMATIC RIFLES --------------------------------------------------------------------------
 ;-------------------------------------- NATO ---------------------------------------------------------------------------------
 
-![wpn_ak5c_bas]:!wpn_m4_sounds,wpn_sig550_sounds
+![wpn_ak5c_bas]:!wpn_m4_sounds,wpn_fnc_sounds
 ; snd_shoot               	= wpn_ak5c_snd_shoot
 ; snd_shoot_actor				= wpn_ak5c_snd_shoot_actor
 snd_reload                  = weapons\ak5c\ak5_reload
@@ -16,7 +16,7 @@ anm_reload_misfire          = ak5c_hand_misfire, ak5c_misfire
 anm_bore				    = ras_m4a1_hand_inspect, idle
 ; anm_bore				    = ras_ak5c_hand_inspecttest, idle
 
-![wpn_ak5c_isg]:!wpn_m4_sounds,wpn_sig550_sounds
+![wpn_ak5c_isg]:!wpn_m4_sounds,wpn_fnc_sounds
 ; snd_shoot               	= wpn_ak5c_snd_shoot
 ; snd_shoot_actor				= wpn_ak5c_snd_shoot_actor
 snd_reload                  = weapons\ak5c\ak5_reload_metal
@@ -94,7 +94,7 @@ snd_reload_misfire          = weapons\m4a1_ras\m4a1_misfire
 ![wpn_howa20]:!wpn_scar_sounds,wpn_m4a1_sounds
 snd_shoot               	= wpn_lr300_snd_shoot
 snd_shoot_actor				= wpn_lr300_snd_shoot_actor
-snd_draw                    = weapons\generic\scar_draw
+snd_draw                    = weapons\generic\scar_draw_fast
 snd_holster                 = weapons\generic\scar_holster
 
 ![wpn_g36v_rwap]:!wpn_sig550_sounds,wpn_g36_sounds
@@ -231,8 +231,25 @@ snd_holster                 = weapons\generic\rifle_holster
 
 ![wpn_fn2000]
 !snd_shoot_grenade
-scripted_snd_show           = weapons\sick550\sig550_draw
-scripted_snd_hide           = weapons\generic\siber_holster
+
+scripted_snd_show 							= weapon\fn2000\fn2000_deploy
+scripted_snd_hide 							= weapon\fn2000\fn2000_holster
+scripted_snd_show_w_gl 						= weapon\fn2000\fn2000_deploy
+scripted_snd_hide_w_gl 						= weapon\fn2000\fn2000_holster
+scripted_snd_show_g 						= weapon\fn2000\fn2000_gl_on_with_deploy
+scripted_snd_hide_g 						= weapon\fn2000\fn2000_gl_off_with_holster
+
+scripted_snd_switch 						= weapon\fn2000\fn2000_gl_off_deployed
+scripted_snd_switch_g 						= weapon\fn2000\fn2000_gl_on_deployed
+snd_switch_mode                             = weapon\fn2000\fn2000_firemode_switch
+snd_bore                                    = weapon\fn2000\fn2000_inspect
+
+scripted_snd_sprint_start             	 	= weapon\fn2000\fn2000_sprint_start
+scripted_snd_sprint_end               	 	= weapon\fn2000\fn2000_sprint_end
+scripted_snd_sprint_start_w_gl            	= weapon\fn2000\fn2000_sprint_start
+scripted_snd_sprint_end_w_gl              	= weapon\fn2000\fn2000_sprint_end
+scripted_snd_sprint_start_g             	= weapon\fn2000\fn2000_sprint_start
+scripted_snd_sprint_end_g                 	= weapon\fn2000\fn2000_sprint_end
 
 ![wpn_m249]
 snd_reload_misfire			= $no_sound
@@ -266,33 +283,33 @@ anm_reload_misfire          = sa_ins_reload_speed_grip, reload_speed
 
 ![wpn_scar_siber]
 !snd_shoot_grenade
-snd_draw                    = weapons\generic\siber_draw
-snd_holster                 = weapons\generic\siber_holster
+snd_draw                    = weapons\generic\scar_draw
+snd_holster                 = weapons\generic\scar_holster
 
 ![wpn_scar_siber_black]
 !snd_shoot_grenade
-snd_draw                    = weapons\generic\siber_draw
-snd_holster                 = weapons\generic\siber_holster
+snd_draw                    = weapons\generic\scar_draw
+snd_holster                 = weapons\generic\scar_holster
 
 ![wpn_scar_siber_m1]
 !snd_shoot_grenade
-snd_draw                    = weapons\generic\scar_draw
+snd_draw                    = weapons\generic\scar_draw_fast
 snd_holster                 = weapons\generic\scar_holster
 
 ![wpn_scar_siber_m1_black]
 !snd_shoot_grenade
-snd_draw                    = weapons\generic\scar_draw
+snd_draw                    = weapons\generic\scar_draw_fast
 snd_holster                 = weapons\generic\scar_holster
 
 ![wpn_scar_siber_m2]
 !snd_shoot_grenade
-snd_draw                    = weapons\generic\scar_draw
+snd_draw                    = weapons\generic\scar_draw_fast
 snd_holster                 = weapons\generic\scar_holster
 
 ![wpn_scar_siber_m2_custom]
 !snd_shoot_grenade
-snd_draw                    = weapons\generic\siber_draw
-snd_holster                 = weapons\generic\siber_holster
+snd_draw                    = weapons\generic\scar_draw
+snd_holster                 = weapons\generic\scar_holster
 
 ;-----------------------------------------------------------------------------------------------------------------------------
 ;---------------------------------- GENERIC SECTIONS -------------------------------------------------------------------------
@@ -319,7 +336,7 @@ snd_shoot_actor                                                   = wpn_m4_snd_s
 snd_silncer_shot			                                      = wpn_556_c_snd_silenced
 snd_silncer_shot_actor		                                      = wpn_556_c_snd_silenced_actor
 
-![wpn_fn2000_sounds]
+; ![wpn_fn2000_sounds]
 ; snd_silncer_shot			                                      = wpn_556_c_snd_silenced
 ; snd_silncer_shot_actor		                                      = wpn_556_c_snd_silenced_actor
 
@@ -393,7 +410,19 @@ snd_3_layer3			                                       	  = weapons\_shared\stere
 snd_4_layer			                                       	 	  = weapons\_bass\bass_mid
 
 ![wpn_m249_snd_shoot_actor]
-snd_4_layer			                                       	 	  = weapons\_bass\bass_mid
+snd_1_layer			                                          	  = weapons\_gunfire\stereo\m249\close_1, 1.0, 0.04
+snd_1_layer1			                                          = weapons\_gunfire\stereo\m249\close_2, 1.0, 0.04
+snd_1_layer2			                                       	  = weapons\_gunfire\stereo\m249\close_3, 1.0, 0.04
+snd_1_layer3			                                       	  = weapons\_gunfire\stereo\m249\close_4, 1.0, 0.04
+snd_2_layer 			                                       	  = weapons\_shared\stereo\reflectors\556\reflector_1, 1.0, 0.04
+snd_2_layer1			                                       	  = weapons\_shared\stereo\reflectors\556\reflector_2, 1.0, 0.04
+snd_2_layer2 			                                       	  = weapons\_shared\stereo\reflectors\556\reflector_3, 1.0, 0.04
+snd_2_layer3			                                       	  = weapons\_shared\stereo\reflectors\556\reflector_4, 1.0, 0.04
+snd_3_layer			                                          	  = weapons\_shared\stereo\echo_1, 0.25, 0.04
+snd_3_layer1			                                          = weapons\_shared\stereo\echo_2, 0.25, 0.04
+snd_3_layer2			                                       	  = weapons\_shared\stereo\echo_3, 0.25, 0.04
+snd_3_layer3			                                       	  = weapons\_shared\stereo\echo_4, 0.25, 0.04
+snd_4_layer			                                       	 	  = weapons\_bass\bass_mid, 1.0, 0.04
 snd_5_layer			                                       	 	  = weapons\_bolt\_bolt_mono\m249
 !snd_6_layer
 
@@ -468,14 +497,14 @@ snd_1_layer			                                          	  = weapons\_sd\stereo\
 snd_1_layer1			                                          = weapons\_sd\stereo\ar15\sd_close_2, 1.0, 0.025
 snd_1_layer2			                                       	  = weapons\_sd\stereo\ar15\sd_close_3, 1.0, 0.025
 snd_1_layer3			                                       	  = weapons\_sd\stereo\ar15\sd_close_4, 1.0, 0.025
-snd_2_layer			                                          	  = weapons\_sd\stereo\556\tail_sd_1, 0.5
-snd_2_layer1		                                              = weapons\_sd\stereo\556\tail_sd_2, 0.5
-snd_2_layer2			                                       	  = weapons\_sd\stereo\556\tail_sd_3, 0.5
-snd_2_layer3			                                       	  = weapons\_sd\stereo\556\tail_sd_4, 0.5
-snd_3_layer			                                          	  = weapons\_shared\stereo\echo_9, 0.25
-snd_3_layer1			                                          = weapons\_shared\stereo\echo_2, 0.25
-snd_3_layer2			                                       	  = weapons\_shared\stereo\echo_3, 0.25
-snd_3_layer3			                                       	  = weapons\_shared\stereo\echo_4, 0.25
+snd_2_layer			                                          	  = weapons\_sd\stereo\556\tail_sd_1, 0.5, 0.025
+snd_2_layer1		                                              = weapons\_sd\stereo\556\tail_sd_2, 0.5, 0.025
+snd_2_layer2			                                       	  = weapons\_sd\stereo\556\tail_sd_3, 0.5, 0.025
+snd_2_layer3			                                       	  = weapons\_sd\stereo\556\tail_sd_4, 0.5, 0.025
+snd_3_layer			                                          	  = weapons\_shared\stereo\echo_9, 0.25, 0.025
+snd_3_layer1			                                          = weapons\_shared\stereo\echo_2, 0.25, 0.025
+snd_3_layer2			                                       	  = weapons\_shared\stereo\echo_3, 0.25, 0.025
+snd_3_layer3			                                       	  = weapons\_shared\stereo\echo_4, 0.25, 0.025
 snd_4_layer			                                       	 	  = weapons\_bass\bass_small_sd_double, 1.0, 0.025
 snd_5_layer			                                       	 	  = weapons\_bolt\_bolt_mono\m249
 

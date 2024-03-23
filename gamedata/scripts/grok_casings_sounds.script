@@ -1,0 +1,164 @@
+-- On weapon shot, plays a delayed sound of cartridge falling on the ground with different sounds for different ground types.
+-- Based on Haruka Exo jump sound player code.
+-- Grok 17/04/2023
+
+-- Revisited by oleh5230, 19/03/2024:
+-- Calls up to six sound playbacks simultaneously
+-- Positional sounds (with offset depending on weapon ejecting mechanism)
+-- Volume and delay adjustments if player is crouched or prone
+-- Mud sounds during rain
+-- Tables updated and moved to .ltx files
+-- MCM settings
+
+-- Credits: xcvb for get_body_state()
+
+local ini_wep = ini_file("plugins\\grok_casings_sounds_weapons.ltx")
+local ini_ammo = ini_file("plugins\\grok_casings_sounds_ammo.ltx")
+
+mat_to_sound = {
+    ["earth"] = "_dirt_",
+    ["dirt"] = "_dirt_",
+    ["bush"] = "_grass_",
+    ["grass"] = "_grass_",
+    -- ["body"] = "_grass_",
+    -- ["cloth"] = "_grass_",
+    ["wood"] = "_wood_",
+    ["tree"] = "_wood_",
+    ["metal"] = "_metal_",
+    ["tin"] = "_metal_",
+    ["gravel"] = "_concrete_",
+    ["asphalt"] = "_concrete_",
+    ["tile"] = "_concrete_",
+    ["concrete"] = "_concrete_",
+    ["shifer"] = "_concrete_",
+    ["bricks"] = "_concrete_",
+    ["water"] = "_water_", -- if you use SSS ice module replace "_water_" with "_concrete_"
+    --["actor"] = "_water_",
+}
+
+local enabled = true
+local volume_base = 2
+local count = 0
+
+function load_mcm_options()
+    if ui_mcm then
+        enabled = ui_mcm.get("grok_casings_sounds/enabled") or false
+        volume_base = ui_mcm.get("grok_casings_sounds/volume") or 2
+    end
+    if not enabled then
+        printf("Grok's Casing Falling Sounds are disabled, unregistering callbacks")
+        UnregisterScriptCallback("actor_on_footstep",actor_on_footstep)
+        UnregisterScriptCallback("actor_on_weapon_fired",actor_on_weapon_fired)
+    end
+end
+
+function actor_on_footstep(material, power, hud_view, flags)
+    current_material = tostring(material)
+
+	for k,v in pairs(mat_to_sound) do
+		found_mat = string.find(current_material, k)
+		if found_mat then
+			current_material = k
+			break
+		end
+	end
+    current_material_sound = mat_to_sound[current_material]
+
+    -- change soft material to mud during rain
+    local wetness = level.rain_wetness()
+    if wetness > 0.2 and (current_material_sound == "_dirt_" or current_material_sound == "_grass_") then
+        local roll = math.random(99)
+        if wetness * 100 > roll then
+            current_material_sound = "_mud_"
+        end
+    end
+    printf("Grok's Casings Sounds //    current_material: %s; current_material_sound: %s; wetness: %s", current_material, current_material_sound, wetness)
+end
+
+function actor_on_weapon_fired(obj, wpn)
+	if obj and wpn and IsWeapon(wpn) and not IsMelee(wpn) then
+		local wpn_sec = wpn:section()
+        local wpn_sec_par = ini_sys:r_string_ex(wpn_sec,"parent_section") or wpn_sec
+
+	    local ammo_list = utils_item.get_ammo(wpn_sec)
+	    local ammo_sec = ammo_list[1]
+		local casing_class = ini_ammo:r_string_ex(ammo_sec,"sound_class") or "556mm"
+        if casing_class == "no_sound" then return end
+
+        local particle = ini_sys:r_string_ex(wpn_sec_par,"shell_particles") or false
+        local orient = ini_wep:r_float_ex(wpn_sec_par,"port_orientation") or 0
+        local time = ini_wep:r_float_ex(wpn_sec_par,"delay") or particle and 1.15 or 0.55
+        if orient == -1 then return end
+
+        local material_sound = current_material_sound or "_dirt_"
+        local sub_coef = particle and time > 0.5 and 1.5 or 1
+        local pos, dir = db.actor:position(), db.actor:direction()
+        local volume = volume_base or 2
+
+        -- adjust delay, volume and altitude offset
+        body_st = get_body_state()
+        if body_st == "low_crouch" then
+            time = time - (0.3 * sub_coef)
+            volume = volume * 0.7
+            pos.y = pos.y - 0.0016
+        elseif body_st == "crouch" then
+            time = time - (0.1 * sub_coef)
+            volume = volume * 0.9
+            pos.y = pos.y - 0.0064
+        else
+            pos.y = pos.y - 0.0092
+        end
+        offset_casing_sound(orient, pos, dir)
+
+        count = count + 1
+        if count > 5 then count = 0 end
+        local roll = math.random(1,4)
+
+        CreateTimeEvent("grok_casings", "grok_casings_sound_" .. count, time + (roll/100), function()
+            sound_to_play = sound_object("casings\\" .. casing_class .. material_sound .. roll)
+            sound_to_play:play_at_pos(db.actor, pos)
+            sound_to_play.volume = volume
+
+            printf("Grok's Casings Sounds //    section: %s; casing: %s; material: %s; base time: %s; volume: %s", wpn_sec_par, casing_class, material_sound, time, volume)
+            --printf("Grok's Casings Sounds //  actor pos: %s, %s, %s;", string.format("%.2f",db.actor:position().x), string.format("%.2f",db.actor:position().y), string.format("%.2f",db.actor:position().z))
+            --printf("Grok's Casings Sounds // sound pos: %s, %s, %s;", string.format("%.2f",pos.x), string.format("%.2f",pos.y), string.format("%.2f",pos.z))
+            --printf("Grok's Casings Sounds //    offset: %s, %s, %s; total: %s", string.format("%.2f",pos.x-db.actor:position().x), string.format("%.2f",pos.y-db.actor:position().y), string.format("%.2f",pos.z-db.actor:position().z), string.format("%.2f", math.sqrt(((pos.x-db.actor:position().x)^2 + (pos.z-db.actor:position().z)^2))))
+            return true
+        end)
+	end
+end
+
+function get_body_state()
+	local crouch = IsMoveState('mcCrouch')
+	local accel = IsMoveState('mcAccel')
+	local body_st = "stand"
+
+	if crouch then
+		if accel then body_st = "low_crouch"
+		else body_st = "crouch"
+		end
+	end
+    return body_st
+end
+
+-- offset casing collision point
+function offset_casing_sound(orient, pos, dir)
+    if orient == 2 then
+        return pos
+    elseif orient == 1 then
+        pos.x = pos.x - dir.z -- + dir.x/3
+        pos.z = pos.z + dir.x -- + dir.z/3
+        return pos
+    else
+        pos.x = pos.x + dir.z + dir.x/2
+        pos.z = pos.z - dir.x + dir.z/2
+        return pos
+    end
+end
+
+function on_game_start()
+    RegisterScriptCallback("actor_on_footstep", actor_on_footstep)
+    RegisterScriptCallback("actor_on_weapon_fired", actor_on_weapon_fired)
+    RegisterScriptCallback("on_option_change", load_mcm_options)
+    load_mcm_options()
+end
