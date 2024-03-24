@@ -12,4 +12,10 @@
 	<string id="ui_mcm_grok_casings_sounds_volume">
 		<text>Громкость</text>
 	</string>
+		<string id="ui_mcm_grok_casings_sounds_ice_patch">
+		<text>Screen Space Shaders Ice Version Патч</text>
+	</string>
+	<string id="ui_mcm_grok_casings_sounds_ice_patch_desc">
+		<text>Исправляет звуки падения гильз при стрельбе на льду</text>
+	</string>
 </string_table>
