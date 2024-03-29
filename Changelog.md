@@ -53,16 +53,18 @@
 - Increased Scorpion/Kiparis gunshot sounds volume
 
 ## Version 1.9 -- 06/12/2023
+**Change log:**
 Fixes some silenced bass and bullet tail sound layers inconsistencies and more
 
 ## Version 1.10 -- 13/12/2023
-Most notable changes are:
+**Change log:**
 - "New" gunfire sounds for unsuppressed 5,45/5,56 AKs. Yes, TheDJ's stuff is back as the only available option, with its volume and quality tweaked
 - Replaced 5,56 and 9x18 SMG suppressed gunfire sounds
 - Better synchronized and cleaner reloading sounds for Groza and upcoming AS Val Reanimation
 and misc tweaks and bugfixes of course
 
 ## Version 1.12.1 -- 04/01/2024
+**Change log:**
 - Replaced 7,62 AK and RPD unsuppressed gunfire sounds
 - Tweaked NPC suppressed subsonic gunfire to be easier to hear
 
@@ -138,3 +140,15 @@ and misc tweaks and bugfixes of course
 - Fixed M4A1 "Protector" and AS Val missing inspect sound
 - Added Screen Space Shaders Ice patch setting (MCM)
 - Disabled Casings Sounds script logging
+
+## Version 1.14.2 -- 29.03.2024
+**Change log:**
+- Howa Type 20: new unsuppressed gunfire
+- AK 5C: remastered unsuppressed gunfire
+- AUG/Thales EF88: reworked foley
+- Thompson M1A1/model 1921: replaced bolt and mag change
+- Remington 870/Mossberg 590A1: replaced pump
+- Blindside's shotguns: extra shell load variations
+- SVD: replaced bolt and mag pouch; fixed timings
+- Galil ACE-52: added mag pouch; fixed timings
+- Included `Changelog.md` file
