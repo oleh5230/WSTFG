@@ -100,7 +100,7 @@ function actor_on_weapon_fired(obj, wpn)
         local material_sound = current_material_sound or "_dirt_"
         local sub_coef = particle and time > 0.45 and 1.5 or 1
         local pos, dir = obj:position(), obj:direction()
-        local volume = volume_base or 2
+        local volume = material_sound == "_grass_" and volume_base/4 or volume_base or 2
 
         -- adjust delay, volume and offset altitude
         body_st = get_body_state()
@@ -119,12 +119,11 @@ function actor_on_weapon_fired(obj, wpn)
 
         count = count + 1
         if count > 5 then count = 0 end
-        local roll = math.random(1,4)
 
-        CreateTimeEvent("grok_casings", "grok_casings_sound_" .. count, time + (roll/100), function()
-            sound_to_play = sound_object("casings\\" .. casing_class .. material_sound .. roll)
+        CreateTimeEvent("grok_casings", "grok_casings_sound_" .. count, time + (math.random(4)/100), function()
+            sound_to_play = sound_object("casings\\" .. casing_class .. material_sound .. math.random(4))
             sound_to_play:play_at_pos(obj, pos)
-            sound_to_play.volume = volume
+            sound_to_play.volume = volume or 1
 
             --printf("Grok's Casings Sounds // %s, %s, class: %s, delay: %s, volume: %s", wpn_sec_par, ammo_list[wpn:get_ammo_type()+1], casing_class, time, volume)
             --printf("Grok's Casings Sounds //   actor: %s, %s, %s", string.format("%.2f",db.actor:position().x), string.format("%.2f",db.actor:position().y), string.format("%.2f",db.actor:position().z))

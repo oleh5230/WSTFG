@@ -27,11 +27,8 @@ snd_draw                    = weapons\generic\f2000_draw, 1.0, 0.15
 snd_holster                 = weapons\generic\siber_holster
 
 ![wpn_aug_freedom]
-snd_reload					= weapons\wpn_aug_augmented\aug_9mm_new_reload, 1.4
-snd_reload_empty		    = weapons\wpn_aug_augmented\aug_9mm_new_reload_empty, 1.4
-; snd_bore				    = weapons\wpn_aug_augmented\aug_new_inspect_2, 1.4
-; snd_reload_misfire          = weapons\wpn_aug_augmented\aug_new_unjam, 1.4    ; causes sound not playing at all sometimes for some reason
-snd_empty                   = weapons\_dryfire\smg9_dry
+snd_reload_misfire          = weapons\wpn_aug_augmented\aug_9mm_new_unjam
+!snd_empty
 
 ![wpn_mp5]
 snd_draw                    = weapons\generic\rifle_draw
@@ -59,14 +56,16 @@ snd_silncer_shot_actor		= wpn_smg45_snd_silenced_actor
 snd_reload				    = weapons\thompson\m1a1_new_reload
 snd_reload_empty			= weapons\thompson\m1a1_new_reload
 snd_reload_misfire          = weapons\thompson\m1a1_new_unjam
-snd_empty                   = weapons\_dryfire\76239_dry
+snd_empty					= weapons\_dryfire\uzi_trigger
+snd_empty_first				= weapons\_dryfire\uzi_bolt
 
 ![wpn_thompson_1921]
 snd_shoot		            = wpn_thompson_snd_shoot
 snd_shoot_actor		        = wpn_thompson_snd_shoot_actor
 snd_silncer_shot            = wpn_smg45_snd_silenced
 snd_silncer_shot_actor		= wpn_smg45_snd_silenced_actor
-snd_empty                   = weapons\_dryfire\76239_dry
+snd_empty					= weapons\_dryfire\uzi_trigger
+snd_empty_first				= weapons\_dryfire\uzi_bolt
 
 ![wpn_ump45]
 
@@ -77,13 +76,17 @@ snd_shoot		            = wpn_vector_snd_shoot
 snd_shoot_actor		        = wpn_vector_snd_shoot_actor
 snd_silncer_shot            = wpn_vector_snd_silenced
 snd_silncer_shot_actor		= wpn_vector_snd_silenced_actor
+snd_empty					= weapons\_dryfire\ump_trigger
+snd_empty_first				= weapons\_dryfire\ump_hammer
 
 ![wpn_sr2_veresk]:!wpn_glock_sounds,wpn_sr2_sounds
+!snd_empty
 ; snd_reload				    = weapons\sr2m\sr2m_reload              ; patch for Syndicate's reanimation
 ; snd_reload_empty			= weapons\sr2m\sr2m_reload_empty
 ; snd_reload_misfire			= weapons\sr2m\sr2m_reload_empty
 
 ![wpn_sr2_m1]:!wpn_glock_sounds,wpn_sr2_sounds
+!snd_empty
 ; snd_reload				    = weapons\sr2m\sr2m_reload
 ; snd_reload_empty			= weapons\sr2m\sr2m_reload_empty
 ; snd_reload_misfire			= weapons\sr2m\sr2m_reload_empty
@@ -92,24 +95,32 @@ snd_silncer_shot_actor		= wpn_vector_snd_silenced_actor
 snd_draw                							= weapons\mp7\mp7_deploy
 snd_holster             							= weapons\mp7\mp7_holster
 snd_switch_mode                            			= weapons\mp7\mp7_firemode_switch
-snd_empty											= weapons\mp7\mp7_trigger_hammer
+!snd_empty
 scripted_snd_sprint_start                 		 	= weapons\mp7\mp7_sprint_start
 scripted_snd_sprint_end                   	 	 	= weapons\mp7\mp7_sprint_end
 
 ;-----------------------------------------------------------------------------------------------------------------------------
 ;---------------------------------- GENERIC SECTIONS -------------------------------------------------------------------------
 
+![wpn_ppsh41_sounds]
+snd_empty											              = weapons\_dryfire\uzi_trigger
+snd_empty_first									                  = weapons\_dryfire\uzi_bolt
+
 ![wpn_vz61_sounds]
 snd_shoot               				                          = wpn_vz61_snd_shoot
 snd_shoot_actor													  = wpn_vz61_snd_shoot_actor
 snd_silncer_shot				                                  = wpn_smg9_2_snd_silenced
 snd_silncer_shot_actor				                              = wpn_smg9_2_snd_silenced_actor
+snd_empty											              = weapons\_dryfire\uzi_trigger
+snd_empty_first									                  = weapons\_dryfire\mp5_hammer
 
 ![wpn_kiparis_sounds]
 snd_shoot               				                          = wpn_vz61_snd_shoot
 snd_shoot_actor													  = wpn_vz61_snd_shoot_actor
 snd_silncer_shot				                                  = wpn_smg9_snd_silenced
 snd_silncer_shot_actor				                              = wpn_smg9_snd_silenced_actor
+snd_empty											              = weapons\_dryfire\uzi_trigger
+snd_empty_first									                  = weapons\_dryfire\mp5_hammer
 
 ![wpn_pp2000_sounds]
 snd_shoot               				                          = wpn_pp2000_snd_shoot
@@ -118,12 +129,16 @@ snd_shoot_actor													  = wpn_pp2000_snd_shoot_actor
 ; snd_shoot_actor													  = wpn_9a91_snd_shoot_actor
 snd_silncer_shot				                                  = wpn_smg9_2_snd_silenced
 snd_silncer_shot_actor				                              = wpn_smg9_2_snd_silenced_actor
+snd_empty											              = weapons\_dryfire\uzi_trigger
+snd_empty_first									                  = weapons\_dryfire\mp5_hammer
 
 [wpn_sr2_sounds]:wpn_pp2000_sounds
 snd_shoot                                                         = wpn_sr2m_snd_shoot
 snd_shoot_actor                                                   = wpn_sr2m_snd_shoot_actor
 snd_silncer_shot				                                  = wpn_smg9_c_snd_silenced
 snd_silncer_shot_actor				                              = wpn_smg9_c_snd_silenced_actor
+snd_empty											              = weapons\_dryfire\uzi_trigger
+snd_empty_first									                  = weapons\_dryfire\bizon_hammer
 
 ![wpn_bizon_sounds]
 snd_shoot               				                          = wpn_bizon_snd_shoot
@@ -131,7 +146,8 @@ snd_shoot_actor													  = wpn_bizon_snd_shoot_actor
 snd_silncer_shot				                                  = wpn_smg9_c_snd_silenced
 snd_silncer_shot_actor				                              = wpn_smg9_c_snd_silenced_actor
 snd_switch_mode				                                      = weapons\ak74\ak74_switch_mode_quick
-snd_empty               	                                      = eft_wp\shared\empty_click_rifle
+snd_empty											              = weapons\_dryfire\ak_trigger
+snd_empty_first									                  = weapons\_dryfire\bizon_hammer
 
 ![wpn_vityaz_sounds]
 snd_shoot               				                          = wpn_vityaz_snd_shoot
@@ -139,43 +155,56 @@ snd_shoot_actor													  = wpn_vityaz_snd_shoot_actor
 snd_silncer_shot				                                  = wpn_smg9_2_c_snd_silenced
 snd_silncer_shot_actor				                              = wpn_smg9_2_c_snd_silenced_actor
 snd_switch_mode				                                      = weapons\ak74\ak74_switch_mode_quick
-snd_empty               	                                      = eft_wp\shared\empty_click_rifle
+snd_empty											              = weapons\_dryfire\ak_trigger
+snd_empty_first									                  = weapons\_dryfire\bizon_hammer
 
 ![wpn_aug_9mm_sounds]
 snd_shoot               				                          = wpn_aug9_snd_shoot
 snd_shoot_actor													  = wpn_aug9_snd_shoot_actor
 snd_silncer_shot				                                  = wpn_smg9_2_snd_silenced
 snd_silncer_shot_actor				                              = wpn_smg9_2_snd_silenced_actor
+snd_empty											              = weapons\_dryfire\bullpup_trigger
+snd_empty_first									                  = weapons\_dryfire\ump_hammer
 
 ![wpn_mp5_sounds]
 snd_shoot               				                          = wpn_mp5_snd_shoot
 snd_shoot_actor													  = wpn_mp5_snd_shoot_actor
 snd_silncer_shot				                                  = wpn_smg9_2_snd_silenced
 snd_silncer_shot_actor				                              = wpn_smg9_2_snd_silenced_actor
+snd_empty											              = weapons\_dryfire\mp5_trigger
+snd_empty_first									                  = weapons\_dryfire\mp5_hammer
 
 ![wpn_mp5sd_sounds]
 snd_shoot               				                          = wpn_mp5_snd_silenced
 snd_shoot_actor													  = wpn_mp5_snd_silenced_actor
 snd_silncer_shot				                                  = wpn_mp5_snd_silenced
 snd_silncer_shot_actor				                              = wpn_mp5_snd_silenced_actor
+snd_empty											              = weapons\_dryfire\mp5_trigger
+snd_empty_first									                  = weapons\_dryfire\mp5_hammer
 
 ![wpn_ump45_sounds]
 snd_shoot               				                          = wpn_ump_snd_shoot
 snd_shoot_actor													  = wpn_ump_snd_shoot_actor
 snd_silncer_shot               				                      = wpn_smg45_snd_silenced
 snd_silncer_shot_actor											  = wpn_smg45_snd_silenced_actor
+snd_empty											              = weapons\_dryfire\ump_trigger
+snd_empty_first									                  = weapons\_dryfire\ump_hammer
 
 ![wpn_mp7_sounds]
 snd_shoot		                                                  = wpn_p90_snd_shoot
 snd_shoot_actor		                                              = wpn_p90_snd_shoot_actor
 snd_silncer_shot				                                  = wpn_mp7_snd_silenced
 snd_silncer_shot_actor				                              = wpn_mp7_snd_silenced_actor
+snd_empty											              = weapons\_dryfire\mp5_trigger
+snd_empty_first									                  = weapons\_dryfire\mp5_hammer
 
 ![wpn_p90_sounds]
 snd_shoot		                                                  = wpn_p90_snd_shoot
 snd_shoot_actor		                                              = wpn_p90_snd_shoot_actor
 snd_silncer_shot				                                  = wpn_p90_snd_silenced
 snd_silncer_shot_actor				                              = wpn_p90_snd_silenced_actor
+snd_empty											              = weapons\_dryfire\bullpup_trigger
+snd_empty_first									                  = weapons\_dryfire\p90_hammer
 
 ;-----------------------------------------------------------------------------------------------------------------------------
 ;---------------------------------- SOUND LAYERS -----------------------------------------------------------------------------
@@ -193,6 +222,10 @@ snd_1_layer2			                                       	  = weapons\_gunfire\mono
 snd_1_layer3			                                       	  = weapons\_gunfire\mono\pp2000\close_4
 snd_2_layer			                                          	  = weapons\_gunfire\mono\pp2000\Close_Distance
 snd_3_layer			                                          	  = weapons\_gunfire\mono\pp2000\Medium_Distance
+snd_4_layer                                                       = weapons\_shared\mono\Reflectors\9\Reflector_1, 0.5
+snd_4_layer1                                                      = weapons\_shared\mono\Reflectors\9\Reflector_2, 0.5
+snd_4_layer2                                                      = weapons\_shared\mono\Reflectors\9\Reflector_3, 0.5
+snd_4_layer3                                                      = weapons\_shared\mono\Reflectors\9\Reflector_4, 0.5
 
 [wpn_vz61_snd_shoot_actor]
 snd_1_layer			                                          	  = weapons\_gunfire\stereo\vz61\close_1
@@ -230,6 +263,10 @@ snd_1_layer2			                                       	  = weapons\_gunfire\mono
 snd_1_layer3			                                       	  = weapons\_gunfire\mono\bizon\close_4
 snd_2_layer			                                          	  = weapons\_gunfire\mono\bizon\Close_Distance
 snd_3_layer			                                          	  = weapons\_gunfire\mono\bizon\Medium_Distance
+snd_4_layer                                                       = weapons\_shared\mono\Reflectors\9\Reflector_1, 0.5
+snd_4_layer1                                                      = weapons\_shared\mono\Reflectors\9\Reflector_2, 0.5
+snd_4_layer2                                                      = weapons\_shared\mono\Reflectors\9\Reflector_3, 0.5
+snd_4_layer3                                                      = weapons\_shared\mono\Reflectors\9\Reflector_4, 0.5
 
 ![wpn_vityaz_snd_shoot_actor]
 snd_1_layer			                                          	  = weapons\_gunfire\stereo\bizon\close_1
@@ -248,6 +285,10 @@ snd_1_layer2			                                       	  = weapons\_gunfire\mono
 snd_1_layer3			                                       	  = weapons\_gunfire\mono\_jsrs\aug_4
 snd_2_layer			                                          	  = weapons\_gunfire\mono\_jsrs\f2000_Close_Distance
 snd_3_layer			                                          	  = weapons\_gunfire\mono\_jsrs\f2000_Medium_Distance
+snd_4_layer                                                       = weapons\_shared\mono\Reflectors\9\Reflector_1, 0.5
+snd_4_layer1                                                      = weapons\_shared\mono\Reflectors\9\Reflector_2, 0.5
+snd_4_layer2                                                      = weapons\_shared\mono\Reflectors\9\Reflector_3, 0.5
+snd_4_layer3                                                      = weapons\_shared\mono\Reflectors\9\Reflector_4, 0.5
 
 [wpn_aug9_snd_shoot_actor]
 snd_1_layer			                                          	  = weapons\_gunfire\stereo\aug9\close_1
@@ -266,6 +307,18 @@ snd_4_layer			                                       	 	  = weapons\_bass\bass_m
 
 ![wpn_ump_snd_shoot_actor]
 snd_4_layer			                                       	 	  = weapons\_bass\bass_mid
+
+[wpn_thompson_snd_shoot]
+snd_1_layer			                                          	  = weapons\_gunfire\mono\thompson\close_1
+snd_1_layer1			                                          = weapons\_gunfire\mono\thompson\close_2
+snd_1_layer2			                                       	  = weapons\_gunfire\mono\thompson\close_3
+snd_1_layer3			                                       	  = weapons\_gunfire\mono\thompson\close_4
+snd_2_layer			                                          	  = weapons\_gunfire\mono\ump\Close_Distance
+snd_3_layer			                                          	  = weapons\_gunfire\mono\ump\Medium_Distance
+snd_4_layer                                                       = weapons\_shared\mono\Reflectors\45\Reflector_1, 0.5
+snd_4_layer1                                                      = weapons\_shared\mono\Reflectors\45\Reflector_2, 0.5
+snd_4_layer2                                                      = weapons\_shared\mono\Reflectors\45\Reflector_3, 0.5
+snd_4_layer3                                                      = weapons\_shared\mono\Reflectors\45\Reflector_4, 0.5
 
 [wpn_thompson_snd_shoot_actor]
 snd_1_layer			                                          	  = weapons\_gunfire\stereo\thompson\close_1
@@ -289,6 +342,10 @@ snd_1_layer2			                                       	  = weapons\_gunfire\mono
 snd_1_layer3			                                       	  = weapons\_gunfire\mono\mp5\close_4
 snd_2_layer			                                          	  = weapons\_gunfire\mono\mp5\Close_Distance
 snd_3_layer			                                          	  = weapons\_gunfire\mono\mp5\Medium_Distance
+snd_4_layer                                                       = weapons\_shared\mono\Reflectors\45\Reflector_1, 0.5
+snd_4_layer1                                                      = weapons\_shared\mono\Reflectors\45\Reflector_2, 0.5
+snd_4_layer2                                                      = weapons\_shared\mono\Reflectors\45\Reflector_3, 0.5
+snd_4_layer3                                                      = weapons\_shared\mono\Reflectors\45\Reflector_4, 0.5
 
 [wpn_fraiser_snd_shoot_actor]
 snd_1_layer			                                          	  = weapons\_gunfire\stereo\mp5\close_1
@@ -312,6 +369,10 @@ snd_1_layer2			                                       	  = weapons\_gunfire\mono
 snd_1_layer3			                                       	  = weapons\_gunfire\mono\p90\close_4
 snd_2_layer			                                          	  = weapons\_gunfire\mono\p90\Close_Distance
 snd_3_layer			                                          	  = weapons\_gunfire\mono\p90\Medium_Distance
+snd_4_layer                                                       = weapons\_shared\mono\Reflectors\45\Reflector_1, 0.5
+snd_4_layer1                                                      = weapons\_shared\mono\Reflectors\45\Reflector_2, 0.5
+snd_4_layer2                                                      = weapons\_shared\mono\Reflectors\45\Reflector_3, 0.5
+snd_4_layer3                                                      = weapons\_shared\mono\Reflectors\45\Reflector_4, 0.5
 
 [wpn_vector_snd_shoot_actor]
 snd_1_layer			                                          	  = weapons\_gunfire\stereo\p90\close_1
@@ -335,6 +396,10 @@ snd_1_layer2			                                       	  = weapons\_gunfire\mono
 snd_1_layer3			                                       	  = weapons\_gunfire\mono\_jsrs\mtar_4
 snd_2_layer			                                          	  = weapons\_gunfire\mono\_jsrs\mtar_Close_Distance
 snd_3_layer			                                          	  = weapons\_gunfire\mono\_jsrs\mtar_Medium_Distance
+snd_4_layer                                                       = weapons\_shared\mono\Reflectors\9\Reflector_1, 0.5
+snd_4_layer1                                                      = weapons\_shared\mono\Reflectors\9\Reflector_2, 0.5
+snd_4_layer2                                                      = weapons\_shared\mono\Reflectors\9\Reflector_3, 0.5
+snd_4_layer3                                                      = weapons\_shared\mono\Reflectors\9\Reflector_4, 0.5
 
 [wpn_sr2m_snd_shoot_actor]
 snd_1_layer			                                          	  = weapons\_gunfire\stereo\sr2m\close_1
@@ -542,7 +607,7 @@ snd_1_layer                                                       = weapons\_sd\
 snd_1_layer1                                                      = weapons\_sd\mono\45_2\sd_close_2
 snd_1_layer2                                                      = weapons\_sd\mono\45_2\sd_close_3
 snd_1_layer3                                                      = weapons\_sd\mono\45_2\sd_close_4
-snd_2_layer			                                          	  = weapons\_bass\bass_small_sd_sub, 1.0, 0.005
+!snd_2_layer
 !snd_3_layer
 !snd_3_layer1
 !snd_3_layer2
@@ -569,7 +634,6 @@ snd_1_layer                                                       = weapons\_sd\
 snd_1_layer1                                                      = weapons\_sd\mono\45_2\sd_close_2
 snd_1_layer2                                                      = weapons\_sd\mono\45_2\sd_close_3
 snd_1_layer3                                                      = weapons\_sd\mono\45_2\sd_close_4
-snd_2_layer			                                          	  = weapons\_bass\bass_small_sd_sub, 1.0, 0.005
 
 [wpn_fraiser_snd_silenced_actor]
 snd_1_layer			                                          	  = weapons\_sd\stereo\45_2\sd_close_1
@@ -583,7 +647,6 @@ snd_1_layer                                                       = weapons\_sd\
 snd_1_layer1                                                      = weapons\_sd\mono\45_2\sd_close_2
 snd_1_layer2                                                      = weapons\_sd\mono\45_2\sd_close_3
 snd_1_layer3                                                      = weapons\_sd\mono\45_2\sd_close_4
-snd_2_layer			                                          	  = weapons\_bass\bass_small_sd_sub, 1.0, 0.005
 
 [wpn_vector_snd_silenced_actor]
 snd_1_layer			                                          	  = weapons\_sd\stereo\45_2\sd_close_1

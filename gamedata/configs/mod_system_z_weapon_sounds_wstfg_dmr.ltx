@@ -2,11 +2,13 @@
 ;--------------------------------- MARKSMAN RIFLES ---------------------------------------------------------------------------
 ;-----------------------------------------------------------------------------------------------------------------------------
 
-; ![wpn_sks_b]
+![wpn_sks_b]
+!snd_empty
 
 ![wpn_sks_molot]
 snd_draw                    = eft_wp\shared\draw_rifle
 snd_holster                 = weapons\generic\siber_holster
+!snd_empty
 snd_reload_misfire			= weapons\sks\reload_full
 ![wpn_sks_molot_hud]
 anm_reload_misfire          = sks_new_socom_reload, weapon_reload
@@ -16,22 +18,24 @@ snd_draw                    = eft_wp\shared\draw_rifle
 snd_holster                 = weapons\generic\siber_holster
 !snd_silncer_shot
 !snd_silncer_shot_actor
+!snd_empty
 snd_reload_misfire			= weapons\sks\reload_full
 ![wpn_sks_tac_hud]
 anm_reload_misfire          = sks_new_socom_reload, weapon_reload
 
 ![wpn_g43]
-snd_empty                   = weapons\_dryfire\sniper_dry
 snd_draw                    = weapons\generic\sniper_draw
 snd_holster				    = weapons\generic\sniper_holster
+!snd_empty
 
 ![up_sect_fourta_svd]
 snd_silncer_shot            = wpn_svd_snd_silenced
 
 ![wpn_svd_m1]
-snd_reload_misfire          = eft_wp\svd\reload
 snd_draw                    = weapons\svds\svd_draw
 snd_holster				    = weapons\svds\svd_holster
+!snd_empty
+snd_reload_misfire          = eft_wp\svd\reload
 ![wpn_svd_m1_hud]
 anm_reload_misfire          = svd-s_ins_reload, reload
 anm_show					= svd-s_ins_draw, idle, 1.2
@@ -40,9 +44,10 @@ anm_hide             		= svd-s_ins_hide, idle, 1.2
 anm_hide_empty             	= svd-s_ins_hide, idle_empty, 1.2
 
 ![wpn_svds]
-snd_reload_misfire          = eft_wp\svd\reload
 snd_draw                    = weapons\svds\svd_draw
 snd_holster				    = weapons\svds\svd_holster
+!snd_empty
+snd_reload_misfire          = eft_wp\svd\reload
 ![wpn_svds_hud]
 anm_reload_misfire          = svd-s_ins_reload, reload
 anm_show					= svd-s_ins_draw, idle, 1.2
@@ -56,6 +61,7 @@ snd_reload_empty            = weapons\svds_pmc\svds_reload_empty
 snd_reload_misfire          = weapons\svds_pmc\svds_misfire
 snd_draw                    = weapons\ak12custom\draw
 snd_holster				    = weapons\ak12custom\hide
+!snd_empty
 
 ![wpn_svu]
 snd_switch_mode				= weapons\ak74\ak74_switch_mode
@@ -69,17 +75,27 @@ snd_switch_mode				= weapons\ru556\ru556_firemode
 snd_draw                    = weapons\generic\siber_draw
 snd_holster                 = weapons\generic\siber_holster
 snd_bore                    = weapons\m4a1_ras\m4a1_boring
+snd_empty                                                         = weapons\_dryfire\ar_trigger
+snd_empty_first                                                   = weapons\_dryfire\ar_hammer
 
 ;-----------------------------------------------------------------------------------------------------------------------------
 ;---------------------------------- GENERIC SECTIONS -------------------------------------------------------------------------
 
+![wpn_g43_sounds]
+snd_empty                                                         = weapons\_dryfire\sks_trigger
+snd_empty_first                                                   = weapons\_dryfire\svd_hammer
+
 ![wpn_sks_sounds]
 snd_silncer_shot			                                      = wpn_sks_snd_silenced
 snd_silncer_shot_actor		                                      = wpn_sks_snd_silenced_actor
+snd_empty                                                         = weapons\_dryfire\sks_trigger
+snd_empty_first                                                   = weapons\_dryfire\sks_hammer
 
 ![wpn_svt40_sounds]
 snd_silncer_shot			                                      = wpn_svd_snd_silenced
 snd_silncer_shot_actor		                                      = wpn_svd_snd_silenced_actor
+snd_empty                                                         = weapons\_dryfire\sks_trigger
+snd_empty_first                                                   = weapons\_dryfire\svd_hammer
 
 ![wpn_svd_sounds]
 snd_silncer_shot			                                      = wpn_svd_snd_silenced
@@ -87,25 +103,36 @@ snd_silncer_shot_actor		                                      = wpn_svd_snd_sile
 snd_reload				                                          = weapons\svd\svd_reload_empty
 snd_reload_empty				                                  = weapons\svd\svd_reload_empty
 snd_switch_mode				                                      = weapons\ak74\ak74_switch_mode_quick
-snd_empty               	                                      = eft_wp\shared\empty_click_rifle
+snd_empty                                                         = weapons\_dryfire\svd_trigger
+snd_empty_first                                                   = weapons\_dryfire\svd_hammer
 
 ![wpn_svu_sounds]
 snd_silncer_shot			                                      = wpn_svu_snd_silenced
 snd_silncer_shot_actor		                                      = wpn_svu_snd_silenced_actor
 snd_switch_mode				                                      = weapons\ak74\ak74_switch_mode_quick
 snd_empty               	                                      = eft_wp\shared\empty_click_rifle
+snd_empty                                                         = weapons\_dryfire\svd_trigger
+snd_empty_first                                                   = weapons\_dryfire\svd_hammer
 
 ![wpn_m14_sounds]
 snd_shoot               				                          = wpn_m14_snd_shoot
 snd_shoot_actor													  = wpn_m14_snd_shoot_actor
 snd_silncer_shot				                                  = wpn_762_nato_snd_silenced
 snd_silncer_shot_actor				                              = wpn_762_nato_snd_silenced_actor
+snd_empty                                                         = weapons\_dryfire\sks_trigger
+snd_empty_first                                                   = weapons\_dryfire\scar_hammer
 
 ![wpn_sr25_sounds]
 snd_shoot               				                          = wpn_m14_snd_shoot
 snd_shoot_actor													  = wpn_m14_snd_shoot_actor
 snd_silncer_shot				                                  = wpn_762_nato_snd_silenced
 snd_silncer_shot_actor				                              = wpn_762_nato_snd_silenced_actor
+snd_empty                                                         = weapons\_dryfire\ar_trigger
+snd_empty_first                                                   = weapons\_dryfire\ar_hammer
+
+![wpn_wa2000_sounds]
+snd_empty                                                         = weapons\_dryfire\sig_trigger
+snd_empty_first                                                   = weapons\_dryfire\scar_hammer
 
 ;-----------------------------------------------------------------------------------------------------------------------------
 ;---------------------------------- SOUND LAYERS -----------------------------------------------------------------------------
@@ -119,21 +146,20 @@ snd_2_layer			                                          	  = weapons\_gunfire\mo
 snd_3_layer			                                          	  = weapons\_gunfire\mono\svd\Medium_Distance
 
 ![wpn_svt40_snd_shoot_actor]
-snd_1_layer			                                          	  = weapons\_gunfire\stereo\svd\close_1
-snd_1_layer1			                                          = weapons\_gunfire\stereo\svd\close_2
-snd_1_layer2			                                       	  = weapons\_gunfire\stereo\svd\close_3
-snd_1_layer3			                                       	  = weapons\_gunfire\stereo\svd\close_4
-snd_2_layer			                                          	  = weapons\_bolt\_bolt_mono\g43_add
-snd_3_layer 			                                       	  = weapons\_shared\stereo\reflectors\762\Reflector_1, 0.5
-snd_3_layer1			                                       	  = weapons\_shared\stereo\reflectors\762\Reflector_2, 0.5
-snd_3_layer2 			                                       	  = weapons\_shared\stereo\reflectors\762\Reflector_3, 0.5
-snd_3_layer3			                                       	  = weapons\_shared\stereo\reflectors\762\Reflector_4, 0.5
-snd_4_layer			                                       		  = weapons\_cracks\stereo\mid\crack_1
-snd_5_layer			                                          	  = weapons\_shared\stereo\echo_1, 0.25
-snd_5_layer1			                                          = weapons\_shared\stereo\echo_2, 0.25
-snd_5_layer2			                                       	  = weapons\_shared\stereo\echo_3, 0.25
-snd_5_layer3			                                       	  = weapons\_shared\stereo\echo_4, 0.25
-snd_6_layer			                                       	 	  = weapons\_bass\bass_mid
+snd_1_layer			                                          	  = weapons\_gunfire\stereo\svt40\close_1
+snd_1_layer1			                                          = weapons\_gunfire\stereo\svt40\close_2
+snd_1_layer2			                                       	  = weapons\_gunfire\stereo\svt40\close_3
+snd_1_layer3			                                       	  = weapons\_gunfire\stereo\svt40\close_4
+snd_2_layer 			                                       	  = weapons\_shared\stereo\reflectors\762\Reflector_1, 0.5
+snd_2_layer1			                                       	  = weapons\_shared\stereo\reflectors\762\Reflector_2, 0.5
+snd_2_layer2 			                                       	  = weapons\_shared\stereo\reflectors\762\Reflector_3, 0.5
+snd_2_layer3			                                       	  = weapons\_shared\stereo\reflectors\762\Reflector_4, 0.5
+snd_3_layer			                                          	  = weapons\_shared\stereo\echo_1, 0.25
+snd_3_layer1			                                          = weapons\_shared\stereo\echo_2, 0.25
+snd_3_layer2			                                       	  = weapons\_shared\stereo\echo_3, 0.25
+snd_3_layer3			                                       	  = weapons\_shared\stereo\echo_4, 0.25
+snd_4_layer			                                       	 	  = weapons\_bass\bass_mid
+snd_5_layer			                                          	  = weapons\_bolt\_bolt_mono\g43_add
 
 ; ![wpn_sks_snd_shoot_actor]
 ; snd_2_layer			                                          	  = weapons\_bolt\_bolt_mono\sks             ; too much bolt

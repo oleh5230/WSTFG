@@ -2,19 +2,11 @@
 ;--------------------------------- MISCELLANEOUS -----------------------------------------------------------------------------
 ;-----------------------------------------------------------------------------------------------------------------------------
 
-; ; Sounds handled in scripts
-; ![wpn_knife]
-; !snd_shoot
-; !snd_shoot1
-; !snd_shoot2
-; scripted_snd_attack          = weapons\barry_knife\knife_2, true
-; scripted_snd_attack1         = weapons\barry_knife\knife_3, true
-; scripted_snd_attack2         = weapons\barry_knife\knife_1, true
-
-; ; Custom Animation Types Handled In Scripts
-; ![wpn_knife_hud]
-; anm_attack_variant1         = barry_knife_attack_hands
-; anm_attack_variant2         = barry_knife_attack_hands2
+![bolt]
+snd_checkout				= weapons\bolt\bolt_checkout
+snd_throw                   = weapons\bolt\bolt_throw_2
+; snd_throw1                  = weapons\bolt\bolt_throw_1
+; snd_throw2                  = weapons\bolt\bolt_throw_3
 
 ![mounted_weapon]
 snd_shoot				    = weapons\weapon_mgun
@@ -29,12 +21,12 @@ snd_shoot				    = wpn_heli_snd_shoot ; weapons\weapon_heli
 ;broken_snd				    = vehicles\helicopter\helicopter_down
 
 [wpn_heli_snd_shoot]
-snd_1_layer			                                          	  = weapons\shared_high_cal_close_1
-snd_1_layer1			                                          = weapons\shared_high_cal_close_2
-snd_2_layer			                                          	  = weapons\shared_high_cal_distant_1
-snd_2_layer2			                                          = weapons\shared_high_cal_distant_3
-snd_3_layer			                                       		  = weapons\shared_high_cal_very_far_1
-snd_3_layer2			                                       	  = weapons\shared_high_cal_very_far_2
+snd_1_layer			                                          	  = weapons\heli_mgun\shared_high_cal_close_1
+snd_1_layer1			                                          = weapons\heli_mgun\shared_high_cal_close_2
+snd_2_layer			                                          	  = weapons\heli_mgun\shared_high_cal_distant_1
+snd_2_layer2			                                          = weapons\heli_mgun\shared_high_cal_distant_2
+snd_3_layer			                                       		  = weapons\heli_mgun\shared_high_cal_very_far_1
+snd_3_layer2			                                       	  = weapons\heli_mgun\shared_high_cal_very_far_2
 
 ;-----------------------------------------------------------------------------------------------------------------------------
 ;-------------------------------- GENERIC SECTIONS ---------------------------------------------------------------------------
@@ -43,19 +35,13 @@ snd_3_layer2			                                       	  = weapons\shared_high_c
 ; snd_shoot                                                         = $no_sound
 ; snd_shoot1                                                        = $no_sound
 ; snd_shoot2                                                        = $no_sound
+; scripted_snd_attack         = weapons\barry_knife\knife_3, true
+; scripted_snd_attack2        = weapons\barry_knife\knife_1, true
 
 ![base_sounds]
 snd_shoot_grenade			                                      = weapons\m203\m203_grenshoot
 scripted_snd_shots_g                                              = weapons\m203\m203_tail, true
 scripted_snd_shots_g_aim                                          = weapons\m203\m203_tail, true
-
-![wpn_m79_sounds]
-snd_shoot               	                                      = weapons\m203\m203_grenshoot
-snd_shoot_actor				                                      = wpn_m79_snd_shoot_actor
-
-![wpn_rg-6_sounds]
-snd_shoot               	                                      = weapons\gp25\gp25_grenshoot
-snd_shoot_actor				                                      = wpn_rg6_snd_shoot_actor
 
 ![scope_detector]
 found_snd				                                          = detectors\detector_8
@@ -64,14 +50,3 @@ catch_snd				                                          = detectors\detector_8
 ![wpn_binoc_sounds]
 found_snd				                                          = detectors\detector_8
 catch_snd				                                          = detectors\detector_8
-
-;-----------------------------------------------------------------------------------------------------------------------------
-;---------------------------------- SOUND LAYERS -----------------------------------------------------------------------------
-
-[wpn_m79_snd_shoot_actor]
-snd_1_layer			                                          	  = weapons\m203\m203_grenshoot
-snd_2_layer			                                          	  = weapons\m203\m203_tail
-
-[wpn_rg6_snd_shoot_actor]
-snd_1_layer			                                          	  = weapons\gp25\gp25_grenshoot
-snd_2_layer			                                          	  = weapons\gp25\gp25_tail

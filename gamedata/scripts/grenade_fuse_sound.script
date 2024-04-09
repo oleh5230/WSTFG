@@ -1,0 +1,13 @@
+-- Plays fuse activation sound after hand grenade is thrown
+-- oleh5230 07/04/2024
+
+function actor_on_hud_animation_play(anm_table, wpn)
+    if IsGrenade(wpn) and anm_table.anm_name == "anm_throw" then
+        local snd = sound_object("weapons\\grenade\\grenade_fuse_" .. math.random(2))
+        snd:play_no_feedback(db.actor, sound_object.s2d, 0, vector(), 1.0, 1.0)
+    end
+end
+
+function on_game_start()
+    RegisterScriptCallback("actor_on_hud_animation_play", actor_on_hud_animation_play)
+end

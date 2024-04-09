@@ -143,12 +143,49 @@ and misc tweaks and bugfixes of course
 
 ## Version 1.14.2 -- 29.03.2024
 **Change log:**
-- Howa Type 20: new unsuppressed gunfire
+- Howa Type 20/Ruger SR-556: new unsuppressed gunfire
 - AK 5C: remastered unsuppressed gunfire
 - AUG/Thales EF88: reworked foley
-- Thompson M1A1/model 1921: replaced bolt and mag change
+- Thompson M1A1 replaced bolt and mag change
+- Thompson model 1921: replaced bolt
 - Remington 870/Mossberg 590A1: replaced pump
 - Blindside's shotguns: extra shell load variations
 - SVD: replaced bolt and mag pouch; fixed timings
 - Galil ACE-52: added mag pouch; fixed timings
 - Included `Changelog.md` file
+
+## Version 1.15 -- 09.09.2024
+**Change log:**
+- Dark Signal Audio Lite Revised part 1:
+ - Restored and redistributed NPC gunfire reflector layers
+ - Decreased NPC suppressed gunfire tail distance
+ - Lowered NPC suppressed gunfire bass
+ - Minor edits for player gunfire sounds
+- Enhanced dry fire sounds:
+> Hammer/striker/bolt drop sound plays only if weapon was charged, otherwise you hear dead trigger only
+- Hand grenades:
+ - Reworked checkout by TheDJ
+ - Fixed and restored throw foley
+ - Added fuse activation sound for player
+- Bolt/casing foley by the TheDJ
+- Winchester 1873, SVU and RAPTR: reworked foley by TheDJ
+- AK 5C: remastered unsuppressed gunfire again
+- ShAK-12: included SIDS suppressed gunfire
+- 9x39 weapons: included SIDS suppressed gunfire bass
+- Mosin: reworked draw/holster and inspect by theDJ
+- PP-19 Vityaz: reworked foley
+- AUG A3 9mm: fixed timings
+- MP7: reworked reload; fixed timings
+- P90: reworked mag change
+- SPAS-12/MP-153: added suppressed gunfire tail layer
+- SPAS-12: extra shell load variations; fixed timings
+- KS-23: fixed shell load; fixed timings
+- MP-133/MP-153: remastered shell load
+- TOZ-106 anim set rifles: fixed bolt timings
+- Winchester Model 1973: restored last shot animation
+- PKM/PKM: fixed suppressed gunfire mech
+- OTs-14 Groza "Storm": fixed UBGL deploy with scope; fixed timings
+- Blindside's AKs: quieter foley
+- Replaced stationary/BTR machine guns gunfire
+- Decreased casings falling on grass sounds volume
+- Fixed some comments

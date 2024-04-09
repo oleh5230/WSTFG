@@ -1,26 +1,31 @@
-
 ;-- High-priority DLTX for editing files loaded after WSTFG
 
 ![wpn_sr2_veresk]               ; patch for Syndicate's reanimation
 !snd_shoot
 !snd_silncer_shot
+!snd_empty
 
 ![wpn_sr2_m1]
 !snd_shoot
 !snd_silncer_shot
+!snd_empty
 
 ![wpn_sr2_m2]
 snd_shoot                   = wpn_sr2m_snd_shoot
 snd_silncer_shot			= wpn_sr2m_snd_silenced
+!snd_empty
 
+![wpn_kriss_vector]
+!snd_empty
 ![wpn_kriss_vector_hud]
 !anm_bore_jammed
 
 ![wpn_svu]
 snd_silncer_shot			= wpn_svu_snd_silenced              ; patch for Barry's reanimation
 snd_silncer_shot_actor		= wpn_svu_snd_silenced_actor
-snd_draw                    = weapons\generic\rifle_draw_stock
-snd_holster                 = weapons\ak12custom\hide
-snd_empty               	= eft_wp\shared\empty_click_rifle
+snd_draw                    = weapons\svu\barry_svu_draw
+snd_holster                 = weapons\svu\barry_svu_holster
+snd_empty                   = weapons\_dryfire\svd_trigger
+snd_empty_first             = weapons\_dryfire\svd_hammer
 ![wpn_svu_hud]
 anm_reload_misfire_empty    = barry_misfire_svu_hands, barry_misfire_svu
