@@ -9,5 +9,5 @@ function actor_on_hud_animation_play(anm_table, wpn)
 end
 
 function on_game_start()
-    RegisterScriptCallback("actor_on_hud_animation_play", actor_on_hud_animation_play)
+    --RegisterScriptCallback("actor_on_hud_animation_play", actor_on_hud_animation_play)
 end

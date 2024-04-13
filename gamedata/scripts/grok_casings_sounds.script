@@ -119,8 +119,9 @@ function actor_on_weapon_fired(obj, wpn)
 
         count = count + 1
         if count > 5 then count = 0 end
+        --play_sound(casing_class, material_sound, obj, pos, time, volume)
 
-        CreateTimeEvent("grok_casings", "grok_casings_sound_" .. count, time + (math.random(4)/100), function()
+        CreateTimeEvent("grok_casings", "grok_casings_sound_" .. count, time + (math.random(10)/100), function()
             sound_to_play = sound_object("casings\\" .. casing_class .. material_sound .. math.random(4))
             sound_to_play:play_at_pos(obj, pos)
             sound_to_play.volume = volume or 1
@@ -132,6 +133,12 @@ function actor_on_weapon_fired(obj, wpn)
             return true
         end)
 	end
+end
+
+function play_sound(casing_class, material_sound, obj, pos, time, volume)
+    local sound_to_play = sound_object("casings\\" .. casing_class .. material_sound .. math.random(4))
+    sound_to_play:play(db.actor)
+    sound_to_play.volume = volume or 1
 end
 
 function get_body_state()
