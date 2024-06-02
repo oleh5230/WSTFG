@@ -5,6 +5,7 @@
 - **TheDJ** for multiple resounds, help with sources and general advice
 - **bert** for MP412 and casings sounds
 - **JSRS Team**, **Shr¡ke** and other weapon sounds authors mentioned in GAMMA credits
+
 Material sources include: Call of Duty Modern Warfare, Escape from Tarkov, Insurgency: Sandstorm, Ready or Not
 
 ## Version 1.1 -- 20.11.2023
@@ -217,3 +218,53 @@ and misc tweaks and bugfixes of course
 - SV-98: fixed timings
 - PKM/PKM: quiter suppressed gunfire
 - Hand grenade fuse sound added to NPCs; reduced delay
+
+## Version 1.16 -- 02.06.2024
+**Change log:**
+- **Rifles**
+ - Insurgency AK models: remastered reload; fixed timings
+ - ShAK-12: added bolt layer for unsuppressed gunfire
+ - Howa 20/SR-556: changed unsuppressed gunfire again
+ - ADAR 2-15: fixed suppressed gunfire
+ - G36/SIG SG series: replaced mag change and bolt
+ - AUG/Thales EF88: replaced bolt
+ - AK 5C: reworked unjam
+ - M249: replaced draw/holster
+ - RPD: tweaked draw/holster
+ - Machine gun bolt drop now plays only before first shot in burst
+- **Sniper**
+ - [MK-18 Mjolnir](https://www.moddb.com/mods/stalker-anomaly/addons/mk-18-mjolnir-reanimation): all sounds rework based on TheDJ CR7 resound
+ - Winchester 1873: replaced lever; quiter gunfire
+ - DVL-10: replaced suppressed gunfire
+ - K98k Forester: dedicated bolt sounds
+ - SVDS "Retribution": remastered reload; fixed timings
+ - VSSK: tweaked bolt; quieter foley
+- **Pistols/SMG**
+ - UMP-45: remastered inspect
+ - Browning Hi-Power: reworked reload
+ - BAS SIG P220/P226: replaced reload
+ - Tweaked pistol draw/holster and firemode switch
+ - Hammer-fired pistols: removed hammer drop
+ - Restored and fixed stereo suppressed 9mm tail
+- **Shotguns**
+ - RAPTR/Protecta: remastered unsuppressed gunfire
+ - TOZ-106: added gunfire variations and dedicated NPC sounds
+ - KS-12: remastered reload; fixed timings
+ - Syndicate's Saiga: fixed timings
+ - TOZ-34: remastered reload
+- **Casings Falling Sounds** update:
+ - Removed concurrent playbacks limit
+ - Separated eject and falling delay
+ - UBGL reload casings sounds
+ - More optimised code 
+ - **MCM tab renamed to `Casings Sounds`**
+- ACE-52, AN-94, SR-2M, MP5, Colt 1911, MP-133/153: minor reload tweaks
+- Lowered bolt/pump action volume
+- Replaced various Blindside's draw/holster
+- Fixed missing holster sounds when empty
+- Fixed missing mag check sounds
+- Fixed Gunslinger ports' casing fall delay
+- Fixed BAS 2022 guns parent sections
+- Added stationary/BTR machine guns gunfire variants
+- Fixed helicopter machine gun fire overlapping
+- Changed default bullet impact

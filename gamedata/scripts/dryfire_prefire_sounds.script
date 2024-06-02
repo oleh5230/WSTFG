@@ -71,7 +71,7 @@ end
 
 -- recharge weapon on unjamming
 function actor_on_hud_animation_play(anm_table, wpn)
-    printf("%s", anm_table.anm_name)
+    --printf("%s", anm_table.anm_name)
     if string.find(anm_table.anm_name, "anm_reload_misfire") then
         charged_guns[wpn:id()] = true
     end

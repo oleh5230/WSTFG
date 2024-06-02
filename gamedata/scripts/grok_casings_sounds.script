@@ -145,7 +145,7 @@ function actor_on_weapon_fired(obj, wpn)
         else
             play_sound(obj, fall_delay, sub_coef, volume, orient, casing_class, material_sound)
         end
-        printf("grok_casings_sounds // %s, %s, eject_delay: %s", wpn:section(), utils_item.get_ammo(wpn:section())[wpn:get_ammo_type()+1], eject_delay)
+        --printf("grok_casings_sounds // %s, %s, eject_delay: %s", wpn:section(), utils_item.get_ammo(wpn:section())[wpn:get_ammo_type()+1], eject_delay)
 
 
         -- CreateTimeEvent("grok_casings", "grok_casings_sound_" .. count, delay + (math.random(10)/100), function()
@@ -183,7 +183,7 @@ function play_sound(obj, fall_delay, sub_coef, volume, orient, casing_class, mat
     sound_to_play = sound_object("casings\\" .. casing_class .. material_sound .. math.random(4))
     sound_to_play:play_no_feedback(obj, sound_object.s3d, fall_delay + (math.random(10)/100), pos, 1, 1)
     sound_to_play.volume = volume
-    printf("grok_casings_sounds // class: %s, fall_delay: %s, orient: %s, volume: %s", casing_class, fall_delay, orient, volume)
+    --printf("grok_casings_sounds // class: %s, fall_delay: %s, orient: %s, volume: %s", casing_class, fall_delay, orient, volume)
     return true
 end
 
@@ -250,7 +250,7 @@ function actor_on_hud_animation_play(anm_table, wpn)
             pos.x = pos.x + dir.x/3
             pos.z = pos.z + dir.z/3
 
-            printf("grok_casings_sounds // delay: %s, %s, volume: %s", eject_delay, fall_delay, volume)
+            --printf("grok_casings_sounds // delay: %s, %s, volume: %s", eject_delay, fall_delay, volume)
             sound_to_play = sound_object("casings\\" .. casing_class .. "_" .. math.random(4))
             sound_to_play:play_no_feedback(actor, sound_object.s3d, fall_delay, pos, 1, 1)
             sound_to_play.volume = volume
@@ -335,7 +335,6 @@ function actor_on_first_update()
     local ammo_sections = ini_ammo:get_sections()
     for i,v in pairs(ammo_sections) do
         ammo_params[v] = ini_ammo:r_string_ex(v,"sound_class") or "556mm"
-        printf("%s", ammo_params)
     end
 
     local gren_sections = ini_gren:get_sections()
