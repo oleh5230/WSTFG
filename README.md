@@ -113,7 +113,7 @@ and misc tweaks and bugfixes of course
  - Mud sounds during rain
  - Tables updated and moved to .ltx files
  - MCM settings (tab name: ~~"Ammo Casings"~~ "Casings Sounds" since v1.16)
-
+- **Other:**
 - Reworked UMP45, RAPTR and SIG P220 sounds
 - Added FN F2000 and MP7 resounds by TheDJ
 - Enhanced UBGL shot sounds thanks to TheDJ
@@ -231,13 +231,14 @@ and misc tweaks and bugfixes of course
  - AK 5C: reworked unjam
  - M249: replaced draw/holster
  - RPD: tweaked draw/holster
+ - PKM: fixed timings
  - Machine gun bolt drop now plays only before first shot in burst
 - **Sniper**
  - [MK-18 Mjolnir](https://www.moddb.com/mods/stalker-anomaly/addons/mk-18-mjolnir-reanimation): all sounds rework based on TheDJ CR7 resound
  - Winchester 1873: replaced lever; quieter gunfire
  - DVL-10: replaced suppressed gunfire
  - K98k Forester: dedicated bolt sounds
- - SVD: tweaked bolt
+ - SVD/SVU: tweaked bolt
  - SVDS "Retribution": remastered reload; fixed timings
  - VSSK: tweaked bolt; quieter foley
 - **Pistols/SMG**
