@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <string_table>
 	<string id="ui_mcm_menu_grok_casings_sounds">
-		<text>Ammo Casings</text>
+		<text>Casings Sounds</text>
 	</string>
 	<string id="ui_mcm_title_grok_casings_sounds">
 		<text>Ammo Casings Falling Sounds</text>
