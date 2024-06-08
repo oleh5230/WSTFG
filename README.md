@@ -277,3 +277,16 @@ and misc tweaks and bugfixes of course
 - Fixed BAS 2022 guns parent sections
 - Fixed helicopter machine gun fire overlapping
 - Added stationary/BTR machine guns gunfire variants
+
+## Version 1.16.1 -- 08.06.2024
+**Change log:**
+- Insurgency anim set AK models: reworked bolt
+- M4A1 "Protector": fixed unjam animation (credits: PKx_Phant0m)
+- M249: fixed missing unsuppressed gunfire delay
+- L96A1/AWSM: fixed timings; tweaked volume
+- VSSK: replaced rattle and cloth (credits: TheDJ)
+- Added Blindside/EFT WP AK inspect sounds (credits: TheDJ)
+- Replaced TOZ-106 anim set inspect sound (credits: TheDJ)
+- Quieter 9mm polymer-frame pistol gunfire
+- Fixed some pistols and SMGs using mono tail
+- Updated script configs' documentation

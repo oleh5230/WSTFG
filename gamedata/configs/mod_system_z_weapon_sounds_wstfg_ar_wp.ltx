@@ -19,10 +19,16 @@ anm_reload_misfire          = abakan_guns_misfire, misfire
 ; snd_shoot                   = wpn_aek_snd_shoot
 ; snd_shoot_actor			    = wpn_aek_snd_shoot_actor
 snd_reload_grenade          = weapons\gp25\gp25_grenload_eftwp
+scripted_snd_bore           = weapons\ak12custom\inspect
+scripted_snd_bore_w_gl      = weapons\ak12custom\inspect_vgrip
+scripted_snd_bore_g         = weapons\ak12custom\inspect_vgrip
 !snd_empty
 
 ![wpn_ak12]
 snd_reload_grenade          = weapons\gp25\gp25_grenload_eftwp
+scripted_snd_bore           = weapons\ak12custom\inspect
+scripted_snd_bore_w_gl      = weapons\ak12custom\inspect_vgrip
+scripted_snd_bore_g         = weapons\ak12custom\inspect_vgrip
 !snd_empty
 
 ![wpn_ak12_m1]:!wpn_ak12_sounds,wpn_ak74m_sounds
@@ -58,10 +64,10 @@ snd_reload_empty            = weapons\ak74m\ak74m_reload_empty
 snd_reload_misfire			= weapons\ak74m\ak74m_unjam
 snd_draw                    = weapons\ak74\ak12_draw
 snd_holster                 = weapons\ak74\ak12_holster
+snd_bore                    = weapons\ak74\ak74_inspect
 !snd_empty
-snd_bore                    = $no_sound
 
-![wpn_ak105]
+![wpn_ak105]    ; check ATHI reanim
 snd_reload                  = weapons\ak105_sp\ak105_reload
 snd_reload_empty            = weapons\ak105_sp\ak105_reload_empty
 snd_reload_misfire		    = weapons\ak105_sp\ak105_misfire
@@ -89,7 +95,7 @@ snd_draw                    = weapons\ak105_sp\draw
 snd_holster                 = weapons\ak105_sp\holster
 !snd_empty
 
-![wpn_ak105_swamp]
+![wpn_ak105_swamp]  ; check PTEW patch
 snd_silncer_shot			= wpn_556_warsaw_snd_silenced
 snd_silncer_shot_actor		= wpn_556_warsaw_snd_silenced_actor
 snd_reload				    = weapons\ak74m\ak74m_reload
@@ -99,6 +105,7 @@ snd_reload_grenade          = weapons\gp25\gp25_grenload_blnd
 snd_switch_mode				= weapons\ak74\ak74_switch_mode
 snd_draw				    = weapons\ak74\ak74_draw
 snd_holster				    = weapons\ak74\ak74_holster
+snd_bore                    = weapons\ak74\ak74_inspect
 !snd_empty
 
 ![wpn_ak105_shakal]
@@ -109,20 +116,28 @@ snd_reload_grenade          = weapons\gp25\gp25_grenload_blnd
 snd_switch_mode				= weapons\ak74\ak74_switch_mode
 snd_draw				    = weapons\ak74\ak74_draw
 snd_holster				    = weapons\ak74\ak74_holster
+snd_bore                    = weapons\ak74\ak74_inspect
 !snd_empty
 
 ![wpn_ak74_n]
 snd_reload_grenade          = weapons\gp25\gp25_grenload_eftwp
 snd_switch_mode				= weapons\ak74\ak74_switch_mode_quick
+scripted_snd_bore           = weapons\ak12custom\inspect
+scripted_snd_bore_w_gl      = weapons\ak12custom\inspect_vgrip
+scripted_snd_bore_g         = weapons\ak12custom\inspect_vgrip
 !snd_empty
 
 ![wpn_ak74m_n]
 snd_reload_grenade          = weapons\gp25\gp25_grenload_eftwp
 snd_switch_mode				= weapons\ak74\ak74_switch_mode_quick
+scripted_snd_bore           = weapons\ak12custom\inspect
+scripted_snd_bore_w_gl      = weapons\ak12custom\inspect_vgrip
+scripted_snd_bore_g         = weapons\ak12custom\inspect_vgrip
 !snd_empty
 
 ![wpn_ak74_pmc]:!wpn_ak74_sounds,wpn_ak74m_sounds
 snd_switch_mode				= weapons\ak74\ak74_switch_mode_quick
+snd_bore                    = weapons\ak12custom\inspect_vgrip
 !snd_empty
 
 ![wpn_ak74m_beard]:!wpn_aks74_sounds,wpn_ak74m_sounds
@@ -132,6 +147,7 @@ snd_reload_misfire          = weapons\ak12custom\ak12_m1_misfire
 snd_switch_mode				= weapons\ak74\ak74_switch_mode_quick
 snd_draw                    = weapons\ak12custom\draw
 snd_holster                 = weapons\ak12custom\hide
+snd_bore                    = weapons\ak12custom\inspect_vgrip
 !snd_empty
 
 ![wpn_ak74u_tac]
@@ -146,6 +162,7 @@ snd_shoot_actor				= wpn_aks74u_snd_shoot_actor
 !snd_reload
 !snd_reload_empty
 !snd_reload_misfire
+snd_bore                    = weapons\ak74\ak74_inspect
 !snd_empty
 
 ![wpn_ak74u_m1_isg]:!wpn_ak12_sounds,wpn_ak74m_sounds
@@ -154,12 +171,14 @@ snd_shoot_actor				= wpn_aks74u_snd_shoot_actor
 !snd_reload
 !snd_reload_empty
 !snd_reload_misfire
+snd_bore                    = weapons\ak74\ak74_inspect
 !snd_empty
 
 ![wpn_ak74_isg]:!wpn_ak74_sounds,wpn_ak74m_sounds
 !snd_reload
 !snd_reload_empty
 !snd_reload_misfire
+snd_bore                    = weapons\ak74\ak74_inspect
 !snd_empty
 
 ![wpn_ak74_isg_ac10632]
@@ -171,6 +190,7 @@ snd_holster                 = weapons\generic\siber_holster
 snd_reload				    = weapons\ak103\ak103_poly_reload
 snd_reload_empty            = weapons\ak103\ak103_poly_reload_empty
 !snd_reload_misfire
+snd_bore                    = weapons\ak74\ak74_inspect
 !snd_empty
 
 ![wpn_akm_alfa]:!wpn_akm_sounds,wpn_ak103_sounds
@@ -180,6 +200,7 @@ snd_reload_empty            = weapons\ak103\ak103_poly_reload_empty
 snd_switch_mode				= weapons\ru556\ru556_firemode
 snd_draw                    = weapons\ak74\ak12_draw
 snd_holster                 = weapons\ak74\ak12_holster
+snd_bore                    = weapons\ak74\ak74_inspect
 !snd_empty
 
 ![wpn_akm_bas]
@@ -192,6 +213,7 @@ snd_holster                 = weapons\ak74\ak12_holster
 !snd_empty
 !snd_draw
 !snd_holster
+!snd_bore
 
 ![wpn_akms_bas]
 !snd_reload
@@ -203,6 +225,7 @@ snd_holster                 = weapons\ak74\ak12_holster
 !snd_empty
 !snd_draw
 !snd_holster
+!snd_bore
 
 ![wpn_ak104_alfa]
 snd_switch_mode				= weapons\ak74\ak74_switch_mode_quick
@@ -219,6 +242,7 @@ anm_switch_mode             = blnd_rpk_firemode, idle, 1
 
 ![wpn_rpk74_16]:!wpn_rpk_sounds,wpn_rpk74_sounds
 snd_switch_mode				= weapons\ak74\ak74_switch_mode_quick
+snd_bore                    = weapons\ak12custom\inspect_vgrip
 !snd_empty
 
 ![wpn_rpk16]
@@ -346,12 +370,14 @@ snd_holster                 = weapons\generic\rifle_holster
 snd_reload		            = weapons\vintorez_m1\reload
 snd_reload_empty            = weapons\vintorez_m1\reload_empty
 snd_reload_misfire	        = weapons\vintorez_m1\vintorez_unjam
+snd_bore                    = weapons\ak12custom\inspect_vgrip
 !snd_empty
 
 ![wpn_vintorez_m2]
 snd_reload		            = weapons\vintorez_m1\reload
 snd_reload_empty            = weapons\vintorez_m1\reload_empty
 snd_reload_misfire	        = weapons\vintorez_m1\vintorez_unjam
+snd_bore                    = weapons\ak12custom\inspect_vgrip
 !snd_empty
 
 ![wpn_vintorez_isg]
@@ -362,6 +388,7 @@ snd_shoot_grenade			= weapons\gp25\gp25_grenshoot
 scripted_snd_shots_g        = weapons\gp25\gp25_tail, true
 snd_reload_grenade          = weapons\gp25\gp25_grenload_blnd
 snd_switch_mode				= weapons\ak74\ak74_switch_mode
+snd_bore                    = weapons\ak74\ak74_inspect
 !snd_empty
 
 ![wpn_9a91]
@@ -463,6 +490,7 @@ scripted_snd_shots_g_aim                                          = weapons\gp25
 snd_switch_mode				                                      = weapons\ak74\ak74_switch_mode
 snd_empty                                                         = weapons\_dryfire\ak_trigger
 snd_empty_first                                                   = weapons\_dryfire\ak_hammer
+snd_bore                                                          = weapons\ak74\ak74_inspect
 
 ![wpn_ak12_sounds]
 snd_reload_grenade                                                = weapons\gp25\gp25_grenload_blnd
@@ -479,7 +507,6 @@ snd_reload_empty                                                  = weapons\akm\
 snd_reload_misfire			                                      = weapons\akm\akm_unjam
 snd_reload_grenade                                                = weapons\gp25\gp25_grenload_blnd
 snd_switch_mode				                                      = weapons\ak74\ak74_switch_mode
-snd_switch				                                          = $no_sound
 
 ![wpn_ak74_sounds]
 snd_reload				                                          = weapons\ak74\ak74_reload

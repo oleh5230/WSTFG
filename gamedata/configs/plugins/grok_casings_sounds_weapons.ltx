@@ -2,8 +2,9 @@
 ; Do not overwrite this file completely, use DLTX instead
 
 ; [wpn_example]
-; port_orientation -- determines casing sound source offset: 0 = right (default), 1 = left, 2 = no offset, -1 = no sound
-; delay -- time after shot (in seconds) until casing sound playback (default = 0.6 or 1.2 for particles; minimal value = 0.3)
+; port_orientation - determines casing sound source offset: 0 = right (default), 1 = left, 2 = no offset, -1 = no sound
+; eject_delay - time after shot (in seconds) until casing is ejected (default = 0)
+; fall_delay - time after ejection (in seconds) until casing sound playback (default = 0.6 or 1.2 for particles; minimal value = 0.3)
 
 ; Manual action
 [wpn_mp133]
@@ -51,6 +52,8 @@ fall_delay = 0.55
 [wpn_l96a1m]:wpn_l96a1
 [wpn_rem700_aics]:wpn_l96a1
 [wpn_rem700_mcmillan]:wpn_l96a1
+[wpn_axmc]:wpn_l96a1
+[wpn_axmc_black]:wpn_l96a1
 
 [wpn_vssk]
 eject_delay = 0.95
@@ -134,7 +137,7 @@ port_orientation = 1
 [wpn_g43]
 port_orientation = 1
 
-; Break action/revolver
+; No casing ejection on shot
 [wpn_mp412]
 port_orientation = -1
 
