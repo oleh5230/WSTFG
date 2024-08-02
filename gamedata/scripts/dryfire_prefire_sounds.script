@@ -10,26 +10,8 @@ To Do:
 - add volume/delay parameters?
 ]]
 
--- ugly patch for WPO
-if arti_jamming then
-    if arti_jamming.get_jam_status then
-        function isMisfireWeapon(wpn, wpn_id)
-            return wpn:cast_Weapon() and wpn:cast_Weapon():IsMisfire() or arti_jamming.get_jam_status(wpn_id)
-        end
-    elseif arti_jamming.get_jammed then
-        function isMisfireWeapon(wpn, wpn_id)
-            return wpn:cast_Weapon() and wpn:cast_Weapon():IsMisfire() or arti_jamming.get_jammed(wpn_id)
-        end
-    end
-else
-    function isMisfireWeapon(wpn, wpn_id)
-        return wpn:cast_Weapon() and wpn:cast_Weapon():IsMisfire()
-    end
-end
-
 local charged_guns = {}
 local prefire_flag
-
 function actor_on_weapon_before_fire(flags)
     prefire_flag = true
 
@@ -77,8 +59,29 @@ function actor_on_hud_animation_play(anm_table, wpn)
     end
 end
 
+isMisfireWeapon = function(wpn, wpn_id)
+    return false
+end
+
 function on_game_start()
     RegisterScriptCallback("actor_on_weapon_before_fire", actor_on_weapon_before_fire)
     RegisterScriptCallback("actor_on_weapon_fired", actor_on_weapon_fired)
     RegisterScriptCallback("actor_on_hud_animation_play", actor_on_hud_animation_play)
+
+    -- ugly patch for WPO
+    if arti_jamming then
+        if arti_jamming.get_jam_status then
+            isMisfireWeapon = function(wpn, wpn_id)
+                return wpn:cast_Weapon() and wpn:cast_Weapon():IsMisfire() or arti_jamming.get_jam_status(wpn_id)
+            end
+        elseif arti_jamming.get_jammed then
+            isMisfireWeapon = function(wpn, wpn_id)
+                return wpn:cast_Weapon() and wpn:cast_Weapon():IsMisfire() or arti_jamming.get_jammed(wpn_id)
+            end
+        end
+    else
+        isMisfireWeapon = function(wpn, wpn_id)
+            return wpn:cast_Weapon() and wpn:cast_Weapon():IsMisfire()
+        end
+    end
 end

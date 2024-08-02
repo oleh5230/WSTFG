@@ -21,6 +21,9 @@ oleh5230, 15/05/2024:
 Credits:
 - xcvb: get_body_state()
 - Maid: .ltx parser
+
+To Do:
+- last shot exception?
 ]]
 
 local ini_wpn = ini_file_ex("plugins\\grok_casings_sounds_weapons.ltx")
@@ -93,7 +96,7 @@ function actor_on_footstep(material, power, hud_view, flags)
             current_material_sound = "_mud_"
         end
     end
-    --printf("grok_casings_sounds // %s, %s, wetness: %s", current_material, current_material_sound, wetness)
+    --printf("grok_casings_sounds // %s, %s, wetness: %s", material, current_material_sound, wetness)
 end
 
 function get_const_params(wpn)
@@ -105,7 +108,6 @@ function get_const_params(wpn)
     local ammo_list = utils_item.get_ammo(wpn_sec)
     local ammo_sec = ammo_list[1]
     local casing_class = ammo_params[ammo_sec] or "556mm"
-
 
     local _wpn_params = {}
     if wpn_params[wpn_sec_par] then
@@ -147,7 +149,6 @@ function actor_on_weapon_fired(obj, wpn)
         end
         --printf("grok_casings_sounds // %s, %s, eject_delay: %s", wpn:section(), utils_item.get_ammo(wpn:section())[wpn:get_ammo_type()+1], eject_delay)
 
-
         -- CreateTimeEvent("grok_casings", "grok_casings_sound_" .. count, delay + (math.random(10)/100), function()
             -- sound_to_play = sound_object("casings\\" .. casing_class .. material_sound .. math.random(4))
             -- sound_to_play:play_at_pos(obj, pos)
@@ -184,6 +185,9 @@ function play_sound(obj, fall_delay, sub_coef, volume, orient, casing_class, mat
     sound_to_play:play_no_feedback(obj, sound_object.s3d, fall_delay + (math.random(10)/100), pos, 1, 1)
     sound_to_play.volume = volume
     --printf("grok_casings_sounds // class: %s, fall_delay: %s, orient: %s, volume: %s", casing_class, fall_delay, orient, volume)
+
+    --draw_part = particles_object("_samples_particles_\\flash_light")
+    --draw_part:play_at_pos(vector():set(pos.x,pos.y - 0.5,pos.z))
     return true
 end
 
@@ -259,9 +263,7 @@ function actor_on_hud_animation_play(anm_table, wpn)
     end
 end
 
---[[
--- add killswitch
-function actor_on_hud_animation_play(anm_table, wpn)
+function actor_on_hud_animation_play_mag_drop(anm_table, wpn)
     if anm_table.anm_name and wpn then
 		local wpn_sec = wpn:section()
         local wpn_sec_par = ini_sys:r_string_ex(wpn_sec,"parent_section") or wpn_sec
@@ -276,7 +278,7 @@ function actor_on_hud_animation_play(anm_table, wpn)
         local volume   = tonumber(_params[4]) or 1
         local offset_x = tonumber(_params[5]) or 0
         local offset_z = tonumber(_params[6]) or 0
-        printf("%s, %s, %s, %s, %s, %s", class, time, velocity, volume, offset_x, offset_z)
+        --printf("%s, %s, %s, %s, %s, %s", class, time, velocity, volume, offset_x, offset_z)
 
         local material_sound = current_material_sound or "_dirt_"
 
@@ -307,7 +309,7 @@ function actor_on_hud_animation_play(anm_table, wpn)
                 pos.z = pos.z - (dir.x*offset_x) + (dir.z*0.2) + (dir.z*offset_z)
             end
 
-            sound_to_play = sound_object("magazines\\" .. class .. material_sound .. 1) --check params
+            sound_to_play = sound_object("magazines\\" .. class .. "_dirt_" .. 1) --check params
             sound_to_play:play_no_feedback(db.actor, sound_object.s3d, fall_delay, pos, 1, 1)
             sound_to_play.volume = volume
             sound_to_play.min_distance = 1
@@ -315,7 +317,6 @@ function actor_on_hud_animation_play(anm_table, wpn)
         end)
     end
 end
-]]
 
 -- parse .ltx files
 function actor_on_first_update()
@@ -347,6 +348,7 @@ function on_game_start()
     RegisterScriptCallback("actor_on_footstep", actor_on_footstep)
     RegisterScriptCallback("actor_on_weapon_fired", actor_on_weapon_fired)
     RegisterScriptCallback("actor_on_hud_animation_play", actor_on_hud_animation_play)
+    --RegisterScriptCallback("actor_on_hud_animation_play", actor_on_hud_animation_play_mag_drop)
     RegisterScriptCallback("actor_on_first_update", actor_on_first_update)
     RegisterScriptCallback("on_option_change", load_mcm_options)
     load_mcm_options()

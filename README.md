@@ -6,7 +6,8 @@
 - **bert** for MP412 and casings sounds
 - **JSRS Team**, **Shr¡ke** and other weapon sounds authors mentioned in GAMMA credits
 
-Material sources include: Call of Duty Modern Warfare, Escape from Tarkov, Insurgency: Sandstorm, Ready or Not
+Main material sources: Call of Duty Modern Warfare, Escape from Tarkov, Insurgency: Sandstorm, Ready or Not
+Other material sources: SCP: Pandemic, Day of infamy
 
 ## Version 1.1 -- 20.11.2023
 **Change log:**
@@ -290,3 +291,39 @@ and misc tweaks and bugfixes of course
 - Quieter 9mm polymer-frame pistol gunfire
 - Fixed some pistols and SMGs using mono tail
 - Updated script configs' documentation
+
+## Version 2.0 Beta -- 02.08.2024
+Change log:
+- **Reworked .ltx files structure** 
+- Gunfire sounds rework:
+ - **Replced most suppressed gunfire sounds**
+ - Normalised unsuppressed gunfire sounds' volume by 1.5-3 dB
+ - AK series/RAPTR/Protecta: remastered unsuppressed gunfire
+ - Removed unsuppressed bass and suppressed echo layers
+ - Divided echo layers into "small" and "sniper" groups
+ - Streamlined suppressed tail layers
+ - Streamlined gunfire detection distances (except for unsuppressed NPC gunfire)
+-# New suppressed gunfire might be remastered before release
+- Weapon rattle sounds:
+ - Cover tilt and lower sounds replaced with Dark Signal ones
+ - Volume and tempo is now proportional to weapon weight
+ - Added sprint rattle (script: Aoldri; sounds: IWP)
+ -# Sprint rattle is currently available only for PKM/PKP, SVU, ACE 52 and some Gunslinger ports, more weapons might be patched before release
+- [9A-91/VSK-94](https://www.moddb.com/mods/stalker-anomaly/addons/9a91-and-vsk94-reanimation): reworked reload; patched sounds
+- [F.A.D.](https://www.moddb.com/mods/stalker-anomaly/addons/lewd-fad-addon), [MDR](https://www.moddb.com/mods/stalker-anomaly/addons/desert-tech-mdr-pack), [MP9](https://www.moddb.com/mods/stalker-anomaly/addons/iwp-mp9-anomaly), [Dark Tracker](https://www.moddb.com/mods/stalker-anomaly/addons/winchester-1886-and-marlin-dark-tracker-lever-action-rifles): patched sounds
+- VSS: remastered foley; sped up animations (116%)
+- FN F2000: replaced bolt; tweaked timings
+- AK series: replaced flag fire selector switch
+- Gunslinger Port rifles: remastered draw/holster
+- AK 5C: patched empty inspect animation
+- M249: tweaked reload comments
+- MP7/UMP45/P90/ACE 52: remastered reload
+- Thompson M1A1/Model 1921: replaced gunfire
+- SKS: added inspect sounds
+- SVDS "Retribution": patched reload
+- lowered bolt/pump/lever volume once again (-15%)
+- Replaced some dryfire trigger sounds
+- Replaced generic fire selector switch
+- Gunslinger Ports: removed fire selector switch anims
+- Changed some bullet impact sounds
+- Replaced helicopter machine gunfire

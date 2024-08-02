@@ -2,43 +2,40 @@
 ;--------------------------------- MISCELLANEOUS -----------------------------------------------------------------------------
 ;-----------------------------------------------------------------------------------------------------------------------------
 
+![bullet_manager]
+whine_sounds				= whine\whine_1, whine\whine_2, whine\whine_3, whine\whine_4, whine\whine_5, whine\whine_6, whine\whine_7, whine\whine_8
+
 ![bolt]
-snd_checkout				= weapons\bolt\bolt_checkout, 1.0, 0.1
+snd_checkout				= weapons\bolt\bolt_checkout, 1.0, 0.05
 snd_throw                   = weapons\bolt\bolt_throw_2, 1.0, 0.1
-; snd_throw1                  = weapons\bolt\bolt_throw_1
-; snd_throw2                  = weapons\bolt\bolt_throw_3
+; snd_throw1                  = weapons\bolt\bolt_throw_1, 1.0, 0.1
+; snd_throw2                  = weapons\bolt\bolt_throw_3, 1.0, 0.1
+
+![grenade_gd-05]:grenade_gd-05_sounds
+!snd_explode
+!snd_checkout
+
+![mine_new_blow]
+snd_explode                 = grenade_rgd5_snd_explode
+
+![rpg_new_blow]
+snd_explode				    = wpn_fake_og-7b_explode
+
+![ied_new_blow]
+snd_explode                 = mine_explode_snd
+
+![scope_detector]
+found_snd				    = detectors\detector_8
+catch_snd				    = detectors\detector_8
 
 ![mounted_weapon]
 snd_shoot                   = weapons\mgun\weapon_mgun_1
 snd_shoot1                  = weapons\mgun\weapon_mgun_2
-snd_shoot2				    = weapons\mgun\weapon_mgun_3
+snd_shoot2                  = weapons\mgun\weapon_mgun_3
 snd_shoot3                  = weapons\mgun\weapon_mgun_4
 
 ![stationary_mgun]
 snd_shoot                   = weapons\mgun\weapon_mgun_1
 snd_shoot1                  = weapons\mgun\weapon_mgun_2
-snd_shoot2				    = weapons\mgun\weapon_mgun_3
+snd_shoot2                  = weapons\mgun\weapon_mgun_3
 snd_shoot3                  = weapons\mgun\weapon_mgun_4
-
-;-----------------------------------------------------------------------------------------------------------------------------
-;-------------------------------- GENERIC SECTIONS ---------------------------------------------------------------------------
-
-; ![wpn_knife_sounds]
-; snd_shoot                                                         = $no_sound
-; snd_shoot1                                                        = $no_sound
-; snd_shoot2                                                        = $no_sound
-; scripted_snd_attack         = weapons\barry_knife\knife_3, true
-; scripted_snd_attack2        = weapons\barry_knife\knife_1, true
-
-![base_sounds]
-snd_shoot_grenade			                                      = weapons\m203\m203_grenshoot
-scripted_snd_shots_g                                              = weapons\m203\m203_tail, true
-scripted_snd_shots_g_aim                                          = weapons\m203\m203_tail, true
-
-![scope_detector]
-found_snd				                                          = detectors\detector_8
-catch_snd				                                          = detectors\detector_8
-
-![wpn_binoc_sounds]
-found_snd				                                          = detectors\detector_8
-catch_snd				                                          = detectors\detector_8
