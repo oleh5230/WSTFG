@@ -201,8 +201,8 @@ snd_reload_empty                                                  = weapons\aks7
 snd_reload_misfire			                                      = weapons\aks74u\aks74u_unjam
 snd_shoot               				                          = wpn_aks74u_snd_shoot
 snd_shoot_actor													  = wpn_aks74u_snd_shoot_actor
-snd_silncer_shot				                                  = wpn_545_c_snd_silenced
-snd_silncer_shot_actor				                              = wpn_545_c_snd_silenced_actor
+snd_silncer_shot				                                  = wpn_545_snd_silenced
+snd_silncer_shot_actor				                              = wpn_545_snd_silenced_actor
 
 [wpn_aks74u_snag_sounds]:wpn_aks74u_sounds
 
@@ -253,7 +253,7 @@ snd_reload_empty		                                          = weapons\ace21\ace2
 snd_reload_misfire		                                          = weapons\ace21\ace21_reload
 snd_shoot               				                          = wpn_ace21_snd_shoot
 snd_shoot_actor													  = wpn_ace21_snd_shoot_actor
-snd_silncer_shot			                                      = wpn_sg550_snd_silencedW
+snd_silncer_shot			                                      = wpn_sg550_snd_silenced
 snd_silncer_shot_actor		                                      = wpn_sg550_snd_silenced_actor
 
 ;-----------------------------------------------------------------------------------------------------------
@@ -306,6 +306,7 @@ snd_shoot_actor													  = wpn_beretta_snd_shoot_actor
 snd_silncer_shot				                                  = wpn_9_2_c_snd_silenced
 snd_silncer_shot_actor				                              = wpn_9_2_c_snd_silenced_actor
 snd_empty				                                          = weapons\_dryfire\1911_trigger
+snd_empty_first                                                   = $no_sound
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -318,6 +319,7 @@ snd_reload			            	                              = weapons\bm16\bm16_relo
 snd_shoot			                                              = wpn_bm16_snd_shoot
 snd_shoot_actor													  = wpn_bm16_snd_shoot_actor
 snd_empty				                                          = weapons\_dryfire\shotgun_trigger
+snd_empty_first                                                   = $no_sound
 
 [wpn_bm16full_sounds]:wpn_bm16_sounds
 snd_reload			            	                              = weapons\bm16\bm16_reload_lr
@@ -337,6 +339,7 @@ snd_shoot_actor													  = wpn_1911_snd_shoot_actor
 snd_silncer_shot				                                  = wpn_45_1_snd_silenced
 snd_silncer_shot_actor				                              = wpn_45_1_snd_silenced_actor
 snd_empty				                                          = weapons\_dryfire\1911_trigger
+snd_empty_first                                                   = $no_sound
 
 [wpn_kimber_sounds]:wpn_colt1911_sounds
 snd_reload					                                      = weapons\colt\kimber_reload
@@ -377,6 +380,7 @@ snd_shoot_actor													  = wpn_deagle_snd_shoot_actor
 snd_silncer_shot				                                  = wpn_357_snd_silenced
 snd_silncer_shot_actor				                              = wpn_357_snd_silenced_actor
 snd_empty				                                          = weapons\_dryfire\1911_trigger
+snd_empty_first                                                   = $no_sound
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -549,6 +553,7 @@ snd_holster				                                          = weapons\gauss\gauss_h
 snd_reload				                                          = weapons\gauss\gauss_reload
 snd_shoot				                                          = wpn_gauss_snd_shoot
 snd_empty				                                          = weapons\gauss\gauss_empty
+snd_empty_first                                                   = $no_sound
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -818,8 +823,6 @@ snd_add_cartridge				                                  = weapons\mp133\mp133_rel
 snd_close_weapon        			                              = weapons\mp133\mp133_reload_end
 snd_shoot		                                                  = wpn_mp133_snd_shoot
 snd_shoot_actor	                                                  = wpn_mp133_snd_shoot_actor
-snd_silncer_shot                                                  = wpn_sg_pump_snd_silenced
-snd_silncer_shot_actor	                                          = wpn_sg_pump_snd_silenced_actor
 snd_empty                                                         = weapons\_dryfire\rem870_trigger
 snd_empty_first                                                   = weapons\_dryfire\shotgun_hammer
 
@@ -849,6 +852,7 @@ snd_shoot_actor													  = wpn_mp412_snd_shoot_actor
 snd_silncer_shot				                                  = wpn_357_snd_silenced
 snd_silncer_shot_actor				                              = wpn_357_snd_silenced_actor
 snd_empty                                                         = weapons\_dryfire\revolver_dry
+snd_empty_first                                                   = $no_sound
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -873,7 +877,7 @@ snd_shoot               				                          = wpn_mosin_snd_shoot
 snd_shoot_actor													  = wpn_mosin_snd_shoot_actor
 snd_silncer_shot				                                  = wpn_mosin_snd_silenced
 snd_silncer_shot_actor				                              = wpn_mosin_snd_silenced_actor
-snd_empty                                                         = weapons\_dryfire\sks_trigger
+snd_empty                                                         = weapons\_dryfire\sniper_trigger
 snd_empty_first                                                   = weapons\_dryfire\mosin_hammer
 
 ;-----------------------------------------------------------------------------------------------------------
@@ -935,6 +939,7 @@ snd_shoot_actor													  = wpn_pm_snd_shoot_actor
 snd_silncer_shot				                                  = wpn_9_1_snd_silenced
 snd_silncer_shot_actor				                              = wpn_9_1_snd_silenced_actor
 snd_empty				                                          = weapons\_dryfire\1911_trigger
+snd_empty_first                                                   = $no_sound
 
 [wpn_pb_sounds]:wpn_pm_sounds
 snd_shoot               				                          = wpn_pb_snd_silenced
@@ -968,8 +973,8 @@ snd_add_cartridge				                                  = weapons\protecta\protec
 snd_close_weapon				                                  = $no_sound
 snd_shoot                                                         = wpn_usas12_snd_shoot
 snd_shoot_actor                                                   = wpn_usas12_snd_shoot_actor
-snd_silncer_shot                                                  = wpn_sg_auto_snd_silenced
-snd_silncer_shot_actor                                            = wpn_sg_auto_snd_silenced_actor
+snd_silncer_shot                                                  = wpn_usas12_snd_silenced
+snd_silncer_shot_actor                                            = wpn_usas12_snd_silenced_actor
 snd_empty                                                         = weapons\_dryfire\saiga_trigger
 snd_empty_first                                                   = weapons\_dryfire\shotgun_hammer
 
@@ -1048,8 +1053,8 @@ snd_reload_misfire			                                      = weapons\saiga\saiga
 snd_reload_empty			                                      = weapons\saiga\saiga_reload_empty
 snd_shoot                                                         = wpn_saiga_snd_shoot
 snd_shoot_actor                                                   = wpn_saiga_snd_shoot_actor
-snd_silncer_shot                                                  = wpn_sg_auto_snd_silenced
-snd_silncer_shot_actor                                            = wpn_sg_auto_snd_silenced_actor
+snd_silncer_shot                                                  = wpn_saiga_snd_silenced
+snd_silncer_shot_actor                                            = wpn_saiga_snd_silenced_actor
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -1087,6 +1092,7 @@ snd_shoot_actor													  = wpn_1911_snd_shoot_actor
 snd_silncer_shot				                                  = wpn_45_1_snd_silenced
 snd_silncer_shot_actor				                              = wpn_45_1_snd_silenced_actor
 snd_empty				                                          = weapons\_dryfire\p220_trigger
+snd_empty_first                                                   = $no_sound
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -1152,10 +1158,10 @@ snd_holster				                                          = weapons\shotgun_holst
 snd_reload				                                          = weapons\spas12\spas12_insertshell
 snd_add_cartridge			                                      = weapons\spas12\spas12_insertshell
 snd_close_weapon			                                      = weapons\spas12\spas12_pump
-snd_shoot                                                         = wpn_mp153_snd_shoot
-snd_shoot_actor                                                   = wpn_mp153_snd_shoot_actor
-snd_silncer_shot                                                  = wpn_mp153_snd_silenced
-snd_silncer_shot_actor                                            = wpn_mp153_snd_silenced_actor
+snd_shoot                                                         = wpn_spas12_snd_shoot
+snd_shoot_actor                                                   = wpn_spas12_snd_shoot_actor
+snd_silncer_shot                                                  = wpn_spas12_snd_silenced
+snd_silncer_shot_actor                                            = wpn_spas12_snd_silenced_actor
 snd_empty                                                         = weapons\_dryfire\saiga_trigger
 snd_empty_first                                                   = weapons\_dryfire\shotgun_hammer
 
@@ -1210,7 +1216,7 @@ snd_shoot               				                          = wpn_svt40_snd_shoot
 snd_shoot_actor													  = wpn_svt40_snd_shoot_actor
 snd_silncer_shot			                                      = wpn_svd_snd_silenced
 snd_silncer_shot_actor		                                      = wpn_svd_snd_silenced_actor
-snd_empty                                                         = weapons\_dryfire\sks_trigger
+snd_empty                                                         = weapons\_dryfire\sniper_trigger
 snd_empty_first                                                   = weapons\_dryfire\svd_hammer
 
 [wpn_g43_sounds]:wpn_svt40_sounds
@@ -1231,6 +1237,7 @@ snd_reload_1				                                      = weapons\toz34\toz34_relo
 snd_shoot			                                              = wpn_bm16_snd_shoot
 snd_shoot_actor													  = wpn_bm16_snd_shoot_actor
 snd_empty				                                          = weapons\_dryfire\shotgun_trigger
+snd_empty_first                                                   = $no_sound
 
 [wpn_toz34_obrez_sounds]:wpn_toz34_sounds
 snd_reload				                                          = weapons\toz34\toz34_reload_obrez
@@ -1280,8 +1287,8 @@ snd_holster				                                          = weapons\shotgun_holst
 snd_reload				                                          = weapons\usas12\usas12_reload
 snd_shoot                                                         = wpn_usas12_snd_shoot
 snd_shoot_actor                                                   = wpn_usas12_snd_shoot_actor
-snd_silncer_shot                                                  = wpn_sg_auto_snd_silenced
-snd_silncer_shot_actor                                            = wpn_sg_auto_snd_silenced_actor
+snd_silncer_shot                                                  = wpn_usas12_snd_silenced
+snd_silncer_shot_actor                                            = wpn_usas12_snd_silenced_actor
 snd_empty                                                         = weapons\_dryfire\saiga_trigger
 snd_empty_first                                                   = weapons\_dryfire\shotgun_hammer
 
@@ -1299,6 +1306,7 @@ snd_silncer_shot				                                  = wpn_45_2_snd_silenced
 snd_silncer_shot_actor				                              = wpn_45_2_snd_silenced_actor
 snd_switch_mode                                                   = weapons\generic\glock17_switch
 snd_empty				                                          = weapons\_dryfire\p220_trigger
+snd_empty_first                                                   = $no_sound
 
 [wpn_fnp45_sounds]:wpn_usp_sounds
 snd_draw				                                          = weapons\fnp45\fnp45_draw
@@ -1324,8 +1332,8 @@ snd_reload				                                          = weapons\vihr\vihr_relo
 snd_reload_empty                                                  = weapons\vihr\vihr_reload_empty
 snd_shoot               				                          = wpn_groza_snd_shoot
 snd_shoot_actor													  = wpn_groza_snd_shoot_actor
-snd_silncer_shot				                                  = wpn_939_int_snd_shoot
-snd_silncer_shot_actor				                              = wpn_939_int_snd_shoot_actor
+snd_silncer_shot				                                  = wpn_val_snd_shoot
+snd_silncer_shot_actor				                              = wpn_val_snd_shoot_actor
 
 [wpn_vintorez_sounds]:wpn_val_sounds
 snd_draw				                                          = weapons\vintorez\vintorez_draw
@@ -1381,8 +1389,6 @@ snd_empty_first									                  = weapons\_dryfire\mp5_hammer
 
 ;-----------------------------------------------------------------------------------------------------------
 
-[wpn_vsk94_sounds]:wpn_9a91_sounds
-
 [wpn_9a91_sounds]:wpn_val_sounds
 snd_draw				                                          = weapons\val\val_draw
 snd_holster				                                          = weapons\rifle_holster
@@ -1391,8 +1397,10 @@ snd_reload_empty                                                  = weapons\9a91
 snd_reload_misfire				                                  = weapons\9a91\9a91_unjam
 snd_shoot               				                          = wpn_groza_snd_shoot
 snd_shoot_actor													  = wpn_groza_snd_shoot_actor
-snd_silncer_shot				                                  = wpn_939_int_snd_shoot
-snd_silncer_shot_actor				                              = wpn_939_int_snd_shoot_actor
+snd_silncer_shot				                                  = wpn_939_snd_shoot
+snd_silncer_shot_actor				                              = wpn_939_snd_shoot_actor
+
+[wpn_vsk94_sounds]:wpn_9a91_sounds
 
 ;-----------------------------------------------------------------------------------------------------------
 

@@ -4,7 +4,7 @@
 - **YungPr1nce** for a lot of sounds included directly or reused as material
 - **TheDJ** for multiple resounds, help with sources and general advice
 - **bert** for MP412 and casings sounds
-- **JSRS Team**, **Shr¡ke** and other weapon sounds authors mentioned in GAMMA credits
+- **JSRS Team**, **Shrike** and other weapon sounds authors mentioned in GAMMA credits
 
 Main material sources: Call of Duty Modern Warfare, Escape from Tarkov, Insurgency: Sandstorm, Ready or Not
 Other material sources: SCP: Pandemic, Day of infamy
@@ -282,7 +282,7 @@ and misc tweaks and bugfixes of course
 ## Version 1.16.1 -- 08.06.2024
 **Change log:**
 - Insurgency anim set AK models: reworked bolt
-- M4A1 "Protector": fixed unjam animation (credits: PKx_Phant0m)
+- M4A1 "Protector": fixed unjam animation (credits: Phant0m)
 - M249: fixed missing unsuppressed gunfire delay
 - L96A1/AWSM: fixed timings; tweaked volume
 - VSSK: replaced rattle and cloth (credits: TheDJ)
@@ -296,8 +296,8 @@ and misc tweaks and bugfixes of course
 Change log:
 - **Reworked .ltx files structure** 
 - Gunfire sounds rework:
- - **Replced most suppressed gunfire sounds**
- - Normalised unsuppressed gunfire sounds' volume by 1.5-3 dB
+ - **Replaced most suppressed gunfire sounds**
+ - Normalised unsuppressed gunfire volume by 1.5-3 dB
  - AK series/RAPTR/Protecta: remastered unsuppressed gunfire
  - Removed unsuppressed bass and suppressed echo layers
  - Divided echo layers into "small" and "sniper" groups
@@ -308,7 +308,7 @@ Change log:
  - Cover tilt and lower sounds replaced with Dark Signal ones
  - Volume and tempo is now proportional to weapon weight
  - Added sprint rattle (script: Aoldri; sounds: IWP)
- -# Sprint rattle is currently available only for PKM/PKP, SVU, ACE 52 and some Gunslinger ports, more weapons might be patched before release
+-# Sprint rattle is currently available only for PKM/PKP, SVU, ACE 52 and some Gunslinger ports, more weapons might be included before release
 - [9A-91/VSK-94](https://www.moddb.com/mods/stalker-anomaly/addons/9a91-and-vsk94-reanimation): reworked reload; patched sounds
 - [F.A.D.](https://www.moddb.com/mods/stalker-anomaly/addons/lewd-fad-addon), [MDR](https://www.moddb.com/mods/stalker-anomaly/addons/desert-tech-mdr-pack), [MP9](https://www.moddb.com/mods/stalker-anomaly/addons/iwp-mp9-anomaly), [Dark Tracker](https://www.moddb.com/mods/stalker-anomaly/addons/winchester-1886-and-marlin-dark-tracker-lever-action-rifles): patched sounds
 - VSS: remastered foley; sped up animations (116%)
@@ -327,3 +327,22 @@ Change log:
 - Gunslinger Ports: removed fire selector switch anims
 - Changed some bullet impact sounds
 - Replaced helicopter machine gunfire
+
+## Version 2.1 Beta -- 21.08.2024
+Change log:
+- Remastered suppressed gunfire:
+ - Fixed missing and incorrect channel sounds
+ - Normalised bass
+ - Replaced shotguns' sounds
+ - Lowered tail volume
+ - Replaced and new sounds for NPCs
+ - Removed bass for NPCs
+ - Tweaked distances for NPCs
+- AWSM/Deer Hunter: replaced unsuppressed gunfire
+- SVD/G43: replaced gunfire (credits: TheDJ)
+- SVU/ACE 52: replaced sprint rattle (credits: TheDJ)
+- SPAS-12: added dedicated bolt layers (credits: TheDJ)
+- SG550/UMP45/P90/MP5: quieter unsuppressed bass
+- Kiparis/Skorpion: replaced reload (credits: YungPr1nce)
+- Replaced bullet flyby/whine sounds
+- Replaced helicopter flying sound

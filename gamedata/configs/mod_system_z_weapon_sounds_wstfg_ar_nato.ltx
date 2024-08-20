@@ -119,7 +119,7 @@ snd_bore                    = weapons\m4a1_ras\m4a1_boring
 !anm_bore_empty_jammed
 !anm_bore_jammed
 
-![wpn_m4_tac]:!wpn_m4_sounds,wpn_m4a1_sounds
+![wpn_m4_tac]
 snd_draw                    = weapons\generic\siber_draw
 snd_holster                 = weapons\generic\siber_holster
 snd_reload_misfire          = weapons\m4a1_ras\m4t_misfire
@@ -130,7 +130,7 @@ snd_bore                    = weapons\m4a1_ras\m4a1_boring
 snd_switch_mode             = weapons\ru556\ru556_firemode_real
 !snd_empty
 
-![wpn_m4_butcher]:!wpn_m4_sounds,wpn_m4a1_sounds
+![wpn_m4_butcher]
 snd_switch_mode             = weapons\ru556\ru556_firemode_real
 !snd_empty
 ; ![wpn_m4_butcher_hud]
@@ -142,7 +142,11 @@ snd_switch_mode             = weapons\ru556\ru556_firemode_real
 ; ![wpn_ar15_freedom_hud]
 ; anm_show_empty			    = mka_sh_draw_alt, draw_alt
 
-![wpn_howa20]:!wpn_scar_sounds,wpn_hk416_sounds
+![wpn_howa20]
+snd_shoot               	= wpn_hk416_snd_shoot
+snd_shoot_actor				= wpn_hk416_snd_shoot_actor
+snd_silncer_shot			= wpn_556_snd_silenced
+snd_silncer_shot_actor		= wpn_556_snd_silenced_actor
 snd_draw                    = weapons\generic\scar_draw_fast
 snd_holster                 = weapons\generic\scar_holster
 !snd_empty
@@ -366,11 +370,9 @@ snd_holster                 = weapons\librarian_m249\holster
 ; ![wpn_dtmdr] ; high-priority
 
 ![wpn_ace52]
-snd_holster               	= $no_sound
-scripted_snd_hide           = weapons\ace52\holster
 !snd_switch_mode
 !snd_empty
-snd_idle_sprint             = weapons\rattle\sprint\sprint_rifle, 0.4, 1.22
+snd_idle_sprint             = weapons\rattle\sprint\sprint_heavy, 0.5, 1.22
 
 ![wpn_fal_aus]
 snd_reload                  = weapons\sa58\sa58_reload
