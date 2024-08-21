@@ -293,7 +293,7 @@ and misc tweaks and bugfixes of course
 - Updated script configs' documentation
 
 ## Version 2.0 Beta -- 02.08.2024
-Change log:
+**Change log:**
 - **Reworked .ltx files structure** 
 - Gunfire sounds rework:
  - **Replaced most suppressed gunfire sounds**
@@ -329,7 +329,7 @@ Change log:
 - Replaced helicopter machine gunfire
 
 ## Version 2.1 Beta -- 21.08.2024
-Change log:
+**Change log:**
 - Remastered suppressed gunfire:
  - Fixed missing and incorrect channel sounds
  - Normalised bass

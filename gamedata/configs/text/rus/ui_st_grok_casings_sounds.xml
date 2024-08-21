@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <string_table>
 	<string id="ui_mcm_menu_grok_casings_sounds">
-		<text>Звуки Гильз</text>
+		<text>Р—РІСѓРєРё Р“РёР»СЊР·</text>
 	</string>
 	<string id="ui_mcm_title_grok_casings_sounds">
-		<text>Звуки Падения Гильз</text>
+		<text>Р—РІСѓРєРё РџР°РґРµРЅРёСЏ Р“РёР»СЊР·</text>
 	</string>
 	<string id="ui_mcm_grok_casings_sounds_enabled">
-		<text>Включить</text>
+		<text>Р’РєР»СЋС‡РёС‚СЊ</text>
 	</string>
 	<string id="ui_mcm_grok_casings_sounds_volume">
-		<text>Громкость</text>
+		<text>Р“СЂРѕРјРєРѕСЃС‚СЊ</text>
 	</string>
 		<string id="ui_mcm_grok_casings_sounds_ice_patch">
-		<text>Screen Space Shaders Ice Version Патч</text>
+		<text>Screen Space Shaders Ice Version РџР°С‚С‡</text>
 	</string>
 	<string id="ui_mcm_grok_casings_sounds_ice_patch_desc">
-		<text>Исправляет звуки падения гильз при стрельбе на льду</text>
+		<text>РСЃРїСЂР°РІР»СЏРµС‚ Р·РІСѓРєРё РїР°РґРµРЅРёСЏ РіРёР»СЊР· РїСЂРё СЃС‚СЂРµР»СЊР±Рµ РЅР° Р»СЊРґСѓ</text>
 	</string>
 </string_table>
