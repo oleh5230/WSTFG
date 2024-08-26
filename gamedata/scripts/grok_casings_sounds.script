@@ -54,12 +54,14 @@ mat_to_sound = {
 }
 
 local enabled = true
+local ubgl_enabled = true
 local volume_base = 2
 local last_weapon_id
 
 function load_mcm_options()
     if ui_mcm then
         enabled = ui_mcm.get("grok_casings_sounds/enabled") or false
+        ubgl_enabled = ui_mcm.get("grok_casings_sounds/ubgl_enabled") or false
         volume_base = ui_mcm.get("grok_casings_sounds/volume") or 2
         ice_patch = ui_mcm.get("grok_casings_sounds/ice_patch") or false
     end
@@ -73,6 +75,9 @@ function load_mcm_options()
         UnregisterScriptCallback("actor_on_footstep",actor_on_footstep)
         UnregisterScriptCallback("actor_on_weapon_fired",actor_on_weapon_fired)
         UnregisterScriptCallback("actor_on_hud_animation_play", actor_on_hud_animation_play)
+    end
+    if not ubgl_enabled then
+        UnregisterScriptCallback("actor_on_hud_animation_play",actor_on_hud_animation_play)
     end
 end
 
@@ -140,7 +145,7 @@ function actor_on_weapon_fired(obj, wpn)
 
         if casing_class == "no_sound" or orient == -1 then return end
         local material_sound = current_material_sound or "_dirt_"
-        local volume = material_sound == "_grass_" and volume_base/4 or volume_base
+        local volume = material_sound == "_grass_" and volume_base/10 or volume_base
 
         if eject_delay and eject_delay > 0 then
             CreateTimeEvent("grok_casings", "grok_casings_sound", eject_delay, play_sound, obj, fall_delay, 1, volume, orient, casing_class, material_sound)
@@ -184,6 +189,7 @@ function play_sound(obj, fall_delay, sub_coef, volume, orient, casing_class, mat
     sound_to_play = sound_object("casings\\" .. casing_class .. material_sound .. math.random(4))
     sound_to_play:play_no_feedback(obj, sound_object.s3d, fall_delay + (math.random(10)/100), pos, 1, 1)
     sound_to_play.volume = volume
+
     --printf("grok_casings_sounds // class: %s, fall_delay: %s, orient: %s, volume: %s", casing_class, fall_delay, orient, volume)
 
     --draw_part = particles_object("_samples_particles_\\flash_light")
