@@ -22,8 +22,8 @@ function play_aim_sound(dir, name, volume, frequency)
         -- local list = getFS():file_list_open("$game_sounds$", dir, bit_or(FS.FS_ListFiles, FS.FS_RootOnly)) -- Perhaps cache the result...?
         -- printf("%s", list:Size())
         -- if list then
-            local roll = math.random(10)
-            if cache == roll then roll = math.random(10) end
+            local roll = math.random(8)
+            if cache == roll then roll = math.random(8) end
             cache = roll
 
             local sound = xr_sound.get_safe_sound_object(dir .. name .. roll) --list:Size()
