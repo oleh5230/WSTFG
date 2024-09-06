@@ -18,6 +18,10 @@ oleh5230, 15/05/2024:
 - .ltx parsed to lua tables instead of direct reading
 - UBGL reload casings sounds
 
+oleh5230, 06/09/2024:
+- Rain mud material indoors fix
+- Delay calculation tweak
+
 Credits:
 - xcvb: get_body_state()
 - Maid: .ltx parser
@@ -94,14 +98,13 @@ function actor_on_footstep(material, power, hud_view, flags)
     current_material_sound = mat_to_sound[current_material]
 
     -- change soft material to mud during rain
-    local wetness = level.rain_wetness()
-    if wetness > 0.2 and (current_material_sound == "_dirt_" or current_material_sound == "_grass_") then
-        local roll = math.random(99)
-        if wetness * 100 > roll then
+    if level.rain_wetness() > 0.25 and level.rain_hemi() > 0.25 and (current_material_sound == "_dirt_" or current_material_sound == "_grass_") then
+        -- local roll = math.random(50)
+        -- if wetness * 100 > roll then
             current_material_sound = "_mud_"
-        end
+        -- end
     end
-    --printf("grok_casings_sounds // %s, %s, wetness: %s", material, current_material_sound, wetness)
+    --printf("grok_casings_sounds // %s, %s, wetness: %s, hemi: %s", material, current_material_sound, level.rain_wetness(), level.rain_hemi())
 end
 
 function get_const_params(wpn)
@@ -174,11 +177,11 @@ function play_sound(obj, fall_delay, sub_coef, volume, orient, casing_class, mat
     local pos, dir = obj:position(), obj:direction()
     body_st = get_body_state()
     if body_st == "low_crouch" then
-        fall_delay = fall_delay - (0.3 * sub_coef)
-        volume = volume * 0.7
+        fall_delay = fall_delay * 0.6
+        volume = volume * 0.6
         pos.y = pos.y - 0.0016
     elseif body_st == "crouch" then
-        fall_delay = fall_delay - (0.1 * sub_coef)
+        fall_delay = fall_delay * 0.9
         volume = volume * 0.9
         pos.y = pos.y - 0.0064
     else
