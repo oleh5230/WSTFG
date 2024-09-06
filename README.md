@@ -346,3 +346,25 @@ and misc tweaks and bugfixes of course
 - Kiparis/Skorpion: replaced reload (credits: YungPr1nce)
 - Replaced bullet flyby/whine sounds
 - Replaced helicopter flying sound
+
+## Version 2.1.1 Beta -- 06.09.2024
+**Change log:**
+- Fixed `snd_scripted_shots_g` crash
+- Renamed WSTFG custom sections
+- Replaced weapon rattle sounds (credits: IWP)
+- Reworked rattle volume and tempo
+- Added dedicated SR-25 unsuppressed gunfire
+- AK 5.45: switched back to original suppressed gunfire
+- AK series/Saiga-12/Howa 20/RU 556: replaced NPC gunfire
+- .45 pistols: merged suppressed gunfire files
+- M249: tweaked bolt
+- Karabiner 98k: reworked bolt
+- Glock/FNP/FNX: patched for PRP
+- Fixed Steyr Scout sounds
+- Balanced shotguns' unsuppressed gunfire volume
+- Fixed missing PP-19 mono tail
+- Fixed casing on grass sounds volume
+- Fixed russian localisation encoding
+- Fixed casing sounds not playing when fall delay is too short
+- Fixed casing sounds using mud material while indoors
+- Removed casings volume setting (doesn't work with play_no_feedback())

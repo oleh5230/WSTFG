@@ -80,7 +80,7 @@ function load_mcm_options()
         UnregisterScriptCallback("actor_on_weapon_fired",actor_on_weapon_fired)
         UnregisterScriptCallback("actor_on_hud_animation_play", actor_on_hud_animation_play)
     end
-    if not ubgl_enabled then
+    if enabled and not ubgl_enabled then
         UnregisterScriptCallback("actor_on_hud_animation_play",actor_on_hud_animation_play)
     end
 end
