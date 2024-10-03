@@ -26,15 +26,15 @@ function play_aim_sound(dir, name, volume, frequency)
         -- local list = getFS():file_list_open("$game_sounds$", dir, bit_or(FS.FS_ListFiles, FS.FS_RootOnly)) -- Perhaps cache the result...?
         -- printf("%s", list:Size())
         -- if list then
-            local roll = math.random(10)
-            if cache == roll then roll = math.random(10) end
+            local roll = math.random(8)
+            if cache == roll then roll = math.random(8) end
             cache = roll
 
             local sound = xr_sound.get_safe_sound_object(dir .. name .. roll) --list:Size()
             sound:play(db.actor, 0, sound_object.s2d)
             sound.volume = volume or 0.5
             sound.frequency = frequency or 1
-            --printf("eft_rattle: %s %s", volume, frequency)
+            printf("eft_rattle.script // volume: %s frequency: %s, roll: %s", volume, frequency, roll)
             -- tm = ct + 175
         -- end
     -- end
@@ -48,10 +48,10 @@ function get_wpn_params(wpn)
         cached_wpn = wpn
         weight     = ini_sys:r_string_ex(wpn, "inv_weight") or 3.5
         aim_time   = ini_sys:r_string_ex(wpn, "zoom_rotate_time") or 0.25
-        volume     = ini_sys:r_string_ex(wpn, "bullet_bones") and (1.0 + weight*0.075) or (0.35 + weight*0.075)
-        frequency  = 0.275 / aim_time
-        if frequency < 0.67 then frequency = 0.67 end
-        if frequency > 1.33 then frequency = 1.33 end
+        volume     = ini_sys:r_string_ex(wpn, "bullet_bones") and (1.0 + weight*0.05) or (0.5 + weight*0.05)
+        frequency  = 1.35 - aim_time --0.275 / aim_time
+        if frequency < 0.77 then frequency = 0.77 end
+        --if frequency > 1.33 then frequency = 1.33 end
     end
     return volume, frequency
 end

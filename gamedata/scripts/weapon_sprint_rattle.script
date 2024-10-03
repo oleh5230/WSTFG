@@ -29,8 +29,13 @@ function actor_on_hud_animation_play(anm_table, item)
     end
 end
 
-function stop_sound_playback(item)
-    --if item and item:id() and item:id() == cached_id and snd_obj and snd_obj:playing() then
+function actor_on_item_drop(item)
+    if item and item:id() and item:id() == cached_id and snd_obj and snd_obj:playing() then
+        snd_obj:stop()
+    end
+end
+
+function stop_sound_playback()
     if snd_obj and snd_obj:playing() then
         snd_obj:stop()
     end
@@ -38,11 +43,11 @@ end
 
 function on_game_start()
 	RegisterScriptCallback("actor_on_hud_animation_play", actor_on_hud_animation_play)
-    RegisterScriptCallback("actor_item_to_ruck", stop_sound_playback)
-    RegisterScriptCallback("actor_on_item_drop", stop_sound_playback)
+    RegisterScriptCallback("actor_item_to_ruck", actor_on_item_drop)
+    RegisterScriptCallback("actor_on_item_drop", actor_on_item_drop)
 	RegisterScriptCallback("actor_on_before_death", stop_sound_playback)
 	RegisterScriptCallback("actor_on_net_destroy", stop_sound_playback)
-    --RegisterScriptCallback("actor_on_footstep", actor_on_footstep) -- uncomment to disable footsteps sounds
+    RegisterScriptCallback("actor_on_footstep", actor_on_footstep) -- uncomment to disable footsteps sounds
 end
 
 function actor_on_footstep(material, power, hud_view, flags)

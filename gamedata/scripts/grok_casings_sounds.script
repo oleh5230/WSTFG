@@ -216,10 +216,20 @@ end
 -- offset casing collision point
 function offset_casing_sound(orient, pos, dir)
     if orient == 2 then
+        pos.x = pos.x + dir.x/4
+        pos.z = pos.z + dir.z/4
+        return pos
+    elseif orient == 21 then
+        pos.x = pos.x + dir.x/2
+        pos.z = pos.z + dir.z/2
+        return pos
+    elseif orient == 22 then
+        pos.x = pos.x - dir.x/2
+        pos.z = pos.z - dir.z/2
         return pos
     elseif orient == 1 then
-        pos.x = pos.x - dir.z -- + dir.x/3
-        pos.z = pos.z + dir.x -- + dir.z/3
+        pos.x = pos.x - dir.z + dir.x/4
+        pos.z = pos.z + dir.x + dir.z/4
         return pos
     else
         pos.x = pos.x + dir.z*1.33 + dir.x/2
