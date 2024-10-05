@@ -377,10 +377,11 @@ and misc tweaks and bugfixes of course
 - MP5/UMP45/Vector: replaced unsuppressed gunfire
 - AK series: tweaked mech for different RoF (650/750/900 RPM)
 - USP/FNP/FNX: replaced suppressed gunfire
+- Patched 20x70 Ithaca M37
 - Fixed Sako TRG-42 sound conflicts
+- Removed vanilla binoculars sounds
+- Quieter bulllet flybys
 - Replaced small suppressed tail
 - Added backward and forward casings sound offset
-- Removed vanilla binoculars sounds
-- Disabled sprint rattle (supposedly bugged)
-- Patched 20x70 Ithaca M37
+- Quieter UBGL casing fall sound on soft materials
 - Tweaked rattle formulae
