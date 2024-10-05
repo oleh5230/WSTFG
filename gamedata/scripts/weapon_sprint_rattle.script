@@ -47,7 +47,7 @@ function on_game_start()
     RegisterScriptCallback("actor_on_item_drop", actor_on_item_drop)
 	RegisterScriptCallback("actor_on_before_death", stop_sound_playback)
 	RegisterScriptCallback("actor_on_net_destroy", stop_sound_playback)
-    RegisterScriptCallback("actor_on_footstep", actor_on_footstep) -- uncomment to disable footsteps sounds
+    --RegisterScriptCallback("actor_on_footstep", actor_on_footstep) -- uncomment to disable footsteps sounds
 end
 
 function actor_on_footstep(material, power, hud_view, flags)

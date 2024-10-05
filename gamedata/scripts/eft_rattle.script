@@ -34,7 +34,7 @@ function play_aim_sound(dir, name, volume, frequency)
             sound:play(db.actor, 0, sound_object.s2d)
             sound.volume = volume or 0.5
             sound.frequency = frequency or 1
-            printf("eft_rattle.script // volume: %s frequency: %s, roll: %s", volume, frequency, roll)
+            --printf("eft_rattle.script // volume: %s frequency: %s, roll: %s", volume, frequency, roll)
             -- tm = ct + 175
         -- end
     -- end

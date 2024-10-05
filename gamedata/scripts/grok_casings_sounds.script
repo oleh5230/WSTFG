@@ -57,6 +57,12 @@ mat_to_sound = {
     --["actor"] = "_water_",
 }
 
+soft_mats = {
+    ["_dirt_"] = true,
+    ["_grass_"] = true,
+    ["_mud_"] = true,
+}
+
 local enabled = true
 local ubgl_enabled = true
 local volume_base = 2
@@ -98,7 +104,7 @@ function actor_on_footstep(material, power, hud_view, flags)
     current_material_sound = mat_to_sound[current_material]
 
     -- change soft material to mud during rain
-    if level.rain_wetness() > 0.25 and level.rain_hemi() > 0.25 and (current_material_sound == "_dirt_" or current_material_sound == "_grass_") then
+    if level.rain_wetness() > 0.25 and level.rain_hemi() > 0.25 and soft_mats[current_material_sound] then
         -- local roll = math.random(50)
         -- if wetness * 100 > roll then
             current_material_sound = "_mud_"
@@ -148,7 +154,7 @@ function actor_on_weapon_fired(obj, wpn)
 
         if casing_class == "no_sound" or orient == -1 then return end
         local material_sound = current_material_sound or "_dirt_"
-        local volume = material_sound == "_grass_" and volume_base/10 or volume_base
+        local volume = volume_base
 
         if eject_delay and eject_delay > 0 then
             CreateTimeEvent("grok_casings", "grok_casings_sound", eject_delay, play_sound, obj, fall_delay, 1, volume, orient, casing_class, material_sound)
@@ -244,9 +250,9 @@ function actor_on_hud_animation_play(anm_table, wpn)
         local wpn_sec = wpn:section()
         local wpn_sec_par = ini_sys:r_string_ex(wpn_sec,"parent_section") or wpn_sec
 
-        local material_sound = current_material_sound or "_dirt_"
+        local material_sound = soft_mats[current_material_sound] and "_quiet_" or "_"
         local casing_class = material_sound == "_water_" and "127mm_water" or "m209"
-        local volume = material_sound == "_grass_" and volume_base/4 or material_sound == "_dirt_" and volume_base/1.7 or volume_base
+        local volume = volume_base
         local eject_delay, fall_delay = gren_params[wpn_sec_par], 0.6
         if not eject_delay then return end
 
@@ -260,12 +266,12 @@ function actor_on_hud_animation_play(anm_table, wpn)
             local pos, dir = actor:position(), actor:direction()
             body_st = get_body_state()
             if body_st == "low_crouch" then
-                fall_delay = fall_delay - 0.3
-                volume = volume * 0.2
+                fall_delay = fall_delay * 0.55
+                volume = volume * 0.55
                 pos.y = pos.y - 0.0016
             elseif body_st == "crouch" then
-                fall_delay = fall_delay - 0.1
-                volume = volume * 0.75
+                fall_delay = fall_delay * 0.8
+                volume = volume * 0.8
                 pos.y = pos.y - 0.0064
             else
                 pos.y = pos.y - 0.0092
@@ -274,7 +280,7 @@ function actor_on_hud_animation_play(anm_table, wpn)
             pos.z = pos.z + dir.z/3
 
             --printf("grok_casings_sounds // delay: %s, %s, volume: %s", eject_delay, fall_delay, volume)
-            sound_to_play = sound_object("casings\\" .. casing_class .. "_" .. math.random(4))
+            sound_to_play = sound_object("casings\\" .. casing_class .. material_sound .. math.random(4))
             sound_to_play:play_no_feedback(actor, sound_object.s3d, fall_delay, pos, 1, 1)
             sound_to_play.volume = volume
             return true

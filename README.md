@@ -368,3 +368,19 @@ and misc tweaks and bugfixes of course
 - Fixed casing sounds not playing when fall delay is too short
 - Fixed casing sounds using mud material while indoors
 - Removed casings volume setting (doesn't work with play_no_feedback())
+
+## Version 2.2 Beta -- 04.10.2024
+**Change log:**
+- Replaced remaining suppressed tails
+- Replaced 5,45 AK suppressed gunfire
+- Redistributed SMG suppressed gunfire
+- MP5/UMP45/Vector: replaced unsuppressed gunfire
+- AK series: tweaked mech for different RoF (650/750/900 RPM)
+- USP/FNP/FNX: replaced suppressed gunfire
+- Fixed Sako TRG-42 sound conflicts
+- Replaced small suppressed tail
+- Added backward and forward casings sound offset
+- Removed vanilla binoculars sounds
+- Disabled sprint rattle (supposedly bugged)
+- Patched 20x70 Ithaca M37
+- Tweaked rattle formulae
