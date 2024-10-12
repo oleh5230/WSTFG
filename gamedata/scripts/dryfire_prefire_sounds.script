@@ -76,9 +76,6 @@ function on_game_start()
             end
         elseif arti_jamming.get_jammed then
             isMisfireWeapon = function(wpn, wpn_id)
-                if wpn:cast_Weapon() and wpn:cast_Weapon():IsMisfire() then printf("vanilla") end
-                if arti_jamming.get_jammed(wpn_id) then printf("WPO") end
-                printf("----------")
                 return wpn:cast_Weapon() and wpn:cast_Weapon():IsMisfire() or arti_jamming.get_jammed(wpn_id)
             end
         end

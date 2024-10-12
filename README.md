@@ -385,3 +385,13 @@ and misc tweaks and bugfixes of course
 - Added backward and forward casings sound offset
 - Quieter UBGL casing fall sound on soft materials
 - Tweaked rattle formulae
+
+## Version 2.3 Beta -- 04.10.2024
+**Change log:**
+- Replaced AR-15/HOWA-20 gunfire
+- Replaced 5.56 suppressed gunfire
+- Replaced 9x18/5.7 suppressed gunfire
+- Replaced Saiga-12 suppressed mech
+- Replaced NPC suppressed rifle tail
+- Fixed missing bass layers errors
+- Fixed mono suppressed sound comments
