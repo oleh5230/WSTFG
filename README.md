@@ -386,7 +386,7 @@ and misc tweaks and bugfixes of course
 - Quieter UBGL casing fall sound on soft materials
 - Tweaked rattle formulae
 
-## Version 2.3 Beta -- 04.10.2024
+## Version 2.3 Beta -- 12.10.2024
 **Change log:**
 - Replaced AR-15/HOWA-20 gunfire
 - Replaced 5.56 suppressed gunfire

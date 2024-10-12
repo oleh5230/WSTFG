@@ -1,6 +1,7 @@
+# exclude all dot files except .gitignore
+.*
+!.gitignore
+
 *.bak
-SAVandT.exe
-desktop.ini
-meta.ini
-.tmp.driveupload
-.tmp.drivedownload
+*.exe
+*.ini
