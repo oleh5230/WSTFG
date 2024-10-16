@@ -388,10 +388,22 @@ and misc tweaks and bugfixes of course
 
 ## Version 2.3 Beta -- 12.10.2024
 **Change log:**
-- Replaced AR-15/HOWA-20 gunfire
+- Replaced AR-15/Howa 20 gunfire
 - Replaced 5.56 suppressed gunfire
 - Replaced 9x18/5.7 suppressed gunfire
 - Replaced Saiga-12 suppressed mech
 - Replaced NPC suppressed rifle tail
 - Fixed missing bass layers errors
 - Fixed mono suppressed sound comments
+
+## Version 2.3.1 Beta -- 16.10.2024
+**Change log:**
+- Quieter .338/AK 5C gunfire
+- Quieter TOZ-34/66 reloads
+- Quieter MP-133/Ithaca M37 pump
+- Tweaked NPC suppressed gunfire
+- Tweaked AR-15/SR-25 gunfire volume
+- Tweaked NPC UMP45/Vector gunfire
+- Renamed and expanded MCM tab: `Weapon Sounds`/`Звуки Оружия`
+ - Moved aim/lower rattle setting
+ - Added sprint rattle settings

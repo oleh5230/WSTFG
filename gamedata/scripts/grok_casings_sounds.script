@@ -72,7 +72,7 @@ function load_mcm_options()
     if ui_mcm then
         enabled = ui_mcm.get("grok_casings_sounds/enabled") or false
         ubgl_enabled = ui_mcm.get("grok_casings_sounds/ubgl_enabled") or false
-        volume_base = ui_mcm.get("grok_casings_sounds/volume") or 2
+        -- volume_base = ui_mcm.get("grok_casings_sounds/volume") or 2
         ice_patch = ui_mcm.get("grok_casings_sounds/ice_patch") or false
     end
     if ice_patch then
