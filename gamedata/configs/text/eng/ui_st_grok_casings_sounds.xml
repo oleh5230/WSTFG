@@ -41,4 +41,11 @@
 	<string id="ui_mcm_grok_casings_sounds_volume_sprint_rattle">
 		<text>Sprint Rattle Volume</text>
 	</string>
+
+	<string id="ui_mcm_grok_casings_sounds_enabled_reload_hint">
+		<text>Enable Low Ammo Sounds</text>
+	</string>
+	<string id="ui_mcm_grok_casings_sounds_volume_reload_hint">
+		<text>Low Ammo Sounds Volume</text>
+	</string>
 </string_table>

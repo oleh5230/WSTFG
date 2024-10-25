@@ -41,4 +41,11 @@
 	<string id="ui_mcm_grok_casings_sounds_volume_sprint_rattle">
 		<text>Громкость грохота при беге</text>
 	</string>
+
+	<string id="ui_mcm_grok_casings_sounds_enabled_reload_hint">
+		<text>Включить звуки низкого уровня боеприпасов</text>
+	</string>
+	<string id="ui_mcm_grok_casings_sounds_volume_reload_hint">
+		<text>Громкость звуков низкого уровня боеприпасов</text>
+	</string>
 </string_table>
