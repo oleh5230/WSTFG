@@ -1,6 +1,9 @@
 -- Plays weapon rattle sound during sprint - oleh5230
 -- Original script by Aoldri
 
+-- To Do:
+-- Lower Weapon Sprint rattle (unlocalizing needed)
+
 local enabled = true
 local volume_base = 1
 function load_mcm_options()
@@ -12,8 +15,8 @@ end
 
 local cached_id, snd_obj
 function actor_on_hud_animation_play(anm_table, item)
-    if not enabled then return end
-	if not item then return end
+    --printf("%s, %s", anm_table.anm_name, lower_weapon_sprint and lower_weapon_sprint.lower_weapon_sprint_status)
+    if not enabled and item then return end
     cached_id = item:id()
     if snd_obj and snd_obj:playing() then snd_obj:stop() end
 
@@ -29,11 +32,14 @@ function actor_on_hud_animation_play(anm_table, item)
         local snd_path = snd_values[1]
         local volume = snd_values[2] or 0.25
         local frequency = snd_values[3] or 1
+        -- somehow passing delay as variable causes ctd
+        local delay = snd_values[4] or 0
 
         -- play sound
         snd_obj = sound_object(snd_path)
         if not snd_obj then return end
-        snd_obj:play(db.actor, 0, sound_object.s2d + sound_object.looped)
+        -- delay to avoid duplicate playback during transition animations
+        snd_obj:play(db.actor, 0.2, sound_object.s2d + sound_object.looped)
         snd_obj.volume = volume_base * volume
         snd_obj.frequency = frequency
     end

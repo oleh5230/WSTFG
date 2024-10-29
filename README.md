@@ -404,6 +404,23 @@ and misc tweaks and bugfixes of course
 - Tweaked NPC suppressed gunfire
 - Tweaked AR-15/SR-25 gunfire volume
 - Tweaked NPC UMP45/Vector gunfire
-- Renamed and expanded MCM tab: `Weapon Sounds`/`Çâóêè Îğóæèÿ`
+- Renamed and expanded MCM tab: `Weapon Sounds`/`Ğ—Ğ²ÑƒĞºĞ¸ ĞÑ€ÑƒĞ¶Ğ¸Ñ`
  - Moved aim/lower rattle setting
  - Added sprint rattle settings
+
+## Version 2.4 Beta -- 29.10.2024
+**Change log:**
+- Added Low Ammo Sounds (disabled by default) (credits: HarukaSai)
+- Added sprint rattle to most compatible weapons
+- Remapped NPC unsuppressed gunfire
+- Replaced 9mm pistol suppressed gunfire
+- AK 5,45 (650 RPM): remastered gunfire
+- FAL/SCAR: remastered suppressed gunfire
+- PB/APS: tweaked mech
+- Desert Eagle: repalced reload (credits: relax_68)
+- RAPTR: replaced draw/holster/inspect (credits: relax_68)
+- Howa 20: replaced unsuppressed mech
+- SCAR: tweaked gunfire volume
+- Fixed Vector missing suppressed tail
+- Fixed AN-94 unjam w/ UBGL animation
+- Fixed `eft_rattle.script:83` crash

@@ -117,7 +117,6 @@ function get_const_params(wpn)
     local wpn_sec = wpn:section()
     local wpn_sec_par = ini_sys:r_string_ex(wpn_sec,"parent_section") or wpn_sec
     local particle = ini_sys:r_string_ex(wpn_sec_par,"shell_particles") or false
-    local sub_coef = particle and 1.5 or 1
 
     local ammo_list = utils_item.get_ammo(wpn_sec)
     local ammo_sec = ammo_list[1]
@@ -140,7 +139,7 @@ function get_const_params(wpn)
     -- local orient = tonumber(_wpn_params[3]) or 1
     -- if orient == -1 then return end
 
-    return eject_delay, fall_delay, sub_coef, volume, orient, casing_class, material_sound
+    return eject_delay, fall_delay, orient, casing_class
 end
 
 -- play casing sound after shot
@@ -149,7 +148,7 @@ function actor_on_weapon_fired(obj, wpn)
 
         if not last_weapon_id or last_weapon_id ~= wpn:id() then
             last_weapon_id = wpn:id()
-            eject_delay, fall_delay, sub_coef, volume, orient, casing_class, material_sound = get_const_params(wpn)
+            eject_delay, fall_delay, orient, casing_class = get_const_params(wpn)
         end
 
         if casing_class == "no_sound" or orient == -1 then return end
@@ -157,9 +156,9 @@ function actor_on_weapon_fired(obj, wpn)
         local volume = volume_base
 
         if eject_delay and eject_delay > 0 then
-            CreateTimeEvent("grok_casings", "grok_casings_sound", eject_delay, play_sound, obj, fall_delay, 1, volume, orient, casing_class, material_sound)
+            CreateTimeEvent("grok_casings", "grok_casings_sound", eject_delay, play_sound, obj, fall_delay, volume, orient, casing_class, material_sound)
         else
-            play_sound(obj, fall_delay, sub_coef, volume, orient, casing_class, material_sound)
+            play_sound(obj, fall_delay, volume, orient, casing_class, material_sound)
         end
         --printf("grok_casings_sounds // %s, %s, eject_delay: %s", wpn:section(), utils_item.get_ammo(wpn:section())[wpn:get_ammo_type()+1], eject_delay)
 
@@ -177,7 +176,7 @@ function actor_on_weapon_fired(obj, wpn)
 	end
 end
 
-function play_sound(obj, fall_delay, sub_coef, volume, orient, casing_class, material_sound)
+function play_sound(obj, fall_delay, volume, orient, casing_class, material_sound)
     if not obj then return end
     -- adjust delay, volume and offset altitude
     local pos, dir = obj:position(), obj:direction()

@@ -11,6 +11,7 @@
 ]]
 
 local enabled = false
+local enabled_cache = true
 local volume = 1
 
 function load_mcm_options()
@@ -18,14 +19,19 @@ function load_mcm_options()
         enabled = ui_mcm.get("grok_casings_sounds/enabled_reload_hint") or false
         volume = ui_mcm.get("grok_casings_sounds/volume_reload_hint") or 1
     end
-    if not enabled then
-        UnregisterScriptCallback("actor_on_weapon_fired",actor_on_weapon_fired)
-    end
+    -- if enabled_cache and not enabled then
+    --     UnregisterScriptCallback("actor_on_weapon_fired", actor_on_weapon_fired)
+    --     enabled_cache = false
+    -- elseif enabled then
+    --     RegisterScriptCallback("actor_on_weapon_fired", actor_on_weapon_fired)
+    --     enabled_cache = true
+    -- end
 end
 
-function actor_on_weapon_fired()
-    local actor = db.actor
-    local wpn = actor:active_item()
+function actor_on_weapon_fired(obj)
+    if not enabled then return end
+
+    local wpn = obj:active_item()
     local sec = wpn and wpn:section()
     if not sec then return end
     local wpn_id = wpn:id()
@@ -34,7 +40,7 @@ function actor_on_weapon_fired()
     local elapsed = wpn:get_ammo_in_magazine() - 1
     if (elapsed) == 0 then
         sound_to_play = sound_object("reload_hint\\OutofAmmo")
-        sound_to_play:play(actor, 0, sound_object.s2d)
+        sound_to_play:play(obj, 0, sound_object.s2d)
         sound_to_play.volume = volume
         return
     end
@@ -50,7 +56,7 @@ function actor_on_weapon_fired()
 
     if elapsed / mag_size <= 0.2 then
         sound_to_play = sound_object("reload_hint\\ReloadHint")
-        sound_to_play:play(actor, 0, sound_object.s2d)
+        sound_to_play:play(obj, 0, sound_object.s2d)
         sound_to_play.volume = volume
         return
     end

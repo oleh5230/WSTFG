@@ -49,7 +49,7 @@ end
 
 local cached_wpn
 function get_wpn_params(wpn)
-    if not wpn then return end
+    if not wpn then return 0.5, 1 end
     wpn = wpn:section()
     if not cached_wpn or wpn ~= cached_wpn then
         cached_wpn = wpn
@@ -65,29 +65,29 @@ end
 
 function actor_on_weapon_zoom_in(wpn)
     if opt_aim_rattle then
-        volume, frequency = get_wpn_params(wpn)
-        play_aim_sound("weapons\\rattle\\raise\\", "raise_", volume * volume_aim_rattle, frequency) --"weapons\\rattle\\aimin\\", "aim_in_"
+        local volume, frequency = get_wpn_params(wpn)
+        play_aim_sound("rattle\\raise\\", "raise_", volume * volume_aim_rattle, frequency) --"weapons\\rattle\\aimin\\", "aim_in_"
     end
 end
 
 function actor_on_weapon_zoom_out(wpn)
     if opt_aim_rattle then
-        volume, frequency = get_wpn_params(wpn)
-        play_aim_sound("weapons\\rattle\\lower\\", "lower_", volume * volume_aim_rattle, frequency) --"weapons\\rattle\\aimout\\", "aim_out_"
+        local volume, frequency = get_wpn_params(wpn)
+        play_aim_sound("rattle\\lower\\", "lower_", volume * volume_aim_rattle, frequency) --"weapons\\rattle\\aimout\\", "aim_out_"
     end
 end
 
 function actor_on_weapon_raise(wpn)
     if opt_lower_raise_rattle then
-        volume, frequency = get_wpn_params(wpn)
-        play_aim_sound("weapons\\rattle\\raise\\", "raise_", volume * volume_lower_raise_rattle, 1.1)
+        local volume, frequency = get_wpn_params(wpn)
+        play_aim_sound("rattle\\raise\\", "raise_", volume * volume_lower_raise_rattle, 1.1)
     end
 end
 
 function actor_on_weapon_lower(wpn)
     if opt_lower_raise_rattle then
-        volume, frequency = get_wpn_params(wpn)
-        play_aim_sound("weapons\\rattle\\lower\\", "lower_", volume * volume_lower_raise_rattle, 1.1)
+        local volume, frequency = get_wpn_params(wpn)
+        play_aim_sound("rattle\\lower\\", "lower_", volume * volume_lower_raise_rattle, 1.1)
     end
 end
 
