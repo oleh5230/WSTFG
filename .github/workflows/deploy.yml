@@ -31,16 +31,6 @@ jobs:
         id: date
         run: echo "::set-output name=today::$(date +'%Y.%m.%d')"
 
-      - name: Install dependencies
-        id: ta_dep
-        run: |
-          cp -r anomaly-dependencies/trader_autoinject/gamedata .
-          cp -r anomaly-dependencies/encyclopedia/gamedata .
-          cp -r anomaly-dependencies/larp/gamedata .
-          cp -r anomaly-dependencies/inv_upgrades/gamedata .
-          cp -r anomaly-dependencies/repair_custom/gamedata .
-          cp -r anomaly-demonized-scripts/custom_functor_autoinject/gamedata .
-
       - name: Zip folder
         run: zip -r $RELEASE_NAME.zip gamedata README.md
         env: 
