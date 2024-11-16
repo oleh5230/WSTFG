@@ -35,7 +35,7 @@ jobs:
       - name: Zip folder
         run: zip -r $RELEASE_NAME.zip gamedata README.md
         env: 
-          RELEASE_NAME: Weapon_Sounds_Tweaks_and_Fixes_for_GAMMA-v{{ steps.date.outputs.today }}
+          RELEASE_NAME: Weapon_Sounds_Tweaks_and_Fixes_for_GAMMA-${{ steps.date.outputs.today }}
       
       - name: Publish
         uses: "marvinpinto/action-automatic-releases@v1.2.1"
