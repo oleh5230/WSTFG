@@ -2,6 +2,7 @@
 .*
 !.gitignore
 
+*_bkp
 *.bak
 *.exe
 *.ini
