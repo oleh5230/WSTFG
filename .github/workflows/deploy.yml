@@ -35,13 +35,13 @@ jobs:
       - name: Zip folder
         run: zip -r $RELEASE_NAME.zip gamedata README.md
         env: 
-          RELEASE_NAME: ${{ github.event.repository.name }}.${{ steps.date.outputs.today }}
+          RELEASE_NAME: Weapon_Sounds_Tweaks_and_Fixes_for_GAMMA-${{ steps.date.outputs.today }}
       
       - name: Publish
         uses: "marvinpinto/action-automatic-releases@v1.2.1"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: ${{ github.event_name == 'push' && 'latest' || 'pre-release' }}
+          automatic_release_tag: ${{ steps.date.outputs.today }}
           prerelease: ${{ github.event_name != 'push' }}
           files: |
             *.zip
