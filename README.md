@@ -449,3 +449,20 @@ and misc tweaks and bugfixes of course
 - Disabled pistols sprint rattle (desync too noticeable)
 - Fixed sprint rattle playing after moving weapon between slots
 - Fixed sprint rattle playing after entering vehicles
+
+## Version 2.6 -- 30.11.2024
+**Change log:**
+- Patched [Firebreath's RPK](<https://www.moddb.com/mods/stalker-anomaly/addons/random-rpk>) (cerdits: relax_68, TheDJ)
+- Patched [Mossberg 590 Reanimation](<https://www.moddb.com/mods/stalker-anomaly/addons/mossberg-590>)
+- Patched [UDP-9](https://discord.com/channels/912320241713958912/1309537226287218718) gunfire
+- Partially replaced Pretty Pistols Reanimated reloads again
+- SPAS-12/M1014: replaced gunfire/reload
+- RAPTR: tweaked gunfire
+- Patched TCWP foley volume/comments
+- Replaced MK47 (TCWP) gunfire
+- MP5/9x39 weapons: replaced suppressed gunfire
+- ShAK-12/VSSK: replaced distant gunfire
+- Added sweetener for ported/BAS rifle unsuppressed gunfire
+- Lowered default sprint rattle volume
+- Fixed RPK fire mode switch
+- Fixed alt aim rattle playing when not aiming down
