@@ -466,3 +466,7 @@ and misc tweaks and bugfixes of course
 - Lowered default sprint rattle volume
 - Fixed RPK fire mode switch
 - Fixed alt aim rattle playing when not aiming down
+
+## Version 2.6.5
+**Change log:**
+To Do
