@@ -1,7 +1,7 @@
 # exclude all dot files except .gitignore
 .*
 !.gitignore
-*shot
+*shot*
 *_bkp
 *.bak
 *.exe
