@@ -467,6 +467,6 @@ and misc tweaks and bugfixes of course
 - Fixed RPK fire mode switch
 - Fixed alt aim rattle playing when not aiming down
 
-## Version 2.6.5
+## Version 2.7.3
 **Change log:**
 To Do
