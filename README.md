@@ -1,13 +1,15 @@
-# Recommended SFX volume: `0.5` (otherwise sounds may be louder/quieter than intended)
+## Recommended SFX volume: `0.5` (otherwise sounds may be louder/quieter than intended)
 
-# Credits
-- **YungPr1nce** for a lot of sounds included directly or reused as material
-- **TheDJ** for multiple resounds, help with sources and general advice
-- **bert** for MP412 and casings sounds
-- **JSRS Team**, **Shrike** and other weapon sounds authors mentioned in GAMMA credits
+## Credits
+- **YungPr1nce**: a lot of sounds included directly or reused as material
+- **TheDJ**: multiple resounds, help with sources and general advice
+- **relax_68** multiple reload sounds
+- **HarukaSai**: low ammo hint script
+- **Qudix**: aim rattle script
+- **bert**: casings falling sounds port
+- **JSRS Team**, **Shrike** and other weapon addon authors whose works are included in GAMMA
 
-Main material sources: Call of Duty Modern Warfare, Escape from Tarkov, Insurgency: Sandstorm, Ready or Not
-Other material sources: SCP: Pandemic, Day of infamy
+Material sources include: Call of Duty Modern Warfare, Escape from Tarkov, Insurgency: Sandstorm, Ready or Not, SCP: 5K
 
 ## Version 1.1 -- 20.11.2023
 **Change log:**
@@ -467,6 +469,6 @@ and misc tweaks and bugfixes of course
 - Fixed RPK fire mode switch
 - Fixed alt aim rattle playing when not aiming down
 
-## Version 2.7.3
+## Version 2.8
 **Change log:**
 To Do
