@@ -8,6 +8,8 @@
 --[[
     Patched for vanilla ammo system and MCM settings
     - oleh5230, 25.10.2024
+    
+    Added class-unique sounds, 31.03.2025
 ]]
 
 local enabled = false
@@ -21,29 +23,11 @@ function load_mcm_options()
 end
 
 local classes = {
-    ["w_melee"]     = "melee",
-    ["WP_KNIFE"]    = "melee",
-
     ["w_pistol"]    = "pistol",
-    ["WP_HPSA"]     = "pistol",
-    ["WP_PM"]       = "pistol",
-    ["WP_USP45"]    = "pistol",
-
     ["w_shotgun"]   = "shotgun",
-    ["WP_ASHTG"]    = "shotgun",
-    ["WP_BM16"]     = "shotgun",
-
     ["w_smg"]       = "smg",
-
     ["w_rifle"]     = "rifle",
-    ["WP_AK74"]     = "rifle",
-    ["WP_GROZA"]    = "rifle",
-    ["WP_LR300"]    = "rifle",
-    ["WP_VAL"]      = "rifle",
-
-    ["w_sniper"]    = "sniper",
-    ["WP_SVD"]      = "sniper",
-    ["WP_SVU"]      = "sniper",
+    ["w_sniper"]    = "sniper"
 }
 
 function actor_on_weapon_fired(obj)
@@ -54,7 +38,7 @@ function actor_on_weapon_fired(obj)
     if not sec then return end
     local wpn_id = wpn:id()
     local mag_size = 1
-    local class = classes[SYS_GetParam(0, sec, "class")] or "rifle"
+    local class = classes[SYS_GetParam(0, sec, "kind")] or "rifle"
     if SYS_GetParam(0, sec, "bullet_bones") then class = "mg" end
 
     if magazine_binder and magazine_binder.get_data then
