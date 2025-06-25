@@ -1,15 +1,35 @@
-## Recommended SFX volume: `0.5` (otherwise sounds may be louder/quieter than intended)
+## Description
+WSTFG stands for Weapon Sounds Tweaks and Fixes for [G.A.M.M.A.](https://github.com/Grokitach/Stalker_GAMMA)
+This addon is a weapon sound overhaul based on [Dark Signal Weapon Audio](https://www.moddb.com/mods/stalker-anomaly/addons/dark-signal-stand-alone-weapon-audio)
+
+## Recommended in-game settings:
+- SFX Volume (`snd_volume_eff`): `0.5` - otherwise sounds may be louder/quieter than intended
+- Rendering Distance (World) (`vis_distance`): at least `0.6` (20% of the slider) - otherwise distant gunfire sounds would not be audible
+
+## Features
+- Dark Signal gunfire sounds overhaul: redistributed and tweaked gunshot sounds, as well as addition of new ones, aiming for quality over quantity.
+- Suppressed gunfire sounds overhaul
+- Inclusion of better sounds from various addons
+- Sound synchronisation with animations
+- Custom foley sound replacements
+- Volume adjustments
+- Multitude of bug fixes
+- Edited and custom scripts:
+ - Grok's & Bert's Casings Falling Sounds Revised
+ - Weapon sprint rattle
+ - Enhanced dryfire
+ - Low ammo sounds
 
 ## Credits
 - **YungPr1nce**: a lot of sounds included directly or reused as material
 - **TheDJ**: multiple resounds, help with sources and general advice
-- **relax_68** multiple reload sounds
+- **relax_68**: multiple foley resounds
 - **HarukaSai**: low ammo hint script
 - **Qudix**: aim rattle script
 - **bert**: casings falling sounds port
 - **JSRS Team**, **Shrike** and other weapon addon authors whose works are included in GAMMA
 
-Material sources include: Call of Duty Modern Warfare, Escape from Tarkov, Insurgency: Sandstorm, Ready or Not, SCP: 5K
+Material sources include: Call of Duty Modern Warfare, Delta Force, Escape from Tarkov, Insurgency: Sandstorm, Ready or Not, SCP: 5K
 
 ## Version 1.1 -- 20.11.2023
 **Change log:**
