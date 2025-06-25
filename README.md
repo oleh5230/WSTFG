@@ -1,10 +1,10 @@
 ## Description
 WSTFG stands for Weapon Sounds Tweaks and Fixes for [G.A.M.M.A.](https://github.com/Grokitach/Stalker_GAMMA)
-This addon is a weapon sound overhaul based on [Dark Signal Weapon Audio](https://www.moddb.com/mods/stalker-anomaly/addons/dark-signal-stand-alone-weapon-audio)
+It is is a weapon audio overhaul based on [Dark Signal Weapon Audio](https://www.moddb.com/mods/stalker-anomaly/addons/dark-signal-stand-alone-weapon-audio)
 
 ## Recommended in-game settings:
 - SFX Volume (`snd_volume_eff`): `0.5` - otherwise sounds may be louder/quieter than intended
-- Rendering Distance (World) (`vis_distance`): at least `0.6` (20% of the slider) - otherwise distant gunfire sounds would not be audible
+- Rendering Distance (World) (`rs_vis_distance`): at least `0.6` (20% of the slider) - otherwise distant gunfire sounds would not be audible
 
 ## Features
 - Dark Signal gunfire sounds overhaul: redistributed and tweaked gunshot sounds, as well as addition of new ones, aiming for quality over quantity.
