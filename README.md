@@ -15,10 +15,10 @@ It is a weapon audio overhaul based on [Dark Signal Weapon Audio](https://www.mo
 - Volume adjustments
 - Multitude of bug fixes
 - Edited and custom scripts:
- - Grok's & Bert's Casings Falling Sounds Revised
- - Weapon sprint rattle
- - Enhanced dryfire
- - Low ammo sounds
+- Grok's & Bert's Casings Falling Sounds Revised
+- Weapon sprint rattle
+- Enhanced dryfire
+- Low ammo sounds
 
 ## Credits
 - **YungPr1nce**: a lot of sounds included directly or reused as material
