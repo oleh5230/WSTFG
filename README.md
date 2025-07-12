@@ -1,6 +1,6 @@
 ## Description
 WSTFG stands for Weapon Sounds Tweaks and Fixes for [G.A.M.M.A.](https://github.com/Grokitach/Stalker_GAMMA)
-It is is a weapon audio overhaul based on [Dark Signal Weapon Audio](https://www.moddb.com/mods/stalker-anomaly/addons/dark-signal-stand-alone-weapon-audio)
+It is a weapon audio overhaul based on [Dark Signal Weapon Audio](https://www.moddb.com/mods/stalker-anomaly/addons/dark-signal-stand-alone-weapon-audio)
 
 ## Recommended in-game settings:
 - SFX Volume (`snd_volume_eff`): `0.5` - otherwise sounds may be louder/quieter than intended
