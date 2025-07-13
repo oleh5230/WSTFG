@@ -91,7 +91,7 @@ function on_game_start()
     RegisterScriptCallback("on_option_change", load_mcm_options)
     load_mcm_options()
 
-    RegisterScriptCallback("actor_on_footstep", actor_on_footstep) -- uncomment to disable footsteps sounds
+    --RegisterScriptCallback("actor_on_footstep", actor_on_footstep) -- uncomment to disable footsteps sounds
 end
 
 function actor_on_footstep(material, power, hud_view, flags)
