@@ -1,24 +1,46 @@
 -- Plays weapon rattle sound during sprint - oleh5230
--- Original script by Aoldri
+-- Credits: Aoldri
+-- Last edit: 01.08.25
 
--- To Do:
--- Lower Weapon Sprint rattle (unlocalizing needed)
+local debug = true
 
 local enabled = true
-local snd_value, snd_values, snd_path, snd_obj
-local cached_id
+local enabled_lowered = true
 local volume_base = 1
-local volume = 0.25
-local frequency = 1
-local delay = 0
+local snd_obj, snd_obj_lowered
+local cached_id
 
-function load_mcm_options()
-    if ui_mcm then
-        enabled = ui_mcm.get("grok_casings_sounds/enabled_sprint_rattle")
-        volume_base = ui_mcm.get("grok_casings_sounds/volume_sprint_rattle") or 1
+-- default sound files used per weapon "kind" during lowered weapon sprint
+-- backup is "rattle\\sprint\\sprint_rifle"
+wpn_kinds = {
+    ["w_pistol"]    = "rattle\\sprint\\sprint_light",
+    ["w_smg"]       = "rattle\\sprint\\sprint_light",
+}
+
+function play_sprint_rattle(lowered, path, volume, frequency)
+    if snd_obj and snd_obj:playing() then snd_obj:stop() end
+    if snd_obj_lowered and snd_obj_lowered:playing() then snd_obj_lowered:stop() end
+
+    if device():is_paused() or not is_hud_free() then return end
+
+    if lowered then
+        snd_obj_lowered = sound_object(path)
+        if not snd_obj_lowered then return end
+        snd_obj_lowered:play(db.actor, 0, sound_object.s2d + sound_object.looped)
+        snd_obj_lowered.volume = volume_base * volume
+        snd_obj_lowered.frequency = frequency
+        print_dbg("start lowered rattle")
+    else
+        snd_obj = sound_object(path)
+        if not snd_obj then return end
+        snd_obj:play(db.actor, 0.15, sound_object.s2d + sound_object.looped)
+        snd_obj.volume = volume_base * volume
+        snd_obj.frequency = frequency
+        print_dbg("start standard rattle")
     end
 end
 
+-- rattle accompanying .omf weapon sprint animation
 function actor_on_hud_animation_play(anm_table, item)
     --printf("start: %s, %s", anm_table.anm_name, lower_weapon_sprint and lower_weapon_sprint.lower_weapon_sprint_status)
     if snd_obj and snd_obj:playing() then snd_obj:stop() end
@@ -28,43 +50,87 @@ function actor_on_hud_animation_play(anm_table, item)
     and IsMoveState("mcSprint")
     and string.find(anm_table.anm_name, "idle_sprint")
     and item and active_item and item and item:id() == active_item:id() then
+        print_dbg("play_sprint_rattle")
         section = item:section()
         if not section then return end
 
         -- check if weapon has a valid sound in config
-        snd_value = ini_sys:r_string_ex(section, "snd_idle_sprint")
+        local snd_value = ini_sys:r_string_ex(section, "snd_idle_sprint")
         if not snd_value then return end
-        cached_id = item:id()
 
-        snd_values = str_explode(snd_value,",")
-        snd_path = snd_values[1]
-        volume = snd_values[2] or 0.25
-        frequency = snd_values[3] or 1
+        local snd_values = str_explode(snd_value,",")
+        local snd_path = snd_values[1]
+        local volume = snd_values[2] or 0.25
+        local frequency = snd_values[3] or 1
         -- somehow passing delay as variable causes ctd
-        delay = snd_values[4] or 0
+        local delay = snd_values[4] or 0
 
-        -- play sound
-        snd_obj = sound_object(snd_path)
-        if not snd_obj then return end
-        -- delay to avoid duplicate playback during transition animations
-        snd_obj:play(db.actor, 0.15, sound_object.s2d + sound_object.looped)
-        snd_obj.volume = volume_base * volume
-        snd_obj.frequency = frequency
+        play_sprint_rattle(false, snd_path, volume, frequency)
+        cached_id = item:id()
     end
 end
 
+-- rattle accompanying lowered weapon sprint animation
+function actor_on_movement_changed(move_state)
+    --news_manager.send_tip(db.actor, "!actor_on_movement_changed: " .. move_state, nil, "swiss_knife", 1000)
+    if snd_obj_lowered and snd_obj_lowered:playing() then snd_obj_lowered:stop() end
+
+    if  enabled_lowered
+    and IsMoveState('mcSprint')
+    and game.actor_weapon_lowered() then
+        local item = db.actor:active_item()
+        if not item then return end
+        local section = item:section()
+        local weight = ini_sys:r_string_ex(section, "inv_weight") or 3.3
+
+        -- check if weapon has a valid sound in config
+        local snd_value = ini_sys:r_string_ex(section, "snd_idle_sprint")
+        local snd_path = "rattle\\sprint\\sprint_rifle"
+        local volume = 0.2 + weight*0.02
+        if snd_value then
+            local snd_values = str_explode(snd_value,",")
+            snd_path = snd_values[1]
+            volume = snd_values[2] and snd_values[2] * 0.75 or (0.2 + weight*0.02)
+            -- frequency = snd_values[3] or 1
+        else
+            snd_path = wpn_kinds[SYS_GetParam(0, section, "kind")] or "rattle\\sprint\\sprint_rifle"
+        end
+
+        play_sprint_rattle(true, snd_path, volume, 1.12)
+        cached_id = item:id()
+    end
+end
+
+function is_hud_free()
+    return  actor_menu.is_hud_free()
+    or      _GUIs["UIInventory"] and ui_inventory.GUI and ui_inventory.GUI.mode == "inventory"
+    or      _GUIs["UIWheelAmmo"]
+    or      _GUIs["UIWheelCompanion"]
+end
+
+-- stop rattle if object is moved out of active slot
 function actor_on_item_moved(item)
+    print_dbg("stop object rattle")
     if item and item:id() and item:id() == cached_id and snd_obj and snd_obj:playing() then
         snd_obj:stop()
     end
-end
-
-function stop_sound_playback()
-    if snd_obj and snd_obj:playing() then
-        snd_obj:stop()
+    if item and item:id() and item:id() == cached_id and snd_obj_lowered and snd_obj_lowered:playing() then
+        snd_obj_lowered:stop()
     end
 end
 
+-- stop rattle if game is paused/actor entered a vehicle
+function stop_sound_playback()
+    print_dbg("stop all rattle")
+    if snd_obj and snd_obj:playing() then
+        snd_obj:stop()
+    end
+    if snd_obj_lowered and snd_obj_lowered:playing() then
+        snd_obj_lowered:stop()
+    end
+end
+
+--[[
 function actor_on_weapon_raise(item)
     if not enabled then return end
     local active_item = db.actor:active_item()
@@ -77,23 +143,42 @@ function actor_on_weapon_raise(item)
         snd_obj.volume = volume_base * volume
     end
 end
+]]
+
+function load_mcm_options()
+    if ui_mcm and grok_casings_sounds_mcm then
+        enabled = ui_mcm.get("grok_casings_sounds/enabled_sprint_rattle")
+        enabled_lowered = ui_mcm.get("grok_casings_sounds/enabled_sprint_rattle_lowered")
+        volume_base = ui_mcm.get("grok_casings_sounds/volume_sprint_rattle") or 1
+    end
+end
 
 function on_game_start()
 	RegisterScriptCallback("actor_on_hud_animation_play", actor_on_hud_animation_play)
-    RegisterScriptCallback("actor_on_item_drop", actor_on_item_moved)
-    RegisterScriptCallback("actor_item_to_ruck", actor_on_item_moved)
-    RegisterScriptCallback("actor_item_to_slot", actor_on_item_moved)
-    --RegisterScriptCallback("actor_on_weapon_raise", actor_on_weapon_raise)
-    --RegisterScriptCallback("actor_on_weapon_lower", stop_sound_playback)
-    RegisterScriptCallback("actor_on_attach_vehicle", stop_sound_playback)
-	RegisterScriptCallback("actor_on_before_death", stop_sound_playback)
-	RegisterScriptCallback("actor_on_net_destroy", stop_sound_playback)
+    RegisterScriptCallback("actor_on_movement_changed", actor_on_movement_changed)
+
+    RegisterScriptCallback("actor_on_item_drop",        actor_on_item_moved)
+    RegisterScriptCallback("actor_item_to_ruck",        actor_on_item_moved)
+    RegisterScriptCallback("actor_item_to_slot",        actor_on_item_moved)
+
+    RegisterScriptCallback("actor_on_attach_vehicle",   stop_sound_playback)
+	RegisterScriptCallback("actor_on_before_death",     stop_sound_playback)
+    RegisterScriptCallback("main_menu_on_init",         stop_sound_playback)
+	RegisterScriptCallback("actor_on_net_destroy",      stop_sound_playback)
+
     RegisterScriptCallback("on_option_change", load_mcm_options)
     load_mcm_options()
 
-    --RegisterScriptCallback("actor_on_footstep", actor_on_footstep) -- uncomment to disable footsteps sounds
+    if debug then RegisterScriptCallback("actor_on_footstep", actor_on_footstep) end
 end
 
+-- disables footstep sounds
 function actor_on_footstep(material, power, hud_view, flags)
     flags.ret_value = false
+end
+
+function print_dbg(txt, ...)
+	if debug then
+		printf("[weapon_sprint_rattle] " .. txt, ...)
+	end
 end
