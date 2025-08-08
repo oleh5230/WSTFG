@@ -1,4 +1,4 @@
-if eft_rattle and eft_rattle.get_wpn_params and eft_rattle.count and eft_rattle.limit and grok_casings_sounds_mcm then
+if eft_rattle and eft_rattle.get_wpn_params and eft_rattle.count and eft_rattle.limit then
 
 	local wct = weapon_cover_tilt
 	local sound_add_start = true
