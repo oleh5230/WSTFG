@@ -130,13 +130,22 @@ snd_shoot                   = wpn_mossberg_sc_snd_shoot
 snd_shoot_actor             = wpn_mossberg_sc_snd_shoot_actor
 !snd_empty
 snd_draw                    = weapons\generic\shotgun_draw
-snd_holster                 = weapons\generic\shotgun_holster
+snd_holster                 = weapons\generic\shotgun_holster, 1.0, 0.15
 snd_add_cartridge           = $no_sound
 snd_add_cartridge1          = $no_sound
 snd_add_cartridge2          = $no_sound
-scripted_snd_open_empty 	                = weapons\mossberg590a1\m590_open_empty, true
+
+scripted_snd_open_empty                     = weapons\mossberg590a1\m590_open_empty, true
+scripted_snd_open 	                        = weapons\mossberg590a1\m590_open, true
+scripted_snd_open_ammo1                     = weapons\mossberg590a1\m590_open, true
+scripted_snd_open_ammoeven                  = weapons\mossberg590a1\m590_open, true
+scripted_snd_open_ammoodd                   = weapons\mossberg590a1\m590_open, true
+scripted_snd_close_ammoeven                 = weapons\mossberg590a1\m590_close_even, true
+scripted_snd_close_ammoodd                  = weapons\mossberg590a1\m590_close, true
 scripted_snd_add_cartridge_empty		    = weapons\mossberg590a1\m590_load_empty, true
 scripted_snd_add_cartridge_ammo1		    = weapons\mossberg590a1\m590_load_ammo1, true
+scripted_snd_add_cartridge_ammoeven		    = weapons\mossberg590a1\m590_load_ammo2, true
+scripted_snd_add_cartridge_ammoodd		    = weapons\mossberg590a1\m590_load_ammo3, true
 ![wpn_mossberg590_hud]
 !anm_empty_fire
 !anm_empty_fire_aim
@@ -216,6 +225,8 @@ snd_shoot                   = wpn_l85_snd_shoot
 snd_shoot_actor             = wpn_l85_snd_shoot_actor
 snd_silncer_shot            = wpn_aug_wstfg_snd_silenced
 snd_silncer_shot_actor      = wpn_aug_wstfg_snd_silenced_actor
+snd_shoot_first             = weapons\_bolt\mono\m4_prefire
+snd_silncer_shot_first      = weapons\_bolt\mono\m4_prefire
 ; snd_draw                    = weapons\generic\scar_draw_fast
 ; snd_holster                 = weapons\generic\scar_holster
 !snd_empty
@@ -225,6 +236,8 @@ snd_shoot                   = wpn_l85_snd_shoot
 snd_shoot_actor             = wpn_l85_snd_shoot_actor
 snd_silncer_shot            = wpn_aug_wstfg_snd_silenced
 snd_silncer_shot_actor      = wpn_aug_wstfg_snd_silenced_actor
+snd_shoot_first             = weapons\_bolt\mono\m4_prefire
+snd_silncer_shot_first      = weapons\_bolt\mono\m4_prefire
 ; snd_draw                    = weapons\generic\scar_draw_fast
 ; snd_holster                 = weapons\generic\scar_holster
 !snd_empty
@@ -279,14 +292,14 @@ snd_silncer_shot			= wpn_mosin_wstfg_snd_silenced
 snd_silncer_shot_actor		= wpn_mosin_wstfg_snd_silenced_actor
 
 ![wpn_m98b]  ; frosty's reanimation patch
-snd_shoot				    = wpn_l96m_wstfg_snd_shoot
-snd_shoot_actor			    = wpn_l96m_wstfg_snd_shoot_actor
-snd_silncer_shot            = wpn_l96msp_wstfg_snd_silenced
-snd_silncer_shot_actor      = wpn_l96msp_wstfg_snd_silenced_actor
-snd_reload                  = weapons\wpn_l96_new\l96_new_reload
-snd_reload_empty		    = weapons\wpn_l96_new\l96_new_reload_empty
-snd_reload_misfire          = weapons\wpn_l96_new\l96_new_unjam
-snd_bore                    = weapons\wpn_l96_new\l96_new_inspect
+snd_shoot				    = wpn_m98_wstfg_snd_shoot
+snd_shoot_actor			    = wpn_m98_wstfg_snd_shoot_actor
+snd_silncer_shot            = wpn_m98sp_wstfg_snd_silenced
+snd_silncer_shot_actor      = wpn_m98msp_wstfg_snd_silenced_actor
+snd_reload                  = weapons\wpn_m98_new\l96_new_reload
+snd_reload_empty		    = weapons\wpn_m98_new\l96_new_reload_empty
+snd_reload_misfire          = weapons\wpn_m98_new\l96_new_unjam
+snd_bore                    = weapons\wpn_m98_new\l96_new_inspect
 snd_draw                    = weapons\generic\siber_draw
 snd_holster                 = weapons\generic\ak_holster
 snd_empty                   = weapons\_dryfire\svd_trigger

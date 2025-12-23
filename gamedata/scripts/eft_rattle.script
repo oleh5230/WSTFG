@@ -8,7 +8,13 @@ local volume_aim_rattle = 1
 local volume_lower_raise_rattle = 1
 
 function load_settings()
-    if ui_mcm and grok_casings_sounds_mcm then
+    if ui_mcm and oleh_sounds_mcm then
+        opt_aim_rattle = ui_mcm.get("oleh_sounds/weapons/enabled_aim_rattle")
+        opt_lower_raise_rattle = ui_mcm.get("oleh_sounds/weapons/enabled_lower_raise_rattle")
+        volume_aim_rattle = ui_mcm.get("oleh_sounds/weapons/volume_aim_rattle") or 1
+        volume_lower_raise_rattle = ui_mcm.get("oleh_sounds/weapons/volume_lower_raise_rattle") or 1
+    -- old MCM compatibility
+    elseif ui_mcm and grok_casings_sounds_mcm then
         opt_aim_rattle = ui_mcm.get("grok_casings_sounds/enabled_aim_rattle")
         opt_lower_raise_rattle = ui_mcm.get("grok_casings_sounds/enabled_lower_raise_rattle")
         volume_aim_rattle = ui_mcm.get("grok_casings_sounds/volume_aim_rattle") or 1
