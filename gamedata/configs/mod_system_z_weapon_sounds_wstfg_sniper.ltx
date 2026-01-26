@@ -25,6 +25,10 @@ snd_empty_first             = weapons\_dryfire\sniper_hammer
 snd_open_weapon             = weapons\obrez\obrez_reload_start
 snd_close_weapon            = weapons\obrez\obrez_reload_end
 !snd_empty
+snd_idle_sprint             = rattle\sprint\sprint_light, 0.2, 1.12
+snd_reload_misfire          = weapons\obrez\bolt
+![wpn_mosin_hud]
+anm_reload_misfire          = obrez_shoot
 
 ![wpn_k98]
 snd_shoot			        = wpn_k98_jm_wstfg_snd_shoot
@@ -49,13 +53,15 @@ snd_shoot		            = wpn_k98mod_snd_shoot
 snd_shoot_actor		        = wpn_k98mod_snd_shoot_actor
 snd_silncer_shot		    = wpn_k98modsp_snd_silenced
 snd_silncer_shot_actor      = wpn_k98modsp_snd_silenced_actor
+snd_idle_sprint             = rattle\sprint\sprint_rifle, 0.3, 1.0
+!snd_empty
 
 snd_bore                    = weapons\wpn_r700_new\l96_new_inspect
 snd_reload                  = weapons\wpn_r700_new\l96_new_reload
 snd_reload_empty		    = weapons\wpn_r700_new\l96_new_reload_empty
 snd_reload_misfire          = weapons\wpn_r700_new\l96_new_unjam
-snd_draw                    = weapons\generic\siber_draw
-snd_holster                 = weapons\generic\ak_holster
+snd_draw                    = weapons\wpn_r700_new\l96_new_draw
+snd_holster                 = weapons\wpn_r700_new\l96_new_holster
 
 ; snd_reload					= weapons\k98mod\reload
 ; snd_reload_empty			= weapons\k98mod\reload_empty
@@ -71,13 +77,15 @@ snd_shoot		            = wpn_k98mod_snd_shoot
 snd_shoot_actor		        = wpn_k98mod_snd_shoot_actor
 snd_silncer_shot		    = wpn_k98modsp_snd_silenced
 snd_silncer_shot_actor      = wpn_k98modsp_snd_silenced_actor
+snd_idle_sprint             = rattle\sprint\sprint_rifle, 0.3, 1.0
+!snd_empty
 
 snd_bore                    = weapons\wpn_r700_new\l96_new_inspect
 snd_reload                  = weapons\wpn_r700_new\l96_new_reload
 snd_reload_empty		    = weapons\wpn_r700_new\l96_new_reload_empty
 snd_reload_misfire          = weapons\wpn_r700_new\l96_new_unjam
-snd_draw                    = weapons\generic\siber_draw
-snd_holster                 = weapons\generic\ak_holster
+snd_draw                    = weapons\wpn_r700_new\l96_new_draw
+snd_holster                 = weapons\wpn_r700_new\l96_new_holster
 
 ; snd_reload					= weapons\k98mod\reload
 ; snd_reload_empty			= weapons\k98mod\reload_empty
@@ -93,13 +101,15 @@ snd_shoot		            = wpn_k98mod_snd_shoot
 snd_shoot_actor		        = wpn_k98mod_snd_shoot_actor
 snd_silncer_shot		    = wpn_k98modsp_snd_silenced
 snd_silncer_shot_actor      = wpn_k98modsp_snd_silenced_actor
+snd_idle_sprint             = rattle\sprint\sprint_rifle, 0.3, 1.0
+!snd_empty
 
 snd_bore                    = weapons\wpn_r700_new\l96_new_inspect
 snd_reload                  = weapons\wpn_r700_new\l96_new_reload
 snd_reload_empty		    = weapons\wpn_r700_new\l96_new_reload_empty
 snd_reload_misfire          = weapons\wpn_r700_new\l96_new_unjam
-snd_draw                    = weapons\generic\siber_draw
-snd_holster                 = weapons\generic\ak_holster
+snd_draw                    = weapons\wpn_r700_new\l96_new_draw
+snd_holster                 = weapons\wpn_r700_new\l96_new_holster
 
 ![wpn_sv98_kntl_sounds]:wpn_sv98_sounds
 snd_shoot                   = wpn_sv98_snd_shoot
@@ -129,8 +139,6 @@ snd_shoot                   = wpn_l96_snd_shoot
 snd_shoot_actor             = wpn_l96_snd_shoot_actor
 snd_silncer_shot            = wpn_l96_snd_silenced
 snd_silncer_shot_actor      = wpn_l96_snd_silenced_actor
-snd_draw                    = weapons\generic\siber_draw
-snd_holster                 = weapons\generic\ak_holster
 !snd_empty
 snd_idle_sprint             = rattle\sprint\sprint_rifle, 0.3, 1.0
 scripted_snd_ammo_check     = weapons\wpn_l96_new\l96_new_ammo_check
@@ -142,27 +150,26 @@ snd_shoot				    = wpn_l96m_wstfg_snd_shoot
 snd_shoot_actor			    = wpn_l96m_wstfg_snd_shoot_actor
 snd_silncer_shot            = wpn_l96msp_wstfg_snd_silenced
 snd_silncer_shot_actor      = wpn_l96msp_wstfg_snd_silenced_actor
-snd_draw                    = weapons\generic\siber_draw
-snd_holster                 = weapons\generic\ak_holster
 
 ; ![up_sect_fourta_remi700]
 ; !snd_silncer_shot
 
 ![wpn_remington700]
-snd_shoot				    = wpn_l96_snd_shoot
-snd_shoot_actor			    = wpn_l96_snd_shoot_actor
-snd_silncer_shot            = wpn_l96_snd_silenced
-snd_silncer_shot_actor      = wpn_l96_snd_silenced_actor
+snd_shoot				    = wpn_dvl_wstfg_snd_shoot
+snd_shoot_actor			    = wpn_dvl_wstfg_snd_shoot_actor
+snd_silncer_shot		    = wpn_dvlsp_wstfg_snd_silenced
+snd_silncer_shot_actor      = wpn_dvlsp_wstfg_snd_silenced_actor
 snd_draw					= weapons\generic\draw_slow
 snd_holster					= weapons\generic\holster_slow
+snd_idle_sprint             = rattle\sprint\sprint_rifle, 0.3, 1.0
 !snd_empty
 
 snd_bore                    = weapons\wpn_r700_new\l96_new_inspect
 snd_reload                  = weapons\wpn_r700_new\l96_new_reload
 snd_reload_empty		    = weapons\wpn_r700_new\l96_new_reload_empty
 snd_reload_misfire          = weapons\wpn_r700_new\l96_new_unjam
-snd_draw                    = weapons\generic\siber_draw
-snd_holster                 = weapons\generic\ak_holster
+snd_draw                    = weapons\wpn_r700_new\l96_new_draw
+snd_holster                 = weapons\wpn_r700_new\l96_new_holster
 
 ; snd_reload_misfire          = weapons\toz106\bolt
 ; ![wpn_remington700_hud]
@@ -187,6 +194,8 @@ snd_shoot				    = wpn_dvl_wstfg_snd_shoot
 snd_shoot_actor			    = wpn_dvl_wstfg_snd_shoot_actor
 snd_silncer_shot		    = wpn_dvlsp_wstfg_snd_silenced
 snd_silncer_shot_actor      = wpn_dvlsp_wstfg_snd_silenced_actor
+snd_idle_sprint             = rattle\sprint\sprint_rifle, 0.3, 1.0
+!snd_empty
 
 snd_bore                    = weapons\wpn_r700_new\l96_new_inspect
 snd_reload                  = weapons\wpn_r700_new\l96_new_reload
@@ -214,6 +223,8 @@ snd_shoot				    = wpn_dvlsp_wstfg_snd_silenced
 snd_shoot_actor			    = wpn_dvlsp_wstfg_snd_silenced_actor
 snd_silncer_shot		    = wpn_dvlsp_wstfg_snd_silenced
 snd_silncer_shot_actor      = wpn_dvlsp_wstfg_snd_silenced_actor
+snd_idle_sprint             = rattle\sprint\sprint_rifle, 0.3, 1.0
+!snd_empty
 
 snd_bore                    = weapons\wpn_r700_new\l96_new_inspect
 snd_reload                  = weapons\wpn_r700_new\l96_new_reload
