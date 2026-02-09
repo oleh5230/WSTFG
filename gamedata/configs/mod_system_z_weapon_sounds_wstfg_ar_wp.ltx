@@ -528,13 +528,13 @@ snd_switch_g                = weapons\gr\groza_gl_activate_scope
 !anm_switch_mode_w_gl
 
 ![wpn_vintorez_n1]
-snd_draw                    = weapon\fn2000\fn2000_deploy
-snd_holster                 = weapon\fn2000\fn2000_holster
+; snd_draw                    = weapon\fn2000\fn2000_deploy
+; snd_holster                 = weapon\fn2000\fn2000_holster
 !snd_empty
-![wpn_vintorez_n1_hud]
-anm_show             		= val_ac_draw, idle, 1.32
-anm_reload              	= vss_ac_reload, reload, 1.16
-anm_reload_empty        	= vss_ac_reload_empty, reload_empty, 1.16
+; ![wpn_vintorez_n1_hud]
+; anm_show             		= val_ac_draw, idle, 1.32
+; anm_reload              	= vss_ac_reload, reload, 1.16
+; anm_reload_empty        	= vss_ac_reload_empty, reload_empty, 1.16
 ; anm_reload_misfire			= val_ac_misfire, misfire, 1.16
 
 ![wpn_val_tac]
@@ -562,19 +562,33 @@ snd_bore                    = weapons\ak12custom\inspect_vgrip
 !snd_empty
 
 ![wpn_vintorez_isg]
-snd_reload				    = weapons\ak74m\ak74m_reload
-snd_reload_empty            = weapons\ak74m\ak74m_reload_empty
-snd_reload_misfire			= weapons\ak74m\ak74m_unjam
-snd_shoot_grenade			= weapons\gp25\gp25_grenshoot
-scripted_snd_shots_g        = weapons\gp25\gp25_tail, true
-snd_reload_grenade          = weapons\gp25\gp25_grenload_blnd
-snd_draw                    = weapons\ak74\ak74_draw
-snd_holster                 = weapons\ak74\ak74_holster
-snd_bore                    = weapons\ak74\ak74_inspect
+!snd_shoot_grenade
+snd_reload = weapons\vintorez_isg\reload
+snd_reload_empty = weapons\vintorez_isg\reload_empty
+snd_reload_misfire = weapons\vintorez_isg\unjam
+snd_switch_mode = weapons\vintorez_isg\firemode
+snd_bore = weapons\vintorez_isg\bored
+snd_reload_grenade = weapons\vintorez_isg\gl_reload
+snd_draw                    = weapons\generic\ak_draw
+snd_holster                 = weapons\generic\ak_holster
+
+scripted_snd_ammo_check             = weapons\vintorez_isg\ammocheck_plastic
+scripted_snd_ammo_check_empty       = weapons\vintorez_isg\ammocheck_plastic
+scripted_snd_ammo_check_w_gl        = weapons\vintorez_isg\ammocheck_plastic
+scripted_snd_ammo_check_empty_w_gl  = weapons\vintorez_isg\ammocheck_plastic
+; snd_reload				    = weapons\ak74m\ak74m_reload
+; snd_reload_empty            = weapons\ak74m\ak74m_reload_empty
+; snd_reload_misfire			= weapons\ak74m\ak74m_unjam
+; snd_shoot_grenade			= weapons\gp25\gp25_grenshoot
+; scripted_snd_shots_g        = weapons\gp25\gp25_tail, true
+; snd_reload_grenade          = weapons\gp25\gp25_grenload_blnd
+; snd_draw                    = weapons\ak74\ak74_draw
+; snd_holster                 = weapons\ak74\ak74_holster
+; snd_bore                    = weapons\ak74\ak74_inspect
 !snd_switch_mode
 !snd_empty
-![wpn_vintorez_isg_hud]
-!anm_switch_mode
+; ![wpn_vintorez_isg_hud]
+; !anm_switch_mode
 
 ![wpn_9a91]
 snd_bore                    = weapons\ak12custom\inspect_vgrip
