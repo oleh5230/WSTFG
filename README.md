@@ -27,7 +27,8 @@ It is a weapon audio overhaul based on [Dark Signal Weapon Audio](https://www.mo
 - **HarukaSai**: low ammo hint script
 - **Qudix**: aim rattle script
 - **bert**: casings falling sounds port
-- **The_aphrodite_child**: bullet crack sounds
+- **The_aphrodite_child**: bullet crack sounds, indoor tails
+- **Varian**: indoor configs
 - **JSRS Team**, **Shrike** and other weapon addon authors whose works are included in GAMMA
 
 Material sources include: Call of Duty Modern Warfare, Delta Force, Escape from Tarkov, Insurgency: Sandstorm, Ready or Not, SCP: 5K, rzen1th
