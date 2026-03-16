@@ -30,7 +30,7 @@ It is a weapon audio overhaul based on [Dark Signal Weapon Audio](https://www.mo
 - **The_aphrodite_child**: bullet crack sounds
 - **JSRS Team**, **Shrike** and other weapon addon authors whose works are included in GAMMA
 
-Material sources include: Call of Duty Modern Warfare, Delta Force, Escape from Tarkov, Insurgency: Sandstorm, Ready or Not, SCP: 5K
+Material sources include: Call of Duty Modern Warfare, Delta Force, Escape from Tarkov, Insurgency: Sandstorm, Ready or Not, SCP: 5K, rzen1th
 
 ## Version 1.1 -- 20.11.2023
 **Change log:**

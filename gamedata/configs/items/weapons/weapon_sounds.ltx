@@ -1,6 +1,6 @@
 ;-----------------------------------------------------------------------------------------------------------
-; Based on JSRS Port by Solarint
-; Reworked by oleh5230 for "Weapon Sounds Tweakes and Fixes for GAMMA"
+; addon: Weapon Sounds Tweaks and Fixes for GAMMA
+; author: oleh5230, indoor entries by Varian
 ;-----------------------------------------------------------------------------------------------------------
 
 #include "sound_layers\wpn_AR_sounds.ltx"
@@ -57,7 +57,7 @@ snd_holster                                                        = weapons\bin
 ; snd_zoomin                                                      = weapons\binoculars_zoomin
 ; snd_zoomout                                                     = weapons\binoculars_zoomout
 snd_shoot                                                          = $no_sound ;weapons\pistol_empty
-snd_shoot_indoor                                                   = $no_sound
+; snd_shoot_indoor                                                   = $no_sound
 snd_empty                                                          = $no_sound ;weapons\pistol_empty
 snd_reload                                                         = $no_sound ;weapons\pm_reload, 0.8
 found_snd                                                          = detectors\detector_8
@@ -117,34 +117,38 @@ snd_draw                                                           = weapons\aba
 snd_holster                                                        = weapons\rifle_holster
 snd_reload                                                         = weapons\abakan\abakan_reload
 snd_reload_empty                                                   = weapons\abakan\abakan_reload_empty
-snd_reload_grenade                                                 = weapons\gp30\gp30_grenload,    1.0, 0.8
+snd_reload_grenade                                                 = weapons\gp30\gp30_grenload, 1.0, 0.8
 snd_switch_mode                                                    = firemode\firemode_ar
 
 snd_shoot                                                          = wpn_abakan_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_abakan_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_abakan_snd_shoot
 snd_shoot_actor                                                    = wpn_abakan_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_abakan_snd_shoot_actor
 snd_shoot_first                                                    = weapons\_gunfire\stereo\abakan\prefire
 
 snd_silncer_shot                                                   = wpn_545_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_545_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_545_snd_silenced
 snd_silncer_shot_actor                                             = wpn_545_snd_silenced_actor
-snd_silncer_shoot_actor_first                                      = wpn_545_snd_silenced_actor
-snd_silncer_shot_actor_indoor                                      = weapons\_bolt\mono\m4_prefire
+snd_silncer_shot_actor_indoor                                      = int_wpn_545_snd_silenced_actor
+snd_silncer_shot_first                                             = weapons\_bolt\mono\m4_prefire
 
 ;-----------------------------------------------------------------------------------------------------------
 
 [wpn_aek971_sounds]:wpn_ak_sounds
 snd_reload                                                         = weapons\aek971\aek971_reload
+snd_switch_mode                                                    = firemode\firemode_ar
+
 snd_shoot                                                          = wpn_aek_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_aek_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_aek_snd_shoot
 snd_shoot_actor                                                    = wpn_aek_snd_shoot_actor
+snd_shoot_actor_indoor                                             = int_wpn_aek_snd_shoot_actor
+snd_shoot_first                                                    = weapons\_gunfire\stereo\aek\prefire
+
 snd_silncer_shot                                                   = wpn_545_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_545_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_545_snd_silenced
 snd_silncer_shot_actor                                             = wpn_545_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_545_snd_silenced_actor
-snd_switch_mode                                                    = firemode\firemode_ar
-snd_shoot_actor_indoor                                             = int_wpn_aek_snd_shoot_actor
+snd_silncer_shot_first                                             = weapons\_bolt\mono\m4_prefire
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -161,13 +165,13 @@ scripted_snd_shots_g                                               = weapons\gp2
 scripted_snd_shots_g_aim                                           = weapons\gp25\gp25_tail, true
 
 snd_shoot                                                          = wpn_akm_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_akm_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_akm_snd_shoot
 snd_shoot_actor                                                    = wpn_akm_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_akm_snd_shoot_actor
 snd_shoot_first                                                    = weapons\_gunfire\stereo\akm\prefire
 
 snd_silncer_shot                                                   = wpn_762_warsaw_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_762_warsaw_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_762_warsaw_snd_silenced
 snd_silncer_shot_actor                                             = wpn_762_warsaw_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_762_warsaw_snd_silenced_actor
 snd_silncer_shot_first                                             = weapons\_bolt\mono\m4_prefire
@@ -186,19 +190,14 @@ snd_bore                                                           = weapons\ak7
 
 ;-----------------------------------------------------------------------------------------------------------
 
-[wpn_ak12_sounds]:wpn_ak_sounds
+[wpn_ak12_sounds]:wpn_ak74_sounds
 snd_draw                                                           = weapons\ak\ak_draw
 snd_holster                                                        = weapons\rifle_holster
 snd_reload                                                         = weapons\ak12\ak12_reload
-snd_shoot                                                          = wpn_ak74_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_ak74_snd_shoot
-snd_shoot_actor                                                    = wpn_ak74_snd_shoot_actor
-snd_silncer_shot                                                   = wpn_545_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_545_snd_silenced
-snd_silncer_shot_actor                                             = wpn_545_snd_silenced_actor
-snd_silncer_shot_actor_indoor                                      = int_wpn_545_snd_silenced_actor
+snd_reload_empty                                                   = weapons\ak12\ak12_reload
+snd_reload_misfire                                                 = weapons\ak12\ak12_reload
+snd_bore                                                           = $no_sound
 snd_switch_mode                                                    = firemode\firemode_ar
-snd_shoot_actor_indoor                                             = int_wpn_ak74_snd_shoot_actor
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -209,13 +208,13 @@ snd_reload_misfire                                                 = weapons\ak7
 snd_bore                                                           = weapons\ak74\ak74_inspect
 
 snd_shoot                                                          = wpn_ak74_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_ak74_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_ak74_snd_shoot
 snd_shoot_actor                                                    = wpn_ak74_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_ak74_snd_shoot_actor
-snd_shoot_first                                                    = weapons\_gunfire\stereo\sk74\prefire
+snd_shoot_first                                                    = weapons\_gunfire\stereo\ak74\prefire
 
 snd_silncer_shot                                                   = wpn_545_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_545_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_545_snd_silenced
 snd_silncer_shot_actor                                             = wpn_545_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_545_snd_silenced_actor
 snd_silncer_shot_first                                             = weapons\_bolt\mono\m4_prefire
@@ -261,15 +260,17 @@ snd_holster                                                        = weapons\aps
 snd_reload                                                         = weapons\aps\aps_reload
 snd_reload_empty                                                   = weapons\aps\aps_reload_empty
 snd_reload_misfire                                                 = weapons\aps\aps_unjam
+snd_switch_mode                                                    = firemode\firemode_pistol
+
 snd_shoot                                                          = wpn_aps_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_aps_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_aps_snd_shoot
 snd_shoot_actor                                                    = wpn_aps_snd_shoot_actor
+snd_shoot_actor_indoor                                             = int_wpn_aps_snd_shoot_actor
+
 snd_silncer_shot                                                   = wpn_9_2_2_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_9_2_2_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_9_2_2_snd_silenced
 snd_silncer_shot_actor                                             = wpn_9_2_2_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_9_2_2_snd_silenced_actor
-snd_switch_mode                                                    = firemode\firemode_pistol
-snd_shoot_actor_indoor                                             = int_wpn_aps_snd_shoot_actor
 
 [wpn_apb_sounds]:wpn_aps_sounds
 
@@ -279,15 +280,17 @@ snd_shoot_actor_indoor                                             = int_wpn_aps
 snd_reload                                                         = weapons\ace21\ace21_reload
 snd_reload_empty                                                   = weapons\ace21\ace21_reload
 snd_reload_misfire                                                 = weapons\ace21\ace21_reload
+
 snd_shoot                                                          = wpn_ace21_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_ace21_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_ace21_snd_shoot
 snd_shoot_actor                                                    = wpn_ace21_snd_shoot_actor
-snd_silncer_shot                                                   = wpn_sg550_wstfg_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_sg550_wstfg_snd_silenced
-snd_silncer_shot_actor                                             = wpn_sg550_wstfg_snd_silenced_actor
-snd_silncer_shot_actor_indoor                                      = int_wpn_sg550_wstfg_snd_silenced_actor
 snd_shoot_actor_indoor                                             = int_wpn_ace21_snd_shoot_actor
 snd_shoot_first                                                    = weapons\_gunfire\stereo\ace21\prefire
+
+snd_silncer_shot                                                   = wpn_sg550_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_sg550_wstfg_snd_silenced
+snd_silncer_shot_actor                                             = wpn_sg550_wstfg_snd_silenced_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_sg550_wstfg_snd_silenced_actor
 snd_silncer_shot_first                                             = weapons\_bolt\mono\m4_prefire
 
 ;-----------------------------------------------------------------------------------------------------------
@@ -301,13 +304,13 @@ snd_empty                                                          = weapons\_dr
 snd_empty_first                                                    = weapons\_dryfire\bullpup_poly_hammer
 
 snd_shoot                                                          = wpn_aug_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_aug_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_aug_snd_shoot
 snd_shoot_actor                                                    = wpn_aug_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_aug_snd_shoot_actor
 snd_shoot_first                                                    = weapons\_gunfire\stereo\aug\prefire
 
 snd_silncer_shot                                                   = wpn_aug_wstfg_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_aug_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_aug_wstfg_snd_silenced
 snd_silncer_shot_actor                                             = wpn_aug_wstfg_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_aug_wstfg_snd_silenced_actor
 snd_silncer_shot_first                                             = weapons\_bolt\mono\m4_prefire
@@ -317,17 +320,31 @@ snd_draw                                                           = weapons\aug
 snd_reload                                                         = weapons\aug\aug_a3_reload
 snd_reload_grenade                                                 = weapons\aug\aug_a3_reload_grenade
 
+[wpn_aug_xs_sounds]:wpn_aug_sounds
+snd_shoot                                                          = wpn_aug9_wstfg_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_aug9_wstfg_snd_shoot
+snd_shoot_actor                                                    = wpn_aug9_wstfg_snd_shoot_actor
+snd_shoot_actor_indoor                                             = int_wpn_aug9_wstfg_snd_shoot_actor
+snd_shoot_first                                                    = weapons\_bolt\mono\mp5_prefire
+
+snd_silncer_shot                                                   = wpn_smg9_2_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_smg9_2_snd_silenced
+snd_silncer_shot_actor                                             = wpn_smg9_2_snd_silenced_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_smg9_2_snd_silenced_actor
+snd_silncer_shot_first                                             = weapons\_bolt\mono\mp5_prefire
+
 ;-----------------------------------------------------------------------------------------------------------
 
 [wpn_ash12_sounds]:wpn_vssk_sounds
 snd_shoot                                                          = wpn_ash12_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_ash12_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_ash12_snd_shoot
 snd_shoot_actor                                                    = wpn_ash12_snd_shoot_actor
+snd_shoot_actor_indoor                                             = int_wpn_ash12_snd_shoot_actor
+
 snd_silncer_shot                                                   = wpn_ash12_wstfg_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_ash12_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_ash12_wstfg_snd_silenced
 snd_silncer_shot_actor                                             = wpn_ash12_wstfg_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_ash12_wstfg_snd_silenced_actor
-snd_shoot_actor_indoor                                             = int_wpn_ash12_snd_shoot_actor
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -336,17 +353,21 @@ snd_draw                                                           = weapons\mp5
 snd_holster                                                        = weapons\pistol_holster
 snd_reload                                                         = weapons\bizon\bizon_reload
 snd_reload_empty                                                   = weapons\bizon\bizon_reload
-snd_shoot                                                          = wpn_bizon_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_bizon_snd_shoot
-snd_shoot_actor                                                    = wpn_bizon_snd_shoot_actor
-snd_silncer_shot                                                   = wpn_pp19_wstfg_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_pp19_wstfg_snd_silenced
-snd_silncer_shot_actor                                             = wpn_pp19_wstfg_snd_silenced_actor
-snd_silncer_shot_actor_indoor                                      = int_wpn_pp19_wstfg_snd_silenced_actor
 snd_switch_mode                                                    = weapons\ak74\ak74_switch_mode_quick
 snd_empty                                                          = weapons\_dryfire\ak_trigger
 snd_empty_first                                                    = weapons\_dryfire\bizon_hammer
+
+snd_shoot                                                          = wpn_bizon_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_bizon_snd_shoot
+snd_shoot_actor                                                    = wpn_bizon_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_bizon_snd_shoot_actor
+snd_shoot_first                                                    = weapons\_bolt\mono\mp5_prefire
+
+snd_silncer_shot                                                   = wpn_pp19_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_pp19_wstfg_snd_silenced
+snd_silncer_shot_actor                                             = wpn_pp19_wstfg_snd_silenced_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_pp19_wstfg_snd_silenced_actor
+snd_silncer_shot_first                                             = weapons\_bolt\mono\mp5_prefire
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -356,17 +377,19 @@ snd_holster                                                        = weapons\pis
 snd_reload                                                         = weapons\beretta\beretta_reload
 snd_reload_empty                                                   = weapons\beretta\beretta_reload_empty
 snd_close                                                          = weapons\beretta\beretta_close
-snd_shoot                                                          = wpn_beretta_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_beretta_snd_shoot
-snd_shoot_actor                                                    = wpn_beretta_snd_shoot_actor
-snd_silncer_shot                                                   = wpn_beretta_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_beretta_snd_silenced
-snd_silncer_shot_actor                                             = wpn_beretta_snd_silenced_actor
-snd_silncer_shot_actor_indoor                                      = int_wpn_beretta_snd_silenced_actor
 snd_switch_mode                                                    = firemode\firemode_pistol
 snd_empty                                                          = weapons\_dryfire\1911_trigger
 snd_empty_first                                                    = $no_sound
+
+snd_shoot                                                          = wpn_beretta_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_beretta_snd_shoot
+snd_shoot_actor                                                    = wpn_beretta_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_beretta_snd_shoot_actor
+
+snd_silncer_shot                                                   = wpn_beretta_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_beretta_snd_silenced
+snd_silncer_shot_actor                                             = wpn_beretta_snd_silenced_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_beretta_snd_silenced_actor
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -376,15 +399,16 @@ snd_holster                                                        = weapons\gen
 snd_reload_1                                                       = weapons\bm16\bm16_reload_l_shorty
 snd_reload_misfire                                                 = weapons\bm16\bm16_unjam_shorty
 snd_reload                                                         = weapons\bm16\bm16_reload_lr_shorty
-snd_shoot                                                          = wpn_bm16_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_bm16_snd_shoot
-snd_shoot_actor                                                    = wpn_bm16_snd_shoot_actor
 snd_empty                                                          = weapons\_dryfire\shotgun_trigger
 snd_empty_first                                                    = $no_sound
+
+snd_shoot                                                          = wpn_bm16_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_bm16_snd_shoot
+snd_shoot_actor                                                    = wpn_bm16_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_bm16_snd_shoot_actor
 
 [wpn_bm16full_sounds]:wpn_bm16_sounds
-snd_shoot_indoor                                                   = int_wpn_bm16_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_bm16_snd_shoot
 snd_reload                                                         = weapons\bm16\bm16_reload_lr
 snd_reload_1                                                       = weapons\bm16\bm16_reload_l
 snd_reload_misfire                                                 = weapons\bm16\bm16_unjam
@@ -397,37 +421,50 @@ snd_holster                                                        = weapons\pis
 snd_reload                                                         = weapons\colt\colt_reload
 snd_reload_empty                                                   = weapons\colt\colt_reload_empty
 snd_close                                                          = weapons\colt\colt_close
-snd_shoot                                                          = wpn_1911_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_1911_snd_shoot
-snd_shoot_actor                                                    = wpn_1911_snd_shoot_actor
-snd_silncer_shot                                                   = wpn_45_1_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_45_1_snd_silenced
-snd_silncer_shot_actor                                             = wpn_45_1_snd_silenced_actor
-snd_silncer_shot_actor_indoor                                      = int_wpn_45_1_snd_silenced_actor
 snd_switch_mode                                                    = firemode\firemode_pistol
 snd_empty                                                          = weapons\_dryfire\1911_trigger
 snd_empty_first                                                    = $no_sound
+
+snd_shoot                                                          = wpn_1911_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_1911_snd_shoot
+snd_shoot_actor                                                    = wpn_1911_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_1911_snd_shoot_actor
+
+snd_silncer_shot                                                   = wpn_45_1_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_45_1_snd_silenced
+snd_silncer_shot_actor                                             = wpn_45_1_snd_silenced_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_45_1_snd_silenced_actor
 
 [wpn_kimber_sounds]:wpn_colt1911_sounds
 snd_reload                                                         = weapons\colt\kimber_reload
 snd_reload_empty                                                   = weapons\colt\kimber_reload_empty
 
+[wpn_coonan_sounds]:wpn_colt1911_sounds
+snd_shoot                                                          = wpn_coonan_wstfg_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_coonan_wstfg_snd_shoot
+snd_shoot_actor                                                    = wpn_coonan_wstfg_snd_shoot_actor
+snd_shoot_actor_indoor                                             = int_wpn_coonan_wstfg_snd_shoot_actor
+
+snd_silncer_shot                                                   = wpn_357_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_357_snd_silenced
+snd_silncer_shot_actor                                             = wpn_357_snd_silenced_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_357_snd_silenced_actor
+
 ;-----------------------------------------------------------------------------------------------------------
 
 [wpn_cz75_sounds]:wpn_beretta_sounds
-snd_shoot_indoor                                                   = int_wpn_beretta_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_beretta_snd_shoot
 snd_reload                                                         = weapons\cz75\cz75_reload
 snd_reload_empty                                                   = weapons\cz75\cz75_reload_empty
 snd_silncer_shot                                                   = wpn_9_1_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_9_1_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_9_1_snd_silenced
 snd_silncer_shot_actor                                             = wpn_9_1_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_9_1_snd_silenced_actor
 
 [wpn_cz75_auto_sounds]:wpn_cz75_sounds
-snd_silncer_shot_indoor                                            = int_wpn_9_1_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_9_1_snd_silenced
 snd_silncer_shot_actor_indoor                                      = int_wpn_9_1_snd_silenced_actor
-snd_shoot_indoor                                                   = int_wpn_beretta_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_beretta_snd_shoot
 snd_reload                                                         = weapons\cz75\cz75_auto_reload
 snd_reload_empty                                                   = weapons\cz75\cz75_auto_reload
 
@@ -438,14 +475,16 @@ snd_draw                                                           = weapons\cz5
 snd_reload                                                         = weapons\cz52\cz52_reload
 snd_reload_empty                                                   = weapons\cz52\cz52_reload_empty
 snd_reload_misfire                                                 = weapons\cz52\cz52_unjam
+
 snd_shoot                                                          = wpn_gsh18_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_gsh18_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_gsh18_snd_shoot
 snd_shoot_actor                                                    = wpn_gsh18_snd_shoot_actor
+snd_shoot_actor_indoor                                             = int_wpn_gsh18_snd_shoot_actor
+
 snd_silncer_shot                                                   = wpn_9_1_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_9_1_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_9_1_snd_silenced
 snd_silncer_shot_actor                                             = wpn_9_1_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_9_1_snd_silenced_actor
-snd_shoot_actor_indoor                                             = int_wpn_gsh18_snd_shoot_actor
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -455,17 +494,19 @@ snd_holster                                                        = weapons\pis
 snd_reload                                                         = weapons\de\de_reload
 snd_reload_empty                                                   = weapons\de\de_reload_empty
 snd_close                                                          = weapons\de\de_close
-snd_shoot                                                          = wpn_deagle_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_deagle_snd_shoot
-snd_shoot_actor                                                    = wpn_deagle_snd_shoot_actor
-snd_silncer_shot                                                   = wpn_357_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_357_snd_silenced
-snd_silncer_shot_actor                                             = wpn_357_snd_silenced_actor
-snd_silncer_shot_actor_indoor                                      = int_wpn_357_snd_silenced_actor
 snd_switch_mode                                                    = firemode\firemode_pistol
 snd_empty                                                          = weapons\_dryfire\1911_trigger
 snd_empty_first                                                    = $no_sound
+
+snd_shoot                                                          = wpn_deagle_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_deagle_snd_shoot
+snd_shoot_actor                                                    = wpn_deagle_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_deagle_snd_shoot_actor
+
+snd_silncer_shot                                                   = wpn_357_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_357_snd_silenced
+snd_silncer_shot_actor                                             = wpn_357_snd_silenced_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_357_snd_silenced_actor
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -478,13 +519,13 @@ snd_empty                                                          = weapons\_dr
 snd_empty_first                                                    = weapons\_dryfire\scar_hammer
 
 snd_shoot                                                          = wpn_fal_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_fal_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_fal_snd_shoot
 snd_shoot_actor                                                    = wpn_fal_snd_shoot_actor
-snd_shoot_first                                                    = weapons\_gunfire\stereo\fal\prefire
 snd_shoot_actor_indoor                                             = int_wpn_fal_snd_shoot_actor
+snd_shoot_first                                                    = weapons\_gunfire\stereo\fal\prefire
 
 snd_silncer_shot                                                   = wpn_fal_wstfg_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_fal_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_fal_wstfg_snd_silenced
 snd_silncer_shot_actor                                             = wpn_fal_wstfg_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_fal_wstfg_snd_silenced_actor
 
@@ -495,17 +536,19 @@ snd_draw                                                           = weapons\gen
 snd_holster                                                        = weapons\rifle_holster
 snd_reload                                                         = weapons\famas\famas_reload
 snd_reload_empty                                                   = weapons\famas\famas_reload
-snd_shoot                                                          = wpn_famas_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_famas_snd_shoot
-snd_shoot_actor                                                    = wpn_famas_snd_shoot_actor
-snd_silncer_shot                                                   = wpn_556_c_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_556_c_snd_silenced
-snd_silncer_shot_actor                                             = wpn_556_c_snd_silenced_actor
-snd_silncer_shot_actor_indoor                                      = int_wpn_556_c_snd_silenced_actor
 snd_switch_mode                                                    = firemode\firemode_vss
 snd_empty                                                          = weapons\_dryfire\bullpup_metal_trigger
 snd_empty_first                                                    = weapons\_dryfire\bullpup_metal_hammer
+
+snd_shoot                                                          = wpn_famas_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_famas_snd_shoot
+snd_shoot_actor                                                    = wpn_famas_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_famas_snd_shoot_actor
+
+snd_silncer_shot                                                   = wpn_556_c_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_556_c_snd_silenced
+snd_silncer_shot_actor                                             = wpn_556_c_snd_silenced_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_556_c_snd_silenced_actor
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -515,16 +558,18 @@ snd_close                                                          = weapons\hps
 snd_reload                                                         = weapons\glock\glock_reload
 snd_reload_empty                                                   = weapons\glock\glock_reload_empty
 snd_close                                                          = weapons\walther\walther_close
-snd_shoot                                                          = wpn_cz75_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_cz75_snd_shoot
-snd_shoot_actor                                                    = wpn_cz75_snd_shoot_actor
-snd_silncer_shot                                                   = wpn_57_1_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_57_1_snd_silenced
-snd_silncer_shot_actor                                             = wpn_57_1_snd_silenced_actor
-snd_silncer_shot_actor_indoor                                      = int_wpn_57_1_snd_silenced_actor
 snd_empty                                                          = weapons\_dryfire\1911_trigger
 snd_empty_first                                                    = weapons\_dryfire\glock_hammer
+
+snd_shoot                                                          = wpn_cz75_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_cz75_snd_shoot
+snd_shoot_actor                                                    = wpn_cz75_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_cz75_snd_shoot_actor
+
+snd_silncer_shot                                                   = wpn_57_1_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_57_1_snd_silenced
+snd_silncer_shot_actor                                             = wpn_57_1_snd_silenced_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_57_1_snd_silenced_actor
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -532,18 +577,21 @@ snd_shoot_actor_indoor                                             = int_wpn_cz7
 snd_draw                                                           = weapons\fn2000\fn2000_draw
 snd_holster                                                        = weapons\rifle_holster
 snd_reload                                                         = weapons\fn2000\fn2000_reload
-snd_shoot                                                          = wpn_f2000_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_f2000_snd_shoot
-snd_shoot_actor                                                    = wpn_f2000_snd_shoot_actor
-snd_silncer_shot                                                   = wpn_f2000_wstfg_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_f2000_wstfg_snd_silenced
-snd_silncer_shot_actor                                             = wpn_f2000_wstfg_snd_silenced_actor
-snd_silncer_shot_actor_indoor                                      = int_wpn_f2000_wstfg_snd_silenced_actor
-snd_silncer_shot_actor_first                                       = wpn_f2000_wstfg_snd_silenced_actor_first
 snd_switch_mode                                                    = firemode\firemode_poly
 snd_empty                                                          = weapons\_dryfire\aug_trigger
 snd_empty_first                                                    = weapons\_dryfire\bullpup_poly_hammer
+
+snd_shoot                                                          = wpn_f2000_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_f2000_snd_shoot
+snd_shoot_actor                                                    = wpn_f2000_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_f2000_snd_shoot_actor
+snd_shoot_first                                                    = weapons\_gunfire\stereo\f2000\prefire
+
+snd_silncer_shot                                                   = wpn_f2000_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_f2000_wstfg_snd_silenced
+snd_silncer_shot_actor                                             = wpn_f2000_wstfg_snd_silenced_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_f2000_wstfg_snd_silenced_actor
+snd_silncer_shot_first                                             = weapons\_bolt\mono\m4_prefire
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -552,19 +600,21 @@ snd_draw                                                           = weapons\sig
 snd_holster                                                        = weapons\rifle_holster
 snd_reload                                                         = weapons\ak101\ak101_reload
 snd_reload_empty                                                   = weapons\ak101\ak101_reload
-snd_shoot                                                          = wpn_ace21_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_ace21_snd_shoot
-snd_shoot_actor                                                    = wpn_ace21_snd_shoot_actor
-snd_shoot_first                                                    = weapons\_gunfire\stereo\ace21\prefire
-snd_silncer_shot                                                   = wpn_sg550_wstfg_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_sg550_wstfg_snd_silenced
-snd_silncer_shot_actor                                             = wpn_sg550_wstfg_snd_silenced_actor
-snd_silncer_shot_actor_indoor                                      = int_wpn_sg550_wstfg_snd_silenced_actor
-snd_silncer_shot_first                                             = weapons\_bolt\mono\m4_prefire
 snd_switch_mode                                                    = firemode\firemode_ar
 snd_empty                                                          = weapons\_dryfire\ar_trigger
 snd_empty_first                                                    = weapons\_dryfire\ar_hammer
+
+snd_shoot                                                          = wpn_ace21_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_ace21_snd_shoot
+snd_shoot_actor                                                    = wpn_ace21_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_ace21_snd_shoot_actor
+snd_shoot_first                                                    = weapons\_gunfire\stereo\ace21\prefire
+
+snd_silncer_shot                                                   = wpn_sg550_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_sg550_wstfg_snd_silenced
+snd_silncer_shot_actor                                             = wpn_sg550_wstfg_snd_silenced_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_sg550_wstfg_snd_silenced_actor
+snd_silncer_shot_first                                             = weapons\_bolt\mono\m4_prefire
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -574,14 +624,16 @@ snd_holster                                                        = weapons\gen
 snd_reload                                                         = weapons\grach\grach_reload
 snd_reload_empty                                                   = weapons\grach\grach_reload_empty
 snd_reload_misfire                                                 = weapons\tt33\tt33_unjam
+
 snd_shoot                                                          = wpn_fort_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_fort_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_fort_snd_shoot
 snd_shoot_actor                                                    = wpn_fort_snd_shoot_actor
+snd_shoot_actor_indoor                                             = int_wpn_fort_snd_shoot_actor
+
 snd_silncer_shot                                                   = wpn_9_1_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_9_1_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_9_1_snd_silenced
 snd_silncer_shot_actor                                             = wpn_9_1_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_9_1_snd_silenced_actor
-snd_shoot_actor_indoor                                             = int_wpn_fort_snd_shoot_actor
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -590,17 +642,19 @@ snd_draw                                                           = weapons\ak\
 snd_holster                                                        = weapons\rifle_holster
 snd_reload                                                         = weapons\galil\galil_reload
 snd_reload_empty                                                   = weapons\galil\galil_reload
-snd_shoot                                                          = wpn_galil_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_galil_snd_shoot
-snd_shoot_actor                                                    = wpn_galil_snd_shoot_actor
-snd_silncer_shot                                                   = wpn_galil_wstfg_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_galil_wstfg_snd_silenced
-snd_silncer_shot_actor                                             = wpn_galil_wstfg_snd_silenced_actor
-snd_silncer_shot_actor_indoor                                      = int_wpn_galil_wstfg_snd_silenced_actor
 snd_switch_mode                                                    = weapons\ak74\ak74_switch_mode_quick
 snd_empty                                                          = weapons\_dryfire\ak_trigger
 snd_empty_first                                                    = weapons\_dryfire\ak_hammer
+
+snd_shoot                                                          = wpn_galil_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_galil_snd_shoot
+snd_shoot_actor                                                    = wpn_galil_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_galil_snd_shoot_actor
+
+snd_silncer_shot                                                   = wpn_galil_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_galil_wstfg_snd_silenced
+snd_silncer_shot_actor                                             = wpn_galil_wstfg_snd_silenced_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_galil_wstfg_snd_silenced_actor
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -610,31 +664,33 @@ snd_holster                                                        = weapons\pis
 snd_reload                                                         = weapons\glock\glock_reload
 snd_reload_empty                                                   = weapons\glock\glock_reload_empty
 snd_close                                                          = weapons\walther\walther_close
-snd_shoot                                                          = wpn_glock_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_glock_snd_shoot
-snd_shoot_actor                                                    = wpn_glock_snd_shoot_actor
-snd_silncer_shot                                                   = wpn_9_3_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_9_3_snd_silenced
-snd_silncer_shot_actor                                             = wpn_9_3_snd_silenced_actor
-snd_silncer_shot_actor_indoor                                      = int_wpn_9_3_snd_silenced_actor
 snd_switch_mode                                                    = firemode\firemode_pistol
 snd_empty                                                          = weapons\_dryfire\glock_trigger
 snd_empty_first                                                    = weapons\_dryfire\glock_hammer
+
+snd_shoot                                                          = wpn_glock_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_glock_snd_shoot
+snd_shoot_actor                                                    = wpn_glock_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_glock_snd_shoot_actor
+
+snd_silncer_shot                                                   = wpn_9_3_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_9_3_snd_silenced
+snd_silncer_shot_actor                                             = wpn_9_3_snd_silenced_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_9_3_snd_silenced_actor
 
 ;-----------------------------------------------------------------------------------------------------------
 
 [wpn_gsh18_sounds]:wpn_beretta_sounds
-snd_shoot_indoor                                                   = int_wpn_beretta_snd_shoot
 snd_draw                                                           = weapons\walther\walther_draw
 snd_holster                                                        = weapons\pistol_holster
 snd_reload                                                         = weapons\walther\walther_reload
 snd_reload_empty                                                   = weapons\walther\walther_reload_empty
+snd_empty_first                                                    = weapons\_dryfire\glock_hammer
+
 snd_silncer_shot                                                   = wpn_9_1_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_9_1_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_9_1_snd_silenced
 snd_silncer_shot_actor                                             = wpn_9_1_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_9_1_snd_silenced_actor
-snd_empty_first                                                    = weapons\_dryfire\glock_hammer
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -643,10 +699,10 @@ snd_draw                                                           = weapons\mp5
 snd_holster                                                        = weapons\rifle_holster
 snd_reload                                                         = weapons\g3\g3_reload
 snd_shoot                                                          = wpn_g3_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_g3_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_g3_snd_shoot
 snd_shoot_actor                                                    = wpn_g3_snd_shoot_actor
 snd_silncer_shot                                                   = wpn_fal_wstfg_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_fal_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_fal_wstfg_snd_silenced
 snd_silncer_shot_actor                                             = wpn_fal_wstfg_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_fal_wstfg_snd_silenced_actor
 snd_switch_mode                                                    = firemode\firemode_mp5
@@ -673,13 +729,13 @@ snd_empty                                                          = weapons\_dr
 snd_empty_first                                                    = weapons\_dryfire\sig_hammer
 
 snd_shoot                                                          = wpn_g36_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_g36_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_g36_snd_shoot
 snd_shoot_actor                                                    = wpn_g36_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_g36_snd_shoot_actor
 snd_shoot_first                                                    = weapons\_gunfire\stereo\g36\prefire
 
 snd_silncer_shot                                                   = wpn_g36_wstfg_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_g36_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_g36_wstfg_snd_silenced
 snd_silncer_shot_actor                                             = wpn_g36_wstfg_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_g36_wstfg_snd_silenced_actor
 snd_silncer_shot_first                                             = weapons\_bolt\mono\m4_prefire
@@ -698,16 +754,20 @@ snd_reload                                                         = weapons\g36
 
 [wpn_gauss_snd_shoot]
 snd_1_layer                                                        = weapons\gauss\gauss_shot
-snd_2_layer                                                        = weapons\gauss\gauss_wave
-snd_3_layer                                                        = weapons\_distance_shooting_mid\gauss_distant
-snd_4_layer                                                        = weapons\_distance_shooting_far\gauss_distant
+snd_2_layer                                                        = weapons\_distance_shooting_mid\gauss_distant
+snd_3_layer                                                        = weapons\_distance_shooting_far\gauss_distant
+
+[wpn_gauss_snd_shoot_actor]
+snd_1_layer                                                        = weapons\gauss\gauss_shot
 
 [wpn_gauss_sounds]:base_sounds
 snd_draw                                                           = weapons\gauss\gauss_draw
 snd_holster                                                        = weapons\gauss\gauss_holster
 snd_reload                                                         = weapons\gauss\gauss_reload
 snd_shoot                                                          = wpn_gauss_snd_shoot
-snd_shoot_indoor                                                   = wpn_gauss_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_gauss_snd_shoot
+snd_shoot_actor                                                    = wpn_gauss_snd_shoot_actor
+snd_shoot_actor_indoor                                             = int_wpn_gauss_snd_shoot_actor
 snd_empty                                                          = weapons\gauss\gauss_empty
 snd_empty_first                                                    = $no_sound
 
@@ -717,11 +777,11 @@ snd_empty_first                                                    = $no_sound
 snd_draw                                                           = weapons\groza\groza_draw
 snd_holster                                                        = weapons\rifle_holster
 snd_shoot                                                          = wpn_groza_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_groza_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_groza_snd_shoot
 snd_shoot_actor                                                    = wpn_groza_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_groza_snd_shoot_actor
 snd_silncer_shot                                                   = wpn_939_snd_shoot
-snd_silncer_shot_indoor                                            = int_wpn_939_snd_shoot
+; snd_silncer_shot_indoor                                            = int_wpn_939_snd_shoot
 snd_silncer_shot_actor                                             = wpn_939_snd_shoot_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_939_snd_shoot_actor
 snd_reload                                                         = weapons\groza\groza_reload
@@ -757,10 +817,10 @@ snd_reload                                                         = weapons\hps
 snd_reload_empty                                                   = weapons\hpsa\hpsa_reload_empty
 snd_close                                                          = weapons\hpsa\hpsa_close
 snd_shoot                                                          = wpn_beretta_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_beretta_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_beretta_snd_shoot
 snd_shoot_actor                                                    = wpn_beretta_snd_shoot_actor
 snd_silncer_shot                                                   = wpn_9_1_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_9_1_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_9_1_snd_silenced
 snd_silncer_shot_actor                                             = wpn_9_1_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_9_1_snd_silenced_actor
 snd_shoot_actor_indoor                                             = int_wpn_beretta_snd_shoot_actor
@@ -775,7 +835,7 @@ snd_open_weapon                                                    = weapons\k98
 snd_add_cartridge                                                  = weapons\k98\kar98k_reload
 snd_close_weapon                                                   = weapons\k98\kar98k_reload_end
 snd_shoot                                                          = wpn_k98_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_k98_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_k98_snd_shoot
 snd_shoot_actor                                                    = wpn_k98_snd_shoot_actor
 snd_empty                                                          = weapons\_dryfire\sniper_trigger
 snd_empty_first                                                    = weapons\_dryfire\mosin_hammer
@@ -792,16 +852,32 @@ snd_reload_misfire                                                 = weapons\kip
 snd_switch_mode                                                    = firemode\firemode_smg, 1.0, 0.2
 
 snd_shoot                                                          = wpn_vz61_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_vz61_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_vz61_snd_shoot
 snd_shoot_actor                                                    = wpn_vz61_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_vz61_snd_shoot_actor
 snd_shoot_first                                                    = weapons\_bolt\mono\mp5_prefire
 
 snd_silncer_shot                                                   = wpn_smg9_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_smg9_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_smg9_snd_silenced
 snd_silncer_shot_actor                                             = wpn_smg9_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_smg9_snd_silenced_actor
 snd_silncer_shot_first                                             = weapons\_bolt\mono\mp5_prefire
+
+;-----------------------------------------------------------------------------------------------------------
+
+[wpn_ks23_sounds]:base_sounds
+snd_empty                                                          = weapons\_dryfire\rem870_trigger
+snd_empty_first                                                    = weapons\_dryfire\shotgun_hammer
+
+snd_shoot                                                          = wpn_ks23_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_ks23_snd_shoot
+snd_shoot_actor                                                    = wpn_ks23_snd_shoot_actor
+snd_shoot_actor_indoor                                             = int_wpn_ks23_snd_shoot_actor
+
+snd_silncer_shot                                                   = wpn_ks23_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_ks23_wstfg_snd_silenced
+snd_silncer_shot_actor                                             = wpn_ks23_wstfg_snd_silenced_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_ks23_wstfg_snd_silenced_actor
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -816,21 +892,18 @@ snd_empty                                                          = weapons\_dr
 snd_empty_first                                                    = weapons\_dryfire\bullpup_metal_hammer
 
 snd_shoot                                                          = wpn_l85_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_l85_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_l85_snd_shoot
 snd_shoot_actor                                                    = wpn_l85_snd_shoot_actor
-snd_shoot_first                                                    = weapons\_gunfire\stereo\l85\prefire
 snd_shoot_actor_indoor                                             = int_wpn_l85_snd_shoot_actor
+snd_shoot_first                                                    = weapons\_gunfire\stereo\l85\prefire
 
 snd_silncer_shot                                                   = wpn_aug_wstfg_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_aug_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_aug_wstfg_snd_silenced
 snd_silncer_shot_actor                                             = wpn_aug_wstfg_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_aug_wstfg_snd_silenced_actor
 snd_silncer_shot_first                                             = weapons\_bolt\mono\m4_prefire
 
 [wpn_mtar21_sounds]:wpn_l85_sounds
-snd_silncer_shot_indoor                                            = int_wpn_aug_wstfg_snd_silenced
-snd_silncer_shot_actor_indoor                                      = int_wpn_aug_wstfg_snd_silenced_actor
-snd_shoot_indoor                                                   = int_wpn_l85_snd_shoot
 snd_reload                                                         = weapons\mtar21\mtar21_reload
 snd_reload_empty                                                   = weapons\mtar21\mtar21_reload
 snd_reload_misfire                                                 = weapons\mtar21\mtar21_reload
@@ -839,15 +912,32 @@ snd_reload_misfire                                                 = weapons\mta
 
 ;-----------------------------------------------------------------------------------------------------------
 
+[wpn_mdr_sounds]:base_sounds
+snd_switch_mode                                                    = firemode\firemode_ar
+snd_empty                                                          = weapons\_dryfire\bullpup_metal_trigger
+snd_empty_first                                                    = weapons\_dryfire\bullpup_metal_hammer
+
+snd_shoot                                                          = wpn_mdr_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_mdr_snd_shoot
+snd_shoot_actor                                                    = wpn_mdr_snd_shoot_actor
+snd_shoot_actor_indoor                                             = int_wpn_mdr_snd_shoot_actor
+
+snd_silncer_shot                                                   = wpn_mdr_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_mdr_wstfg_snd_silenced
+snd_silncer_shot_actor                                             = wpn_mdr_wstfg_snd_silenced_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_mdr_wstfg_snd_silenced_actor
+
+;-----------------------------------------------------------------------------------------------------------
+
 [wpn_l96a1_sounds]:base_sounds
 snd_draw                                                           = weapons\generic_draw
 snd_holster                                                        = weapons\sniper_holster
 snd_reload                                                         = weapons\l96a1\l96a1_reload
 snd_shoot                                                          = wpn_l96_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_l96_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_l96_snd_shoot
 snd_shoot_actor                                                    = wpn_l96_snd_shoot_actor
 snd_silncer_shot                                                   = wpn_big_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_big_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_big_snd_silenced
 snd_silncer_shot_actor                                             = wpn_big_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_big_snd_silenced_actor
 snd_empty                                                          = weapons\_dryfire\sniper_trigger
@@ -869,16 +959,16 @@ snd_empty                                                          = weapons\_dr
 snd_empty_first                                                    = weapons\_dryfire\ar_hammer
 
 snd_shoot                                                          = wpn_m4_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_m4_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_m4_snd_shoot
 snd_shoot_actor                                                    = wpn_m4_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_m4_snd_shoot_actor
-snd_shoot_first                                                   = weapons\_gunfire\stereo\m4\prefire
+snd_shoot_first                                                    = weapons\_gunfire\stereo\m4\prefire
 
 snd_silncer_shot                                                   = wpn_556_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_556_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_556_snd_silenced
 snd_silncer_shot_actor                                             = wpn_556_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_556_snd_silenced_actor
-snd_silncer_shot_first                                            = weapons\_bolt\mono\m4_prefire
+snd_silncer_shot_first                                             = weapons\_bolt\mono\m4_prefire
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -893,15 +983,76 @@ snd_switch                                                         = weapons\m4a
 
 ;-----------------------------------------------------------------------------------------------------------
 
+[wpn_mk47_sounds]:wpn_m4_sounds
+snd_shoot                                                          = wpn_mk47_wstfg_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_mk47_wstfg_snd_shoot
+snd_shoot_actor                                                    = wpn_mk47_wstfg_snd_shoot_actor
+snd_shoot_actor_indoor                                             = int_wpn_mk47_wstfg_snd_shoot_actor
+snd_shoot_first                                                    = weapons\_gunfire\stereo\m4\prefire
+
+snd_silncer_shot                                                   = wpn_mk47_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_mk47_wstfg_snd_silenced
+snd_silncer_shot_actor                                             = wpn_mk47_wstfg_snd_silenced_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_mk47_wstfg_snd_silenced_actor
+snd_silncer_shot_first                                             = weapons\_bolt\mono\m4_prefire
+
+;-----------------------------------------------------------------------------------------------------------
+
+[wpn_mk18_sounds]:base_sounds
+snd_empty                                                          = weapons\_dryfire\ar_trigger
+snd_empty_first                                                    = weapons\_dryfire\ar_hammer
+
+snd_shoot                                                          = wpn_mk18_wstfg_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_mk18_wstfg_snd_shoot
+snd_shoot_actor                                                    = wpn_mk18_wstfg_snd_shoot_actor
+snd_shoot_actor_indoor                                             = int_wpn_mk18_wstfg_snd_shoot_actor
+snd_shoot_first                                                    = weapons\_gunfire\stereo\m4\prefire
+
+snd_silncer_shot                                                   = wpn_svd_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_svd_wstfg_snd_silenced
+snd_silncer_shot_actor                                             = wpn_svd_wstfg_snd_silenced_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_svd_wstfg_snd_silenced_actor
+snd_silncer_shot_first                                             = weapons\_bolt\mono\m4_prefire
+
+;-----------------------------------------------------------------------------------------------------------
+
+[wpn_raptr_sounds]:wpn_m4_sounds
+snd_shoot                                                          = raptr_wstfg_snd_shoot
+; snd_shoot_indoor                                                   = int_raptr_wstfg_snd_shoot
+snd_shoot_actor                                                    = wpn_raptr_wstfg_snd_shoot_actor
+snd_shoot_actor_indoor                                             = int_wpn_raptr_wstfg_snd_shoot_actor
+
+snd_silncer_shot                                                   = wpn_raptr_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_raptr_wstfg_snd_silenced
+snd_silncer_shot_actor                                             = wpn_raptr_wstfg_snd_silenced_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_raptr_wstfg_snd_silenced_actor
+
+;-----------------------------------------------------------------------------------------------------------
+
+[wpn_udp9_sounds]:wpn_m4_sounds
+snd_shoot                                                          = wpn_udp9_wstfg_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_udp9_wstfg_snd_shoot
+snd_shoot_actor                                                    = wpn_udp9_wstfg_snd_shoot_actor
+snd_shoot_actor_indoor                                             = int_wpn_udp9_wstfg_snd_shoot_actor
+snd_shoot_first                                                    = weapons\_bolt\mono\mp5_prefire
+
+snd_silncer_shot                                                   = wpn_udp9_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_udp9_wstfg_snd_silenced
+snd_silncer_shot_actor                                             = wpn_udp9_wstfg_snd_silenced_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_udp9_wstfg_snd_silenced_actor
+snd_silncer_shot_first                                             = weapons\_bolt\mono\mp5_prefire
+
+;-----------------------------------------------------------------------------------------------------------
+
 [wpn_m14_sounds]:base_sounds
 snd_draw                                                           = weapons\m14\m14_draw
 snd_holster                                                        = weapons\rifle_holster
 snd_reload                                                         = weapons\m14\m14_reload
 snd_shoot                                                          = wpn_m14_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_m14_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_m14_snd_shoot
 snd_shoot_actor                                                    = wpn_m14_snd_shoot_actor
 snd_silncer_shot                                                   = wpn_galil_wstfg_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_galil_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_galil_wstfg_snd_silenced
 snd_silncer_shot_actor                                             = wpn_galil_wstfg_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_galil_wstfg_snd_silenced_actor
 snd_switch_mode                                                    = firemode\firemode_m14
@@ -923,10 +1074,10 @@ snd_holster                                                        = weapons\sni
 snd_reload                                                         = weapons\m24\m24_reload
 snd_close                                                          = weapons\generic_close
 snd_shoot                                                          = wpn_m24_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_m24_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_m24_snd_shoot
 snd_shoot_actor                                                    = wpn_m24_snd_shoot_actor
 snd_silncer_shot                                                   = wpn_big_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_big_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_big_snd_silenced
 snd_silncer_shot_actor                                             = wpn_big_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_big_snd_silenced_actor
 snd_shoot_actor_indoor                                             = int_wpn_m24_snd_shoot_actor
@@ -938,7 +1089,7 @@ snd_draw                                                           = weapons\m60
 snd_holster                                                        = weapons\m60\m60_holster
 snd_reload                                                         = weapons\m60\m60_reload
 snd_shoot                                                          = wpn_m60_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_m60_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_m60_snd_shoot
 snd_shoot_actor                                                    = wpn_m60_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_m60_snd_shoot_actor
 
@@ -948,7 +1099,7 @@ snd_shoot_actor_indoor                                             = int_wpn_m60
 snd_draw                                                           = weapons\generic_draw
 snd_holster                                                        = weapons\shotgun_holster
 snd_shoot                                                          = weapons\m203\m203_grenshoot
-snd_shoot_indoor                                                   = weapons\m203\m203_grenshoot
+; snd_shoot_indoor                                                   = weapons\m203\m203_grenshoot
 snd_shoot_actor                                                    = wpn_m79_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_m79_snd_shoot_actor
 snd_reload                                                         = weapons\m79\m79_reload
@@ -961,7 +1112,7 @@ snd_empty                                                          = weapons\_dr
 snd_draw                                                           = weapons\m98b\m98b_draw
 snd_holster                                                        = weapons\sniper_holster
 snd_shoot                                                          = wpn_m82_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_m82_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_m82_snd_shoot
 snd_shoot_actor                                                    = wpn_m82_snd_shoot_actor
 snd_reload                                                         = weapons\m82\m82_reload_1
 snd_close                                                          = weapons\generic_close
@@ -974,12 +1125,12 @@ snd_draw                                                           = weapons\m95
 snd_holster                                                        = weapons\m95\m95_holster
 snd_reload                                                         = weapons\m95\m95_reload
 snd_shoot                                                          = wpn_m95_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_m95_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_m95_snd_shoot
 snd_shoot_actor                                                    = wpn_m95_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_m95_snd_shoot_actor
 
 [wpn_as50_sounds]:wpn_m95_sounds
-snd_shoot_indoor                                                   = int_wpn_m95_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_m95_snd_shoot
 snd_reload                                                         = weapons\as50\as50_reload
 
 [wpn_m98b_sounds]:wpn_m82_sounds
@@ -987,10 +1138,10 @@ snd_draw                                                           = weapons\m98
 snd_holster                                                        = weapons\m98b\m98b_holster
 snd_reload                                                         = weapons\m98b\m98b_reload
 snd_shoot                                                          = wpn_m98_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_m98_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_m98_snd_shoot
 snd_shoot_actor                                                    = wpn_m98_snd_shoot_actor
 snd_silncer_shot                                                   = wpn_big_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_big_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_big_snd_silenced
 snd_silncer_shot_actor                                             = wpn_big_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_big_snd_silenced_actor
 snd_shoot_actor_indoor                                             = int_wpn_m98_snd_shoot_actor
@@ -1006,13 +1157,13 @@ snd_empty                                                          = weapons\_dr
 snd_empty_first                                                    = weapons\_dryfire\m249_bolt
 
 snd_shoot                                                          = wpn_m249_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_m249_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_m249_snd_shoot
 snd_shoot_actor                                                    = wpn_m249_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_m249_snd_shoot_actor
 snd_shoot_first                                                    = weapons\_bolt\mono\m249_prefire
 
 snd_silncer_shot                                                   = wpn_m249_wstfg_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_m249_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_m249_wstfg_snd_silenced
 snd_silncer_shot_actor                                             = wpn_m249_wstfg_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_m249_wstfg_snd_silenced_actor
 snd_silncer_shot_first                                             = weapons\_bolt\mono\m249_prefire
@@ -1029,13 +1180,13 @@ snd_empty                                                          = weapons\_dr
 snd_empty_first                                                    = weapons\_dryfire\bizon_hammer
 
 snd_shoot                                                          = wpn_mp5_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_mp5_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_mp5_snd_shoot
 snd_shoot_actor                                                    = wpn_mp5_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_mp5_snd_shoot_actor
 snd_shoot_first                                                    = weapons\_bolt\mono\mp5_prefire
 
 snd_silncer_shot                                                   = wpn_mp5_wstfg_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_mp5_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_mp5_wstfg_snd_silenced
 snd_silncer_shot_actor                                             = wpn_mp5_wstfg_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_mp5_wstfg_snd_silenced_actor
 snd_silncer_shot_first                                             = weapons\_bolt\mono\mp5_prefire
@@ -1045,15 +1196,28 @@ snd_reload                                                         = weapons\mp5
 snd_reload_empty                                                   = weapons\mp5\mp5sd_reload
 
 snd_shoot                                                          = wpn_mp5_sd_wstfg_snd_silenced
-snd_shoot_indoor                                                   = int_wpn_mp5_sd_wstfg_snd_silenced
+; snd_shoot_indoor                                                   = int_wpn_mp5_sd_wstfg_snd_silenced
 snd_shoot_actor                                                    = wpn_mp5_sd_wstfg_snd_silenced_actor
 snd_shoot_actor_indoor                                             = int_wpn_mp5_sd_wstfg_snd_silenced_actor
 snd_shoot_first                                                    = weapons\_bolt\mono\mp5_prefire
 
 snd_silncer_shot                                                   = wpn_mp5_sd_wstfg_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_mp5_sd_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_mp5_sd_wstfg_snd_silenced
 snd_silncer_shot_actor                                             = wpn_mp5_sd_wstfg_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_mp5_sd_wstfg_snd_silenced_actor
+snd_silncer_shot_first                                             = weapons\_bolt\mono\mp5_prefire
+
+[wpn_mp5_45_sounds]:wpn_mp5_sounds
+snd_shoot                                                          = wpn_fraiser_wstfg_snd_silenced
+; snd_shoot_indoor                                                   = int_wpn_fraiser_wstfg_snd_silenced
+snd_shoot_actor                                                    = wpn_fraiser_wstfg_snd_silenced_actor
+snd_shoot_actor_indoor                                             = int_wpn_fraiser_wstfg_snd_silenced_actor
+snd_shoot_first                                                    = weapons\_bolt\mono\mp5_prefire
+
+snd_silncer_shot                                                   = wpn_fraiser_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_fraiser_wstfg_snd_silenced
+snd_silncer_shot_actor                                             = wpn_fraiser_wstfg_snd_silenced_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_fraiser_wstfg_snd_silenced_actor
 snd_silncer_shot_first                                             = weapons\_bolt\mono\mp5_prefire
 
 ;-----------------------------------------------------------------------------------------------------------
@@ -1066,13 +1230,13 @@ snd_empty                                                          = weapons\_dr
 snd_empty_first                                                    = weapons\_dryfire\bizon_hammer
 
 snd_shoot                                                          = wpn_mp7_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_mp7_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_mp7_snd_shoot
 snd_shoot_actor                                                    = wpn_mp7_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_mp7_snd_shoot_actor
 snd_shoot_first                                                    = weapons\_bolt\mono\mp5_prefire
 
 snd_silncer_shot                                                   = wpn_mp7_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_mp7_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_mp7_snd_silenced
 snd_silncer_shot_actor                                             = wpn_mp7_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_mp7_snd_silenced_actor
 snd_silncer_shot_first                                             = weapons\_bolt\mono\mp5_prefire
@@ -1085,11 +1249,12 @@ snd_holster                                                        = weapons\sho
 snd_reload                                                         = weapons\mp133\mp133_reload_end
 snd_add_cartridge                                                  = weapons\mp133\mp133_reload
 snd_close_weapon                                                   = weapons\mp133\mp133_reload_end
-snd_shoot                                                          = wpn_mp133_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_mp133_snd_shoot
-snd_shoot_actor                                                    = wpn_mp133_snd_shoot_actor
 snd_empty                                                          = weapons\_dryfire\rem870_trigger
 snd_empty_first                                                    = weapons\_dryfire\shotgun_hammer
+
+snd_shoot                                                          = wpn_mp133_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_mp133_snd_shoot
+snd_shoot_actor                                                    = wpn_mp133_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_mp133_snd_shoot_actor
 
 ;-----------------------------------------------------------------------------------------------------------
@@ -1101,32 +1266,36 @@ snd_reload                                                         = weapons\mp1
 snd_open_weapon                                                    = $no_sound
 snd_add_cartridge                                                  = weapons\mp153\mp153_insertshell
 snd_close_weapon                                                   = $no_sound
-snd_shoot                                                          = wpn_mp153_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_mp153_snd_shoot
-snd_shoot_actor                                                    = wpn_mp153_snd_shoot_actor
-snd_silncer_shot                                                   = wpn_mp153_wstfg_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_mp153_wstfg_snd_silenced
-snd_silncer_shot_actor                                             = wpn_mp153_wstfg_snd_silenced_actor
-snd_silncer_shot_actor_indoor                                      = int_wpn_mp153_wstfg_snd_silenced_actor
 snd_empty                                                          = weapons\_dryfire\saiga_trigger
 snd_empty_first                                                    = weapons\_dryfire\shotgun_hammer
+
+snd_shoot                                                          = wpn_mp153_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_mp153_snd_shoot
+snd_shoot_actor                                                    = wpn_mp153_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_mp153_snd_shoot_actor
+
+snd_silncer_shot                                                   = wpn_mp153_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_mp153_wstfg_snd_silenced
+snd_silncer_shot_actor                                             = wpn_mp153_wstfg_snd_silenced_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_mp153_wstfg_snd_silenced_actor
 
 ;-----------------------------------------------------------------------------------------------------------
 
 [wpn_mp412_sounds]:base_sounds
 snd_reload                                                         = weapons\mp412\mp412_reload
 snd_reload_empty                                                   = weapons\mp412\mp412_reload
-snd_shoot                                                          = wpn_mp412_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_mp412_snd_shoot
-snd_shoot_actor                                                    = wpn_mp412_snd_shoot_actor
-snd_silncer_shot                                                   = wpn_357_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_357_snd_silenced
-snd_silncer_shot_actor                                             = wpn_357_snd_silenced_actor
-snd_silncer_shot_actor_indoor                                      = int_wpn_357_snd_silenced_actor
 snd_empty                                                          = weapons\_dryfire\revolver_dry
 snd_empty_first                                                    = $no_sound
+
+snd_shoot                                                          = wpn_mp412_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_mp412_snd_shoot
+snd_shoot_actor                                                    = wpn_mp412_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_mp412_snd_shoot_actor
+
+snd_silncer_shot                                                   = wpn_357_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_357_snd_silenced
+snd_silncer_shot_actor                                             = wpn_357_snd_silenced_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_357_snd_silenced_actor
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -1137,14 +1306,16 @@ snd_close                                                          = weapons\gen
 snd_reload                                                         = weapons\grach\grach_reload
 snd_reload_empty                                                   = weapons\grach\grach_reload_empty
 snd_reload_misfire                                                 = weapons\tt33\tt33_unjam
+
 snd_shoot                                                          = wpn_beretta_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_beretta_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_beretta_snd_shoot
 snd_shoot_actor                                                    = wpn_beretta_snd_shoot_actor
+snd_shoot_actor_indoor                                             = int_wpn_beretta_snd_shoot_actor
+
 snd_silncer_shot                                                   = wpn_9_2_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_9_2_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_9_2_snd_silenced
 snd_silncer_shot_actor                                             = wpn_9_2_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_9_2_snd_silenced_actor
-snd_shoot_actor_indoor                                             = int_wpn_beretta_snd_shoot_actor
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -1155,30 +1326,34 @@ snd_reload                                                         = weapons\mos
 snd_reload_empty                                                   = weapons\mosin\mosin_reload
 snd_reload_misfire                                                 = weapons\mosin\mosin_unjam
 snd_bore                                                           = weapons\mosin\mosin_inspect
-snd_shoot                                                          = wpn_mosin_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_mosin_snd_shoot
-snd_shoot_actor                                                    = wpn_mosin_snd_shoot_actor
-snd_silncer_shot                                                   = wpn_mosin_wstfg_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_mosin_wstfg_snd_silenced
-snd_silncer_shot_actor                                             = wpn_mosin_wstfg_snd_silenced_actor
-snd_silncer_shot_actor_indoor                                      = int_wpn_mosin_wstfg_snd_silenced_actor
 snd_empty                                                          = weapons\_dryfire\sks_trigger
 snd_empty_first                                                    = weapons\_dryfire\mosin_hammer
+
+snd_shoot                                                          = wpn_mosin_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_mosin_snd_shoot
+snd_shoot_actor                                                    = wpn_mosin_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_mosin_snd_shoot_actor
+
+snd_silncer_shot                                                   = wpn_mosin_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_mosin_wstfg_snd_silenced
+snd_silncer_shot_actor                                             = wpn_mosin_wstfg_snd_silenced_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_mosin_wstfg_snd_silenced_actor
 
 ;-----------------------------------------------------------------------------------------------------------
 
 [wpn_oc33_sounds]:wpn_pm_sounds
 snd_reload                                                         = weapons\oc33\oc33_reload
 snd_reload_empty                                                   = weapons\oc33\oc33_reload
+
 snd_shoot                                                          = wpn_oc33_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_oc33_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_oc33_snd_shoot
 snd_shoot_actor                                                    = wpn_oc33_snd_shoot_actor
+snd_shoot_actor_indoor                                             = int_wpn_oc33_snd_shoot_actor
+
 snd_silncer_shot                                                   = wpn_9_1_2_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_9_1_2_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_9_1_2_snd_silenced
 snd_silncer_shot_actor                                             = wpn_9_1_2_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_9_1_2_snd_silenced_actor
-snd_shoot_actor_indoor                                             = int_wpn_oc33_snd_shoot_actor
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -1190,13 +1365,13 @@ snd_empty                                                          = weapons\_dr
 snd_empty_first                                                    = weapons\_dryfire\p90_hammer
 
 snd_shoot                                                          = wpn_p90_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_p90_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_p90_snd_shoot
 snd_shoot_actor                                                    = wpn_p90_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_p90_snd_shoot_actor
 snd_shoot_first                                                    = weapons\_bolt\mono\mp5_prefire
 
 snd_silncer_shot                                                   = wpn_p90_wstfg_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_p90_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_p90_wstfg_snd_silenced
 snd_silncer_shot_actor                                             = wpn_p90_wstfg_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_p90_wstfg_snd_silenced_actor
 snd_silncer_shot_first                                             = weapons\_bolt\mono\mp5_prefire
@@ -1208,13 +1383,13 @@ snd_reload                                                         = weapons\pp2
 snd_reload_empty                                                   = weapons\pp2000\pp2000_reload
 
 snd_shoot                                                          = wpn_pp2000_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_pp2000_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_pp2000_snd_shoot
 snd_shoot_actor                                                    = wpn_pp2000_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_pp2000_snd_shoot_actor
 snd_shoot_first                                                    = weapons\_bolt\mono\mp5_prefire
 
 snd_silncer_shot                                                   = wpn_smg9_2_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_smg9_2_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_smg9_2_snd_silenced
 snd_silncer_shot_actor                                             = wpn_smg9_2_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_smg9_2_snd_silenced_actor
 snd_silncer_shot_first                                             = weapons\_bolt\mono\mp5_prefire
@@ -1230,13 +1405,13 @@ snd_empty_first                                                    = weapons\_dr
 snd_switch_mode                                                    = firemode\firemode_m14
 
 snd_shoot                                                          = wpn_pkm_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_pkm_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_pkm_snd_shoot
 snd_shoot_actor                                                    = wpn_pkm_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_pkm_snd_shoot_actor
 snd_shoot_first                                                    = weapons\_bolt\mono\pkm_prefire
 
 snd_silncer_shot                                                   = wpn_pkm_wstfg_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_pkm_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_pkm_wstfg_snd_silenced
 snd_silncer_shot_actor                                             = wpn_pkm_wstfg_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_pkm_wstfg_snd_silenced_actor
 snd_silncer_shot_first                                             = weapons\_bolt\mono\pkm_prefire
@@ -1251,10 +1426,10 @@ snd_reload_empty                                                   = weapons\pm\
 snd_reload_misfire                                                 = weapons\pm\pm_unjam
 snd_close                                                          = weapons\pm\pm_close
 snd_shoot                                                          = wpn_pm_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_pm_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_pm_snd_shoot
 snd_shoot_actor                                                    = wpn_pm_snd_shoot_actor
 snd_silncer_shot                                                   = wpn_pm_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_pm_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_pm_snd_silenced
 snd_silncer_shot_actor                                             = wpn_pm_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_pm_snd_silenced_actor
 snd_switch_mode                                                    = firemode\firemode_pistol
@@ -1264,13 +1439,27 @@ snd_shoot_actor_indoor                                             = int_wpn_pm_
 
 [wpn_pb_sounds]:wpn_pm_sounds
 snd_shoot                                                          = wpn_pb_snd_silenced
-snd_shoot_indoor                                                   = int_wpn_pb_snd_silenced
+; snd_shoot_indoor                                                   = int_wpn_pb_snd_silenced
 snd_shoot_actor                                                    = wpn_pb_snd_silenced_actor
+snd_shoot_actor_indoor                                             = int_wpn_pb_snd_silenced_actor
+
 snd_silncer_shot                                                   = wpn_pb_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_pb_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_pb_snd_silenced
 snd_silncer_shot_actor                                             = wpn_pb_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_pb_snd_silenced_actor
-snd_shoot_actor_indoor                                             = int_wpn_pb_snd_silenced_actor
+
+;-----------------------------------------------------------------------------------------------------------
+
+[wpn_sr1_sounds]:wpn_pm_sounds
+snd_shoot                                                          = wpn_sr1m_wstfg_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_sr1m_wstfg_snd_shoot
+snd_shoot_actor                                                    = wpn_sr1m_wstfg_snd_shoot_actor
+snd_shoot_actor_indoor                                             = int_wpn_sr1m_wstfg_snd_shoot_actor
+
+snd_silncer_shot                                                   = wpn_9_2_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_9_2_snd_silenced
+snd_silncer_shot_actor                                             = wpn_9_2_snd_silenced_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_9_2_snd_silenced_actor
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -1285,15 +1474,34 @@ snd_empty                                                          = weapons\_dr
 snd_empty_first                                                    = weapons\_dryfire\smg_bolt
 
 snd_shoot                                                          = wpn_ppsh41_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_ppsh41_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_ppsh41_snd_shoot
 snd_shoot_actor                                                    = wpn_ppsh41_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_ppsh41_snd_shoot_actor
 snd_shoot_first                                                    = weapons\_bolt\mono\smg_prefire
 
 snd_silncer_shot                                                   = wpn_smg9_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_smg9_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_smg9_snd_silenced
 snd_silncer_shot_actor                                             = wpn_smg9_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_smg9_snd_silenced_actor
+snd_silncer_shot_first                                             = weapons\_bolt\mono\smg_prefire
+
+;-----------------------------------------------------------------------------------------------------------
+
+[wpn_thompson_sounds]:base_sounds
+snd_switch_mode                                                    = firemode\firemode_smg
+snd_empty                                                          = weapons\_dryfire\smg_trigger
+snd_empty_first                                                    = weapons\_dryfire\smg_bolt
+
+snd_shoot                                                          = wpn_thompson_wstfg_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_thompson_wstfg_snd_shoot
+snd_shoot_actor                                                    = wpn_thompson_wstfg_snd_shoot_actor
+snd_shoot_actor_indoor                                             = int_wpn_thompson_wstfg_snd_shoot_actor
+snd_shoot_first                                                    = weapons\_bolt\mono\smg_prefire
+
+snd_silncer_shot                                                   = wpn_smg45_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_smg45_snd_silenced
+snd_silncer_shot_actor                                             = wpn_smg45_snd_silenced_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_smg45_snd_silenced_actor
 snd_silncer_shot_first                                             = weapons\_bolt\mono\smg_prefire
 
 ;-----------------------------------------------------------------------------------------------------------
@@ -1305,16 +1513,18 @@ snd_reload                                                         = weapons\toz
 snd_open_weapon                                                    = $no_sound
 snd_add_cartridge                                                  = weapons\protecta\protecta_load
 snd_close_weapon                                                   = $no_sound
-snd_shoot                                                          = wpn_usas12_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_usas12_snd_shoot
-snd_shoot_actor                                                    = wpn_usas12_snd_shoot_actor
-snd_silncer_shot                                                   = wpn_raptr_wstfg_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_raptr_wstfg_snd_silenced
-snd_silncer_shot_actor                                             = wpn_raptr_wstfg_snd_silenced_actor
-snd_silncer_shot_actor_indoor                                      = int_wpn_raptr_wstfg_snd_silenced_actor
 snd_empty                                                          = weapons\_dryfire\saiga_trigger
 snd_empty_first                                                    = weapons\_dryfire\shotgun_hammer
+
+snd_shoot                                                          = wpn_usas12_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_usas12_snd_shoot
+snd_shoot_actor                                                    = wpn_usas12_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_usas12_snd_shoot_actor
+
+snd_silncer_shot                                                   = wpn_raptr_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_raptr_wstfg_snd_silenced
+snd_silncer_shot_actor                                             = wpn_raptr_wstfg_snd_silenced_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_raptr_wstfg_snd_silenced_actor
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -1322,16 +1532,18 @@ snd_shoot_actor_indoor                                             = int_wpn_usa
 snd_draw                                                           = weapons\lr300\lr300_draw
 snd_holster                                                        = weapons\sniper_holster
 snd_reload                                                         = weapons\remington700\reload
-snd_shoot                                                          = wpn_r700_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_r700_snd_shoot
-snd_shoot_actor                                                    = wpn_r700_snd_shoot_actor
-snd_silncer_shot                                                   = wpn_r700sp_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_r700sp_snd_silenced
-snd_silncer_shot_actor                                             = wpn_r700sp_snd_silenced_actor
-snd_silncer_shot_actor_indoor                                      = int_wpn_r700sp_snd_silenced_actor
 snd_empty                                                          = weapons\_dryfire\sniper_trigger
 snd_empty_first                                                    = weapons\_dryfire\sniper_hammer
+
+snd_shoot                                                          = wpn_r700_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_r700_snd_shoot
+snd_shoot_actor                                                    = wpn_r700_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_r700_snd_shoot_actor
+
+snd_silncer_shot                                                   = wpn_r700_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_r700_snd_silenced
+snd_silncer_shot_actor                                             = wpn_r700_snd_silenced_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_r700_snd_silenced_actor
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -1344,13 +1556,13 @@ snd_empty                                                          = weapons\_dr
 snd_empty_first                                                    = weapons\_dryfire\rpd_bolt
 
 snd_shoot                                                          = wpn_rpd_wstfg_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_rpd_wstfg_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_rpd_wstfg_snd_shoot
 snd_shoot_actor                                                    = wpn_rpd_wstfg_snd_shoot_actor
 snd_shoot_first                                                    = weapons\_bolt\mono\rpd_prefire
 snd_silncer_shot_first                                             = weapons\_bolt\mono\rpd_prefire
 
 snd_silncer_shot                                                   = wpn_rpd_wstfg_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_rpd_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_rpd_wstfg_snd_silenced
 snd_silncer_shot_actor                                             = wpn_rpd_wstfg_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_rpd_wstfg_snd_silenced_actor
 snd_shoot_actor_indoor                                             = int_wpn_rpd_wstfg_snd_shoot_actor
@@ -1381,7 +1593,7 @@ snd_open_weapon                                                    = weapons\rg6
 snd_add_cartridge                                                  = weapons\rg6\rg6_reload
 snd_close_weapon                                                   = weapons\rg6\rg6_reload_end
 snd_shoot                                                          = weapons\gp25\gp25_grenshoot
-snd_shoot_indoor                                                   = weapons\gp25\gp25_grenshoot
+; snd_shoot_indoor                                                   = weapons\gp25\gp25_grenshoot
 snd_shoot_actor                                                    = wpn_rg6_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_rg6_snd_shoot_actor
 snd_empty                                                          = weapons\_dryfire\rpg_trigger
@@ -1391,7 +1603,7 @@ snd_draw                                                           = weapons\rpg
 snd_holster                                                        = weapons\rpg7\rpg7_holster
 snd_reload                                                         = weapons\rpg7\rpg7_reload
 snd_shoot                                                          = wpn_rpg_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_rpg_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_rpg_snd_shoot
 snd_shoot_actor                                                    = wpn_rpg_snd_shoot_actor
 snd_fly_sound                                                      = weapons\_boom\mono\rpg\flyby
 snd_explode                                                        = wpn_fake_og-7b_explode
@@ -1407,10 +1619,10 @@ snd_reload                                                         = weapons\sai
 snd_reload_misfire                                                 = weapons\saiga\saiga_unjam
 snd_reload_empty                                                   = weapons\saiga\saiga_reload_empty
 snd_shoot                                                          = wpn_saiga_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_saiga_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_saiga_snd_shoot
 snd_shoot_actor                                                    = wpn_saiga_snd_shoot_actor
 snd_silncer_shot                                                   = wpn_saiga_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_saiga_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_saiga_snd_silenced
 snd_silncer_shot_actor                                             = wpn_saiga_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_saiga_snd_silenced_actor
 snd_switch_mode                                                    = weapons\ak74\ak74_switch_mode_quick
@@ -1426,7 +1638,7 @@ snd_holster                                                        = weapons\gen
 snd_reload                                                         = weapons\sako\sako_reload
 snd_reload_grenade                                                 = weapons\gp25_reload
 snd_shoot                                                          = wpn_sako_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_sako_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_sako_snd_shoot
 snd_shoot_actor                                                    = wpn_sako_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_sako_snd_shoot_actor
 
@@ -1439,10 +1651,10 @@ snd_reload                                                         = weapons\sca
 snd_reload_empty                                                   = weapons\scar\scar_reload
 snd_reload_grenade                                                 = weapons\m203\m203_reload2
 snd_shoot                                                          = wpn_scar_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_scar_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_scar_snd_shoot
 snd_shoot_actor                                                    = wpn_scar_snd_shoot_actor
 snd_silncer_shot                                                   = wpn_scar_wstfg_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_scar_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_scar_wstfg_snd_silenced
 snd_silncer_shot_actor                                             = wpn_scar_wstfg_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_scar_wstfg_snd_silenced_actor
 snd_switch_mode                                                    = firemode\firemode_ar
@@ -1458,17 +1670,30 @@ snd_holster                                                        = weapons\pis
 snd_reload                                                         = weapons\sig220\sig220_reload
 snd_reload_empty                                                   = weapons\sig220\sig220_reload_empty
 snd_close                                                          = weapons\sig220\sig220_close
-snd_shoot                                                          = wpn_1911_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_1911_snd_shoot
-snd_shoot_actor                                                    = wpn_1911_snd_shoot_actor
-snd_silncer_shot                                                   = wpn_45_1_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_45_1_snd_silenced
-snd_silncer_shot_actor                                             = wpn_45_1_snd_silenced_actor
-snd_silncer_shot_actor_indoor                                      = int_wpn_45_1_snd_silenced_actor
 snd_switch_mode                                                    = firemode\firemode_pistol
 snd_empty                                                          = weapons\_dryfire\p220_trigger
 snd_empty_first                                                    = $no_sound
+
+snd_shoot                                                          = wpn_1911_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_1911_snd_shoot
+snd_shoot_actor                                                    = wpn_1911_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_1911_snd_shoot_actor
+
+snd_silncer_shot                                                   = wpn_45_1_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_45_1_snd_silenced
+snd_silncer_shot_actor                                             = wpn_45_1_snd_silenced_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_45_1_snd_silenced_actor
+
+[wpn_sig226_sounds]:wpn_sig220_sounds
+snd_shoot                                                          = wpn_beretta_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_beretta_snd_shoot
+snd_shoot_actor                                                    = wpn_beretta_snd_shoot_actor
+snd_shoot_actor_indoor                                             = int_wpn_beretta_snd_shoot_actor
+
+snd_silncer_shot                                                   = wpn_9_2_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_9_2_snd_silenced
+snd_silncer_shot_actor                                             = wpn_9_2_snd_silenced_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_9_2_snd_silenced_actor
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -1483,13 +1708,13 @@ snd_empty                                                          = weapons\_dr
 snd_empty_first                                                    = weapons\_dryfire\sig_hammer
 
 snd_shoot                                                          = wpn_sg550_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_sg550_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_sg550_snd_shoot
 snd_shoot_actor                                                    = wpn_sg550_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_sg550_snd_shoot_actor
 snd_shoot_first                                                    = weapons\_gunfire\stereo\sg550\prefire
 
 snd_silncer_shot                                                   = wpn_sg550_wstfg_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_sg550_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_sg550_wstfg_snd_silenced
 snd_silncer_shot_actor                                             = wpn_sg550_wstfg_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_sg550_wstfg_snd_silenced_actor
 snd_silncer_shot_first                                             = weapons\_bolt\mono\m4_prefire
@@ -1502,17 +1727,38 @@ snd_reload_empty                                                   = weapons\sig
 
 ;-----------------------------------------------------------------------------------------------------------
 
-[wpn_sr25_sounds]:wpn_m4_sounds
-snd_shoot                                                          = wpn_sr25_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_sr25_snd_shoot
-snd_shoot_actor                                                    = wpn_sr25_snd_shoot_actor
-snd_silncer_shot                                                   = wpn_sr25_wstfg_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_sr25_wstfg_snd_silenced
-snd_silncer_shot_actor                                             = wpn_sr25_wstfg_snd_silenced_actor
-snd_silncer_shot_actor_indoor                                      = int_wpn_sr25_wstfg_snd_silenced_actor
+[wpn_sr2_sounds]:base_sounds
+snd_switch_mode                                                    = firemode\firemode_smg
+snd_empty                                                          = weapons\_dryfire\smg_trigger
+snd_empty_first                                                    = weapons\_dryfire\bizon_hammer
+
+snd_shoot                                                          = wpn_sr2m_wstfg_snd_shoot_actor
+; snd_shoot_indoor                                                   = int_wpn_sr2m_wstfg_snd_shoot_actor
+snd_shoot_actor                                                    = wpn_sr2m_wstfg_snd_shoot_actor_actor
+snd_shoot_actor_indoor                                             = int_wpn_sr2m_wstfg_snd_shoot_actor_actor
+snd_shoot_first                                                    = weapons\_bolt\mono\mp5_prefire
+
+snd_silncer_shot                                                   = wpn_sr2m_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_sr2m_wstfg_snd_silenced
+snd_silncer_shot_actor                                             = wpn_sr2m_wstfg_snd_silenced_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_sr2m_wstfg_snd_silenced_actor
+snd_silncer_shot_first                                             = weapons\_bolt\mono\mp5_prefire
+
+;-----------------------------------------------------------------------------------------------------------
+
+[wpn_sr25_sounds]:base_sounds
 snd_empty                                                          = weapons\_dryfire\ar_trigger
 snd_empty_first                                                    = weapons\_dryfire\ar_hammer
+
+snd_shoot                                                          = wpn_sr25_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_sr25_snd_shoot
+snd_shoot_actor                                                    = wpn_sr25_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_sr25_snd_shoot_actor
+
+snd_silncer_shot                                                   = wpn_sr25_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_sr25_wstfg_snd_silenced
+snd_silncer_shot_actor                                             = wpn_sr25_wstfg_snd_silenced_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_sr25_wstfg_snd_silenced_actor
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -1523,10 +1769,10 @@ snd_reload                                                         = weapons\sks
 snd_reload_empty                                                   = weapons\sks\sks_reload_full
 snd_reload_misfire                                                 = weapons\sks\sks_unjam
 snd_shoot                                                          = wpn_sks_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_sks_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_sks_snd_shoot
 snd_shoot_actor                                                    = wpn_sks_snd_shoot_actor
 snd_silncer_shot                                                   = wpn_sks_wstfg_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_sks_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_sks_wstfg_snd_silenced
 snd_silncer_shot_actor                                             = wpn_sks_wstfg_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_sks_wstfg_snd_silenced_actor
 snd_switch_mode                                                    = firemode\firemode_m14
@@ -1551,10 +1797,10 @@ snd_reload                                                         = weapons\spa
 snd_add_cartridge                                                  = weapons\spas12\spas12_insertshell
 snd_close_weapon                                                   = weapons\spas12\spas12_pump
 snd_shoot                                                          = wpn_spas12_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_spas12_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_spas12_snd_shoot
 snd_shoot_actor                                                    = wpn_spas12_snd_shoot_actor
 snd_silncer_shot                                                   = wpn_spas12_wstfg_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_spas12_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_spas12_wstfg_snd_silenced
 snd_silncer_shot_actor                                             = wpn_spas12_wstfg_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_spas12_wstfg_snd_silenced_actor
 snd_empty                                                          = weapons\_dryfire\saiga_trigger
@@ -1568,10 +1814,10 @@ snd_draw                                                           = weapons\sv9
 snd_holster                                                        = weapons\sniper_holster
 snd_reload                                                         = weapons\sv98\sv98_reload
 snd_shoot                                                          = wpn_sv98_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_sv98_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_sv98_snd_shoot
 snd_shoot_actor                                                    = wpn_sv98_snd_shoot_actor
 snd_silncer_shot                                                   = wpn_sv98_wstfg_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_sv98_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_sv98_wstfg_snd_silenced
 snd_silncer_shot_actor                                             = wpn_sv98_wstfg_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_sv98_wstfg_snd_silenced_actor
 snd_empty                                                          = weapons\_dryfire\sks_trigger
@@ -1586,17 +1832,19 @@ snd_holster                                                        = weapons\sni
 snd_reload                                                         = weapons\svd\svd_reload_empty
 snd_reload_empty                                                   = weapons\svd\svd_reload_empty
 snd_reload_misfire                                                 = weapons\svd\svd_reload_empty
-snd_shoot                                                          = wpn_svd_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_svd_snd_shoot
-snd_shoot_actor                                                    = wpn_svd_snd_shoot_actor
-snd_silncer_shot                                                   = wpn_svd_wstfg_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_svd_wstfg_snd_silenced
-snd_silncer_shot_actor                                             = wpn_svd_wstfg_snd_silenced_actor
-snd_silncer_shot_actor_indoor                                      = int_wpn_svd_wstfg_snd_silenced_actor
 snd_switch_mode                                                    = weapons\ak74\ak74_switch_mode_quick
 snd_empty                                                          = weapons\_dryfire\svd_trigger
 snd_empty_first                                                    = weapons\_dryfire\svd_hammer
+
+snd_shoot                                                          = wpn_svd_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_svd_snd_shoot
+snd_shoot_actor                                                    = wpn_svd_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_svd_snd_shoot_actor
+
+snd_silncer_shot                                                   = wpn_svd_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_svd_wstfg_snd_silenced
+snd_silncer_shot_actor                                             = wpn_svd_wstfg_snd_silenced_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_svd_wstfg_snd_silenced_actor
 
 [wpn_svu_sounds]:wpn_svd_sounds
 snd_draw                                                           = weapons\svu\svu_draw
@@ -1604,14 +1852,16 @@ snd_holster                                                        = weapons\sni
 snd_reload                                                         = weapons\svu\svu_reload
 snd_reload_empty                                                   = weapons\svu\svu_reload_empty
 snd_reload_misfire                                                 = weapons\svd\svu_reload_empty
+
 snd_shoot                                                          = wpn_svu_wstfg_snd_silenced
-snd_shoot_indoor                                                   = int_wpn_svu_wstfg_snd_silenced
+; snd_shoot_indoor                                                   = int_wpn_svu_wstfg_snd_silenced
 snd_shoot_actor                                                    = wpn_svu_wstfg_snd_silenced_actor
+snd_shoot_actor_indoor                                             = int_wpn_svu_wstfg_snd_silenced_actor
+
 snd_silncer_shot                                                   = wpn_svu_wstfg_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_svu_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_svu_wstfg_snd_silenced
 snd_silncer_shot_actor                                             = wpn_svu_wstfg_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_svu_wstfg_snd_silenced_actor
-snd_shoot_actor_indoor                                             = int_wpn_svu_wstfg_snd_silenced_actor
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -1621,17 +1871,19 @@ snd_holster                                                        = weapons\gen
 snd_reload                                                         = weapons\svt40\svt40_reload
 snd_reload_empty                                                   = weapons\svt40\svt40_reload_empty
 snd_reload_misfire                                                 = weapons\svt40\svt40_unjam
-snd_shoot                                                          = wpn_svt40_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_svt40_snd_shoot
-snd_shoot_actor                                                    = wpn_svt40_snd_shoot_actor
-snd_silncer_shot                                                   = wpn_svd_wstfg_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_svd_wstfg_snd_silenced
-snd_silncer_shot_actor                                             = wpn_svd_wstfg_snd_silenced_actor
-snd_silncer_shot_actor_indoor                                      = int_wpn_svd_wstfg_snd_silenced_actor
 snd_switch_mode                                                    = firemode\firemode_m14
 snd_empty                                                          = weapons\_dryfire\svd_trigger
 snd_empty_first                                                    = weapons\_dryfire\svd_hammer
+
+snd_shoot                                                          = wpn_svt40_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_svt40_snd_shoot
+snd_shoot_actor                                                    = wpn_svt40_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_svt40_snd_shoot_actor
+
+snd_silncer_shot                                                   = wpn_svd_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_svd_wstfg_snd_silenced
+snd_silncer_shot_actor                                             = wpn_svd_wstfg_snd_silenced_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_svd_wstfg_snd_silenced_actor
 
 [wpn_g43_sounds]:wpn_svt40_sounds
 snd_draw                                                           = weapons\generic\rifle_draw
@@ -1649,7 +1901,7 @@ snd_holster                                                        = weapons\sho
 snd_reload                                                         = weapons\toz34\toz34_reload
 snd_reload_1                                                       = weapons\toz34\toz34_reload_one
 snd_shoot                                                          = wpn_bm16_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_bm16_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_bm16_snd_shoot
 snd_shoot_actor                                                    = wpn_bm16_snd_shoot_actor
 snd_empty                                                          = weapons\_dryfire\shotgun_trigger
 snd_empty_first                                                    = $no_sound
@@ -1664,15 +1916,17 @@ snd_reload_1                                                       = weapons\toz
 [wpn_trg_sounds]:wpn_remington700_sounds
 snd_draw                                                           = weapons\generic\rifle_draw_03
 snd_holster                                                        = weapons\generic\rifle_holster_02
+snd_reload                                                         = weapons\trg\trg42_reload
+
 snd_shoot                                                          = wpn_trg_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_trg_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_trg_snd_shoot
 snd_shoot_actor                                                    = wpn_trg_snd_shoot_actor
+snd_shoot_actor_indoor                                             = int_wpn_trg_snd_shoot_actor
+
 snd_silncer_shot                                                   = wpn_trg_wstfg_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_trg_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_trg_wstfg_snd_silenced
 snd_silncer_shot_actor                                             = wpn_trg_wstfg_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_trg_wstfg_snd_silenced_actor
-snd_reload                                                         = weapons\trg\trg42_reload
-snd_shoot_actor_indoor                                             = int_wpn_trg_snd_shoot_actor
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -1682,14 +1936,16 @@ snd_holster                                                        = weapons\gen
 snd_reload                                                         = weapons\tt33\tt33_reload
 snd_reload_empty                                                   = weapons\tt33\tt33_reload_empty
 snd_reload_misfire                                                 = weapons\tt33\tt33_unjam
+
 snd_shoot                                                          = wpn_gsh18_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_gsh18_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_gsh18_snd_shoot
 snd_shoot_actor                                                    = wpn_gsh18_snd_shoot_actor
+snd_shoot_actor_indoor                                             = int_wpn_gsh18_snd_shoot_actor
+
 snd_silncer_shot                                                   = wpn_pm_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_pm_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_pm_snd_silenced
 snd_silncer_shot_actor                                             = wpn_pm_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_pm_snd_silenced_actor
-snd_shoot_actor_indoor                                             = int_wpn_gsh18_snd_shoot_actor
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -1700,13 +1956,13 @@ snd_empty                                                          = weapons\_dr
 snd_empty_first                                                    = weapons\_dryfire\ump_hammer
 
 snd_shoot                                                          = wpn_ump_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_ump_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_ump_snd_shoot
 snd_shoot_actor                                                    = wpn_ump_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_ump_snd_shoot_actor
 snd_shoot_first                                                    = weapons\_bolt\mono\mp5_prefire
 
 snd_silncer_shot                                                   = wpn_smg45_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_smg45_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_smg45_snd_silenced
 snd_silncer_shot_actor                                             = wpn_smg45_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_smg45_snd_silenced_actor
 snd_silncer_shot_first                                             = weapons\_bolt\mono\mp5_prefire
@@ -1717,16 +1973,18 @@ snd_silncer_shot_first                                             = weapons\_bo
 snd_draw                                                           = weapons\spas12\spas12_draw
 snd_holster                                                        = weapons\shotgun_holster
 snd_reload                                                         = weapons\usas12\usas12_reload
-snd_shoot                                                          = wpn_usas12_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_usas12_snd_shoot
-snd_shoot_actor                                                    = wpn_usas12_snd_shoot_actor
-snd_silncer_shot                                                   = wpn_raptr_wstfg_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_raptr_wstfg_snd_silenced
-snd_silncer_shot_actor                                             = wpn_raptr_wstfg_snd_silenced_actor
-snd_silncer_shot_actor_indoor                                      = int_wpn_raptr_wstfg_snd_silenced_actor
 snd_empty                                                          = weapons\_dryfire\saiga_trigger
 snd_empty_first                                                    = weapons\_dryfire\shotgun_hammer
+
+snd_shoot                                                          = wpn_usas12_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_usas12_snd_shoot
+snd_shoot_actor                                                    = wpn_usas12_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_usas12_snd_shoot_actor
+
+snd_silncer_shot                                                   = wpn_raptr_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_raptr_wstfg_snd_silenced
+snd_silncer_shot_actor                                             = wpn_raptr_wstfg_snd_silenced_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_raptr_wstfg_snd_silenced_actor
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -1736,17 +1994,19 @@ snd_holster                                                        = weapons\pis
 snd_reload                                                         = weapons\usp\usp_reload
 snd_reload_empty                                                   = weapons\usp\usp_reload_empty
 snd_close                                                          = weapons\usp\usp_close
-snd_shoot                                                          = wpn_usp_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_usp_snd_shoot
-snd_shoot_actor                                                    = wpn_usp_snd_shoot_actor
-snd_silncer_shot                                                   = wpn_45_1_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_45_1_snd_silenced
-snd_silncer_shot_actor                                             = wpn_45_1_snd_silenced_actor
-snd_silncer_shot_actor_indoor                                      = int_wpn_45_1_snd_silenced_actor
 snd_switch_mode                                                    = firemode\firemode_pistol
 snd_empty                                                          = weapons\_dryfire\p220_trigger
 snd_empty_first                                                    = $no_sound
+
+snd_shoot                                                          = wpn_usp_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_usp_snd_shoot
+snd_shoot_actor                                                    = wpn_usp_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_usp_snd_shoot_actor
+
+snd_silncer_shot                                                   = wpn_45_1_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_45_1_snd_silenced
+snd_silncer_shot_actor                                             = wpn_45_1_snd_silenced_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_45_1_snd_silenced_actoê
 
 [wpn_fnp45_sounds]:wpn_usp_sounds
 snd_draw                                                           = weapons\fnp45\fnp45_draw
@@ -1759,31 +2019,36 @@ snd_reload_empty                                                   = weapons\fnp
 snd_draw                                                           = weapons\val\val_draw
 snd_holster                                                        = weapons\rifle_holster
 snd_reload                                                         = weapons\vintorez\vintorez_reload
-snd_shoot                                                          = wpn_val_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_val_snd_shoot
-snd_shoot_actor                                                    = wpn_val_snd_shoot_actor
-snd_silncer_shot                                                   = wpn_val_snd_shoot
-snd_silncer_shot_indoor                                            = int_wpn_val_snd_shoot
-snd_silncer_shot_actor                                             = wpn_val_snd_shoot_actor
-snd_silncer_shot_actor_indoor                                      = int_wpn_val_snd_shoot_actor
 snd_switch_mode                                                    = firemode\firemode_vss
 snd_empty                                                          = weapons\_dryfire\ak_trigger
 snd_empty_first                                                    = weapons\_dryfire\ak_hammer
+
+snd_shoot                                                          = wpn_val_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_val_snd_shoot
+snd_shoot_actor                                                    = wpn_val_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_val_snd_shoot_actor
+
+snd_silncer_shot                                                   = wpn_val_snd_shoot
+; snd_silncer_shot_indoor                                            = int_wpn_val_snd_shoot
+snd_silncer_shot_actor                                             = wpn_val_snd_shoot_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_val_snd_shoot_actor
+
 
 [wpn_vihr_sounds]:wpn_val_sounds
 snd_draw                                                           = weapons\vihr\vihr_draw
 snd_holster                                                        = weapons\vihr\vihr_holster
 snd_reload                                                         = weapons\vihr\vihr_reload
 snd_reload_empty                                                   = weapons\vihr\vihr_reload_empty
+
 snd_shoot                                                          = wpn_groza_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_groza_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_groza_snd_shoot
 snd_shoot_actor                                                    = wpn_groza_snd_shoot_actor
+snd_shoot_actor_indoor                                             = int_wpn_groza_snd_shoot_actor
+
 snd_silncer_shot                                                   = wpn_val_snd_shoot
-snd_silncer_shot_indoor                                            = int_wpn_val_snd_shoot
+; snd_silncer_shot_indoor                                            = int_wpn_val_snd_shoot
 snd_silncer_shot_actor                                             = wpn_val_snd_shoot_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_val_snd_shoot_actor
-snd_shoot_actor_indoor                                             = int_wpn_groza_snd_shoot_actor
 
 [wpn_vintorez_sounds]:wpn_val_sounds
 snd_draw                                                           = weapons\vintorez\vintorez_draw
@@ -1811,17 +2076,19 @@ snd_reload_empty                                                   = weapons\vit
 snd_draw                                                           = weapons\vintorez\vintorez_draw
 snd_holster                                                        = weapons\sniper_holster
 snd_reload                                                         = weapons\vssk\vssk_reload, 0.7
-snd_shoot                                                          = wpn_vssk_snd_silenced
-snd_shoot_indoor                                                   = int_wpn_vssk_snd_silenced
-snd_shoot_actor                                                    = wpn_vssk_snd_silenced_actor
-snd_silncer_shot                                                   = wpn_vssk_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_vssk_snd_silenced
-snd_silncer_shot_actor                                             = wpn_vssk_snd_silenced_actor
-snd_silncer_shot_actor_indoor                                      = int_wpn_vssk_snd_silenced_actor
 snd_switch_mode                                                    = firemode\firemode_vss
 snd_empty                                                          = weapons\_dryfire\bullpup_metal_trigger
 snd_empty_first                                                    = weapons\_dryfire\ash12_hammer
+
+snd_shoot                                                          = wpn_vssk_snd_silenced
+; snd_shoot_indoor                                                   = int_wpn_vssk_snd_silenced
+snd_shoot_actor                                                    = wpn_vssk_snd_silenced_actor
 snd_shoot_actor_indoor                                             = int_wpn_vssk_snd_silenced_actor
+
+snd_silncer_shot                                                   = wpn_vssk_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_vssk_snd_silenced
+snd_silncer_shot_actor                                             = wpn_vssk_snd_silenced_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_vssk_snd_silenced_actor
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -1836,13 +2103,13 @@ snd_empty                                                          = weapons\_dr
 snd_empty_first                                                    = weapons\_dryfire\bizon_hammer
 
 snd_shoot                                                          = wpn_vz61_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_vz61_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_vz61_snd_shoot
 snd_shoot_actor                                                    = wpn_vz61_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_vz61_snd_shoot_actor
 snd_shoot_first                                                    = weapons\_bolt\mono\mp5_prefire
 
 snd_silncer_shot                                                   = wpn_smg9_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_smg9_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_smg9_snd_silenced
 snd_silncer_shot_actor                                             = wpn_smg9_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_smg9_snd_silenced_actor
 snd_silncer_shot_first                                             = weapons\_bolt\mono\mp5_prefire
@@ -1855,15 +2122,17 @@ snd_holster                                                        = weapons\rif
 snd_reload                                                         = weapons\9a91\9a91_reload
 snd_reload_empty                                                   = weapons\9a91\9a91_reload_empty
 snd_reload_misfire                                                 = weapons\9a91\9a91_unjam
+snd_switch_mode                                                    = firemode\firemode_vss
+
 snd_shoot                                                          = wpn_groza_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_groza_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_groza_snd_shoot
 snd_shoot_actor                                                    = wpn_groza_snd_shoot_actor
+snd_shoot_actor_indoor                                             = int_wpn_groza_snd_shoot_actor
+
 snd_silncer_shot                                                   = wpn_939_snd_shoot
-snd_silncer_shot_indoor                                            = int_wpn_939_snd_shoot
+; snd_silncer_shot_indoor                                            = int_wpn_939_snd_shoot
 snd_silncer_shot_actor                                             = wpn_939_snd_shoot_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_939_snd_shoot_actor
-snd_switch_mode                                                    = firemode\firemode_vss
-snd_shoot_actor_indoor                                             = int_wpn_groza_snd_shoot_actor
 
 [wpn_vsk94_sounds]:wpn_9a91_sounds
 
@@ -1873,16 +2142,18 @@ snd_shoot_actor_indoor                                             = int_wpn_gro
 snd_draw                                                           = weapons\generic_draw
 snd_holster                                                        = weapons\sniper_holster
 snd_reload                                                         = weapons\wa2000\wa2000_reload
-snd_shoot                                                          = wpn_m14_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_m14_snd_shoot
-snd_shoot_actor                                                    = wpn_m14_snd_shoot_actor
-snd_silncer_shot                                                   = wpn_m14_wstfg_snd_silenced
-snd_silncer_shot_indoor                                            = int_wpn_m14_wstfg_snd_silenced
-snd_silncer_shot_actor                                             = wpn_scar_wstfg_snd_silenced_actor
-snd_silncer_shot_actor_indoor                                      = int_wpn_m14_wstfg_snd_silenced_actor
 snd_empty                                                          = weapons\_dryfire\sig_trigger
 snd_empty_first                                                    = weapons\_dryfire\scar_hammer
+
+snd_shoot                                                          = wpn_m14_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_m14_snd_shoot
+snd_shoot_actor                                                    = wpn_m14_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_m14_snd_shoot_actor
+
+snd_silncer_shot                                                   = wpn_m14_wstfg_snd_silenced
+; snd_silncer_shot_indoor                                            = int_wpn_m14_wstfg_snd_silenced
+snd_silncer_shot_actor                                             = wpn_scar_wstfg_snd_silenced_actor
+snd_silncer_shot_actor_indoor                                      = int_wpn_m14_wstfg_snd_silenced_actor
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -1907,11 +2178,12 @@ snd_add_cartridge1                                                 = weapons\pum
 snd_add_cartridge2                                                 = weapons\pump\pump_load_3
 snd_reload_misfire                                                 = weapons\remington870\rem870_unjam
 snd_bore                                                           = weapons\remington870\rem870_inspect
-snd_shoot                                                          = wpn_870_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_870_snd_shoot
-snd_shoot_actor                                                    = wpn_870_snd_shoot_actor
 snd_empty                                                          = weapons\_dryfire\rem870_trigger
 snd_empty_first                                                    = weapons\_dryfire\shotgun_hammer
+
+snd_shoot                                                          = wpn_870_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_870_snd_shoot
+snd_shoot_actor                                                    = wpn_870_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_870_snd_shoot_actor
 
 [wpn_mossberg_sounds]:wpn_winchester1300_sounds
@@ -1923,8 +2195,9 @@ snd_shoot_actor_indoor                                             = int_wpn_870
 [wpn_toz194_sounds]:wpn_winchester1300_sounds
 snd_reload_misfire                                                 = weapons\toz194\toz194_unjam
 snd_bore                                                           = weapons\toz194\toz194_inspect
+
 snd_shoot                                                          = wpn_toz194_snd_shoot
-snd_shoot_indoor                                                   = int_wpn_toz194_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_toz194_snd_shoot
 snd_shoot_actor                                                    = wpn_toz194_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_toz194_snd_shoot_actor
 
