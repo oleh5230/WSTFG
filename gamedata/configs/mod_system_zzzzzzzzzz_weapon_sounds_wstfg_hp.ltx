@@ -215,12 +215,11 @@ snd_holster                  = weapons\generic\blnd_holster
 !snd_silncer_shot
 !snd_empty
 
-![wpn_kriss_vector]
+![wpn_kriss_vector]:!wpn_p90_sounds,wpn_vector_sounds
 snd_reload_misfire          = weapons\vector_new\vector_fte
 !scripted_snd_reload_misfire
 !scripted_snd_reload_misfire_jammed
-snd_empty                   = weapons\_dryfire\ump_trigger
-snd_empty_first				= weapons\_dryfire\ump_hammer
+!snd_empty
 scripted_snd_ammo_check             = weapons\vector_new\vector_magcheck
 scripted_snd_ammo_check_empty       = weapons\vector_new\vector_magcheck
 ![wpn_kriss_vector_hud]
@@ -498,3 +497,14 @@ snd_holster                 = weapons\generic\ak_holster
 snd_empty                   = weapons\_dryfire\svd_trigger
 snd_empty_first             = weapons\_dryfire\svd_hammer
 snd_idle_sprint             = rattle\sprint\sprint_rifle, 0.4, 1.1
+
+![wpn_mosin] ; high-priority
+snd_shoot                                = wpn_mosin_snd_shoot
+; snd_shoot_indoor                         = int_wpn_mosin_snd_shoot
+snd_shoot_actor                          = wpn_mosin_snd_shoot_actor
+snd_shoot_actor_indoor                   = int_wpn_mosin_snd_shoot_actor
+
+snd_silncer_shot                         = wpn_mosin_wstfg_snd_silenced
+; snd_silncer_shot_indoor                  = int_wpn_mosin_wstfg_snd_silenced
+snd_silncer_shot_actor                   = wpn_mosin_wstfg_snd_silenced_actor
+snd_silncer_shot_actor_indoor            = int_wpn_mosin_wstfg_snd_silenced_actor
