@@ -686,7 +686,7 @@ snd_silncer_shot                                                   = wpn_glock_s
 snd_silncer_shot_actor                                             = wpn_glock_snd_silenced_actor_auto
 snd_silncer_shot_actor_indoor                                      = int_wpn_glock_snd_silenced_actor_auto
 snd_silncer_shoot_actor_first                                      = wpn_glock_snd_silenced_actor
-snd_silncer_shoot_actor_indoor_first                               = int_wpn_glock_snd_silenced_actor
+snd_silncer_shoot_actor_first_indoor                               = int_wpn_glock_snd_silenced_actor
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -1050,8 +1050,11 @@ snd_silncer_shot_first                                             = weapons\_bo
 ;-----------------------------------------------------------------------------------------------------------
 
 [wpn_raptr_sounds]:wpn_m4_sounds
-snd_shoot                                                          = raptr_wstfg_snd_shoot
-; snd_shoot_indoor                                                   = int_raptr_wstfg_snd_shoot
+snd_draw                                                           = weapons\raptr\raptr_draw
+snd_holster                                                        = weapons\raptr\raptr_hide
+
+snd_shoot                                                          = wpn_raptr_wstfg_snd_shoot
+; snd_shoot_indoor                                                   = int_wpn_raptr_wstfg_snd_shoot
 snd_shoot_actor                                                    = wpn_raptr_wstfg_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_raptr_wstfg_snd_shoot_actor
 
@@ -1651,7 +1654,7 @@ snd_shoot                                                          = wpn_rpg_snd
 ; snd_shoot_indoor                                                   = int_wpn_rpg_snd_shoot
 snd_shoot_actor                                                    = wpn_rpg_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_rpg_snd_shoot_actor
-snd_fly_sound                                                      = weapons\_boom\mono\rpg\flyby
+snd_fly_sound                                                      = weapons\rocket_fly ;weapons\_boom\mono\rpg\flyby
 snd_explode                                                        = wpn_fake_og-7b_explode
 
 ;-----------------------------------------------------------------------------------------------------------
@@ -1899,6 +1902,7 @@ snd_shoot                                                          = wpn_svd_snd
 ; snd_shoot_indoor                                                   = int_wpn_svd_snd_shoot
 snd_shoot_actor                                                    = wpn_svd_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_svd_snd_shoot_actor
+snd_shoot_first                                                    = weapons\_bolt\mono\scar_prefire
 
 snd_silncer_shot                                                   = wpn_svd_wstfg_snd_silenced
 ; snd_silncer_shot_indoor                                            = int_wpn_svd_wstfg_snd_silenced
