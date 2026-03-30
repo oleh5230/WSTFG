@@ -1,26 +1,32 @@
 ;-----------------------------------------------------------------------------------------------------------------------------
 ;---------------------------------- SNIPER RIFLES ----------------------------------------------------------------------------
 ;-----------------------------------------------------------------------------------------------------------------------------
-![wpn_steyr_scout]:wpn_remington700_sounds
-!snd_shoot
-!snd_shoot_actor
-!snd_silncer_shot
-!snd_silncer_shot_actor
+![wpn_steyr_scout]
+snd_shoot				    = wpn_scout_wstfg_snd_shoot
+snd_shoot_actor			    = wpn_scout_wstfg_snd_shoot_actor
+snd_shoot_actor_indoor      = int_wpn_scout_wstfg_snd_shoot_actor
+snd_silncer_shot		    = wpn_scout_wstfg_snd_silenced
+snd_silncer_shot_actor      = wpn_scout_wstfg_snd_silenced_actor
+snd_silncer_shot_actor_indoor = int_wpn_scout_wstfg_snd_silenced_actor
 snd_draw					= weapons\generic\draw_slow
 snd_holster					= weapons\generic\holster_slow
-!snd_empty
+snd_empty                   = weapons\_dryfire\sniper_trigger
+snd_empty_first             = weapons\_dryfire\sniper_hammer
 snd_reload_misfire          = weapons\toz106\bolt
 ![wpn_steyr_scout_hud]
 anm_reload_misfire          = toz106_shoot_fullstock_1, shoot_1
 
-![wpn_steyr_scout_big]:wpn_remington700_sounds
-!snd_shoot
-!snd_shoot_actor
-!snd_silncer_shot
-!snd_silncer_shot_actor
+![wpn_steyr_scout_big]
+snd_shoot				    = wpn_r700_snd_shoot
+snd_shoot_actor			    = wpn_r700_snd_shoot_actor
+snd_shoot_actor_indoor      = int_wpn_r700_snd_shoot_actor
+snd_silncer_shot		    = wpn_r700_snd_silenced
+snd_silncer_shot_actor      = wpn_r700_snd_silenced_actor
+snd_silncer_shot_actor_indoor = int_wpn_r700_snd_silenced_actor
 snd_draw					= weapons\generic\draw_slow
 snd_holster					= weapons\generic\holster_slow
-!snd_empty
+snd_empty                   = weapons\_dryfire\sniper_trigger
+snd_empty_first             = weapons\_dryfire\sniper_hammer
 snd_reload_misfire          = weapons\toz106\bolt
 ![wpn_steyr_scout_big_hud]
 anm_reload_misfire          = toz106_shoot_fullstock_1, shoot_1
@@ -229,9 +235,9 @@ scripted_snd_ammo_check             = weapons\wpn_remington700_new\remington700_
 scripted_snd_ammo_check_empty       = weapons\wpn_remington700_new\remington700_new_ammo_check
 
 ![wpn_remington700_lapua700]
-snd_shoot				    = wpn_dvl_federal_wstfg_snd_silenced
-snd_shoot_actor			    = wpn_dvl_federal_wstfg_snd_silenced_actor
-snd_shoot_actor_indoor      = int_wpn_dvl_federal_wstfg_snd_silenced_actor
+snd_shoot				    = wpn_dvl_wstfg_snd_shoot
+snd_shoot_actor			    = wpn_dvl_wstfg_snd_shoot_actor
+snd_shoot_actor_indoor      = int_wpn_dvl_wstfg_snd_shoot_actor
 snd_silncer_shot		    = wpn_dvl_federal_wstfg_snd_silenced
 snd_silncer_shot_actor      = wpn_dvl_federal_wstfg_snd_silenced_actor
 snd_silncer_shot_actor_indoor = int_wpn_dvl_federal_wstfg_snd_silenced_actor
