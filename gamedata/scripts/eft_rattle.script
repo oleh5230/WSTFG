@@ -91,11 +91,12 @@ local wpn = {
 function get_wpn_params(weapon)
     if not weapon then return end
     local sec = weapon:section()
+    sec = SYS_GetParam(0, sec, "parent_section") or sec
     if not cached_sec or sec ~= cached_sec then
         cached_sec     = sec
         wpn.weight     = ini_sys:r_string_ex(sec, "inv_weight") or 3.3
         wpn.aim_time   = ini_sys:r_string_ex(sec, "zoom_rotate_time") or 0.25
-        wpn.volume     = 0.35 --(0.25 + weight * 0.025)
+        wpn.volume     = 0.5 --(0.25 + weight * 0.025)
         wpn.frequency  = clamp(0.25 / wpn.aim_time, 0.8, 1.2)
         wpn.kind       = SYS_GetParam(0, sec, "kind") or "w_rifle"
         wpn.class      = wpn_kinds[wpn.kind] or wpn_kinds["w_rifle"]
