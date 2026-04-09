@@ -2,9 +2,44 @@
 WSTFG stands for Weapon Sounds Tweaks and Fixes for [G.A.M.M.A.](https://github.com/Grokitach/Stalker_GAMMA)
 It is a weapon audio overhaul based on [Dark Signal Weapon Audio](https://www.moddb.com/mods/stalker-anomaly/addons/dark-signal-stand-alone-weapon-audio)
 
+## Installation
+**WSTFG is included in GAMMA by default (version 2.11.11)**
+1. Download the latest release archive *(do not extract it)*: <https://github.com/oleh5230/WSTFG/releases>
+2. In Mod Organizer, go to `File` > `Install Mod...` (or press `Ctrl` + `M`)
+3. Select the downloaded archive
+4. Enable the installed mod
+5. Disable default "Oleh's Weapons Sounds Tweaks and Fixes" mod
+6. Move the installed mod to default mod's priority
+7. Install 2026 or later release of demonized Modded Exes (or its forks): <https://github.com/themrdemonized/xray-monolith>
+
+## Troubleshooting
+- `Can't open section 'scripted_snd_*'`: update your exes
+- If gunfire sounds are missing make sure `weapon_sounds.ltx` is not 
+- Recommended SFX Volume: `0.5` (otherwise sounds may be louder/quieter than intended)
+- Recommended Rendering Distance (World) (`rs_vis_distance`): at least `0.9` (50% of the slider) - otherwise distant gunfire sounds would not be audible
+overwritten
+
 ## Recommended in-game settings:
 - SFX Volume (`snd_volume_eff`): `0.5` - otherwise sounds may be louder/quieter than intended
-- Rendering Distance (World) (`rs_vis_distance`): at least `0.6` (20% of the slider) - otherwise distant gunfire sounds would not be audible
+- Rendering Distance (World) (`rs_vis_distance`): at least `0.9` (50% of the slider) - otherwise distant gunfire sounds would not be audible
+
+## Compatibility
+Weapon mods would most likely be compatible, unless they alter weapons already existing in Gamma instead of adding them as unique items
+
+## For Modmakers
+Do not include WSTFG scripts in other mods, they are subject to change and not made with compatibility in mind.
+
+## Credits
+- **YungPr1nce**: a lot of sounds included directly or reused as material
+- **TheDJ**: multiple resounds, help with sources and general advice
+- **relax_68**: multiple foley resounds
+- **HarukaSai**: low ammo hint script
+- **Qudix**: aim rattle script
+- **bert**: casings falling sounds port
+- **The_aphrodite_child**: indoor tails
+- **Varian**: indoor configs
+- **JSRS Team**, **Shrike** and other weapon addon authors whose works are included in GAMMA
+Material sources include: Call of Duty Modern Warfare, Delta Force, Escape from Tarkov, Insurgency: Sandstorm, Ready or Not, SCP: 5K, rzen1th
 
 ## Features
 - Dark Signal gunfire sounds overhaul: redistributed and tweaked gunshot sounds, as well as addition of new ones, aiming for quality over quantity.
@@ -20,18 +55,7 @@ It is a weapon audio overhaul based on [Dark Signal Weapon Audio](https://www.mo
   - Enhanced dryfire
   - Low ammo sounds
 
-## Credits
-- **YungPr1nce**: a lot of sounds included directly or reused as material
-- **TheDJ**: multiple resounds, help with sources and general advice
-- **relax_68**: multiple foley resounds
-- **HarukaSai**: low ammo hint script
-- **Qudix**: aim rattle script
-- **bert**: casings falling sounds port
-- **The_aphrodite_child**: bullet crack sounds, indoor tails
-- **Varian**: indoor configs
-- **JSRS Team**, **Shrike** and other weapon addon authors whose works are included in GAMMA
 
-Material sources include: Call of Duty Modern Warfare, Delta Force, Escape from Tarkov, Insurgency: Sandstorm, Ready or Not, SCP: 5K, rzen1th
 
 ## Version 1.1 -- 20.11.2023
 **Change log:**
