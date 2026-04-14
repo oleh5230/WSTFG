@@ -32,6 +32,7 @@ local gunfire_sil = {
 }
 
 function on_before_play_hud_sound(alias, parent, result)
+    --printf("on_before_play_hud_sound: %s %s %s", alias, parent, result)
     if parent and parent:id() == AC_ID then
         if gunfire[alias] then
             result.volume_mult = volume
