@@ -13,11 +13,11 @@ It is a weapon audio overhaul based on [Dark Signal Weapon Audio](https://www.mo
 7. Install 2026 or later release of demonized Modded Exes (or its forks): <https://github.com/themrdemonized/xray-monolith>
 
 ## Troubleshooting
-- `Can't open section 'scripted_snd_*'`: update your exes
-- If gunfire sounds are missing make sure `weapon_sounds.ltx` is not 
+- Gunfire sounds are missing: make sure `weapon_sounds.ltx` is not overwritten
+- Can't open section 'scripted_snd_*' error: update your exes
+- Gunfire Volume sliders are ineffective: update your exes
 - Recommended SFX Volume: `0.5` (otherwise sounds may be louder/quieter than intended)
 - Recommended Rendering Distance (World) (`rs_vis_distance`): at least `0.9` (50% of the slider) - otherwise distant gunfire sounds would not be audible
-overwritten
 
 ## Recommended in-game settings:
 - SFX Volume (`snd_volume_eff`): `0.5` - otherwise sounds may be louder/quieter than intended
