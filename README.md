@@ -3,7 +3,7 @@ WSTFG stands for Weapon Sounds Tweaks and Fixes for [G.A.M.M.A.](https://github.
 It is a weapon audio overhaul based on [Dark Signal Weapon Audio](https://www.moddb.com/mods/stalker-anomaly/addons/dark-signal-stand-alone-weapon-audio)
 
 ## Installation
-**WSTFG is included in GAMMA by default (version 2.11.11)**
+**WSTFG is included in GAMMA by default (version 3.0.5)**
 1. Download the latest release archive *(do not extract it)*: <https://github.com/oleh5230/WSTFG/releases>
 2. In Mod Organizer, go to `File` > `Install Mod...` (or press `Ctrl` + `M`)
 3. Select the downloaded archive

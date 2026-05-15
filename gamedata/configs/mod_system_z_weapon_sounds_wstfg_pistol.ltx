@@ -2,6 +2,21 @@
 ;------------------------------------- PISTOLS -------------------------------------------------------------------------------
 ;-----------------------------------------------------------------------------------------------------------------------------
 
+![wpn_walther]
+scripted_snd_ammo_check                 = weapons\glock\glock_magcheck
+scripted_snd_ammo_check_empty           = weapons\glock\glock_magcheck
+scripted_snd_ammo_check_jammed          = weapons\glock\glock_magcheck
+scripted_snd_ammo_check_empty_jammed    = weapons\glock\glock_magcheck
+;scripted_snd_ammo_check_no_mag          = $no_sound
+
+snd_reload		                        = weapons\glock\glock_reload
+snd_reload_empty	                    = weapons\glock\glock_reload_empty
+
+snd_reload_misfire                      = weapons\glock\glock_unjam
+scripted_snd_reload_misfire_empty       = weapons\glock\glock_unjam_empty
+scripted_snd_sprint2walk        	    = weapons\fort\fort_new_draw
+scripted_snd_walk2sprint        	    = weapons\fort\fort_new_holster   
+
 ![wpn_pm]
 !snd_silncer_shot
 !snd_empty
@@ -20,7 +35,7 @@ snd_reload_misfire          = weapons\generic\pistolguns_revival2
 !snd_empty
 snd_draw                    = weapons\generic\pistolguns_draw
 snd_holster                 = weapons\generic\pistolguns_holster
-; snd_idle_sprint             = rattle\sprint\sprint_hand, 1.0, 1.2
+; ; wstfg_snd_idle_sprint             = rattle\sprint\sprint_hand, 1.0, 1.2
 ![wpn_aps_hud]
 !anm_bore_empty_jammed
 !anm_bore_jammed
@@ -41,6 +56,10 @@ snd_holster                 = weapons\generic\pistolguns_holster
 !snd_silncer_shot
 !snd_switch_mode
 !snd_empty
+![wpn_oc33_hud]
+!anm_switch_mode
+!anm_switch_mode_empty
+!anm_switch_mode_jammed
 
 ![wpn_tt33]
 !snd_switch_mode

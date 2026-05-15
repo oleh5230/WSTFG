@@ -11,7 +11,8 @@ snd_switch				    = weapons\abakan_n\ak74_gl_activate
 snd_draw                    = weapons\generic\guns_draw
 snd_holster                 = weapons\generic\guns_holster
 !snd_empty
-snd_idle_sprint             = rattle\sprint\sprint_rifle, 0.35, 1.18
+!snd_switch_mode
+; wstfg_snd_idle_sprint             = rattle\sprint\sprint_rifle, 0.35, 1.18
 ![wpn_abakan_n_hud]
 anm_reload_misfire_w_gl     = abakan_guns_misfire_w_gl, misfire
 
@@ -31,6 +32,7 @@ scripted_snd_switch_g       = weapons\ak12\ak12_gl_on
 scripted_snd_switch         = weapons\ak12\ak12_gl_off
 snd_reload_grenade		    = weapons\ak12\ak12_gl_re
 !snd_empty
+!snd_switch_mode
 
 ; ![wpn_aek_hud] high-priority
 ; !anm_switch_mode
@@ -58,7 +60,7 @@ snd_reload_grenade		    = weapons\ak12\ak12_gl_re
 snd_switch_mode				= weapons\ak74\ak74_switch_mode_quick
 snd_draw                    = weapon\fn2000\fn2000_deploy
 snd_holster                 = weapon\fn2000\fn2000_holster
-snd_idle_sprint             = rattle\sprint\sprint_rifle, 0.35, 1.0
+; wstfg_snd_idle_sprint             = rattle\sprint\sprint_rifle, 0.35, 1.0
 !snd_empty
 ![wpn_ak12_m1_hud]
 !anm_switch_mode
@@ -114,30 +116,46 @@ snd_holster                 = weapons\ak105_sp\holster
 !snd_empty
 
 ![wpn_ak105_swamp]
+snd_reload                  = weapons\aksu_prince\aksu_tact_reload
+snd_reload_empty            = weapons\aksu_prince\aksu_tact_reload_empty
+snd_reload_misfire          = weapons\aksu_prince\aksu_tact_misfire
+
+snd_switch_mode				= weapons\ak74\ak74_switch_mode_quick
+snd_draw                    = weapons\generic\siber_draw
+snd_holster                 = weapons\generic\siber_holster
+snd_bore                    = weapons\aksu_prince\aksu_tact_boring
 !snd_empty
 
 ![wpn_ak105_shakal]
+snd_reload                  = weapons\aksu_prince\aksu_tact_reload
+snd_reload_empty            = weapons\aksu_prince\aksu_tact_reload_empty
+snd_reload_misfire          = weapons\aksu_prince\aksu_tact_misfire
+
+snd_switch_mode				= weapons\ak74\ak74_switch_mode_quick
+snd_draw                    = weapons\generic\siber_draw
+snd_holster                 = weapons\generic\siber_holster
+snd_bore                    = weapons\aksu_prince\aksu_tact_boring
 !snd_empty
 
 ![wpn_ak74]
 snd_draw                    = weapons\generic\ak_draw
 snd_holster                 = weapons\generic\ak_holster
-; snd_idle_sprint             = rattle\sprint\sprint_light, 0.4, 1.04
+; ; wstfg_snd_idle_sprint             = rattle\sprint\sprint_light, 0.4, 1.04
 
 ![wpn_ak74m]
 snd_draw                    = weapons\generic\ak_draw
 snd_holster                 = weapons\generic\ak_holster
-; snd_idle_sprint             = rattle\sprint\sprint_light, 0.4, 1.04
+; ; wstfg_snd_idle_sprint             = rattle\sprint\sprint_light, 0.4, 1.04
 
 ![wpn_aks74]
 snd_draw                    = weapons\generic\ak_draw
 snd_holster                 = weapons\generic\ak_holster
-; snd_idle_sprint             = rattle\sprint\sprint_light, 0.4, 1.04
+; ; wstfg_snd_idle_sprint             = rattle\sprint\sprint_light, 0.4, 1.04
 
 ![wpn_ak74u]
 snd_draw                    = weapons\generic\ak_draw
 snd_holster                 = weapons\generic\ak_holster
-; snd_idle_sprint             = rattle\sprint\sprint_light, 0.4, 1.04
+; ; wstfg_snd_idle_sprint             = rattle\sprint\sprint_light, 0.4, 1.04
 
 ![wpn_ak74_n]
 snd_reload_grenade          = weapons\gp25\gp25_grenload_eftwp
@@ -155,19 +173,43 @@ scripted_snd_bore_w_gl      = weapons\ak12custom\inspect_vgrip
 scripted_snd_bore_g         = weapons\ak12custom\inspect_vgrip
 !snd_empty
 
-![wpn_ak74_pmc]
+![wpn_ak74_pmc]:wpn_ak74
+!snd_shoot
+!snd_shoot1
+!snd_shoot2
+!snd_shoot3
+!snd_shoot4
+!snd_shoot6
+!snd_shoot7
+!snd_shoot8
+!snd_shoot9
+!snd_shoot10
+!snd_shoot11
+!snd_shoot12
+!snd_shoot13
+!snd_shoot14
+!snd_shoot15
+!snd_silncer_shot
+!snd_silncer_shot1
+!snd_silncer_shot2
+!snd_silncer_shot3
+!snd_silncer_shot4
+!snd_silncer_shot5
+!snd_silncer_shot6
 snd_switch_mode				= weapons\ak74\ak74_switch_mode_quick
 snd_bore                    = weapons\ak12custom\inspect_vgrip
 !snd_empty
 
 ![wpn_ak74m_beard]
-snd_reload                  = weapons\ak12custom\ak12_m1_reload
-snd_reload_empty            = weapons\ak12custom\ak12_m1_reload_empty
-snd_reload_misfire          = weapons\ak12custom\ak12_m1_misfire
-snd_switch_mode				= weapons\ak74\ak74_switch_mode_quick
-snd_draw                    = weapons\ak12custom\draw
-snd_holster                 = weapons\ak12custom\hide
-snd_bore                    = weapons\ak12custom\inspect_vgrip
+snd_draw                    = weapons\generic\ak_draw
+snd_holster                 = weapons\generic\ak_holster
+snd_reload = weapons\librarian_ak74\reload_plastic
+snd_reload_empty = weapons\librarian_ak74\reload_empty_heavy_plastic
+snd_reload_misfire = weapons\librarian_ak74\unjam
+snd_switch = $no_sound
+snd_switch_mode = weapons\librarian_ak74\firemode
+snd_bore = weapons\librarian_ak74\bored
+snd_reload_grenade = weapons\librarian_ak74\gl_reload
 !snd_empty
 
 ![wpn_ak74u_tac]
@@ -196,32 +238,32 @@ snd_holster                 = weapons\generic\siber_holster
 ![wpn_ak101]
 snd_draw                    = weapons\generic\ak_draw
 snd_holster                 = weapons\generic\ak_holster
-; snd_idle_sprint             = rattle\sprint\sprint_light, 0.4, 1.04
+; ; wstfg_snd_idle_sprint             = rattle\sprint\sprint_light, 0.4, 1.04
 
 ![wpn_ak102]
 snd_draw                    = weapons\generic\ak_draw
 snd_holster                 = weapons\generic\ak_holster
-; snd_idle_sprint             = rattle\sprint\sprint_light, 0.4, 1.04
+; ; wstfg_snd_idle_sprint             = rattle\sprint\sprint_light, 0.4, 1.04
 
 ![wpn_ak103]
 snd_draw                    = weapons\generic\ak_draw
 snd_holster                 = weapons\generic\ak_holster
-; snd_idle_sprint             = rattle\sprint\sprint_light, 0.4, 1.04
+; ; wstfg_snd_idle_sprint             = rattle\sprint\sprint_light, 0.4, 1.04
 
-![wpn_ak104]
-snd_draw                    = weapons\generic\ak_draw
-snd_holster                 = weapons\generic\ak_holster
-; snd_idle_sprint             = rattle\sprint\sprint_light, 0.4, 1.04
+; ![wpn_ak104]
+; snd_draw                    = weapons\generic\ak_draw
+; snd_holster                 = weapons\generic\ak_holster
+; ; wstfg_snd_idle_sprint             = rattle\sprint\sprint_light, 0.4, 1.04
 
 ![wpn_ak]
 snd_draw                    = weapons\generic\ak_draw
 snd_holster                 = weapons\generic\ak_holster
-; snd_idle_sprint             = rattle\sprint\sprint_light, 0.4, 1.04
+; ; wstfg_snd_idle_sprint             = rattle\sprint\sprint_light, 0.4, 1.04
 
 ![wpn_akm]
 snd_draw                    = weapons\generic\ak_draw
 snd_holster                 = weapons\generic\ak_holster
-; snd_idle_sprint             = rattle\sprint\sprint_light, 0.4, 1.04
+; ; wstfg_snd_idle_sprint             = rattle\sprint\sprint_light, 0.4, 1.04
 
 ![wpn_akm_alfa]:wpn_akm_sounds  ; SeDzhiMol's reanimation patch
 ; snd_reload				    = weapons\ak103\ak103_poly_reload
@@ -237,7 +279,7 @@ snd_holster                 = weapons\generic\ak_holster
 snd_draw                    = weapons\generic\ak_draw
 snd_holster                 = weapons\generic\ak_holster
 snd_switch_mode				= weapons\ru556\ru556_firemode_real
-snd_idle_sprint             = rattle\sprint\sprint_rifle, 0.3, 0.9
+; wstfg_snd_idle_sprint             = rattle\sprint\sprint_rifle, 0.3, 0.9
 !snd_empty
 
 !snd_shoot
@@ -271,10 +313,28 @@ snd_holster				    = weapons\ak74\ak74_holster
 !snd_empty
 !snd_bore
 
-![wpn_ak104_alfa]
+![wpn_ak104_alfa]:wpn_ak104_sounds
 snd_switch_mode				= weapons\ak74\ak74_switch_mode_quick
 snd_draw                    = weapons\generic\siber_draw
 snd_holster                 = weapons\generic\siber_holster
+!snd_shoot
+!snd_shoot1
+!snd_shoot2
+!snd_silncer_shot
+!snd_silncer_shot1
+!snd_silncer_shot2
+!snd_empty
+
+![wpn_ak104] ; patch for Athi's retarget
+snd_switch_mode				= weapons\ak74\ak74_switch_mode_quick
+snd_draw                    = weapons\generic\siber_draw
+snd_holster                 = weapons\generic\siber_holster
+!snd_shoot
+!snd_shoot1
+!snd_shoot2
+!snd_silncer_shot
+!snd_silncer_shot1
+!snd_silncer_shot2
 !snd_empty
 
 ![wpn_rpk]       ; patched for FIREBREATH's reanimation
@@ -283,14 +343,14 @@ scripted_snd_bore_jammed            = weapons\ak12custom\inspect_vgrip
 scripted_snd_sprint2walk        	= weapons\rpk\rpk_sprint_start
 scripted_snd_walk2sprint        	= weapons\rpk\rpk_sprint_end
 !snd_empty
-snd_idle_sprint                     = rattle\sprint\sprint_rifle, 0.45, 1.08
+; wstfg_snd_idle_sprint                     = rattle\sprint\sprint_rifle, 0.45, 1.08
 
 ![wpn_rpk74]:wpn_rpk74_sounds
 snd_bore                            = weapons\rpk\rpk_inspect
 scripted_snd_sprint2walk        	= weapons\rpk\rpk_sprint_start
 scripted_snd_walk2sprint        	= weapons\rpk\rpk_sprint_end
 !snd_empty
-snd_idle_sprint                     = rattle\sprint\sprint_rifle, 0.45, 1.08
+; wstfg_snd_idle_sprint                     = rattle\sprint\sprint_rifle, 0.45, 1.08
 ; ![wpn_rpk74_hud]
 ; anm_switch_mode             = blnd_rpk_firemode, idle
 
@@ -298,7 +358,6 @@ snd_idle_sprint                     = rattle\sprint\sprint_rifle, 0.45, 1.08
 snd_switch_mode             = weapons\ak74\ak74_switch_mode_quick
 snd_bore                    = weapons\ak12custom\inspect_vgrip
 !snd_empty
-
 
 ![wpn_rpk16]
 snd_switch_mode				= weapons\ak74\ak74_switch_mode
@@ -317,7 +376,7 @@ snd_switch_mode				= weapons\ak74\ak74_switch_mode
 !snd_empty3
 !snd_empty4
 !snd_empty5
-snd_idle_sprint             = $no_sound
+; wstfg_snd_idle_sprint             = $no_sound
 
 ![wpn_rpk74_16_drum]
 snd_switch_mode				= weapons\ak74\ak74_switch_mode
@@ -336,7 +395,7 @@ snd_switch_mode				= weapons\ak74\ak74_switch_mode
 !snd_empty3
 !snd_empty4
 !snd_empty5
-snd_idle_sprint             = $no_sound
+; wstfg_snd_idle_sprint             = $no_sound
 
 ![wpn_rpd]
 snd_reload_misfire			= $no_sound
@@ -352,7 +411,7 @@ snd_holster                                                       = weapons\sick
 snd_reload_grenade      	                                      = weapons\gp25\gp25_grenload_grozaguns
 snd_switch                                                        = weapons\gr\groza_gl_activate
 snd_switch_g                                                      = weapons\gr\groza_gl_activate
-snd_idle_sprint                                                   = rattle\sprint\sprint_rifle, 0.35, 1.18
+; wstfg_snd_idle_sprint                                                   = rattle\sprint\sprint_rifle, 0.35, 1.18
 
 ![wpn_groza_nimble]:wpn_aks74u_sounds
 snd_reload                  = weapons\gr\groza_reload_poly
@@ -365,7 +424,7 @@ snd_reload_misfire                                                = weapons\gr\g
 snd_bore					                                      = $no_sound
 snd_switch                                                        = weapons\gr\groza_gl_deactivate
 snd_switch_g                                                      = weapons\gr\groza_gl_activate
-snd_idle_sprint                                                   = rattle\sprint\sprint_rifle, 0.35, 1.18
+; wstfg_snd_idle_sprint                                                   = rattle\sprint\sprint_rifle, 0.35, 1.18
 !snd_empty
 ![wpn_groza_nimble_hud]
 !anm_switch_mode
@@ -448,7 +507,7 @@ snd_reload_misfire                                                = weapons\gr\g
 snd_bore					                                      = $no_sound
 snd_switch                                                        = weapons\gr\groza_gl_deactivate
 snd_switch_g                                                      = weapons\gr\groza_gl_activate
-snd_idle_sprint                                                   = rattle\sprint\sprint_rifle, 0.35, 1.18
+; wstfg_snd_idle_sprint                                                   = rattle\sprint\sprint_rifle, 0.35, 1.18
 !snd_empty
 ![wpn_groza_hud]
 !anm_switch_mode
@@ -515,7 +574,7 @@ snd_bore                    = weapons\ak12custom\inspect_vgrip
 snd_draw                    = weapon\fn2000\fn2000_deploy
 snd_holster                 = weapon\fn2000\fn2000_holster
 snd_switch_mode             = firemode\firemode_vss
-snd_idle_sprint             = rattle\sprint\sprint_rifle, 0.3, 1.16
+; wstfg_snd_idle_sprint             = rattle\sprint\sprint_rifle, 0.3, 1.16
 !snd_empty
 
 snd_bore                            = $no_sound
@@ -531,7 +590,7 @@ scripted_snd_ammo_check_empty       = weapons\val\val_magcheck
 snd_draw                    = weapon\fn2000\fn2000_deploy
 snd_holster                 = weapon\fn2000\fn2000_holster
 snd_switch_mode             = firemode\firemode_vss
-snd_idle_sprint             = rattle\sprint\sprint_rifle, 0.3, 1.16
+; wstfg_snd_idle_sprint             = rattle\sprint\sprint_rifle, 0.3, 1.16
 !snd_empty
 
 snd_bore                            = $no_sound
@@ -547,7 +606,7 @@ scripted_snd_ammo_check_empty       = weapons\val\val_magcheck
 snd_draw                    = weapon\fn2000\fn2000_deploy
 snd_holster                 = weapon\fn2000\fn2000_holster
 snd_switch_mode             = firemode\firemode_vss
-snd_idle_sprint             = rattle\sprint\sprint_rifle, 0.3, 1.16
+; wstfg_snd_idle_sprint             = rattle\sprint\sprint_rifle, 0.3, 1.16
 !snd_empty
 
 snd_bore                            = $no_sound
@@ -606,7 +665,7 @@ snd_reload_misfire      = weapons\pkm_prince\pkm_unjam
 
 snd_draw                    = weapons\pkm_prince\pkm_draw
 snd_holster                 = weapons\pkm_prince\pkm_holster
-snd_idle_sprint             = rattle\sprint\sprint_pkm, 1.0, 0.9
+wstfg_snd_idle_sprint             = rattle\sprint\sprint_pkm, 1.0, 0.9
 scripted_snd_idle_aim_start          = rattle\ads\pkm_aimin, true
 scripted_snd_idle_aim_end            = rattle\ads\pkm_aimout, true
 
@@ -626,7 +685,7 @@ scripted_snd_idle_aim_end            = rattle\ads\pkm_aimout, true
 
 snd_draw                    = weapons\pkm_prince\pkm_draw
 snd_holster                 = weapons\pkm_prince\pkm_holster
-snd_idle_sprint             = rattle\sprint\sprint_pkm, 1.0, 0.9
+wstfg_snd_idle_sprint             = rattle\sprint\sprint_pkm, 1.0, 0.9
 scripted_snd_idle_aim_start          = rattle\ads\pkm_aimin, true
 scripted_snd_idle_aim_end            = rattle\ads\pkm_aimout, true
 
@@ -646,7 +705,7 @@ scripted_snd_idle_aim_end            = rattle\ads\pkm_aimout, true
 
 snd_draw                    = weapons\pkm_prince\pkm_draw
 snd_holster                 = weapons\pkm_prince\pkm_holster
-snd_idle_sprint             = rattle\sprint\sprint_pkm, 1.0, 0.9
+wstfg_snd_idle_sprint             = rattle\sprint\sprint_pkm, 1.0, 0.9
 scripted_snd_idle_aim_start          = rattle\ads\pkm_aimin, true
 scripted_snd_idle_aim_end            = rattle\ads\pkm_aimout, true
 
@@ -671,7 +730,7 @@ snd_reload_misfire      = weapons\pkm_prince\pkm_unjam
 
 snd_draw                    = weapons\pkm_prince\pkm_draw
 snd_holster                 = weapons\pkm_prince\pkm_holster
-snd_idle_sprint             = rattle\sprint\sprint_pkm, 1.0, 0.9
+wstfg_snd_idle_sprint             = rattle\sprint\sprint_pkm, 1.0, 0.9
 scripted_snd_idle_aim_start          = rattle\ads\pkm_aimin, true
 scripted_snd_idle_aim_end            = rattle\ads\pkm_aimout, true
 
@@ -691,7 +750,7 @@ scripted_snd_idle_aim_end            = rattle\ads\pkm_aimout, true
 
 snd_draw                    = weapons\pkm_prince\pkm_draw
 snd_holster                 = weapons\pkm_prince\pkm_holster
-snd_idle_sprint             = rattle\sprint\sprint_pkm, 1.0, 0.9
+wstfg_snd_idle_sprint             = rattle\sprint\sprint_pkm, 1.0, 0.9
 scripted_snd_idle_aim_start          = rattle\ads\pkm_aimin, true
 scripted_snd_idle_aim_end            = rattle\ads\pkm_aimout, true
 
@@ -716,6 +775,6 @@ snd_reload_misfire      = weapons\pkm_prince\pkm_unjam
 
 snd_draw                    = weapons\pkm_prince\pkm_draw
 snd_holster                 = weapons\pkm_prince\pkm_holster
-snd_idle_sprint             = rattle\sprint\sprint_pkm, 1.0, 0.9
+wstfg_snd_idle_sprint             = rattle\sprint\sprint_pkm, 1.0, 0.9
 scripted_snd_idle_aim_start          = rattle\ads\pkm_aimin, true
 scripted_snd_idle_aim_end            = rattle\ads\pkm_aimout, true
