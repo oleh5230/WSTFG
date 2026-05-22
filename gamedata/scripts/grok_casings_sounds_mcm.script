@@ -23,6 +23,10 @@ function on_mcm_load()
             {id = "volume_aim_rattle", type = "track", val = 2, min = 0, max = 2, step = 0.05, def = 1},
             {id = "volume_lower_raise_rattle", type = "track", val = 2, min = 0, max = 2, step = 0.05, def = 1},
 
+            {id = "divider", type = "line"},
+            {id = "enabled_scope_zoom", type = "check", val = 1, def = true},
+            {id = "volume_scope_zoom", type = "track", val = 2, min = 0, max = 2, step = 0.05, def = 0.5},
+
             -- casings
             {id = "divider", type = "line"},
             {id = "enabled", type = "check", val = 1, def = true},

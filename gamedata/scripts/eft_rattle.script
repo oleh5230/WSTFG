@@ -35,6 +35,7 @@ wpn_kinds = {
     ["w_rifle"]             = "rifle-0",
     ["w_sniper"]            = "shotgun-0",
     ["w_explosive"]         = "shotgun-0",
+    ["w_misc"]              = "shotgun-0",
 }
 
 limit = {
