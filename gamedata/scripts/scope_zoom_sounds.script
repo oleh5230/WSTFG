@@ -54,11 +54,11 @@ function get_scope_sounds(wpn)
 end
 
 function load_mcm_options()
-    if ui_mcm and oleh_sounds_mcm then
-        enabled = ui_mcm.get("oleh_sounds/weapons/enabled_scope_zoom")
-        volume  = ui_mcm.get("oleh_sounds/weapons/volume_scope_zoom") or 0.5
-    -- old MCM compatibility
-    elseif ui_mcm and grok_casings_sounds_mcm then
+    -- if ui_mcm and oleh_sounds_mcm then
+    --     enabled = ui_mcm.get("oleh_sounds/weapons/enabled_scope_zoom")
+    --     volume  = ui_mcm.get("oleh_sounds/weapons/volume_scope_zoom") or 0.5
+    -- -- old MCM compatibility
+    if ui_mcm and grok_casings_sounds_mcm then
         enabled = ui_mcm.get("grok_casings_sounds/enabled_scope_zoom")
         volume  = ui_mcm.get("grok_casings_sounds/volume_scope_zoom") or 0.5
     end
