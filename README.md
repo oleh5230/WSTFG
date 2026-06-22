@@ -8,9 +8,6 @@ It is a weapon audio overhaul based on [Dark Signal Weapon Audio](https://www.mo
 2. In Mod Organizer, go to `File` > `Install Mod...` (or press `Ctrl` + `M`)
 3. Select the downloaded archive
 4. Enable the installed mod
-5. Disable default "Oleh's Weapons Sounds Tweaks and Fixes" mod
-6. Move the installed mod to default mod's priority
-7. Install 2026 or later release of demonized Modded Exes (or its forks): <https://github.com/themrdemonized/xray-monolith>
 
 ## Troubleshooting
 - Gunfire sounds are missing: make sure `weapon_sounds.ltx` is not overwritten
