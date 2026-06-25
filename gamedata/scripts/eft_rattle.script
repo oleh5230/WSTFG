@@ -10,7 +10,7 @@ local volume_lower_raise_rattle = 1
 local volume_sprint_rattle = 1
 
 function load_settings()
-    if ui_mcm and oleh_sounds_mcm then
+    if ui_mcm and oleh_sounds_mcm.on_mcm_load then
         opt_aim_rattle              = ui_mcm.get("oleh_sounds/weapons/enabled_aim_rattle")
         opt_lower_raise_rattle      = ui_mcm.get("oleh_sounds/weapons/enabled_lower_raise_rattle")
         opt_sprint_rattle           = ui_mcm.get("oleh_sounds/weapons/enabled_sprint_rattle")
@@ -18,7 +18,7 @@ function load_settings()
         volume_lower_raise_rattle   = ui_mcm.get("oleh_sounds/weapons/volume_lower_raise_rattle") or 1
         volume_sprint_rattle        = ui_mcm.get("oleh_sounds/weapons/volume_sprint_rattle") or 1
     -- old MCM compatibility
-    elseif ui_mcm and grok_casings_sounds_mcm then
+    elseif ui_mcm and grok_casings_sounds_mcm.on_mcm_load then
         opt_aim_rattle              = ui_mcm.get("grok_casings_sounds/enabled_aim_rattle")
         opt_lower_raise_rattle      = ui_mcm.get("grok_casings_sounds/enabled_lower_raise_rattle")
         opt_sprint_rattle           = ui_mcm.get("grok_casings_sounds/enabled_sprint_rattle")

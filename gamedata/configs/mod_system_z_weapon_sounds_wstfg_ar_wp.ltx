@@ -354,12 +354,12 @@ scripted_snd_walk2sprint        	= weapons\rpk\rpk_sprint_end
 ; ![wpn_rpk74_hud]
 ; anm_switch_mode             = blnd_rpk_firemode, idle
 
-![wpn_rpk74_16]:wpn_rpk74_sounds
+![wpn_rpk74_16]:wpn_rpk16_wstfg_sounds
 snd_switch_mode             = weapons\ak74\ak74_switch_mode_quick
 snd_bore                    = weapons\ak12custom\inspect_vgrip
 !snd_empty
 
-![wpn_rpk16]
+![wpn_rpk16]:wpn_rpk16_wstfg_sounds
 snd_switch_mode				= weapons\ak74\ak74_switch_mode
 !snd_shoot
 !snd_shoot_actor
@@ -378,7 +378,7 @@ snd_switch_mode				= weapons\ak74\ak74_switch_mode
 !snd_empty5
 ; wstfg_snd_idle_sprint             = $no_sound
 
-![wpn_rpk74_16_drum]
+![wpn_rpk74_16_drum]:wpn_rpk16_wstfg_sounds
 snd_switch_mode				= weapons\ak74\ak74_switch_mode
 !snd_shoot
 !snd_shoot_actor
@@ -621,8 +621,10 @@ scripted_snd_ammo_check_empty       = weapons\val\val_magcheck
 ![wpn_vihr]
 !snd_silncer_shot
 !snd_silncer_shot_actor
-snd_draw                    = weapons\generic\rifle_draw_fast
-snd_holster                 = weapons\generic\siber_holster, 1.0, 0.1
+; snd_draw                    = weapons\generic\rifle_draw_fast
+; snd_holster                 = weapons\generic\siber_holster, 1.0, 0.1
+scripted_snd_show           = weapons\vihr\ak74_draw, 0.5
+scripted_snd_hide           = weapons\vihr\ak74_holster, 0.5
 !snd_switch_mode
 !snd_empty
 

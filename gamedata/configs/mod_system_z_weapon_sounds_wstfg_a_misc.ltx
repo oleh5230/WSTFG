@@ -14,6 +14,10 @@ snd_throw                   = weapons\bolt\bolt_throw_2, 1.0, 0.1 ; potentially 
 ; snd_throw1                  = weapons\bolt\bolt_throw_1, 1.0, 0.1
 ; snd_throw2                  = weapons\bolt\bolt_throw_3, 1.0, 0.1
 
+![device_glowstick]
+snd_draw					= weapons\bino_draw
+snd_holster					= weapons\bino_holster
+
 ![grenade_gd-05]:grenade_gd-05_sounds
 !snd_explode
 !snd_checkout
@@ -55,9 +59,13 @@ snd_zoom_out                = scope\scope_zoom_lever_out
 snd_zoom_in                 = scope\scope_zoom_button_in
 snd_zoom_out                = scope\scope_zoom_button_out
 
-; ![gauss_s]
-; snd_zoom_in                 = $no_sound
-; snd_zoom_out                = $no_sound
+![gauss_s]
+snd_zoom_in                 = scope\scope_zoom_alt_1,scope\scope_zoom_alt_2,scope\scope_zoom_alt_3,scope\scope_zoom_alt_4
+snd_zoom_out                = scope\scope_zoom_alt_1,scope\scope_zoom_alt_2,scope\scope_zoom_alt_3,scope\scope_zoom_alt_4
+
+![wpn_binoc_inv]
+snd_zoom_in                 = scope\scope_zoom_wp_1,scope\scope_zoom_wp_2,scope\scope_zoom_wp_3,scope\scope_zoom_wp_4
+snd_zoom_out                = scope\scope_zoom_wp_1,scope\scope_zoom_wp_2,scope\scope_zoom_wp_3,scope\scope_zoom_wp_4
 
 ![1p78gs_s]
 snd_zoom_in                 = scope\scope_zoom_wp_1,scope\scope_zoom_wp_2,scope\scope_zoom_wp_3,scope\scope_zoom_wp_4
