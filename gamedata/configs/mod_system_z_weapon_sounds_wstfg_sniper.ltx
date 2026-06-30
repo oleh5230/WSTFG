@@ -55,6 +55,7 @@ snd_add_cartridge3                       = weapons\obrez\obrez_cartridge_4
 snd_add_cartridge4                       = weapons\obrez\obrez_cartridge_5
 
 !snd_empty
+snd_rattle_class            = db\db_shotty-0
 ; wstfg_snd_idle_sprint             = rattle\sprint\sprint_light, 0.2, 1.12
 snd_reload_misfire          = weapons\obrez\bolt
 ![wpn_mosin_hud]
@@ -76,12 +77,16 @@ snd_silncer_shot                         = wpn_k98_jm_wstfg_snd_silenced
 snd_silncer_shot_actor                   = wpn_k98_jm_wstfg_snd_silenced_actor
 snd_silncer_shot_actor_indoor            = int_wpn_k98_jm_wstfg_snd_silenced_actor
 
+scripted_snd_shots                       = weapons\k98\bolt
+scripted_snd_shot_l                      = weapons\k98\bolt
+
 snd_add_cartridge		    = weapons\k98\kar98k_cartridge_1
 snd_add_cartridge1          = weapons\k98\kar98k_cartridge_2
 snd_add_cartridge2          = weapons\k98\kar98k_cartridge_3
 snd_add_cartridge3          = weapons\k98\kar98k_cartridge_4
 snd_add_cartridge4          = weapons\k98\kar98k_cartridge_5
 !snd_empty
+snd_rattle_class            = db\db_shotty-0
 ; wstfg_snd_idle_sprint             = rattle\sprint\sprint_light, 0.2, 1.12
 snd_reload_misfire          = weapons\k98\bolt
 ![wpn_k98_hud]
@@ -330,6 +335,8 @@ scripted_snd_ammo_check_empty_aim           = weapons\vssk\barry_magcheck_aim
 scripted_snd_ammo_check_jammed              = weapons\vssk\barry_magcheck
 scripted_snd_ammo_check_empty_jammed        = weapons\vssk\barry_magcheck
 
+snd_rattle_class            = mk14\mk14-0
+
 ![wpn_winchester1873]
 scripted_snd_shots          = weapon\winchester1873\lever, true
 scripted_snd_shot_l         = $no_sound
@@ -343,6 +350,7 @@ snd_silncer_shot_actor_indoor = int_wpn_winchester_wsftg_snd_silenced_actor
 snd_empty			        = weapons\_dryfire\svd_trigger
 snd_empty_first		        = $no_sound
 snd_bore					= weapon\winchester1873\win_inspect
+snd_rattle_class            = db\db_shotty-0
 ; wstfg_snd_idle_sprint             = rattle\sprint\sprint_light, 0.25, 1.2
 
 scripted_snd_sprint_start                       = weapon\winchester1873\win_sprint_start
@@ -390,3 +398,5 @@ snd_shoot                                                          = wpn_gauss_s
 ; snd_shoot_indoor                                                   = int_wpn_gauss_snd_shoot
 snd_shoot_actor                                                    = wpn_gauss_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_gauss_snd_shoot_actor
+
+snd_rattle_class            = mk14\mk14-0

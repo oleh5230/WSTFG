@@ -2,8 +2,12 @@
 ;------------------------------------- SHOTGUNS ------------------------------------------------------------------------------
 ;-----------------------------------------------------------------------------------------------------------------------------
 
+![wpn_eft_mts_255]
+snd_rattle_class            = db\db_shotty-0
+
 ![wpn_toz34]
 snd_bore                    = weapons\toz34\toz34_bore
+snd_rattle_class            = db\db_shotty-0
 !snd_empty
 ; wstfg_snd_idle_sprint             = rattle\sprint\sprint_light, 0.35, 1.12
 ![wpn_toz34_hud]
@@ -36,8 +40,10 @@ snd_shoot			        = wpn_db23_wstfg_snd_shoot
 ; snd_shoot_indoor			= int_wpn_db23_wstfg_snd_shoot
 snd_shoot_actor			    = wpn_db23_wstfg_snd_shoot_actor
 snd_shoot_actor_indoor	    = int_wpn_db23_wstfg_snd_shoot_actor
-
 !snd_empty
+
+![wpn_bm16]
+snd_rattle_class            = db\db_shotty-0
 
 ![wpn_bm16_full_alt_23]
 snd_shoot			        = wpn_db23_wstfg_snd_shoot
@@ -76,6 +82,7 @@ scripted_snd_add_cartridge2 = weapons\ithacam37\load3
 snd_draw                    = weapons\generic\blnd_draw
 snd_holster                 = weapons\generic\blnd_holster
 !snd_empty
+snd_rattle_class            = db\db_shotty-0
 
 ![wpn_ithacam37_sawnoff]
 snd_shoot			        = wpn_ithacam37_s_wstfg_snd_shoot
@@ -88,6 +95,7 @@ snd_add_cartridge2          = weapons\ithacam37\ithacam37_reload
 snd_draw                    = weapons\generic\blnd_draw
 snd_holster                 = weapons\generic\blnd_holster
 !snd_empty
+snd_rattle_class            = db\db_shotty-0
 
 ![wpn_ithacam37_stakeout]
 snd_shoot			        = wpn_ithacam37_s_wstfg_snd_shoot
@@ -103,6 +111,7 @@ scripted_snd_add_cartridge2 = weapons\ithacam37\load_r3
 snd_draw                    = weapons\generic\blnd_draw
 snd_holster                 = weapons\generic\blnd_holster
 !snd_empty
+snd_rattle_class            = db\db_shotty-0
 
 ![wpn_ithacam37_stakeout_20x70]
 snd_shoot			        = wpn_ithacam37_s_wstfg_snd_shoot
@@ -118,6 +127,7 @@ scripted_snd_add_cartridge2 = weapons\ithacam37\load_r3
 snd_draw                    = weapons\generic\blnd_draw
 snd_holster                 = weapons\generic\blnd_holster
 !snd_empty
+snd_rattle_class            = db\db_shotty-0
 
 ![wpn_ithacam37_trench]
 snd_shoot			        = wpn_ithacam37_t_wstfg_snd_shoot
@@ -133,6 +143,7 @@ scripted_snd_add_cartridge2 = weapons\ithacam37\load_r3
 snd_draw                    = weapons\generic\blnd_draw
 snd_holster                 = weapons\generic\blnd_holster
 !snd_empty
+snd_rattle_class            = db\db_shotty-0
 
 ![wpn_toz106]
 snd_shoot	                = wpn_toz106_snd_shoot
@@ -147,6 +158,7 @@ snd_draw					= weapons\toz106\draw
 snd_holster					= weapons\toz106\hide
 snd_empty                   = weapons\_dryfire\sks_trigger
 snd_empty_first             = weapons\_dryfire\sniper_hammer
+snd_rattle_class            = db\db_shotty-0
 ![wpn_toz106_hud]
 anm_reload_misfire			= toz106_shoot_1, shoot_1
 
@@ -163,6 +175,7 @@ snd_draw					= weapons\toz106\draw
 snd_holster					= weapons\toz106\hide
 snd_empty                   = weapons\_dryfire\sks_trigger
 snd_empty_first             = weapons\_dryfire\sniper_hammer
+snd_rattle_class            = db\db_shotty-0
 ![wpn_toz106_m1_hud]
 anm_reload_misfire			= toz106_shoot_fullstock_1, shoot_1
 
@@ -170,6 +183,7 @@ anm_reload_misfire			= toz106_shoot_fullstock_1, shoot_1
 !snd_empty
 snd_draw                    = weapons\generic\shotgun_draw
 snd_holster                 = weapons\generic\shotgun_holster
+snd_rattle_class            = db\db_shotty-0
 snd_on_take = weapon
 
 ![wpn_mp153_m1]
@@ -183,6 +197,7 @@ snd_add_cartridge           = $no_sound
 !snd_silncer_shot
 !snd_silncer_shot_actor
 !snd_empty
+snd_rattle_class            = db\db_shotty-0
 
 ![wpn_spas12]
 scripted_snd_add_cartridge                          = weapons\spas\load_1, true
@@ -259,6 +274,9 @@ snd_bore                    = weapons\raptr\raptr_inspect
 snd_bore                    = weapons\raptr\raptr_inspect
 ; wstfg_snd_idle_sprint             = rattle\sprint\sprint_rifle, 0.4, 1.1
 
+![wpn_wincheaster1300]
+snd_rattle_class            = db\db_shotty-0
+
 ![wpn_remington870]
 snd_add_cartridge		    = $no_sound
 snd_add_cartridge1  	    = $no_sound
@@ -276,6 +294,7 @@ scripted_snd_reloadendemptytac_end                                = weapons\winc
 scripted_snd_reload_misfire                                       = weapons\winchestertco\winchester1300_revival, true
 scripted_snd_rotatetac_start                                      = weapons\winchestertco\winchester1300_reload_empty_second_ammo, true
 !snd_empty
+snd_rattle_class            = db\db_shotty-0
 
 ![wpn_mp133]
 !snd_shoot
@@ -298,6 +317,7 @@ scripted_snd_reloadendemptytac_end                                = weapons\winc
 scripted_snd_reload_misfire                                       = weapons\winchestertco\winchester1300_revival, true
 scripted_snd_rotatetac_start                                      = weapons\winchestertco\winchester1300_reload_empty_second_ammo, true
 !snd_empty
+snd_rattle_class            = db\db_shotty-0
 
 snd_shoot                   = wpn_win1300_wstfg_snd_shoot
 snd_shoot_actor             = wpn_win1300_wstfg_snd_shoot_actor
@@ -324,6 +344,7 @@ scripted_snd_reloadendemptytac_end                                = weapons\ks23
 scripted_snd_reload_misfire                                       = weapons\ks23guns\winchester1300_revival, true
 scripted_snd_rotatetac_start                                      = weapons\ks23guns\winchester1300_reload_empty_second_ammo, true
 !snd_empty
+snd_rattle_class            = db\db_shotty-0
 
 ![wpn_ksg23]
 snd_shoot                   = wpn_ksg23_wstfg_snd_shoot

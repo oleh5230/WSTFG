@@ -4,26 +4,15 @@
 
 --[[
 Revisited by oleh5230, 19/03/2024:
-- Calls up to six sound playbacks simultaneously
-- Positional sounds (with offset depending on ejection port orintation)
+- Positional sounds
 - Volume and delay adjustments if player is crouched or prone
 - Mud sounds during rain
 - Tables updated and moved to .ltx files
 - MCM settings
-
-oleh5230, 15/05/2024:
 - Switched to play_no_feedback(): no concurrent playbacks limit, minimized time events usage
 - Separated eject and falling delay
 - Most parameters are now fetched on first shot only
-- .ltx parsed to lua tables instead of direct reading
 - UBGL reload casings sounds
-
-oleh5230, 06/09/2024:
-- Rain mud material indoors fix
-- Delay calculation tweak
-
-oleh5230, 10/11/2024:
-- Offset accepts arbitrary values
 
 Credits:
 - xcvb: get_body_state()
@@ -73,13 +62,13 @@ local volume_base = 2
 local last_weapon_id
 
 function load_mcm_options()
-    if ui_mcm and oleh_sounds_mcm.on_mcm_load then
+    if ui_mcm and oleh_sounds_mcm and oleh_sounds_mcm.on_mcm_load then
         enabled = ui_mcm.get("oleh_sounds/weapons/enabled")
         ubgl_enabled = ui_mcm.get("oleh_sounds/weapons/ubgl_enabled")
         -- volume_base = ui_mcm.get("oleh_sounds/weapons/volume") or 2
         ice_patch = ui_mcm.get("oleh_sounds/weapons/ice_patch")
     -- old MCM compatibility
-    elseif ui_mcm and grok_casings_sounds_mcm.on_mcm_load then
+    elseif ui_mcm and grok_casings_sounds_mcm and grok_casings_sounds_mcm.on_mcm_load then
         enabled = ui_mcm.get("grok_casings_sounds/enabled")
         ubgl_enabled = ui_mcm.get("grok_casings_sounds/ubgl_enabled")
         -- volume_base = ui_mcm.get("grok_casings_sounds/volume") or 2

@@ -10,7 +10,7 @@ local volume_lower_raise_rattle = 1
 local volume_sprint_rattle = 1
 
 function load_settings()
-    if ui_mcm and oleh_sounds_mcm.on_mcm_load then
+    if ui_mcm and oleh_sounds_mcm and oleh_sounds_mcm.on_mcm_load then
         opt_aim_rattle              = ui_mcm.get("oleh_sounds/weapons/enabled_aim_rattle")
         opt_lower_raise_rattle      = ui_mcm.get("oleh_sounds/weapons/enabled_lower_raise_rattle")
         opt_sprint_rattle           = ui_mcm.get("oleh_sounds/weapons/enabled_sprint_rattle")
@@ -18,7 +18,7 @@ function load_settings()
         volume_lower_raise_rattle   = ui_mcm.get("oleh_sounds/weapons/volume_lower_raise_rattle") or 1
         volume_sprint_rattle        = ui_mcm.get("oleh_sounds/weapons/volume_sprint_rattle") or 1
     -- old MCM compatibility
-    elseif ui_mcm and grok_casings_sounds_mcm.on_mcm_load then
+    elseif ui_mcm and grok_casings_sounds_mcm and grok_casings_sounds_mcm.on_mcm_load then
         opt_aim_rattle              = ui_mcm.get("grok_casings_sounds/enabled_aim_rattle")
         opt_lower_raise_rattle      = ui_mcm.get("grok_casings_sounds/enabled_lower_raise_rattle")
         opt_sprint_rattle           = ui_mcm.get("grok_casings_sounds/enabled_sprint_rattle")
@@ -47,6 +47,11 @@ limit = {
     ["sprint_smg-0"]        = 6,
     ["sprint_shotgun-0"]    = 6,
     ["sprint_rifle-0"]      = 6,
+
+    ["mp7\\mp7-0"]          = 8,
+    ["db\\db_shotty-0"]     = 8,
+    ["mk14\\mk14-0"]        = 8,
+    ["pkm\\pkm-0"]          = 8,
 }
 
 count = {
@@ -58,6 +63,11 @@ count = {
     ["sprint_smg-0"]        = 1,
     ["sprint_shotgun-0"]    = 1,
     ["sprint_rifle-0"]      = 1,
+
+    ["mp7\\mp7-0"]          = 1,
+    ["db\\db_shotty-0"]     = 1,
+    ["mk14\\mk14-0"]        = 1,
+    ["pkm\\pkm-0"]          = 1,
 }
 
 -- create sample queues to mitigate the issue of same sample playing multiple times in a row
@@ -70,6 +80,11 @@ queues = {
     ["sprint_smg-0"]        = {},
     ["sprint_shotgun-0"]    = {},
     ["sprint_rifle-0"]      = {},
+
+    ["mp7\\mp7-0"]          = {},
+    ["db\\db_shotty-0"]     = {},
+    ["mk14\\mk14-0"]        = {},
+    ["pkm\\pkm-0"]          = {},
 }
 for k,v in pairs(queues) do
     for i=1, limit[k] do
@@ -100,7 +115,7 @@ function get_wpn_params(weapon)
         wpn.volume     = 0.5 --(0.25 + weight * 0.025)
         wpn.frequency  = clamp(0.25 / wpn.aim_time, 0.8, 1.2)
         wpn.kind       = SYS_GetParam(0, sec, "kind") or "w_rifle"
-        wpn.class      = wpn_kinds[wpn.kind] or wpn_kinds["w_rifle"]
+        wpn.class      = SYS_GetParam(0, sec, "snd_rattle_class") or wpn_kinds[wpn.kind] or wpn_kinds["w_rifle"]
 
         -- special case for magazine fed shotguns
         -- reads GAMMA casings sounds .ltx to check if weapon has delayed ejection (manual action)
@@ -117,11 +132,17 @@ function get_wpn_params(weapon)
         not ini_cas:r_float_ex(sec, "eject_delay") then
             wpn.class = wpn_kinds["w_rifle"]
         end
-        wpn.sclass = "sprint_" .. wpn.class
+
+        wpn.class  = SYS_GetParam(0, sec, "snd_rattle_class", wpn.class)
+        wpn.sclass = SYS_GetParam(0, sec, "snd_rattle_class", "sprint_" .. wpn.class)
     end
 end
 
 function play_aim_sound(volume, frequency)
+    if not wpn.class or not count[wpn.class] or not limit[wpn.class] then
+        printe("!ERROR eft_rattle | missing weapon parameters: %s %s %s", wpn.sclass, count[wpn.sclass], limit[wpn.sclass])
+    return end
+
     local sound = sound_object("weapons\\_rattle\\" .. wpn.class .. queues[wpn.class][count[wpn.class]])
     sound:play(db.actor, 0, sound_object.s2d)
     sound.volume = volume or 0.5
@@ -136,6 +157,10 @@ function play_aim_sound(volume, frequency)
 end
 
 function play_sprint_rattle_sound(volume, frequency)
+    if not wpn.sclass or not count[wpn.sclass] or not limit[wpn.sclass] then
+        printe("!ERROR eft_rattle | missing weapon parameters: %s %s %s", wpn.sclass, count[wpn.sclass], limit[wpn.sclass])
+    return end
+
     local sound = sound_object("weapons\\_rattle\\" .. wpn.sclass .. queues[wpn.sclass][count[wpn.sclass]])
     sound:play(db.actor, 0, sound_object.s2d)
     sound.volume = volume or 0.5
@@ -213,8 +238,9 @@ end
 function actor_on_footstep(material, power, hud_view, flags)
     local active_item = db.actor:active_item()
     if not active_item or (active_item and not IsWeapon(active_item)) then return end
+        local state = active_item:get_state()
 
-    if opt_sprint_rattle and IsMoveState('mcSprint') and game.actor_weapon_lowered() then
+    if opt_sprint_rattle and IsMoveState('mcSprint') and state and state == 0 then -- and game.actor_weapon_lowered()
         get_wpn_params(active_item)
         play_sprint_rattle_sound(wpn.volume * volume_sprint_rattle, 1)
     end
