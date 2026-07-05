@@ -78,7 +78,7 @@ function play_scope_sound(id, scroll_dir)
     if not snd_obj then return false end
 
     snd_obj:play(actor, 0, sound_object.s2d)
-    snd_obj.volume = volume
+    snd_obj.volume = volume * 2
 end
 
 -- build a table with static values per weapon id

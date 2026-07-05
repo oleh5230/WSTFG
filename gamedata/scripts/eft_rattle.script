@@ -114,8 +114,8 @@ function get_wpn_params(weapon)
         wpn.aim_time   = ini_sys:r_string_ex(sec, "zoom_rotate_time") or 0.25
         wpn.volume     = 0.5 --(0.25 + weight * 0.025)
         wpn.frequency  = clamp(0.25 / wpn.aim_time, 0.8, 1.2)
-        wpn.kind       = SYS_GetParam(0, sec, "kind") or "w_rifle"
-        wpn.class      = SYS_GetParam(0, sec, "snd_rattle_class") or wpn_kinds[wpn.kind] or wpn_kinds["w_rifle"]
+        wpn.kind       = SYS_GetParam(0, sec, "kind") or "w_misc"
+        wpn.class      = SYS_GetParam(0, sec, "snd_rattle_class") or wpn_kinds[wpn.kind] or wpn_kinds["w_misc"]
 
         -- special case for magazine fed shotguns
         -- reads GAMMA casings sounds .ltx to check if weapon has delayed ejection (manual action)
@@ -237,12 +237,14 @@ end
 
 function actor_on_footstep(material, power, hud_view, flags)
     local active_item = db.actor:active_item()
-    if not active_item or (active_item and not IsWeapon(active_item)) then return end
+    if not active_item then return end
+    if IsWeapon(active_item) and not IsMelee(active_item) then
         local state = active_item:get_state()
 
-    if opt_sprint_rattle and IsMoveState('mcSprint') and state and state == 0 then -- and game.actor_weapon_lowered()
-        get_wpn_params(active_item)
-        play_sprint_rattle_sound(wpn.volume * volume_sprint_rattle, 1)
+        if opt_sprint_rattle and IsMoveState('mcSprint') and state and state == 0 then -- and game.actor_weapon_lowered()
+            get_wpn_params(active_item)
+            play_sprint_rattle_sound(wpn.volume * volume_sprint_rattle, 1)
+        end
     end
 end
 
