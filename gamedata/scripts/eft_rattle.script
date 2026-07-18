@@ -9,25 +9,6 @@ local volume_aim_rattle = 1
 local volume_lower_raise_rattle = 1
 local volume_sprint_rattle = 1
 
-function load_settings()
-    if ui_mcm and oleh_sounds_mcm and oleh_sounds_mcm.on_mcm_load then
-        opt_aim_rattle              = ui_mcm.get("oleh_sounds/weapons/enabled_aim_rattle")
-        opt_lower_raise_rattle      = ui_mcm.get("oleh_sounds/weapons/enabled_lower_raise_rattle")
-        opt_sprint_rattle           = ui_mcm.get("oleh_sounds/weapons/enabled_sprint_rattle")
-        volume_aim_rattle           = ui_mcm.get("oleh_sounds/weapons/volume_aim_rattle") or 1
-        volume_lower_raise_rattle   = ui_mcm.get("oleh_sounds/weapons/volume_lower_raise_rattle") or 1
-        volume_sprint_rattle        = ui_mcm.get("oleh_sounds/weapons/volume_sprint_rattle") or 1
-    -- old MCM compatibility
-    elseif ui_mcm and grok_casings_sounds_mcm and grok_casings_sounds_mcm.on_mcm_load then
-        opt_aim_rattle              = ui_mcm.get("grok_casings_sounds/enabled_aim_rattle")
-        opt_lower_raise_rattle      = ui_mcm.get("grok_casings_sounds/enabled_lower_raise_rattle")
-        opt_sprint_rattle           = ui_mcm.get("grok_casings_sounds/enabled_sprint_rattle")
-        volume_aim_rattle           = ui_mcm.get("grok_casings_sounds/volume_aim_rattle") or 1
-        volume_lower_raise_rattle   = ui_mcm.get("grok_casings_sounds/volume_lower_raise_rattle") or 1
-        volume_sprint_rattle        = ui_mcm.get("grok_casings_sounds/volume_sprint_rattle") or 1
-    end
-end
-
 wpn_kinds = {
     ["w_pistol"]            = "pistol-0",
     ["w_smg"]               = "smg-0",
@@ -50,6 +31,7 @@ limit = {
 
     ["mp7\\mp7-0"]          = 8,
     ["db\\db_shotty-0"]     = 8,
+    ["asval\\asval-0"]      = 8,
     ["mk14\\mk14-0"]        = 8,
     ["pkm\\pkm-0"]          = 8,
 }
@@ -66,6 +48,7 @@ count = {
 
     ["mp7\\mp7-0"]          = 1,
     ["db\\db_shotty-0"]     = 1,
+    ["asval\\asval-0"]      = 1,
     ["mk14\\mk14-0"]        = 1,
     ["pkm\\pkm-0"]          = 1,
 }
@@ -83,6 +66,7 @@ queues = {
 
     ["mp7\\mp7-0"]          = {},
     ["db\\db_shotty-0"]     = {},
+    ["asval\\asval-0"]      = {},
     ["mk14\\mk14-0"]        = {},
     ["pkm\\pkm-0"]          = {},
 }
@@ -248,6 +232,17 @@ function actor_on_footstep(material, power, hud_view, flags)
     end
 end
 
+function load_mcm_options()
+    if ui_mcm and ((oleh_sounds_mcm and oleh_sounds_mcm.on_mcm_load) or (grok_casings_sounds_mcm and grok_casings_sounds_mcm.on_mcm_load)) then
+        opt_aim_rattle              = ui_mcm.get("oleh_sounds/weapons/enabled_aim_rattle") or ui_mcm.get("grok_casings_sounds/enabled_aim_rattle")
+        opt_lower_raise_rattle      = ui_mcm.get("oleh_sounds/weapons/enabled_lower_raise_rattle") or ui_mcm.get("grok_casings_sounds/enabled_lower_raise_rattle")
+        opt_sprint_rattle           = ui_mcm.get("oleh_sounds/weapons/enabled_sprint_rattle") or ui_mcm.get("grok_casings_sounds/enabled_sprint_rattle")
+        volume_aim_rattle           = ui_mcm.get("oleh_sounds/weapons/volume_aim_rattle") or ui_mcm.get("grok_casings_sounds/volume_aim_rattle") or 1
+        volume_lower_raise_rattle   = ui_mcm.get("oleh_sounds/weapons/volume_lower_raise_rattle") or ui_mcm.get("grok_casings_sounds/volume_lower_raise_rattle") or 1
+        volume_sprint_rattle        = ui_mcm.get("oleh_sounds/weapons/volume_sprint_rattle") or ui_mcm.get("grok_casings_sounds/volume_sprint_rattle") or 1
+    end
+end
+
 function on_game_start()
     RegisterScriptCallback("actor_on_weapon_zoom_in", actor_on_weapon_zoom_in)
     RegisterScriptCallback("actor_on_weapon_zoom_out", actor_on_weapon_zoom_out)
@@ -255,6 +250,6 @@ function on_game_start()
     RegisterScriptCallback("actor_on_weapon_raise", actor_on_weapon_raise)
     RegisterScriptCallback("actor_on_weapon_lower", actor_on_weapon_lower)
     RegisterScriptCallback("actor_on_footstep", actor_on_footstep)
-    RegisterScriptCallback("on_option_change", load_settings)
-    load_settings()
+    RegisterScriptCallback("on_option_change", load_mcm_options)
+    load_mcm_options()
 end

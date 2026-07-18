@@ -102,14 +102,9 @@ function get_const_params(sec)
 end
 
 function load_settings()
-
-    if ui_mcm and oleh_sounds_mcm and oleh_sounds_mcm.on_mcm_load then
-        enabled = ui_mcm.get("oleh_sounds/weapons/enabled_scope_zoom")
-        volume  = ui_mcm.get("oleh_sounds/weapons/volume_scope_zoom") or 0.5
-    -- old MCM compatibility
-    elseif ui_mcm and grok_casings_sounds_mcm and grok_casings_sounds_mcm.on_mcm_load then
-        enabled = ui_mcm.get("grok_casings_sounds/enabled_scope_zoom")
-        volume  = ui_mcm.get("grok_casings_sounds/volume_scope_zoom") or 0.5
+    if ui_mcm and ((oleh_sounds_mcm and oleh_sounds_mcm.on_mcm_load) or (grok_casings_sounds_mcm and grok_casings_sounds_mcm.on_mcm_load)) then
+        enabled = ui_mcm.get("oleh_sounds/weapons/enabled_scope_zoom") or ui_mcm.get("grok_casings_sounds/enabled_scope_zoom")
+        volume  = ui_mcm.get("oleh_sounds/weapons/volume_scope_zoom") or ui_mcm.get("grok_casings_sounds/volume_scope_zoom") or 0.5
     end
 end
 
