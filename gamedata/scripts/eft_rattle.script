@@ -34,6 +34,7 @@ limit = {
     ["asval\\asval-0"]      = 8,
     ["mk14\\mk14-0"]        = 8,
     ["pkm\\pkm-0"]          = 8,
+    ["m82\\m82-0"]          = 8,
 }
 
 count = {
@@ -51,6 +52,7 @@ count = {
     ["asval\\asval-0"]      = 1,
     ["mk14\\mk14-0"]        = 1,
     ["pkm\\pkm-0"]          = 1,
+    ["m82\\m82-0"]          = 1,
 }
 
 -- create sample queues to mitigate the issue of same sample playing multiple times in a row
@@ -69,6 +71,7 @@ queues = {
     ["asval\\asval-0"]      = {},
     ["mk14\\mk14-0"]        = {},
     ["pkm\\pkm-0"]          = {},
+    ["m82\\m82-0"]          = {},
 }
 for k,v in pairs(queues) do
     for i=1, limit[k] do

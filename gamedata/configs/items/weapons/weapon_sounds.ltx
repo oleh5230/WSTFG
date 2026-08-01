@@ -1,6 +1,6 @@
 ;-----------------------------------------------------------------------------------------------------------
 ; addon: Weapon Sounds Tweaks and Fixes for GAMMA
-; author: oleh5230, indoor entries by Varian
+; author: oleh5230; indoor entries by Varian
 ;-----------------------------------------------------------------------------------------------------------
 
 #include "sound_layers\wpn_AR_sounds.ltx"
@@ -29,6 +29,7 @@
 ; snd_parameter                                                   = <file_path>, <volume> [0.0 - 2.0], <delay> [sec]                ; volume and delay parameters may be incompatible with addons (WPO (snd_reload_misfire, snd_bore), Inspect Weapon (snd_bore), etc.)
 ; scripted_snd_parameter                                          = <file_path>, <never_cancel_flag> [boolean]                      ; never_cancel_flag continues the sound playback even after animation ends
 ; wstfg_snd_idle_sprint                                           = <file_path>, <volume> [0.0 - 2.0], <frequency> [0.0 - 2.0]      ; unique to GAMMA
+; snd_rattle_class                                                = <class>                                                         ; unique to GAMMA
 
 ; P.S.: volume parameter does not work in sound layer collections
 
@@ -131,6 +132,8 @@ snd_silncer_shot                                                   = wpn_545_snd
 snd_silncer_shot_actor                                             = wpn_545_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_545_snd_silenced_actor
 snd_silncer_shot_first                                             = weapons\_bolt\mono\ak_prefire
+
+snd_rattle_class                                                   = mk14\mk14-0
 
 ;-----------------------------------------------------------------------------------------------------------
 
@@ -321,6 +324,8 @@ snd_silncer_shot                                                   = wpn_aug_wst
 snd_silncer_shot_actor                                             = wpn_aug_wstfg_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_aug_wstfg_snd_silenced_actor
 snd_silncer_shot_first                                             = weapons\_bolt\mono\m4_prefire
+
+snd_rattle_class                                                   = mk14\mk14-0
 
 [wpn_aug_a3_sounds]:wpn_aug_sounds
 snd_draw                                                           = weapons\aug\aug_a3_draw
@@ -609,6 +614,8 @@ snd_silncer_shot_actor                                             = wpn_f2000_w
 snd_silncer_shot_actor_indoor                                      = int_wpn_f2000_wstfg_snd_silenced_actor
 snd_silncer_shot_first                                             = weapons\_bolt\mono\m4_prefire
 
+snd_rattle_class                                                   = mk14\mk14-0
+
 ;-----------------------------------------------------------------------------------------------------------
 
 [wpn_fnc_sounds]:base_sounds
@@ -780,6 +787,8 @@ snd_silncer_shot_actor                                             = wpn_g36_wst
 snd_silncer_shot_actor_indoor                                      = int_wpn_g36_wstfg_snd_silenced_actor
 snd_silncer_shot_first                                             = weapons\_bolt\mono\m4_prefire
 
+snd_rattle_class                                                   = mk14\mk14-0
+
 [wpn_g36c_sounds]:wpn_g36_sounds
 snd_draw                                                           = weapons\g36c\g36c_draw
 snd_holster                                                        = weapons\g36c\g36c_holster
@@ -851,7 +860,7 @@ snd_shoot                                                          = wpn_hk416_s
 ; snd_shoot_indoor                                                   = int_wpn_hk416_snd_shoot
 snd_shoot_actor                                                    = wpn_hk416_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_hk416_snd_shoot_actor
-snd_shoot_first                                                    = weapons\_gunfire\stereo\hk416\prefire
+snd_shoot_first                                                    = weapons\_bolt\mono\m4_prefire
 
 snd_silncer_shot                                                   = wpn_556_snd_silenced
 ; snd_silncer_shot_indoor                                            = int_wpn_556_snd_silenced
@@ -1078,7 +1087,7 @@ snd_shoot                                                          = wpn_m4_snd_
 ; snd_shoot_indoor                                                   = int_wpn_m4_snd_shoot
 snd_shoot_actor                                                    = wpn_m4_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_m4_snd_shoot_actor
-snd_shoot_first                                                    = weapons\_gunfire\stereo\m4\prefire
+snd_shoot_first                                                    = weapons\_bolt\mono\m4_prefire
 
 snd_silncer_shot                                                   = wpn_556_snd_silenced
 ; snd_silncer_shot_indoor                                            = int_wpn_556_snd_silenced
@@ -1104,7 +1113,7 @@ snd_shoot                                                          = wpn_mk47_ws
 ; snd_shoot_indoor                                                   = int_wpn_mk47_wstfg_snd_shoot
 snd_shoot_actor                                                    = wpn_mk47_wstfg_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_mk47_wstfg_snd_shoot_actor
-snd_shoot_first                                                    = weapons\_gunfire\stereo\m4\prefire
+snd_shoot_first                                                    = weapons\_bolt\mono\m4_prefire
 
 snd_silncer_shot                                                   = wpn_mk47_wstfg_snd_silenced
 ; snd_silncer_shot_indoor                                            = int_wpn_mk47_wstfg_snd_silenced
@@ -1122,7 +1131,7 @@ snd_shoot                                                          = wpn_mk18_ws
 ; snd_shoot_indoor                                                   = int_wpn_mk18_wstfg_snd_shoot
 snd_shoot_actor                                                    = wpn_mk18_wstfg_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_mk18_wstfg_snd_shoot_actor
-snd_shoot_first                                                    = weapons\_gunfire\stereo\m4\prefire
+snd_shoot_first                                                    = weapons\_bolt\mono\m4_prefire
 
 snd_silncer_shot                                                   = wpn_svd_wstfg_snd_silenced
 ; snd_silncer_shot_indoor                                            = int_wpn_svd_wstfg_snd_silenced
