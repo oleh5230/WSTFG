@@ -19,6 +19,9 @@ wpn_kinds = {
     ["w_misc"]              = "shotgun-0",
 }
 
+-- create sample queues to mitigate the issue of same sample playing multiple times in a row
+count = {}
+queues = {}
 limit = {
     ["pistol-0"]            = 9,
     ["smg-0"]               = 9,
@@ -34,50 +37,22 @@ limit = {
     ["asval\\asval-0"]      = 8,
     ["mk14\\mk14-0"]        = 8,
     ["pkm\\pkm-0"]          = 8,
+    ["sprint_pkm\\pkm-0"]   = 16,
     ["m82\\m82-0"]          = 8,
 }
 
-count = {
-    ["pistol-0"]            = 1,
-    ["smg-0"]               = 1,
-    ["shotgun-0"]           = 1,
-    ["rifle-0"]             = 1,
-    ["sprint_pistol-0"]     = 1,
-    ["sprint_smg-0"]        = 1,
-    ["sprint_shotgun-0"]    = 1,
-    ["sprint_rifle-0"]      = 1,
-
-    ["mp7\\mp7-0"]          = 1,
-    ["db\\db_shotty-0"]     = 1,
-    ["asval\\asval-0"]      = 1,
-    ["mk14\\mk14-0"]        = 1,
-    ["pkm\\pkm-0"]          = 1,
-    ["m82\\m82-0"]          = 1,
-}
-
--- create sample queues to mitigate the issue of same sample playing multiple times in a row
-queues = {
-    ["pistol-0"]            = {},
-    ["smg-0"]               = {},
-    ["shotgun-0"]           = {},
-    ["rifle-0"]             = {},
-    ["sprint_pistol-0"]     = {},
-    ["sprint_smg-0"]        = {},
-    ["sprint_shotgun-0"]    = {},
-    ["sprint_rifle-0"]      = {},
-
-    ["mp7\\mp7-0"]          = {},
-    ["db\\db_shotty-0"]     = {},
-    ["asval\\asval-0"]      = {},
-    ["mk14\\mk14-0"]        = {},
-    ["pkm\\pkm-0"]          = {},
-    ["m82\\m82-0"]          = {},
-}
-for k,v in pairs(queues) do
-    for i=1, limit[k] do
-        table.insert(queues[k], i)
+local function init()
+    for k,v in pairs(limit) do
+        queues[k] = {}
+        count[k] = 1
     end
-    shuffle_table(queues[k])
+
+    for k,v in pairs(queues) do
+        for i=1, limit[k] do
+            table.insert(queues[k], i)
+        end
+        shuffle_table(queues[k])
+    end
 end
 
 local cached_sec
@@ -102,7 +77,7 @@ function get_wpn_params(weapon)
         wpn.volume     = 0.5 --(0.25 + weight * 0.025)
         wpn.frequency  = clamp(0.25 / wpn.aim_time, 0.8, 1.2)
         wpn.kind       = SYS_GetParam(0, sec, "kind") or "w_misc"
-        wpn.class      = SYS_GetParam(0, sec, "snd_rattle_class") or wpn_kinds[wpn.kind] or wpn_kinds["w_misc"]
+        wpn.class      = wpn_kinds[wpn.kind] or wpn_kinds["w_misc"]
 
         -- special case for magazine fed shotguns
         -- reads GAMMA casings sounds .ltx to check if weapon has delayed ejection (manual action)
@@ -121,7 +96,7 @@ function get_wpn_params(weapon)
         end
 
         wpn.class  = SYS_GetParam(0, sec, "snd_rattle_class", wpn.class)
-        wpn.sclass = SYS_GetParam(0, sec, "snd_rattle_class", "sprint_" .. wpn.class)
+        wpn.sclass = queues["sprint_"..wpn.class] and "sprint_"..wpn.class or wpn.class
     end
 end
 
@@ -247,6 +222,7 @@ function load_mcm_options()
 end
 
 function on_game_start()
+    init()
     RegisterScriptCallback("actor_on_weapon_zoom_in", actor_on_weapon_zoom_in)
     RegisterScriptCallback("actor_on_weapon_zoom_out", actor_on_weapon_zoom_out)
     RegisterScriptCallback("actor_on_weapon_zoom_type_changed", actor_on_weapon_zoom_type_changed)

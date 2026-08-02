@@ -67,6 +67,7 @@ scripted_snd_add_cartridge2 = weapons\ithacam37\load3
 snd_draw                    = weapons\generic\blnd_draw
 snd_holster                 = weapons\generic\blnd_holster
 !snd_empty
+snd_rattle_class            = db\db_shotty-0
 
 ![wpn_ithacam37_mag]
 snd_shoot			        = wpn_ithacam37_wstfg_snd_shoot
@@ -204,11 +205,13 @@ scripted_snd_add_cartridge                          = weapons\spas\load_1, true
 scripted_snd_add_cartridge_variant1                 = weapons\spas\load_2, true
 scripted_snd_add_cartridge_variant2                 = weapons\spas\load_3, true
 !snd_empty
+snd_rattle_class            = m82\m82-0
 ; wstfg_snd_idle_sprint                                     = rattle\sprint\sprint_rifle, 0.4, 1.18
 ![wpn_spas12_hud]
 anm_add_cartridge                                   = wpn_spas12_new_load
 anm_add_cartridge_variant1                          = wpn_spas12_new_load
 anm_add_cartridge_variant2                          = wpn_spas12_new_load
+
 
 ![wpn_benelli_m1014]:!wpn_saiga_sounds,!wpn_spas12_sounds,wpn_mp153_sounds
 scripted_snd_add_cartridge                          = weapons\spas\load_1, true
@@ -273,9 +276,6 @@ snd_bore                    = weapons\raptr\raptr_inspect
 !snd_empty
 snd_bore                    = weapons\raptr\raptr_inspect
 ; wstfg_snd_idle_sprint             = rattle\sprint\sprint_rifle, 0.4, 1.1
-
-![wpn_wincheaster1300]
-snd_rattle_class            = db\db_shotty-0
 
 ![wpn_remington870]
 snd_add_cartridge		    = $no_sound
