@@ -111,6 +111,7 @@ function play_aim_sound(volume, frequency, weapon)
     else
         local active_item = db.actor:active_item()
         if not active_item then return end
+        if not IsWeapon(active_item) or IsMelee(active_item) then return end
         get_wpn_params(active_item)
     end
 
@@ -136,6 +137,7 @@ function play_sprint_rattle_sound(volume, frequency, weapon)
     else
         local active_item = db.actor:active_item()
         if not active_item then return end
+        if not IsWeapon(active_item) or IsMelee(active_item) then return end
         get_wpn_params(active_item)
     end
 
