@@ -9,6 +9,8 @@ local volume_aim_rattle = 1
 local volume_lower_raise_rattle = 1
 local volume_sprint_rattle = 1
 
+gamma = true
+
 wpn_kinds = {
     ["w_pistol"]            = "pistol-0",
     ["w_smg"]               = "smg-0",
@@ -100,14 +102,21 @@ function get_wpn_params(weapon)
     end
 end
 
-function play_aim_sound(volume, frequency)
+function play_aim_sound(volume, frequency, weapon)
     if not wpn.class or not count[wpn.class] or not limit[wpn.class] then
         printe("!ERROR eft_rattle | missing weapon parameters: %s %s %s", wpn.sclass, count[wpn.sclass], limit[wpn.sclass])
     return end
 
+    if weapon then get_wpn_params(weapon)
+    else
+        local active_item = db.actor:active_item()
+        if not active_item then return end
+        get_wpn_params(active_item)
+    end
+
     local sound = sound_object("weapons\\_rattle\\" .. wpn.class .. queues[wpn.class][count[wpn.class]])
     sound:play(db.actor, 0, sound_object.s2d)
-    sound.volume = volume or 0.5
+    sound.volume = (wpn.volume * volume) or 0.5
     sound.frequency = frequency or 1
     --printf("[eft_rattle] %s | volume: %s, frequency: %s", wpn.class .. queues[wpn.class][count[wpn.class]], volume, frequency)
 
@@ -118,14 +127,21 @@ function play_aim_sound(volume, frequency)
     end
 end
 
-function play_sprint_rattle_sound(volume, frequency)
+function play_sprint_rattle_sound(volume, frequency, weapon)
     if not wpn.sclass or not count[wpn.sclass] or not limit[wpn.sclass] then
         printe("!ERROR eft_rattle | missing weapon parameters: %s %s %s", wpn.sclass, count[wpn.sclass], limit[wpn.sclass])
     return end
 
+    if weapon then get_wpn_params(weapon)
+    else
+        local active_item = db.actor:active_item()
+        if not active_item then return end
+        get_wpn_params(active_item)
+    end
+
     local sound = sound_object("weapons\\_rattle\\" .. wpn.sclass .. queues[wpn.sclass][count[wpn.sclass]])
     sound:play(db.actor, 0, sound_object.s2d)
-    sound.volume = volume or 0.5
+    sound.volume = (wpn.volume * volume) or 0.5
     sound.frequency = frequency or 1
     --printf("[eft_rattle] %s | volume: %s, frequency: %s", wpn.sclass .. queues[wpn.sclass][count[wpn.sclass]], volume, frequency)
 
@@ -138,48 +154,43 @@ end
 
 function actor_on_weapon_zoom_in(weapon)
     if opt_aim_rattle then
-        get_wpn_params(weapon)
-        play_aim_sound(wpn.volume * volume_aim_rattle * 0.8, wpn.frequency)
+        play_aim_sound(volume_aim_rattle * 0.8, wpn.frequency, weapon)
     end
 end
 
 function actor_on_weapon_zoom_out(weapon)
     if opt_aim_rattle then
-        get_wpn_params(weapon)
-        play_aim_sound(wpn.volume * volume_aim_rattle * 0.8, wpn.frequency)
+        play_aim_sound(volume_aim_rattle * 0.8, wpn.frequency, weapon)
     end
 end
 
 function actor_on_weapon_zoom_type_changed(weapon, previous, current)
     if opt_aim_rattle then
-        get_wpn_params(weapon)
         -- UBGL on
         if current == 2 then
-            play_aim_sound(wpn.volume * volume_aim_rattle * 0.6, wpn.frequency)
+            play_aim_sound(volume_aim_rattle * 0.6, wpn.frequency, weapon)
         -- UBGL off
         elseif previous == 2 then
-            play_aim_sound(wpn.volume * volume_aim_rattle * 0.6, wpn.frequency)
+            play_aim_sound(volume_aim_rattle * 0.6, wpn.frequency, weapon)
         -- alt aim on
         elseif current == 1 and axr_main.weapon_is_zoomed then
-            play_aim_sound(wpn.volume * volume_aim_rattle * 0.6, wpn.frequency)
+            play_aim_sound(volume_aim_rattle * 0.6, wpn.frequency, weapon)
         -- alt aim off
         elseif current == 0 and axr_main.weapon_is_zoomed then
-            play_aim_sound(wpn.volume * volume_aim_rattle * 0.6, wpn.frequency)
+            play_aim_sound(volume_aim_rattle * 0.6, wpn.frequency, weapon)
         end
     end
 end
 
 function actor_on_weapon_raise(weapon)
     if opt_lower_raise_rattle then
-        get_wpn_params(weapon)
-        play_aim_sound(wpn.volume * volume_lower_raise_rattle, 1)
+        play_aim_sound(volume_lower_raise_rattle, 1, weapon)
     end
 end
 
 function actor_on_weapon_lower(weapon)
     if opt_lower_raise_rattle then
-        get_wpn_params(weapon)
-        play_aim_sound(wpn.volume * volume_lower_raise_rattle, 1)
+        play_aim_sound(volume_lower_raise_rattle, 1, weapon)
     end
 end
 
@@ -187,25 +198,26 @@ local wct_raised = false
 play_sound = weapon_cover_tilt_rattle.play_sound
 function weapon_cover_tilt_rattle.play_sound(dir, weapon, coeff)
     if not weapon_cover_tilt.get_setting("tilt_rattle") or not weapon then return end
-    get_wpn_params(weapon)
 
     if wct_raised then
-        play_aim_sound(wpn.volume * volume_lower_raise_rattle, clamp(1.25 - wpn.weight * 0.0625, 0.8, 1.2))
+        play_aim_sound(volume_lower_raise_rattle, clamp(1.25 - wpn.weight * 0.0625, 0.8, 1.2), weapon)
     else
-        play_aim_sound(wpn.volume * volume_lower_raise_rattle, clamp(1.25 - wpn.weight * 0.0625, 0.8, 1.2))
+        play_aim_sound(volume_lower_raise_rattle, clamp(1.25 - wpn.weight * 0.0625, 0.8, 1.2), weapon)
     end
     wct_raised = not wct_raised
 end
 
 function actor_on_footstep(material, power, hud_view, flags)
+    -- footstep callback is being sent upon landing (sometimes even twice)
+    if oleh_sound_utils.land_tg and oleh_sound_utils.land_tg + 200 > time_global() then return end
+
     local active_item = db.actor:active_item()
     if not active_item then return end
     if IsWeapon(active_item) and not IsMelee(active_item) then
         local state = active_item:get_state()
 
         if opt_sprint_rattle and IsMoveState('mcSprint') and state and state == 0 then -- and game.actor_weapon_lowered()
-            get_wpn_params(active_item)
-            play_sprint_rattle_sound(wpn.volume * volume_sprint_rattle, 1)
+            play_sprint_rattle_sound(volume_sprint_rattle, 1, active_item)
         end
     end
 end
