@@ -47,7 +47,8 @@ function on_mouse_wheel(scroll_dir, flags)
 
     -- GetZoomFactor() seems to update after callback
     nextTick(function()
-        local cwpn = itm and itm:cast_Weapon()
+        local obj = get_object_by_id(id)
+        local cwpn = obj and obj:cast_Weapon()
         local zoom = cwpn and cwpn:GetZoomFactor() or 80
         if not zoom then return end
 
