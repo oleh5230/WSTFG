@@ -18,20 +18,16 @@ It is a weapon audio overhaul based on [Dark Signal Weapon Audio](https://www.mo
 - SFX Volume (`snd_volume_eff`): `0.5` - otherwise sounds may be louder/quieter than intended
 - Rendering Distance (World) (`rs_vis_distance`): at least `0.9` (50% of the slider) - otherwise distant gunfire sounds would not be audible
 
-## For Modmakers
-Do not include WSTFG scripts in other mods, they are subject to change and not made with compatibility in mind.
-
 ## Credits
-- **YungPr1nce**: a lot of sounds included directly or reused as material
+- **Shrike**: a lot of gunfire sounds
+- **YungPr1nce**: a lot of foley sounds included directly or reused as material
 - **TheDJ**: multiple resounds, help with sources and general advice
 - **relax_68**: multiple foley resounds
-- **HarukaSai**: low ammo hint script
-- **Qudix**: aim rattle script
-- **bert**: casings falling sounds port
-- **The_aphrodite_child**: indoor tails
+- **HarukaSai**: original low ammo hint script
+- **Qudix**: original aim rattle script
+- **bert**: original casings falling sounds port
+- **The_aphrodite_child**: indoor tails sources
 - **Varian**: indoor configs
-- **JSRS Team**, **Shrike** and other weapon addon authors whose works are included in GAMMA
-Material sources include: Call of Duty Modern Warfare, Delta Force, Escape from Tarkov, Insurgency: Sandstorm, Ready or Not, SCP: 5K, rzen1th
 
 ## Features
 - Dark Signal gunfire sounds overhaul: redistributed and tweaked gunshot sounds, as well as addition of new ones, aiming for quality over quantity.
@@ -43,7 +39,8 @@ Material sources include: Call of Duty Modern Warfare, Delta Force, Escape from 
 - Multitude of bug fixes
 - Edited and custom scripts:
   - Grok's & Bert's Casings Falling Sounds Revised
-  - Weapon sprint rattle
+  - Weapon rattle
   - Enhanced dryfire
   - Low ammo sounds
   - Scope zoom adjustment sounds
+  - Gunfire volume settings
