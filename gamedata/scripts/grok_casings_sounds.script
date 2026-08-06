@@ -63,12 +63,17 @@ local volume_base = 2
 local last_weapon_id
 
 function load_mcm_options()
-    if ui_mcm and ((oleh_sounds_mcm and oleh_sounds_mcm.on_mcm_load) or (grok_casings_sounds_mcm and grok_casings_sounds_mcm.on_mcm_load)) then
-        enabled = ui_mcm.get("oleh_sounds/weapons/enabled") or ui_mcm.get("grok_casings_sounds/enabled")
-        ubgl_enabled = ui_mcm.get("oleh_sounds/weapons/ubgl_enabled") or ui_mcm.get("grok_casings_sounds/ubgl_enabled")
-        -- volume_base = ui_mcm.get("oleh_sounds/weapons/volume") or ui_mcm.get("grok_casings_sounds/volume") or 2
-        ice_patch = ui_mcm.get("oleh_sounds/general/ice_patch") or ui_mcm.get("oleh_sounds/weapons/ice_patch") or ui_mcm.get("grok_casings_sounds/ice_patch")
-        grass_patch = ui_mcm.get("oleh_sounds/general/grass_patch") or ui_mcm.get("extended_movement_sounds/grass_patch")
+    if ui_mcm and oleh_sounds_mcm and oleh_sounds_mcm.on_mcm_load then
+        enabled = ui_mcm.get("oleh_sounds/weapons/enabled")
+        ubgl_enabled = ui_mcm.get("oleh_sounds/weapons/ubgl_enabled")
+        ice_patch = ui_mcm.get("oleh_sounds/general/ice_patch")
+        grass_patch = ui_mcm.get("oleh_sounds/general/grass_patch")
+        -- volume_base = ui_mcm.get("oleh_sounds/weapons/volume")
+    elseif ui_mcm and grok_casings_sounds_mcm and grok_casings_sounds_mcm.on_mcm_load then
+        enabled = ui_mcm.get("grok_casings_sounds/enabled")
+        ubgl_enabled = ui_mcm.get("grok_casings_sounds/ubgl_enabled")
+        ice_patch = ui_mcm.get("grok_casings_sounds/ice_patch")
+        -- volume_base = ui_mcm.get("grok_casings_sounds/volume")
     end
 
     if ice_patch then
@@ -78,6 +83,7 @@ function load_mcm_options()
     end
 end
 
+current_material_sound = "_dirt_"
 function actor_on_footstep(material, power, hud_view, flags)
     local current_material = tostring(material)
 
@@ -88,10 +94,10 @@ function actor_on_footstep(material, power, hud_view, flags)
 			break
 		end
 	end
-    current_material_sound = grass_patch and oleh_sound_utils.is_actually_grass and oleh_sound_utils.is_actually_grass(material) and "_grass_" or mat_to_sound[current_material]
+    current_material_sound = grass_patch and oleh_sound_utils and oleh_sound_utils.is_actually_grass and oleh_sound_utils.is_actually_grass(material) and "_grass_" or mat_to_sound[current_material]
 
     -- change soft material to mud during rain
-    if level.rain_wetness() > 0.25 and level.rain_hemi() > 0.25 and soft_mats[current_material_sound] then
+    if level.rain_wetness() > 0.25 and level.rain_hemi() > 0.25 and current_material_sound == "_dirt_" then
         -- local roll = math.random(50)
         -- if wetness * 100 > roll then
         current_material_sound = "_mud_"
