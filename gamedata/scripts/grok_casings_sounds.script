@@ -84,6 +84,7 @@ function load_mcm_options()
 end
 
 current_material_sound = "_dirt_"
+local is_actually_grass = oleh_sound_utils and oleh_sound_utils.is_actually_grass
 function actor_on_footstep(material, power, hud_view, flags)
     local current_material = tostring(material)
 
@@ -94,7 +95,7 @@ function actor_on_footstep(material, power, hud_view, flags)
 			break
 		end
 	end
-    current_material_sound = grass_patch and oleh_sound_utils and oleh_sound_utils.is_actually_grass and oleh_sound_utils.is_actually_grass(material) and "_grass_" or mat_to_sound[current_material]
+    current_material_sound = grass_patch and is_actually_grass and oleh_sound_utils.is_actually_grass(material) and "_grass_" or mat_to_sound[current_material]
 
     -- change soft material to mud during rain
     if level.rain_wetness() > 0.25 and level.rain_hemi() > 0.25 and current_material_sound == "_dirt_" then
