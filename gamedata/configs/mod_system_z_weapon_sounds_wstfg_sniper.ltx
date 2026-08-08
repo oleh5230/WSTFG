@@ -46,14 +46,15 @@ snd_bore								 = weapons\obrez\obrez_inspect
 snd_draw		                         = weapons\obrez\obrez_draw
 snd_holster		                         = weapons\obrez\obrez_holster
 snd_empty		                         = weapons\obrez\obrez_empty
-snd_open_weapon                          = weapons\obrez\obrez_reload_start
-snd_close_weapon                         = weapons\obrez\obrez_reload_end
+snd_close_weapon                         = $no_sound
+snd_open_weapon                          = $no_sound
+scripted_snd_open                        = weapons\obrez\obrez_reload_start
+scripted_snd_close                       = weapons\obrez\obrez_reload_end
 snd_add_cartridge 		                 = weapons\obrez\obrez_cartridge_1
 snd_add_cartridge1                       = weapons\obrez\obrez_cartridge_2
 snd_add_cartridge2                       = weapons\obrez\obrez_cartridge_3
 snd_add_cartridge3                       = weapons\obrez\obrez_cartridge_4
 snd_add_cartridge4                       = weapons\obrez\obrez_cartridge_5
-
 !snd_empty
 snd_rattle_class            = db\db_shotty-0
 ; wstfg_snd_idle_sprint             = rattle\sprint\sprint_light, 0.2, 1.12
@@ -65,6 +66,8 @@ anm_reload_misfire          = obrez_shoot, obrez_shoot, 1.12
 anm_shots                   = obrez_shoot, obrez_shoot, 1.12
 anm_shot_l                  = obrez_shoot_last, obrez_shoot_last, 1.12
 anm_add_cartridge           = obrez_reload_addcartridge, obrez_reload_addcartridge, 1.12
+ts_pattern_reload_interrupt              = anm_add_cartridge, ^anm_idle.*, anm_close 
+ts_pattern_reload_empty_interrupt        = anm_add_cartridge_empty, ^anm_idle.*, anm_close
 
 ![wpn_k98]
 snd_shoot                                = wpn_k98_jm_wstfg_snd_shoot
@@ -80,6 +83,10 @@ snd_silncer_shot_actor_indoor            = int_wpn_k98_jm_wstfg_snd_silenced_act
 scripted_snd_shots                       = weapons\k98\bolt
 scripted_snd_shot_l                      = weapons\k98\bolt
 
+snd_close_weapon            = $no_sound
+snd_open_weapon             = $no_sound
+scripted_snd_open           = weapons\k98\kar98k_reload_start
+scripted_snd_close          = weapons\k98\kar98k_reload_end
 snd_add_cartridge		    = weapons\k98\kar98k_cartridge_1
 snd_add_cartridge1          = weapons\k98\kar98k_cartridge_2
 snd_add_cartridge2          = weapons\k98\kar98k_cartridge_3
@@ -96,6 +103,8 @@ anm_reload_misfire          = jadey_kar_shoot, jadey_kar_shoot, 1.12
 anm_shots                   = jadey_kar_shoot, jadey_kar_shoot, 1.12
 anm_shot_l                  = jadey_kar_shoot_last, jadey_kar_shoot_last, 1.12
 anm_add_cartridge           = jadey_kar_reload_addcartridge, jadey_kar_reload_addcartridge, 1.12
+ts_pattern_reload_interrupt              = anm_add_cartridge, ^anm_idle.*, anm_close 
+ts_pattern_reload_empty_interrupt        = anm_add_cartridge_empty, ^anm_idle.*, anm_close
 ![up_sect_firstf_k98]
 snd_silncer_shot		    = wpn_k98_jm_wstfg_snd_silenced_actor
 

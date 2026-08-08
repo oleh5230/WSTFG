@@ -191,6 +191,10 @@ snd_on_take = weapon
 !snd_empty
 
 ![wpn_mp155]:wpn_mp155_wstfg_sounds
+!snd_shoot
+!snd_shoot_actor
+!snd_silncer_shot
+!snd_silncer_shot_actor
 !snd_empty
 snd_draw                    = weapons\generic\shotgun_draw
 snd_holster                 = weapons\generic\shotgun_holster
@@ -268,6 +272,7 @@ snd_holster                 = weapons\generic\siber_holster
 ; snd_empty_first             = weapons\_dryfire\fal_hammer
 
 ![wpn_raptr]:wpn_raptr_sounds
+snd_bore                    = weapons\raptr\raptr_inspect
 !snd_shoot
 !snd_shoot_actor
 !snd_silncer_shot
@@ -275,10 +280,16 @@ snd_holster                 = weapons\generic\siber_holster
 !tri_state_reload
 !snd_switch_mode
 !snd_empty
-snd_bore                    = weapons\raptr\raptr_inspect
 ; wstfg_snd_idle_sprint             = rattle\sprint\sprint_rifle, 0.4, 1.1
 
 ![wpn_usas12]:wpn_raptr_sounds
+snd_bore                    = weapons\raptr\raptr_inspect
+snd_draw                    = weapons\raptr\raptr_draw
+snd_reload                  = weapons\raptr\reload_short
+snd_reload_empty            = weapons\raptr\reload_empty
+snd_holster			        = weapons\raptr\raptr_hide
+snd_reload_misfire          = weapons\raptr\unjam
+
 !snd_shoot 
 !snd_shoot_actor
 !snd_silncer_shot
@@ -286,7 +297,6 @@ snd_bore                    = weapons\raptr\raptr_inspect
 !tri_state_reload
 !snd_switch_mode
 !snd_empty
-snd_bore                    = weapons\raptr\raptr_inspect
 ; wstfg_snd_idle_sprint             = rattle\sprint\sprint_rifle, 0.4, 1.1
 
 ![wpn_remington870]
