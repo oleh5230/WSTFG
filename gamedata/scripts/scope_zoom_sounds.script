@@ -104,6 +104,9 @@ function get_const_params(sec)
 end
 
 function load_mcm_options()
+    assert(oleh_sound_utils and oleh_sound_utils.VERSION and oleh_sound_utils.VERSION >= 5, "\n\n"..
+    "Oleh's Weapon Sounds: oleh_sound_utils.script is missing or outdated, update MSIG (Miscellaneous Sound Improvements)")
+
     if ui_mcm and oleh_sounds_mcm and oleh_sounds_mcm.on_mcm_load then
         enabled = ui_mcm.get("oleh_sounds/weapons/enabled_scope_zoom")
         volume  = ui_mcm.get("oleh_sounds/weapons/volume_scope_zoom") or 0.5

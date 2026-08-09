@@ -22,6 +22,7 @@ To Do:
 - last shot exception?
 ]]
 
+local utils = oleh_sound_utils
 local ini_wpn = ini_file_ex("plugins\\grok_casings_sounds_weapons.ltx")
 local ini_ammo = ini_file_ex("plugins\\grok_casings_sounds_ammo.ltx")
 local ini_gren = ini_file_ex("plugins\\grok_casings_sounds_grenades.ltx")
@@ -84,7 +85,6 @@ function load_mcm_options()
 end
 
 current_material_sound = "_dirt_"
-local is_actually_grass = oleh_sound_utils and oleh_sound_utils.is_actually_grass
 function actor_on_footstep(material, power, hud_view, flags)
     local current_material = tostring(material)
 
@@ -95,7 +95,7 @@ function actor_on_footstep(material, power, hud_view, flags)
 			break
 		end
 	end
-    current_material_sound = grass_patch and is_actually_grass and oleh_sound_utils.is_actually_grass(material) and "_grass_" or mat_to_sound[current_material]
+    current_material_sound = grass_patch and utils.is_actually_grass(material) and "_grass_" or mat_to_sound[current_material]
 
     -- change soft material to mud during rain
     if level.rain_wetness() > 0.25 and level.rain_hemi() > 0.25 and current_material_sound == "_dirt_" then
@@ -334,6 +334,9 @@ function actor_on_first_update()
 end
 
 function on_game_start()
+    assert(oleh_sound_utils and oleh_sound_utils.VERSION and oleh_sound_utils.VERSION >= 5, "\n\n"..
+    "Oleh's Weapon Sounds: oleh_sound_utils.script is missing or outdated, update MSIG (Miscellaneous Sound Improvements)\nhttps://github.com/oleh5230/MSIG")
+
     RegisterScriptCallback("actor_on_footstep", actor_on_footstep)
     RegisterScriptCallback("actor_on_weapon_fired", actor_on_weapon_fired)
     RegisterScriptCallback("actor_on_hud_animation_play", actor_on_hud_animation_play)
