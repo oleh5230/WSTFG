@@ -1,3 +1,5 @@
+VERSION = 5
+
 function on_mcm_load()
     op = {
         id = "grok_casings_sounds", sh = true, gr = {
