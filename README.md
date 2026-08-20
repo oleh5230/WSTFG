@@ -8,7 +8,7 @@ It is a weapon audio overhaul based on [Dark Signal Weapon Audio](https://www.mo
 2. In Mod Organizer, go to `File` > `Install Mod...` (or press `Ctrl` + `M`)
 3. Select the downloaded archive
 4. Enable the installed mod
-5. Check dependecies below
+5. Check dependencies below
 
 **Load order (priority) does not matter, keep it below default GAMMA addons**
 
