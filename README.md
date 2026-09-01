@@ -8,7 +8,7 @@ It is a weapon audio overhaul based on [Dark Signal Weapon Audio](https://www.mo
 2. In Mod Organizer, go to `File` > `Install Mod...` (or press `Ctrl` + `M`)
 3. Select the downloaded archive
 4. Enable the installed mod
-5. Check dependecies below
+5. Check dependencies below
 
 **Load order (priority) does not matter, keep it below default GAMMA addons**
 
@@ -23,7 +23,7 @@ It is a weapon audio overhaul based on [Dark Signal Weapon Audio](https://www.mo
 - Gunfire Volume sliders are ineffective: update your exes
 
 ## Recommended in-game settings:
-- SFX Volume (`snd_volume_eff`): `0.5` - otherwise sounds may be louder/quieter than intended
+- SFX Volume (`snd_volume_eff`): `0.5` - otherwise some sounds may have imbalanced volume
 - Rendering Distance (World) (`rs_vis_distance`): at least `0.9` (50% of the slider) - otherwise distant gunfire sounds would not be audible
 
 ## Recommended addons
