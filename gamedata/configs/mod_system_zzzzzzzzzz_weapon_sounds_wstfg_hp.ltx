@@ -5,34 +5,16 @@
 ; snd_holster                 = weapons\axe\holster
 
 ![wpn_pm]
-snd_reload_misfire          = $no_sound
-snd_reload		            = weapons\pm_sc\pm_reload_partial
-
-snd_draw                    = weapons\generic\pistol_draw
-snd_holster                 = $no_sound
-scripted_snd_hide           = weapons\generic\pistol_holster
-scripted_snd_hide_empty     = weapons\generic\pistol_holster
-scripted_snd_hide_jammed    = weapons\generic\pistol_holster
+snd_draw                    = weapons\pm\handling\pm_mlg_draw
+snd_holster                 = weapons\pm\handling\pm_mlg_holster
 
 ![wpn_pm_custom]
-snd_reload_misfire          = $no_sound
-snd_reload		            = weapons\pm_sc\pm_reload_partial
-
-snd_draw                    = weapons\generic\pistol_draw
-snd_holster                 = $no_sound
-scripted_snd_hide           = weapons\generic\pistol_holster
-scripted_snd_hide_empty     = weapons\generic\pistol_holster
-scripted_snd_hide_jammed    = weapons\generic\pistol_holster
+snd_draw                    = weapons\pm\handling\pm_mlg_draw
+snd_holster                 = weapons\pm\handling\pm_mlg_holster
 
 ![wpn_pb]
-snd_reload_misfire          = $no_sound
-snd_reload		            = weapons\pm_sc\pm_reload_partial
-
-snd_draw                    = weapons\generic\pistol_draw
-snd_holster                 = $no_sound
-scripted_snd_hide           = weapons\generic\pistol_holster
-scripted_snd_hide_empty     = weapons\generic\pistol_holster
-scripted_snd_hide_jammed    = weapons\generic\pistol_holster
+snd_draw                    = weapons\pm\handling\pm_mlg_draw
+snd_holster                 = weapons\pm\handling\pm_mlg_holster
 
 ![wpn_fort_snag]
 snd_reload_misfire          = weapons\fort\fort_new_unjam
@@ -136,6 +118,11 @@ snd_reload                  = weapons\92fs\1911_reload
 snd_reload_empty            = weapons\92fs\1911_reload_empty
 
 ![wpn_sig220_n_upg220]
+!snd_empty
+snd_reload                  = weapons\92fs\1911_reload
+snd_reload_empty            = weapons\92fs\1911_reload_empty
+
+![wpn_sig220_u2p2g0r]
 !snd_empty
 snd_reload                  = weapons\92fs\1911_reload
 snd_reload_empty            = weapons\92fs\1911_reload_empty
@@ -315,8 +302,8 @@ snd_shoot_actor_indoor      = int_wpn_toz194_snd_shoot_actor
 snd_silncer_shot		    = wpn_toz194_wstfg_snd_silenced
 snd_silncer_shot_actor      = wpn_toz194_wstfg_snd_silenced_actor
 snd_silncer_shot_actor_indoor = int_wpn_toz194_wstfg_snd_silenced_actor
-snd_draw                    = weapons\generic\siber_holster
-snd_holster                 = weapons\generic\holster_rifle
+snd_draw                    = weapons\generic\siber_draw_fast
+snd_holster                 = weapons\generic\siber_holster
 !snd_add_cartridge3
 
 ![wpn_remington870]
@@ -394,6 +381,8 @@ scripted_snd_add_cartridge_ammoodd		    = weapons\mossberg590a1\m590_load_ammo3,
 !anm_empty_fire_aim
 
 ![wpn_saiga12s_m1]
+snd_draw				    = weapons\generic\siber_draw_fast
+snd_holster				    = weapons\generic\siber_holster
 !snd_shoot
 !snd_shoot1
 !snd_shoot2
@@ -408,6 +397,8 @@ scripted_snd_add_cartridge_ammoodd		    = weapons\mossberg590a1\m590_load_ammo3,
 ; scripted_snd_ammo_check_empty    = weapons\saiga_eft\magcheck
 
 ![wpn_saiga12s_m2]
+snd_draw				    = weapons\generic\siber_draw_fast
+snd_holster				    = weapons\generic\siber_holster
 !snd_shoot
 !snd_shoot1
 !snd_shoot2

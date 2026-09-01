@@ -242,16 +242,28 @@ snd_empty_first				= $no_sound
 ![wpn_korth_custom]
 !snd_empty
 
+![wpn_sig220]
+!snd_empty
+
 ![wpn_sig220_n]
 !snd_empty
 
-![wpn_sig220_n_u2p2g0r]
+![wpn_sig220_u2p2g0r]:!wpn_sig220_sounds,wpn_sig226_sounds
+!snd_empty
+snd_draw        	        = weapons\fort\fort_new_draw
+snd_holster        	        = weapons\fort\fort_new_holster
+snd_bore		            = weapons\fort\fort_new_inspect
+
+scripted_snd_sprint2walk        	        = weapons\fort\fort_new_draw
+scripted_snd_walk2sprint        	        = weapons\fort\fort_new_holster   
+
+![wpn_sig220_n_u2p2g0r]:!wpn_sig220_sounds,wpn_sig226_sounds
 !snd_empty
 
 ![wpn_sig226]:!wpn_sig220_sounds,wpn_sig226_sounds
 !snd_empty
 
-![wpn_sig226_226sig_kit]
+![wpn_sig226_226sig_kit]:!wpn_sig220_sounds,wpn_sig226_sounds
 !snd_empty
 
 ![wpn_usp_tac]
