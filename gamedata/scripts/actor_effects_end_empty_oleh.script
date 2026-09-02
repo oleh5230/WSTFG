@@ -1,0 +1,12 @@
+-- removes snd_empty when using a UBGL
+-- oleh5230, 01.09.26
+
+actor_on_weapon_before_fire = actor_effects.actor_on_weapon_before_fire
+function actor_effects.actor_on_weapon_before_fire(flags)
+	local obj_wpn = db.actor:active_item()
+	if obj_wpn and IsWeapon(obj_wpn) and (not IsMelee(obj_wpn)) then
+		if not (obj_wpn:weapon_is_grenadelauncher() and obj_wpn:cast_Weapon():GetZoomType() == 2) then
+			actor_on_weapon_before_fire(flags)
+		end
+	end
+end
