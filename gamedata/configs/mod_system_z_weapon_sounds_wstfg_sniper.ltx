@@ -353,7 +353,6 @@ scripted_snd_ammo_check_jammed              = weapons\vssk\barry_magcheck
 scripted_snd_ammo_check_empty_jammed        = weapons\vssk\barry_magcheck
 
 snd_rattle_class            = m82\m82-0
-!snd_unload
 
 ![wpn_winchester1873]
 scripted_snd_shots          = weapon\winchester1873\lever, true
@@ -368,6 +367,8 @@ snd_silncer_shot_actor_indoor = int_wpn_winchester_wsftg_snd_silenced_actor
 snd_empty			        = weapons\_dryfire\svd_trigger
 snd_empty_first		        = $no_sound
 snd_bore					= weapon\winchester1873\win_inspect
+
+snd_unload                  = interface\unload\k98_unload
 snd_rattle_class            = db\db_shotty-0
 ; wstfg_snd_idle_sprint             = rattle\sprint\sprint_light, 0.25, 1.2
 
@@ -412,6 +413,7 @@ anm_add_cartridge_variant3                      = win_add_cartridge3, win_add_ca
 ; anm_add_cartridge_variant3                      = win_add_cartridge3, win_add_cartridge3
 
 ![wpn_m98b]
+snd_unload                                                         = interface\unload\bolt_unload
 snd_rattle_class            = m82\m82-0
 
 ![wpn_gauss]

@@ -23,9 +23,6 @@ wpn_kinds = {
     ["w_misc"]              = "shotgun-0",
 }
 
--- create sample queues to mitigate the issue of same sample playing multiple times in a row
-queues = {}
-count = {}
 limit = {
     ["pistol-0"]            = 9,
     ["smg-0"]               = 9,
@@ -44,20 +41,6 @@ limit = {
     ["sprint_pkm\\pkm-0"]   = 16,
     ["m82\\m82-0"]          = 8,
 }
-
-local function init()
-    for k,v in pairs(limit) do
-        queues[k] = {}
-        count[k] = 1
-    end
-
-    for k,v in pairs(queues) do
-        for i=1, limit[k] do
-            table.insert(queues[k], i)
-        end
-        shuffle_table(queues[k])
-    end
-end
 
 local cached_sec
 local ini_cas = ini_file_ex("plugins\\grok_casings_sounds_weapons.ltx")
@@ -78,7 +61,7 @@ function get_wpn_params(weapon)
         cached_sec     = sec
         wpn.weight     = ini_sys:r_float_ex(sec, "inv_weight") or 3.3
         wpn.aim_time   = ini_sys:r_float_ex(sec, "zoom_rotate_time") or 0.25
-        wpn.volume     = 0.37 --(0.25 + weight * 0.025)
+        wpn.volume     = 0.33 --(0.25 + weight * 0.025)
         wpn.frequency  = clamp(0.25 / wpn.aim_time, 0.8, 1.2)
         wpn.kind       = SYS_GetParam(0, sec, "kind") or "w_misc"
         wpn.class      = wpn_kinds[wpn.kind] or wpn_kinds["w_misc"]
@@ -100,10 +83,11 @@ function get_wpn_params(weapon)
         end
 
         wpn.class  = SYS_GetParam(0, sec, "snd_rattle_class", wpn.class)
-        wpn.sclass = queues["sprint_"..wpn.class] and "sprint_"..wpn.class or wpn.class
+        wpn.sclass = limit["sprint_"..wpn.class] and "sprint_"..wpn.class or wpn.class
     end
 end
 
+local last_ar = 0
 function play_aim_sound(volume, frequency, weapon)
     if weapon then get_wpn_params(weapon)
     else
@@ -113,23 +97,25 @@ function play_aim_sound(volume, frequency, weapon)
         get_wpn_params(active_item)
     end
 
-    if not wpn.class or not count[wpn.class] or not limit[wpn.class] then
-        printe("!ERROR eft_rattle | missing weapon parameters: %s %s %s", wpn.sclass, count[wpn.sclass], limit[wpn.sclass])
+    if not wpn.class or not limit[wpn.class] then
+        printe("!ERROR eft_rattle | missing weapon parameters: %s %s", wpn.sclass, limit[wpn.sclass])
     return end
 
-    local sound = sound_object("weapons\\_rattle\\" .. wpn.class .. queues[wpn.class][count[wpn.class]])
+    local roll = math.random(limit[wpn.class])
+    if roll == last_ar then
+        roll = last_ar % (limit[wpn.class] + 1)
+    end
+    last_ar = roll
+
+    local sound = sound_object("weapons\\_rattle\\" .. wpn.class .. roll)
     sound:play(db.actor, 0, sound_object.s2d)
     sound.volume = (wpn.volume * volume) or 0.5
     sound.frequency = frequency or 1
-    --printf("[eft_rattle] %s | volume: %s, frequency: %s", wpn.class .. queues[wpn.class][count[wpn.class]], volume, frequency)
+    --printf("[eft_rattle] %s | volume: %s, frequency: %s", wpn.class .. roll, volume, frequency)
 
-    count[wpn.class] = count[wpn.class] + 1
-    if count[wpn.class] > limit[wpn.class] then
-        count[wpn.class] = 1
-        shuffle_table(queues[wpn.class])
-    end
 end
 
+local last_sr = 0
 function play_sprint_rattle_sound(volume, frequency, weapon)
     if weapon then get_wpn_params(weapon)
     else
@@ -139,21 +125,22 @@ function play_sprint_rattle_sound(volume, frequency, weapon)
         get_wpn_params(active_item)
     end
 
-    if not wpn.sclass or not count[wpn.sclass] or not limit[wpn.sclass] then
-        printe("!ERROR eft_rattle | missing weapon parameters: %s %s %s", wpn.sclass, count[wpn.sclass], limit[wpn.sclass])
+    if not wpn.sclass or not limit[wpn.sclass] then
+        printe("!ERROR eft_rattle | missing weapon parameters: %s %s", wpn.sclass, limit[wpn.sclass])
     return end
 
-    local sound = sound_object("weapons\\_rattle\\" .. wpn.sclass .. queues[wpn.sclass][count[wpn.sclass]])
+    local roll = math.random(limit[wpn.sclass])
+    if roll == last_sr then
+        roll = last_sr % (limit[wpn.sclass] + 1)
+    end
+    last_sr = roll
+
+    local sound = sound_object("weapons\\_rattle\\" .. wpn.sclass .. roll)
     sound:play(db.actor, 0, sound_object.s2d)
     sound.volume = (wpn.volume * volume) or 0.5
     sound.frequency = frequency or 1
-    --printf("[eft_rattle] %s | volume: %s, frequency: %s", wpn.sclass .. queues[wpn.sclass][count[wpn.sclass]], volume, frequency)
+    --printf("[eft_rattle] %s | volume: %s, frequency: %s", wpn.sclass .. roll, volume, frequency)
 
-    count[wpn.sclass] = count[wpn.sclass] + 1
-    if count[wpn.sclass] > limit[wpn.sclass] then
-        count[wpn.sclass] = 1
-        shuffle_table(queues[wpn.sclass])
-    end
 end
 
 function actor_on_weapon_zoom_in(weapon)
@@ -256,5 +243,4 @@ function on_game_start()
     RegisterScriptCallback("actor_on_footstep", actor_on_footstep)
     RegisterScriptCallback("on_option_change", load_mcm_options)
     load_mcm_options()
-    init()
 end

@@ -67,6 +67,8 @@ scripted_snd_add_cartridge2 = weapons\ithacam37\load3
 snd_draw                    = weapons\generic\blnd_draw
 snd_holster                 = weapons\generic\blnd_holster
 !snd_empty
+
+snd_unload                  = interface\unload\m37_unload
 snd_rattle_class            = db\db_shotty-0
 
 ![wpn_ithacam37_mag]
@@ -83,6 +85,7 @@ scripted_snd_add_cartridge2 = weapons\ithacam37\load3
 snd_draw                    = weapons\generic\blnd_draw
 snd_holster                 = weapons\generic\blnd_holster
 !snd_empty
+snd_unload                  = interface\unload\m37_unload
 snd_rattle_class            = db\db_shotty-0
 
 ![wpn_ithacam37_sawnoff]
@@ -96,6 +99,7 @@ snd_add_cartridge2          = weapons\ithacam37\ithacam37_reload
 snd_draw                    = weapons\generic\blnd_draw
 snd_holster                 = weapons\generic\blnd_holster
 !snd_empty
+snd_unload                  = interface\unload\m37_unload
 snd_rattle_class            = db\db_shotty-0
 
 ![wpn_ithacam37_stakeout]
@@ -112,6 +116,7 @@ scripted_snd_add_cartridge2 = weapons\ithacam37\load_r3
 snd_draw                    = weapons\generic\blnd_draw
 snd_holster                 = weapons\generic\blnd_holster
 !snd_empty
+snd_unload                  = interface\unload\m37_unload
 snd_rattle_class            = db\db_shotty-0
 
 ![wpn_ithacam37_stakeout_20x70]
@@ -128,6 +133,7 @@ scripted_snd_add_cartridge2 = weapons\ithacam37\load_r3
 snd_draw                    = weapons\generic\blnd_draw
 snd_holster                 = weapons\generic\blnd_holster
 !snd_empty
+snd_unload                  = interface\unload\m37_unload
 snd_rattle_class            = db\db_shotty-0
 
 ![wpn_ithacam37_trench]
@@ -144,6 +150,7 @@ scripted_snd_add_cartridge2 = weapons\ithacam37\load_r3
 snd_draw                    = weapons\generic\blnd_draw
 snd_holster                 = weapons\generic\blnd_holster
 !snd_empty
+snd_unload                  = interface\unload\m37_unload
 snd_rattle_class            = db\db_shotty-0
 
 ![wpn_toz106]
@@ -301,6 +308,15 @@ snd_reload_misfire          = weapons\raptr\unjam
 !snd_empty
 ; wstfg_snd_idle_sprint             = rattle\sprint\sprint_rifle, 0.4, 1.1
 
+![wpn_mossberg590]
+snd_unload                                                        = interface\unload\r870_unload
+
+![wpn_mossberg590_rail]
+snd_unload                                                        = interface\unload\r870_unload
+
+![wpn_wincheaster1300]
+snd_unload                                                        = interface\unload\r870_unload
+
 ![wpn_remington870]
 snd_add_cartridge		    = $no_sound
 snd_add_cartridge1  	    = $no_sound
@@ -318,6 +334,8 @@ scripted_snd_reloadendemptytac_end                                = weapons\winc
 scripted_snd_reload_misfire                                       = weapons\winchestertco\winchester1300_revival, true
 scripted_snd_rotatetac_start                                      = weapons\winchestertco\winchester1300_reload_empty_second_ammo, true
 !snd_empty
+
+snd_unload                                                        = interface\unload\r870_unload
 
 ![wpn_mp133]
 !snd_shoot
