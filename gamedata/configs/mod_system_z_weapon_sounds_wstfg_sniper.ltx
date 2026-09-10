@@ -34,16 +34,6 @@ snd_reload_misfire          = weapons\toz106\bolt
 anm_reload_misfire          = toz106_shoot_fullstock_1, shoot_1
 
 ![wpn_mosin] ; high-priority
-snd_shoot                                = wpn_mosin_snd_shoot
-; snd_shoot_indoor                         = int_wpn_mosin_snd_shoot
-snd_shoot_actor                          = wpn_mosin_snd_shoot_actor
-snd_shoot_actor_indoor                   = int_wpn_mosin_snd_shoot_actor
-
-snd_silncer_shot                         = wpn_mosin_wstfg_snd_silenced
-; snd_silncer_shot_indoor                  = int_wpn_mosin_wstfg_snd_silenced
-snd_silncer_shot_actor                   = wpn_mosin_wstfg_snd_silenced_actor
-snd_silncer_shot_actor_indoor            = int_wpn_mosin_wstfg_snd_silenced_actor
-
 snd_bore								 = weapons\obrez\obrez_inspect
 snd_draw		                         = weapons\obrez\obrez_draw
 snd_holster		                         = weapons\obrez\obrez_holster
@@ -62,6 +52,34 @@ snd_rattle_class            = db\db_shotty-0
 ; wstfg_snd_idle_sprint             = rattle\sprint\sprint_light, 0.2, 1.12
 snd_reload_misfire          = weapons\obrez\bolt
 ![wpn_mosin_hud]
+anm_hide                    = obrez_holster, obrez_holster, 1.36
+anm_show                    = obrez_draw, obrez_draw, 1.36
+anm_reload_misfire          = obrez_shoot, obrez_shoot, 1.12
+anm_shots                   = obrez_shoot, obrez_shoot, 1.12
+anm_shot_l                  = obrez_shoot_last, obrez_shoot_last, 1.12
+anm_add_cartridge           = obrez_reload_addcartridge, obrez_reload_addcartridge, 1.12
+ts_pattern_reload_interrupt              = anm_add_cartridge, ^anm_idle.*, anm_close 
+ts_pattern_reload_empty_interrupt        = anm_add_cartridge_empty, ^anm_idle.*, anm_close
+
+![wpn_mosin_obrez] ; high-priority
+snd_bore								 = weapons\obrez\obrez_inspect
+snd_draw		                         = weapons\obrez\obrez_draw
+snd_holster		                         = weapons\obrez\obrez_holster
+snd_empty		                         = weapons\obrez\obrez_empty
+snd_close_weapon                         = $no_sound
+snd_open_weapon                          = $no_sound
+scripted_snd_open                        = weapons\obrez\obrez_reload_start
+scripted_snd_close                       = weapons\obrez\obrez_reload_end
+snd_add_cartridge 		                 = weapons\obrez\obrez_cartridge_1
+snd_add_cartridge1                       = weapons\obrez\obrez_cartridge_2
+snd_add_cartridge2                       = weapons\obrez\obrez_cartridge_3
+snd_add_cartridge3                       = weapons\obrez\obrez_cartridge_4
+snd_add_cartridge4                       = weapons\obrez\obrez_cartridge_5
+!snd_empty
+snd_rattle_class            = db\db_shotty-0
+; wstfg_snd_idle_sprint             = rattle\sprint\sprint_light, 0.2, 1.12
+snd_reload_misfire          = weapons\obrez\bolt
+![wpn_mosin_obrez_hud]
 anm_hide                    = obrez_holster, obrez_holster, 1.36
 anm_show                    = obrez_draw, obrez_draw, 1.36
 anm_reload_misfire          = obrez_shoot, obrez_shoot, 1.12
@@ -413,7 +431,7 @@ anm_add_cartridge_variant3                      = win_add_cartridge3, win_add_ca
 ; anm_add_cartridge_variant3                      = win_add_cartridge3, win_add_cartridge3
 
 ![wpn_m98b]
-snd_unload                                                         = interface\unload\bolt_unload
+snd_unload                  = interface\unload\bolt_unload
 snd_rattle_class            = m82\m82-0
 
 ![wpn_gauss]
@@ -422,4 +440,5 @@ snd_shoot                                                          = wpn_gauss_s
 snd_shoot_actor                                                    = wpn_gauss_snd_shoot_actor
 snd_shoot_actor_indoor                                             = int_wpn_gauss_snd_shoot_actor
 
+snd_unload                  = interface\unload\gauss_unload
 snd_rattle_class            = m82\m82-0

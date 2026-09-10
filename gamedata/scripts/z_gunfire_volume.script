@@ -1,6 +1,9 @@
 -- oleh5230, 03.04.26
 -- credits: Diazzz for the idea
 
+-- To Do:
+-- apply to scripted sounds
+
 local volume = 1
 local volume_sil = 1
 local volume_npc = 1
@@ -13,7 +16,7 @@ local gunfire = {
     ["sndShotActorIndoor"] = true,
     ["sndShotActorFirst"] = true,
     ["sndShotActorFirstIndoor"] = true,
-    ["sndShotG"] = true,
+    --["sndShotG"] = true,
     -- unused
     -- ["sndShotMisfire"] = true,
     -- ["sndShotMisfireActor"] = true,

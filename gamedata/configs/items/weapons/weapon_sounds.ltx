@@ -46,9 +46,9 @@ snd_bore1                                                          = $no_sound
 snd_switch                                                         = $no_sound
 snd_empty                                                          = weapons\_dryfire\ar_trigger
 snd_switch_mode                                                    = firemode\firemode_generic
-snd_shoot_grenade                                                  = weapons\m203\m203_grenshoot
-scripted_snd_shots_g                                               = weapons\m203\m203_tail, true
-scripted_snd_shots_g_aim                                           = weapons\m203\m203_tail, true
+snd_shoot_grenade                                                  = weapons\_gunfire\ubgl\m203_mono
+scripted_snd_shots_g                                               = weapons\_gunfire\ubgl\m203_stereo, true
+scripted_snd_shots_g_aim                                           = weapons\_gunfire\ubgl\m203_stereo, true
 ; wstfg_snd_idle_sprint                                                 = rattle\sprint\sprint_light, 0.25, 1.1
 
 [wpn_binoc_sounds]:base_sounds
@@ -163,9 +163,9 @@ snd_switch_mode                                                    = weapons\ak7
 snd_empty                                                          = weapons\_dryfire\ak_trigger
 snd_empty_first                                                    = weapons\_dryfire\ak_hammer
 
-snd_shoot_grenade                                                  = weapons\_gunfire\gp25\mono_1
-scripted_snd_shots_g                                               = weapons\_gunfire\gp25\stereo_1, true
-scripted_snd_shots_g_aim                                           = weapons\_gunfire\gp25\stereo_1, true
+snd_shoot_grenade                                                  = weapons\_gunfire\ubgl\gp25_mono
+scripted_snd_shots_g                                               = weapons\_gunfire\ubgl\gp25_stereo, true
+scripted_snd_shots_g_aim                                           = weapons\_gunfire\ubgl\gp25_stereo, true
 
 snd_shoot                                                          = wpn_akm_snd_shoot
 ; snd_shoot_indoor                                                   = int_wpn_akm_snd_shoot
@@ -744,7 +744,7 @@ snd_draw                                                           = weapons\wal
 snd_holster                                                        = weapons\pistol_holster
 snd_reload                                                         = weapons\walther\walther_reload
 snd_reload_empty                                                   = weapons\walther\walther_reload_empty
-snd_empty_first                                                    = weapons\_dryfire\glock_hammer
+snd_empty_first                                                    = weapons\_dryfire\beretta_hammer
 
 snd_silncer_shot                                                   = wpn_9_1_snd_silenced
 ; snd_silncer_shot_indoor                                            = int_wpn_9_1_snd_silenced
@@ -873,9 +873,9 @@ snd_switch_mode                                                    = weapons\ak7
 snd_empty                                                          = weapons\_dryfire\ak_trigger
 snd_empty_first                                                    = weapons\_dryfire\ak_hammer
 
-snd_shoot_grenade                                                  = weapons\_gunfire\gp25\mono_1
-scripted_snd_shots_g                                               = weapons\_gunfire\gp25\stereo_1, true
-scripted_snd_shots_g_aim                                           = weapons\_gunfire\gp25\stereo_1, true
+snd_shoot_grenade                                                  = weapons\_gunfire\ubgl\gp25_mono
+scripted_snd_shots_g                                               = weapons\_gunfire\ubgl\gp25_stereo, true
+scripted_snd_shots_g_aim                                           = weapons\_gunfire\ubgl\gp25_stereo, true
 
 snd_shoot                                                          = wpn_groza_snd_shoot
 ; snd_shoot_indoor                                                   = int_wpn_groza_snd_shoot
@@ -1703,7 +1703,7 @@ snd_silncer_shot_actor_indoor                                      = int_wpn_pm_
 
 snd_unload                                                         = interface\unload\pistol_unload
 
-[wpn_pb_sounds]:wpn_pm_sounds
+[wpn_pb_sounds]:base_sounds
 snd_shoot                                                          = wpn_pb_snd_silenced
 ; snd_shoot_indoor                                                   = int_wpn_pb_snd_silenced
 snd_shoot_actor                                                    = wpn_pb_snd_silenced_actor
@@ -1713,6 +1713,12 @@ snd_silncer_shot                                                   = wpn_pb_snd_
 ; snd_silncer_shot_indoor                                            = int_wpn_pb_snd_silenced
 snd_silncer_shot_actor                                             = wpn_pb_snd_silenced_actor
 snd_silncer_shot_actor_indoor                                      = int_wpn_pb_snd_silenced_actor
+
+snd_empty                                                          = weapons\_dryfire\1911_trigger
+snd_empty_first                                                    = $no_sound
+snd_switch_mode                                                    = firemode\firemode_pistol
+
+snd_unload                                                         = interface\unload\pistol_unload
 
 ;-----------------------------------------------------------------------------------------------------------
 

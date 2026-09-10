@@ -53,6 +53,7 @@ snd_holster                 = weapons\generic\pistolguns_holster
 !snd_empty
 
 ![wpn_oc33]
+!snd_close
 !snd_silncer_shot
 !snd_switch_mode
 !snd_empty
@@ -126,6 +127,7 @@ scripted_snd_walk2sprint        	        = weapons\fort\fort_new_holster
 !snd_empty
 
 ![wpn_glock]
+!snd_close
 !snd_switch_mode
 !snd_empty
 
@@ -181,13 +183,25 @@ snd_silncer_shot            = wpn_9_2_snd_silenced
 !snd_switch_mode
 !snd_empty
 
-![wpn_desert_eagle]     ; TheShinyHaxorus' reanim patch
+![wpn_desert_eagle]
+!snd_shoot
+!snd_shoot_indoor
+!snd_shoot_actor
+!snd_shoot_actor_indoor
+!snd_shoot_actor
+!snd_shoot_actor_ads
+!snd_shoot_actor_indoor
+!snd_shoot_actor_ads_indoor
+!snd_silncer_shot_actor
+!snd_silncer_shot_actor_ads
+!snd_silncer_shot_actor_indoor
+!snd_silncer_shot_actor_ads_indoor
 !snd_empty
-snd_draw                    = weapons\deserteagle\deagle_draw
-snd_holster                 = weapons\deserteagle\deagle_holster
-![wpn_desert_eagle_hud]
-anm_hide                    = deagle_sh_holster_empty, idle
-anm_hide_empty              = deagle_sh_holster_empty, idle_empty
+; snd_draw                    = weapons\deserteagle\deagle_draw
+; snd_holster                 = weapons\deserteagle\deagle_holster
+; ![wpn_desert_eagle_hud]
+; anm_hide                    = deagle_sh_holster_empty, idle
+; anm_hide_empty              = deagle_sh_holster_empty, idle_empty
 
 ![wpn_mp412]
 scripted_snd_show           = weapons\mp412\mp412_draw, true
@@ -200,6 +214,18 @@ scripted_snd_ammo_check_empty           = weapons\mp412\mp412_ammocheck_empty
 ![wpn_revolver357]
 snd_empty                   = weapons\_dryfire\revolver_dry
 snd_empty_first				= $no_sound
+
+![wpn_eft_rsh12]
+snd_shoot               	= wpn_rsh12_wstfg_snd_shoot
+snd_shoot_actor				= wpn_rsh12_wstfg_snd_shoot_actor
+snd_shoot_actor_indoor      = int_wpn_rsh12_wstfg_snd_shoot_actor
+snd_silncer_shot		    = wpn_rsh12_wstfg_snd_silenced
+snd_silncer_shot_actor      = wpn_rsh12_wstfg_snd_silenced_actor
+snd_silncer_shot_actor_indoor = int_wpn_rsh12_wstfg_snd_silenced_actor
+snd_empty                   = weapons\_dryfire\rsh12_dry
+snd_empty_first				= $no_sound
+
+snd_unload                  = interface\unload\revolver_unload
 
 ;------------------------------------ BAS (EFTWP) ----------------------------------------------------------------------------
 
