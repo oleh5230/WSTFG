@@ -233,7 +233,7 @@ end
 
 function on_game_start()
     assert(oleh_sound_utils and oleh_sound_utils.VERSION and oleh_sound_utils.VERSION >= 5, "\n\n"..
-    "Oleh's Weapon Sounds: oleh_sound_utils.script is missing or outdated, update MSIG (Miscellaneous Sound Improvements)\nhttps://github.com/oleh5230/MSIG")
+    "Oleh's Weapon Sounds: oleh_sound_utils.script is missing or outdated, update MSIG (Miscellaneous Sound Improvements) or move it to higher priority\nhttps://github.com/oleh5230/MSIG")
 
     RegisterScriptCallback("actor_on_weapon_zoom_in", actor_on_weapon_zoom_in)
     RegisterScriptCallback("actor_on_weapon_zoom_out", actor_on_weapon_zoom_out)
