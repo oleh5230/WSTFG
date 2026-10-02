@@ -26,6 +26,8 @@ Recommended addons and load order: https://github.com/oleh5230/MSIG/blob/main/MO
 - SFX Volume (`snd_volume_eff`): `0.5` - otherwise some sounds may have imbalanced volume
 - Rendering Distance (World) (`rs_vis_distance`): at least `0.9` (50% of the slider) - otherwise distant gunfire sounds would not be audible
 
+Beware that distant gunfire sounds might have a significant impact on performance
+
 ## Credits
 - **Shrike**: a lot of gunfire sounds
 - **YungPr1nce**: a lot of foley sounds included directly or reused as material
