@@ -61,7 +61,7 @@ function get_wpn_params(weapon)
         cached_sec     = sec
         wpn.weight     = ini_sys:r_float_ex(sec, "inv_weight") or 3.3
         wpn.aim_time   = ini_sys:r_float_ex(sec, "zoom_rotate_time") or 0.25
-        wpn.volume     = 0.33 --(0.25 + weight * 0.025)
+        wpn.volume     = 0.3 --(0.25 + weight * 0.025)
         wpn.frequency  = clamp(0.25 / wpn.aim_time, 0.8, 1.2)
         wpn.kind       = SYS_GetParam(0, sec, "kind") or "w_misc"
         wpn.class      = wpn_kinds[wpn.kind] or wpn_kinds["w_misc"]
@@ -137,7 +137,7 @@ function play_sprint_rattle_sound(volume, frequency, weapon)
 
     local sound = sound_object("weapons\\_rattle\\" .. wpn.sclass .. roll)
     sound:play(db.actor, 0, sound_object.s2d)
-    sound.volume = (wpn.volume * volume) or 0.5
+    sound.volume = (wpn.volume * volume) * 0.75 or 0.25
     sound.frequency = frequency or 1
     --printf("[eft_rattle] %s | volume: %s, frequency: %s", wpn.sclass .. roll, volume, frequency)
 
