@@ -138,7 +138,7 @@ function play_sprint_rattle_sound(volume, frequency, weapon)
 
     local sound = sound_object("weapons\\_rattle\\" .. wpn.sclass .. roll)
     sound:play(db.actor, 0, sound_object.s2d)
-    sound.volume = wpn_lowered and 0.67 * wpn.volume * volume or 1 * wpn.volume * volume
+    sound.volume = wpn_lowered and 0.5 * wpn.volume * volume or 1 * wpn.volume * volume
     sound.frequency = frequency or 1
     --printf("[eft_rattle] %s | volume: %s, frequency: %s", wpn.sclass .. roll, volume, frequency)
 
@@ -194,9 +194,9 @@ function weapon_cover_tilt_rattle.play_sound(dir, weapon, coeff)
     if not weapon_cover_tilt.get_setting("tilt_rattle") or not weapon then return end
 
     if wct_raised then
-        play_aim_sound(volume_lower_raise_rattle, clamp(1.25 - wpn.weight * 0.0625, 0.8, 1.2), weapon)
+        play_aim_sound(volume_lower_raise_rattle * 0.6, clamp(1.25 - wpn.weight * 0.0625, 0.8, 1.2), weapon)
     else
-        play_aim_sound(volume_lower_raise_rattle, clamp(1.25 - wpn.weight * 0.0625, 0.8, 1.2), weapon)
+        play_aim_sound(volume_lower_raise_rattle * 0.6, clamp(1.25 - wpn.weight * 0.0625, 0.8, 1.2), weapon)
     end
     wct_raised = not wct_raised
 end
